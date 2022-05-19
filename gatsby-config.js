@@ -1,20 +1,17 @@
-const language_config = require(`./i18n-config.js`)
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-const site_url = 'https://deriv.com'
+const site_url = 'https://sinbad.dev'
 
 module.exports = {
-    // pathPrefix: process.env.PATH_PREFIX || '/deriv-com/', // For non CNAME GH-pages deployment
     flags: {
         FAST_DEV: true,
     },
     siteMetadata: {
-        title: 'Deriv',
-        description:
-            'Deriv.com gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.',
-        author: 'Deriv.com',
+        title: 'Sinbad',
+        description: '',
+        author: 'sinbad.dev',
         siteUrl: site_url,
     },
     plugins: [
@@ -48,41 +45,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-sitemap',
             options: {
-                excludes: [
-                    '/404',
-                    '/**/404.html',
-                    '/**/404',
-                    '/check-email',
-                    '/**/check-email',
-                    '/reset-password',
-                    '/**/reset-password',
-                    '/ach',
-                    '/ach/**',
-                    '/amp',
-                    '/amp/**',
-                    '/**/amp',
-                    '/**/amp/**',
-                    '/interim',
-                    '/interim/**',
-                    '/**/interim',
-                    '/**/interim/**',
-                    '/homepage',
-                    '/homepage/**',
-                    '/**/homepage',
-                    '/**/homepage/**',
-                    '/offline-plugin-app-shell-fallback',
-                    '/**/offline-plugin-app-shell-fallback',
-                    '/landing',
-                    '/landing/**',
-                    '/**/landing',
-                    '/**/landing/**',
-                    '/endpoint',
-                    '/**/endpoint',
-                    '/signup-success',
-                    '/**/signup-success',
-                    '/academy/blog/posts/preview',
-                    '/academy/subscription',
-                ],
+                excludes: [],
                 query: `
                 {
                     allSitePage {
@@ -98,47 +61,14 @@ module.exports = {
                         return { ...page }
                     })
                 },
-                serialize: ({ path }) => {
-                    const ignore_localized_regex = /careers|besquare|livechat|academy/
-                    const languages = Object.keys(language_config)
-
-                    const path_array = path.split('/')
-                    const current_lang = path_array[1]
-                    const check_lang = current_lang.replace('-', '_')
-                    let current_page = path
-
-                    if (languages.includes(check_lang)) {
-                        path_array.splice(1, 1)
-                        current_page = path_array.join('/')
-                    }
-
-                    languages.push('x-default')
-                    languages.splice(languages.indexOf('ach'), 1)
-                    const ignore_localized = current_page.match(ignore_localized_regex)
-                    const links = languages.map((locale) => {
-                        if (locale !== 'ach' && locale) {
-                            const replaced_locale = locale.replace('_', '-')
-                            const is_default = ['en', 'x-default'].includes(locale)
-                            const href_locale = is_default ? '' : `/${replaced_locale}`
-                            const href = `${site_url}${href_locale}${current_page}`
-                            return { lang: replaced_locale, url: href }
-                        }
-                    })
-
-                    return {
-                        url: path,
-                        links: !ignore_localized ? links : null,
-                    }
-                },
             },
         },
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                name: 'Deriv',
-                short_name: 'Deriv',
-                description:
-                    'Deriv gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.',
+                name: 'Sinbad',
+                short_name: 'Sinbad',
+                description: 'Sinbad Software',
                 start_url: '/',
                 background_color: '#000000',
                 theme_color: '#000000',
@@ -157,19 +87,7 @@ module.exports = {
                         type: `image/png`,
                     },
                 ],
-                gcm_sender_id: '370236002280',
-                gcm_user_visible_only: true,
                 crossOrigin: `use-credentials`,
-                // TODO: add translations and support for language routes e.g:
-                // localize: [
-                //     {
-                //       start_url: '/de/',
-                //       lang: 'de',
-                //       name: 'Die coole Anwendung',
-                //       short_name: 'Coole Anwendung',
-                //       description: 'Die Anwendung macht coole Dinge und macht Ihr Leben besser.',
-                //     },
-                //   ],
             },
         },
         {
@@ -195,42 +113,15 @@ module.exports = {
                     {
                         userAgent: '*',
                         allow: '/',
-                        disallow: [
-                            '/404/',
-                            '/homepage/',
-                            '/landing/',
-                            '/endpoint/',
-                            '/livechat/',
-                            '/storybook/',
-                        ],
+                        disallow: [],
                     },
                 ],
-            },
-        },
-        'gatsby-plugin-anchor-links',
-        {
-            resolve: 'gatsby-plugin-google-tagmanager',
-            options: {
-                id: 'GTM-NF7884S',
-                includeInDevelopment: false,
             },
         },
         {
             resolve: 'gatsby-plugin-anchor-links',
             options: {
                 offset: -100,
-            },
-        },
-        {
-            resolve: '@directus/gatsby-source-directus',
-            options: {
-                url: 'https://deriv-academy.directus.app',
-                auth: {
-                    token: process.env.DIRECTUS_AUTH_TOKEN,
-                },
-                dev: {
-                    refresh: '5s',
-                },
             },
         },
         'gatsby-plugin-use-query-params',
