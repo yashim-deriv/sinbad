@@ -1,15 +1,6 @@
 import React from 'react'
-import { WrapPagesWithLocaleContext } from './src/components/localization'
-import './src/components/localization/config'
-import { MediaContextProvider } from './src/themes/media'
-import { DerivProvider } from './src/store'
 
-export const wrapRootElement = ({ element }) => {
-    return (
-        <DerivProvider>
-            <MediaContextProvider>{element}</MediaContextProvider>
-        </DerivProvider>
-    )
+// Wraps every page in a component
+export const wrapPageElement = ({ element, props }) => {
+    return <section {...props}>{element}</section>
 }
-
-export const wrapPageElement = WrapPagesWithLocaleContext

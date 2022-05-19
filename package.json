@@ -1,24 +1,18 @@
 {
-    "name": "deriv-com",
-    "description": "Deriv.com static content",
+    "name": "sinbad-dev",
+    "description": "Sinbad static content",
     "version": "0.1.0",
-    "author": "Deriv",
+    "author": "Sinbad Software",
     "dependencies": {
-        "@artsy/fresnel": "^3.2.1",
-        "@directus/gatsby-source-directus": "^9.4.2",
-        "@livechat/customer-sdk": "^3.1.0",
         "@loadable/component": "^5.15.2",
         "@svgr/webpack": "^6.1.2",
         "commander": "^8.3.0",
         "crc-32": "^1.2.0",
-        "embla-carousel-react": "^6.0.2",
         "eslint-import-resolver-node": "^0.3.6",
         "extend": "^3.0.2",
-        "formik": "^2.2.9",
         "gatsby": "^4.9.3",
         "gatsby-background-image": "^1.6.0",
         "gatsby-plugin-anchor-links": "^1.2.1",
-        "gatsby-plugin-google-tagmanager": "^4.9.0",
         "gatsby-plugin-image": "^2.9.1",
         "gatsby-plugin-manifest": "^4.9.1",
         "gatsby-plugin-page-progress": "^2.2.1",
@@ -35,7 +29,6 @@
         "gbimage-bridge": "^0.2.1",
         "i18next": "^21.6.5",
         "js-cookie": "^2.2.1",
-        "lottie-web": "^5.8.1",
         "match-sorter": "^6.3.1",
         "postcss": "^8.4.5",
         "preact": "^10.6.4",
@@ -102,7 +95,7 @@
     "license": "Apache License 2.0",
     "scripts": {
         "build": "GATSBY_CPU_COUNT=2 gatsby build --log-pages",
-        "develop": "GATSBY_CPU_COUNT=2 gatsby develop -o",
+        "develop": "GATSBY_CPU_COUNT=2 gatsby develop -o -p 8800",
         "format": "prettier --write '**/*.js' '*.js'",
         "stylelint": "stylelint 'src/**/*.js' --formatter verbose",
         "eslint": "DEBUG=eslint:cli-engine eslint {'src/**/*.{js,jsx,ts,tsx}','./*.js'} --fix",
@@ -110,26 +103,21 @@
         "start-80": "sudo gatsby develop -p 80",
         "serve": "gatsby serve",
         "test": "npm run eslint && npm run stylelint",
-        "translate:download": "crowdin download -b crowdin && crowdin download -b crowdin -l zh-CN",
-        "translate:extract": "cd scripts && node extract-translations.js && cd ..",
-        "translate:upload": "crowdin upload sources -b crowdin",
         "deploy": "npm run build && gh-pages -d public -b master",
         "deploy-dev": "npm run build && gh-pages -d public",
-        "deploy-branch": "PATH_PREFIX=/deriv-com/br/$branch_name npm run build && gh-pages -d public -e br/$branch_name",
+        "deploy-branch": "PATH_PREFIX=/sinbad/br/$branch_name npm run build && gh-pages -d public -e br/$branch_name",
         "prepare": "husky install",
         "pre-commit-lint": "lint-staged",
         "type-check": "tsc --noEmit",
-        "storybook": "start-storybook -p 6006",
-        "build:storybook": "build-storybook -c .storybook -o public/storybook",
         "codegen": "graphql-codegen --config codegen.yml",
         "codegen:watch": "graphql-codegen --config codegen.yml --watch"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/binary-com/deriv-com"
+        "url": "https://github.com/binary-com/sinbad"
     },
     "bugs": {
-        "url": "https://github.com/binary-com/deriv-com/issues"
+        "url": "https://github.com/binary-com/sinbad/issues"
     },
     "engines": {
         "npm": ">=6.9.0"

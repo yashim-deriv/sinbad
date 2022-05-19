@@ -8,8 +8,6 @@ Changes:
 -   [ ] New feature
 -   [ ] Update feature
 -   [ ] Refactor code
--   [ ] Translation to code
--   [ ] Translation to crowdin
 -   [ ] Script configuration
 -   [ ] Improve performance
 -   [ ] Style only
