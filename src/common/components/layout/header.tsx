@@ -2,6 +2,10 @@ import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
+type HeaderProps = {
+    size?: string
+}
+
 const HeaderContainer = styled.div`
     width: 100%;
     height: 60px;
@@ -18,7 +22,7 @@ const StyledHeader = styled.div`
     padding-left: 15px;
 `
 
-const HeaderTitle = styled.div`
+const HeaderTitle = styled.div<HeaderProps>`
     color: black;
     font-weight: ${(props) => (props.size ? props.size : 'normal')};
     font-size: 24px;
@@ -43,7 +47,7 @@ export const PagesWrapper = styled.div`
     padding-right: 15px;
 `
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <HeaderContainer>
             <StyledHeader>

@@ -1,11 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link as GatsbyLink } from 'gatsby'
 import styled from 'styled-components'
 //Logo
 import MapSvg from '../../../../images/svg/map.svg'
 import PhoneSvg from '../../../../images/svg/phone.svg'
-import EmilSvg from '../../../../images/svg/mail.svg'
+import EmailSvg from '../../../../images/svg/mail.svg'
 import { SocialWrapper } from './common/style'
 
 const ContactLink = styled(GatsbyLink)`
@@ -25,29 +24,35 @@ const ContactImage = styled.img`
     border-radius: 20px;
 `
 
-const SocialWrapperComponent = () => {
+const SocialWrapperComponent: React.FC = () => {
     const contacts = [
         {
+            id: 0,
             image: MapSvg,
             info: 'Sinbad Software LLC',
             details: 'Suite 112, Excepteur cupidatat non',
+            link: '',
         },
         {
+            id: 1,
             image: PhoneSvg,
             info: 'Phone:',
             details: '888 22200 33300',
+            link: '',
         },
         {
-            image: EmilSvg,
+            id: 2,
+            image: EmailSvg,
             info: 'Email:',
             details: 'info@sindbadsoftware.com',
+            link: '',
         },
     ]
 
     return (
         <SocialWrapper>
-            {contacts.map((contact, index) => (
-                <ContactLink key={index}>
+            {contacts.map((contact) => (
+                <ContactLink key={contact.id} to={contact.link}>
                     <ContactImage src={contact.image} />
                     <ContactText>{contact.info}</ContactText>
                     <ContactText>{contact.details}</ContactText>
@@ -55,13 +60,6 @@ const SocialWrapperComponent = () => {
             ))}
         </SocialWrapper>
     )
-}
-
-SocialWrapperComponent.propTypes = {
-    fb_url: PropTypes.string,
-    instagram_url: PropTypes.string,
-    is_career_page: PropTypes.bool,
-    twitter_url: PropTypes.string,
 }
 
 export default SocialWrapperComponent

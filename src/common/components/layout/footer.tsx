@@ -10,7 +10,7 @@ const StyledFooterLink = styled(Link)`
     color: white;
 `
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <DefaultFooter>
             <Container>
