@@ -8,7 +8,17 @@ import PhoneSvg from '../../../../images/svg/phone.svg'
 import EmilSvg from '../../../../images/svg/mail.svg'
 import { SocialWrapper } from './common/style'
 
-const LinkedImage = styled.img`
+const ContactLink = styled(GatsbyLink)`
+    width: 100%;
+`
+
+const ContactText = styled.div`
+    font-size: 16px;
+    color: white;
+    padding-top: 10px;
+`
+
+const ContactImage = styled.img`
     background-color: white;
     width: 41px;
     height: 41px;
@@ -16,7 +26,7 @@ const LinkedImage = styled.img`
 `
 
 const SocialWrapperComponent = () => {
-    const info = [
+    const contacts = [
         {
             image: MapSvg,
             info: 'Sinbad Software LLC',
@@ -29,19 +39,19 @@ const SocialWrapperComponent = () => {
         },
         {
             image: EmilSvg,
-            info: 'Email',
+            info: 'Email:',
             details: 'info@sindbadsoftware.com',
         },
     ]
 
     return (
         <SocialWrapper>
-            {info.map((info, index) => (
-                <GatsbyLink key={index}>
-                    <LinkedImage src={info.image} />
-                    <div>{info.info}</div>
-                    <div>{info.details}</div>
-                </GatsbyLink>
+            {contacts.map((contact, index) => (
+                <ContactLink key={index}>
+                    <ContactImage src={contact.image} />
+                    <ContactText>{contact.info}</ContactText>
+                    <ContactText>{contact.details}</ContactText>
+                </ContactLink>
             ))}
         </SocialWrapper>
     )
