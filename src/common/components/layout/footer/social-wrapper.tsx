@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import styled from 'styled-components'
-//Logo
-import MapSvg from '../../../../images/svg/map.svg'
-import PhoneSvg from '../../../../images/svg/phone.svg'
-import EmailSvg from '../../../../images/svg/mail.svg'
 import { SocialWrapper } from './common/style'
+//Logo
+import MapSvg from 'images/svg/map.svg'
+import PhoneSvg from 'images/svg/phone.svg'
+import EmailSvg from 'images/svg/mail.svg'
 
 const ContactLink = styled(GatsbyLink)`
     width: 100%;
@@ -24,7 +24,7 @@ const ContactImage = styled.img`
     border-radius: 20px;
 `
 
-const SocialWrapperComponent: React.FC = () => {
+const SocialWrapperComponent = () => {
     const contacts = [
         {
             id: 0,

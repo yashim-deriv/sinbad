@@ -47,7 +47,7 @@ export const PagesWrapper = styled.div`
     padding-right: 15px;
 `
 
-const Header: React.FC = () => {
+const Header = () => {
     return (
         <HeaderContainer>
             <StyledHeader>
