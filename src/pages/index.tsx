@@ -1,7 +1,12 @@
 import React from 'react'
+import Layout from 'common/components/layout/layout'
 
 const Home = () => {
-    return <h1>Sinbad Software</h1>
+    return (
+        <Layout>
+            <div>Something here</div>
+        </Layout>
+    )
 }
 
 export default Home
