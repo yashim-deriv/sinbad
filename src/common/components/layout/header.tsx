@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import { ContactUsButton } from '../containers/common'
 
 type HeaderProps = {
     size?: string
@@ -14,7 +15,6 @@ const HeaderContainer = styled.div`
     align-items: center;
     background-color: #f7e3ab;
     border-radius: 5px;
-    margin-bottom: 15px;
 `
 
 const StyledHeader = styled.div`
@@ -34,14 +34,6 @@ const StyledHeaderLink = styled(Link)`
     color: black;
 `
 
-const ContactUsButton = styled.button`
-    width: 100px;
-    height: 25px;
-    color: black;
-    background-color: orange;
-    border-radius: 10px;
-`
-
 export const PagesWrapper = styled.div`
     color: white;
     padding-right: 15px;
@@ -54,7 +46,6 @@ const Header = () => {
                 <HeaderTitle size="bold">Sinbad </HeaderTitle>
                 <HeaderTitle>Software</HeaderTitle>
             </StyledHeader>
-
             <PagesWrapper>
                 <StyledHeaderLink to="/">Home | </StyledHeaderLink>
                 <StyledHeaderLink to="/careers"> Careers | </StyledHeaderLink>

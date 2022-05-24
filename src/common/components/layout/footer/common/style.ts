@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import CssGrid from '../../../containers/css-grid'
 import Flex from '../../../containers/flex'
 import device from 'themes/device'
 
@@ -7,9 +6,7 @@ export const DefaultFooter = styled.footer`
     background-color: #22365e;
     color: white;
     width: 100%;
-    margin: 0 auto;
     margin-bottom: ${(props) => props.is_eu_country && '7.3rem'};
-    padding-bottom: 1.6rem;
 
     @media ${device.mobileL} {
         padding-bottom: 6rem;
@@ -19,31 +16,12 @@ export const DefaultFooter = styled.footer`
         }
     }
 `
-export const FooterGrid = styled(CssGrid)`
-    width: 100%;
-    grid-template-columns: 2fr;
-    grid-template-areas:
-        'links links'
-        'disclaimer disclaimer'
-        'copyright social'
-        'copyright pages';
-
-    @media ${device.tabletL} {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            'links'
-            'social'
-            'disclaimer'
-            'pages'
-            'copyright';
-    }
-`
 
 export const SocialWrapper = styled.div`
-    grid-area: links;
+    align-items: center;
+    height: 175px;
     background: #22365e;
     color: white;
-    margin: 1.6rem 0;
     display: flex;
     justify-content: space-between;
 
@@ -65,13 +43,17 @@ export const SocialWrapper = styled.div`
 `
 
 export const DisclaimerWrapper = styled.div`
-    grid-area: disclaimer;
+    height: 100px;
     background: #22365e;
     color: white;
+    border-top: 1px solid gray;
+    display: flex;
 `
 
 export const PagesWrapper = styled(Flex)`
-    grid-area: pages;
     align-items: center;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
 `

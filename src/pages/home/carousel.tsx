@@ -7,11 +7,6 @@ import Image2 from 'images/svg/carousel-2.svg'
 import Sahara from 'images//common/sahara.jpeg'
 import Dot from 'images/svg/dot.svg'
 
-type CarouselProps = {
-    font_size?: string
-    padding?: string
-}
-
 const CarouselContainer = styled.div`
     width: 100%;
     height: 200px;
@@ -21,25 +16,28 @@ const CarouselContainer = styled.div`
 `
 
 const CarouselTextContainer = styled.div`
-    width: 40rem;
+    width: 400px;
     display: flex;
     flex-direction: column;
 `
-const CarouselText = styled.div<CarouselProps>`
+
+const CarouselText = styled.div`
     font-size: ${(props) => (props.font_size ? props.font_size : '16px')};
     color: ${(props) => (props.color ? props.color : 'black')};
     padding: ${(props) => (props.padding ? props.padding : 'unset')};
     padding-bottom: 10px;
 `
+
 const CarouselImageContainer = styled.div`
     height: 100px;
     width: 100px;
 `
 
 const PickerContainer = styled.div`
-    width: 40rem;
+    width: 400px;
     height: 40px;
 `
+
 const Picker = styled.button`
     width: 30px;
     height: 30px;
