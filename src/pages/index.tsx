@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Carousel from './carousel'
 import Welcome from './welcome'
+import Layout from 'common/components/layout/layout'
 
 const TechStackContainer = styled.div`
     width: 100%;
@@ -18,13 +19,15 @@ const HomeContainer = styled.div`
 
 const Home = () => {
     return (
-        <HomeContainer>
-            <Carousel />
-            <Welcome />
+        <Layout>
+            <HomeContainer>
+                <Carousel />
+                <Welcome />
 
-            <TechStackContainer>TechStack</TechStackContainer>
-            <JoinUsContainer>JoinUs</JoinUsContainer>
-        </HomeContainer>
+                <TechStackContainer>TechStack</TechStackContainer>
+                <JoinUsContainer>JoinUs</JoinUsContainer>
+            </HomeContainer>
+        </Layout>
     )
 }
 
