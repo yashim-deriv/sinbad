@@ -13,6 +13,7 @@ const CarouselContainer = styled.div`
     display: flex;
     align-items: center;
     background-image: url(${Sahara});
+    padding-left: 50px;
 `
 
 const CarouselTextContainer = styled.div`
@@ -24,11 +25,11 @@ const CarouselTextContainer = styled.div`
 const CarouselText = styled.div`
     font-size: ${(props) => (props.font_size ? props.font_size : '16px')};
     color: ${(props) => (props.color ? props.color : 'black')};
-    padding: ${(props) => (props.padding ? props.padding : 'unset')};
+    padding: 10px 10px;
     padding-bottom: 10px;
 `
 
-const CarouselImageContainer = styled.div`
+const CarouselImageContainer = styled.img`
     height: 100px;
     width: 100px;
 `
@@ -70,24 +71,16 @@ const Carousel = () => {
         <>
             <CarouselContainer>
                 <CarouselTextContainer>
-                    <CarouselText color="red" padding="10px 10px">
-                        Sinbad Sowtfare
-                    </CarouselText>
-                    <CarouselText font_size="24px" padding="10px 10px">
-                        TRANSFORMING IDEAS INTO SOLUTIONS
-                    </CarouselText>
-                    <CarouselText color="red" padding="10px 10px">
-                        {data[active].text}
-                    </CarouselText>
+                    <CarouselText color="red">Sinbad Sowtfare</CarouselText>
+                    <CarouselText font_size="24px">TRANSFORMING IDEAS INTO SOLUTIONS</CarouselText>
+                    <CarouselText color="red">{data[active].text}</CarouselText>
                     <PickerContainer>
                         <Picker onClick={() => setActive(0)}></Picker>
                         <Picker onClick={() => setActive(1)}></Picker>
                         <Picker onClick={() => setActive(2)}></Picker>
                     </PickerContainer>
                 </CarouselTextContainer>
-                <CarouselImageContainer>
-                    <img src={data[active].img} />
-                </CarouselImageContainer>
+                <CarouselImageContainer src={data[active].img} />
             </CarouselContainer>
         </>
     )

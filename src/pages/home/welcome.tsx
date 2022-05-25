@@ -60,9 +60,10 @@ const CardText = styled.div`
 
 const OurTermsContainer = styled.div`
     display: flex;
-    width: 340px;
+    width: 1140px;
     height: 480px;
     text-align: center;
+    justify-content: center;
     align-items: center;
 `
 
@@ -70,11 +71,11 @@ const TermsTextContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
     width: 100%;
     height: 200px;
-    margin: 30px 15px;
+    padding: 30px 15px;
 `
 
 const SinbadImage = styled.img`

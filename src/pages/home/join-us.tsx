@@ -5,6 +5,8 @@ import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 400px;
     background-color: #f7cd43;
@@ -18,15 +20,14 @@ const JoinUsInfo = styled.div`
     align-content: flex-start;
     text-align: center;
     align-items: start;
-    width: 100%;
     height: 300px;
-    padding: 50px 40px 0 80px;
+    padding: 50px 40px 0;
 `
 
 const TechDashboard = styled.img`
     width: 600px;
     height: 400px;
-    padding: 0 40px;
+    padding: 20px 0;
 `
 
 const JoinUs = () => {
