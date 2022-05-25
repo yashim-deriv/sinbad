@@ -14,14 +14,13 @@ const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 `
 
 const Returner = styled.img`
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 282%;
+    top: 270.5%;
     left: 50%;
 `
 

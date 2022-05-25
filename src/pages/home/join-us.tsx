@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContactUsButton, HeaderText, CommonText } from 'common/components/containers/common'
+import { ContactUsButton, Header, Text } from 'common/components/layout/footer/common/text'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
@@ -34,12 +34,12 @@ const JoinUs = () => {
     return (
         <JoinUsContainer>
             <JoinUsInfo>
-                <HeaderText color="red">Sinbad Software</HeaderText>
-                <HeaderText font_size="28px">JOIN OUR TEAM!</HeaderText>
-                <CommonText>
+                <Header color="red">Sinbad Software</Header>
+                <Header font_size="28px">JOIN OUR TEAM!</Header>
+                <Text>
                     Is your dream to build great products using leading technologies? Join Sinbad
                     Software, where creativity, talent, and a passion for challenges come together
-                </CommonText>
+                </Text>
                 <ContactUsButton>SEE OUR OPEN POSITIONS</ContactUsButton>
             </JoinUsInfo>
             <TechDashboard src={Dashboard} />

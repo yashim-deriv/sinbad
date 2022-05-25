@@ -6,6 +6,7 @@ import Image1 from 'images/svg/carousel-1.svg'
 import Image2 from 'images/svg/carousel-2.svg'
 import Sahara from 'images//common/sahara.jpeg'
 import Dot from 'images/svg/dot.svg'
+import { Text } from 'common/components/layout/footer/common/text'
 
 const CarouselContainer = styled.div`
     width: 100%;
@@ -20,13 +21,6 @@ const CarouselTextContainer = styled.div`
     width: 400px;
     display: flex;
     flex-direction: column;
-`
-
-const CarouselText = styled.div`
-    font-size: ${(props) => (props.font_size ? props.font_size : '16px')};
-    color: ${(props) => (props.color ? props.color : 'black')};
-    padding: 10px 10px;
-    padding-bottom: 10px;
 `
 
 const CarouselImageContainer = styled.img`
@@ -71,9 +65,9 @@ const Carousel = () => {
         <>
             <CarouselContainer>
                 <CarouselTextContainer>
-                    <CarouselText color="red">Sinbad Sowtfare</CarouselText>
-                    <CarouselText font_size="24px">TRANSFORMING IDEAS INTO SOLUTIONS</CarouselText>
-                    <CarouselText color="red">{data[active].text}</CarouselText>
+                    <Text color="red">Sinbad Sowtfare</Text>
+                    <Text font_size="24px">TRANSFORMING IDEAS INTO SOLUTIONS</Text>
+                    <Text color="red">{data[active].text}</Text>
                     <PickerContainer>
                         <Picker onClick={() => setActive(0)}></Picker>
                         <Picker onClick={() => setActive(1)}></Picker>

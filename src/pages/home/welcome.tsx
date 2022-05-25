@@ -3,8 +3,12 @@ import styled from 'styled-components'
 import Random from 'images/svg/random.svg'
 import SimbadSmile from 'images/common/simbad-smile.png'
 import Flex from 'common/components/containers/flex'
-import { CommonText, HeaderText } from 'common/components/containers/common'
+import { Text, Header } from 'common/components/layout/footer/common/text'
 
+type TermProps = {
+    index?: number
+    border_left?: boolean
+}
 const WelcomeContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -26,7 +30,8 @@ const StyledFlex = styled(Flex)`
 `
 const CardContainer = styled.div`
     display: flex;
-    padding: 0 0 35px 25px;
+    justify-content: center;
+    padding-bottom: 25px;
 `
 
 const Card = styled(Flex)`
@@ -71,11 +76,11 @@ const TermsTextContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     width: 100%;
     height: 200px;
-    padding: 30px 15px;
+    padding: 30px 0 30px 150px;
 `
 
 const SinbadImage = styled.img`
@@ -112,7 +117,7 @@ const TermText = styled.div`
     font-weight: normal;
 `
 
-const Term = styled.div`
+const Term = styled.div<TermProps>`
     display: flex;
     align-items: center;
     height: 70px;
@@ -199,13 +204,13 @@ const Welcome = () => {
     return (
         <WelcomeContainer>
             <TextContainer>
-                <HeaderText>WELCOME TO THE SINBAD SOFTWARE</HeaderText>
-                <CommonText width="720px" text_align="center">
+                <Header>WELCOME TO THE SINBAD SOFTWARE</Header>
+                <Text width="720px" text_align="center">
                     Sinbad Software LLC provides software development services and IT solutions for
                     the fintech industri. At every step of the way, we aim to give our clients the
                     power to go beyond digital boundaires and surpass their competitors in the
                     ever-evolving fintech landscape
-                </CommonText>
+                </Text>
             </TextContainer>
             <CardContainer>
                 <Card direction="column" ai="center" jc="start" margin="170px 0">
@@ -225,23 +230,21 @@ const Welcome = () => {
             </CardContainer>
             <OurTermsContainer>
                 <TermsTextContainer>
-                    <HeaderText color="red">Sinbad Software</HeaderText>
-                    <HeaderText font_size="28px">
-                        Revolutionising fintech needs amazing software
-                    </HeaderText>
-                    <CommonText padding="15px 0 15px">
+                    <Header color="red">Sinbad Software</Header>
+                    <Header font_size="28px">Revolutionising fintech needs amazing software</Header>
+                    <Text padding="15px 0 15px">
                         Our mission is to develop world-class fintech software solutions taht will
                         give our clients a cutting edge.
-                    </CommonText>
-                    <CommonText padding="0 0 20px">
+                    </Text>
+                    <Text padding="0 0 20px">
                         With a deep undestanding of the fintech industry and a talented team, we are
                         ready to provide clients around the world with they need - from custom
                         software to mobile applications, websites, web applications, information
                         architecture, and more.
-                    </CommonText>
-                    <HeaderText color="red" font_size="18px" font_weight="normal">
+                    </Text>
+                    <Header color="red" font_size="18px" font_weight="normal">
                         Where others see gaps, we see an opportunity to build a powerhouse
-                    </HeaderText>
+                    </Header>
                 </TermsTextContainer>
                 <SinbadImage src={SimbadSmile} />
                 <OurTermsTable>

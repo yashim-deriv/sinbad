@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { ContactUsButton } from '../containers/common'
+import { ContactUsButton } from './footer/common/text'
 
 type HeaderProps = {
     size?: string

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Dashboard from 'images/common/dashboard.png'
-import { HeaderText, CommonText } from 'common/components/containers/common'
+import { Header, Text } from 'common/components/layout/footer/common/text'
 
 const TechStackContainer = styled.div`
     width: 100%;
@@ -72,20 +72,20 @@ const TechStack = () => {
             <TechDashboard src={Dashboard} />
             <TechStackInfo>
                 <TermsTextContainer>
-                    <HeaderText color="red">Sinbad Software</HeaderText>
-                    <HeaderText font_size="28px">Tech stack</HeaderText>
-                    <CommonText>
+                    <Header color="red">Sinbad Software</Header>
+                    <Header font_size="28px">Tech stack</Header>
+                    <Text>
                         We leverage a wide range of programming languages and frameworks to create
                         robus software for the fintech industry to meet our clients needs.
-                    </CommonText>
+                    </Text>
                     <StackContainer>
                         {tech_stack.map((item, index) => (
                             <Stack key={index}>{item}</Stack>
                         ))}
                     </StackContainer>
-                    <HeaderText color="red" font_size="18px" font_weight="normal">
+                    <Header color="red" font_size="18px" font_weight="normal">
                         and more...
-                    </HeaderText>
+                    </Header>
                 </TermsTextContainer>
             </TechStackInfo>
         </TechStackContainer>

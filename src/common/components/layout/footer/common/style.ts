@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import Flex from '../../../containers/flex'
+import Flex from 'common/components/containers/flex'
 import device from 'themes/device'
 
 export const DefaultFooter = styled.footer`
     background-color: #22365e;
     color: white;
     width: 100%;
-    margin-bottom: ${(props) => props.is_eu_country && '7.3rem'};
+    margin-bottom: 7.3rem;
 
     @media ${device.mobileL} {
         padding-bottom: 6rem;
