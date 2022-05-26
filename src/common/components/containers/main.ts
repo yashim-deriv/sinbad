@@ -11,6 +11,10 @@ type TextProps = {
     text_align?: string
     padding?: string
 }
+type ImageProps = {
+    width?: string
+    height?: string
+}
 
 export const ContactUsButton = styled.button`
     width: fit-content;
@@ -19,6 +23,11 @@ export const ContactUsButton = styled.button`
     background-color: orange;
     border-radius: 10px;
     font-size: 10px;
+`
+
+export const ImageContainer = styled.img<ImageProps>`
+    width: ${(props) => (props.width ? props.width : '400px')};
+    height: ${(props) => (props.height ? props.height : '100%')};
 `
 
 export const Header = styled.div<HeaderProps>`

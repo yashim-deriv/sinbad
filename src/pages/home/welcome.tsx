@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { IconProps } from '../index'
 import Random from 'images/svg/random.svg'
-import SimbadSmile from 'images/common/simbad-smile.png'
+import Sinbad0 from 'images/common/carousel/sinbad-0.png'
+import Sinbad1 from 'images/common/carousel/sinbad-1.png'
+import Sinbad2 from 'images/common/carousel/sinbad-2.png'
 import Flex from 'common/components/containers/flex'
-import { Text, Header } from 'common/components/layout/footer/common/text'
+import { Text, Header, ImageContainer } from 'common/components/containers/main'
 
 type TermProps = {
     index?: number
     border_left?: boolean
 }
+
 const WelcomeContainer = styled.div`
     width: 100%;
     height: 100%;
@@ -81,11 +85,6 @@ const TermsTextContainer = styled.div`
     width: 100%;
     height: 200px;
     padding: 30px 0 30px 150px;
-`
-
-const SinbadImage = styled.img`
-    width: 100%;
-    height: 100%;
 `
 
 const OurTermsTable = styled.div`
@@ -200,7 +199,9 @@ const data = {
     },
 }
 
-const Welcome = () => {
+const carousel = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }]
+
+const Welcome = ({ active }: IconProps) => {
     return (
         <WelcomeContainer>
             <TextContainer>
@@ -246,7 +247,10 @@ const Welcome = () => {
                         Where others see gaps, we see an opportunity to build a powerhouse
                     </Header>
                 </TermsTextContainer>
-                <SinbadImage src={SimbadSmile} />
+                {carousel.map(
+                    (current_item, index) =>
+                        index == active && <ImageContainer key={active} src={current_item.icon} />,
+                )}
                 <OurTermsTable>
                     Our Terms
                     <OurTerms>

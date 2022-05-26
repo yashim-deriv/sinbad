@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { DefaultFooter, DisclaimerWrapper, PagesWrapper } from './footer/common/style'
+import { DefaultFooter, DisclaimerWrapper, PagesWrapper } from '../containers/common/style'
 import SocialWrapperComponent from './footer/social-wrapper'
 import UpArrow from 'images/svg/up-arrow.svg'
 
@@ -20,7 +20,7 @@ const Returner = styled.img`
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 270.5%;
+    top: 350%;
     left: 50%;
 `
 

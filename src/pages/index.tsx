@@ -1,25 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
+import * as React from 'react'
+import { useState } from 'react'
 import Carousel from './home/carousel'
 import Welcome from './home/welcome'
 import TechStack from './home/tech-stack'
 import JoinUs from './home/join-us'
 import Layout from 'common/components/layout/layout'
 
-const HomeContainer = styled.div`
-    width: 100%;
-    height: 100%;
-`
+export type IconProps = {
+    active?: number
+    setActive?: (number) => void
+    active_data?: { icon: any }[]
+}
 
 const Home = () => {
+    const [active, setActive] = useState(0)
+
     return (
         <Layout>
-            <HomeContainer>
-                <Carousel />
-                <Welcome />
-                <TechStack />
-                <JoinUs />
-            </HomeContainer>
+            <Carousel active={active} setActive={setActive} />
+            <Welcome active={active} />
+            <TechStack />
+            <JoinUs active={active} />
         </Layout>
     )
 }

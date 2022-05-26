@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContactUsButton, Header, Text } from 'common/components/layout/footer/common/text'
+import { IconProps } from '../index'
+import Sinbad0 from 'images/common/carousel/sinbad-0.png'
+import Sinbad1 from 'images/common/carousel/sinbad-1.png'
+import Sinbad2 from 'images/common/carousel/sinbad-2.png'
+import { ContactUsButton, Header, ImageContainer, Text } from 'common/components/containers/main'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
@@ -30,7 +34,9 @@ const TechDashboard = styled.img`
     padding: 20px 0;
 `
 
-const JoinUs = () => {
+const join_team = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }]
+
+const JoinUs = ({ active }: IconProps) => {
     return (
         <JoinUsContainer>
             <JoinUsInfo>
@@ -43,6 +49,10 @@ const JoinUs = () => {
                 <ContactUsButton>SEE OUR OPEN POSITIONS</ContactUsButton>
             </JoinUsInfo>
             <TechDashboard src={Dashboard} />
+            {join_team.map(
+                (current_item, index) =>
+                    index == active && <ImageContainer key={active} src={current_item.icon} />,
+            )}
         </JoinUsContainer>
     )
 }

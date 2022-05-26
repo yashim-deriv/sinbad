@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import styled from 'styled-components'
-import { SocialWrapper } from './common/style'
+import { SocialWrapper } from '../../containers/common/style'
 import MapSvg from 'images/svg/map.svg'
 import PhoneSvg from 'images/svg/phone.svg'
 import EmailSvg from 'images/svg/mail.svg'
