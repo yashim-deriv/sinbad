@@ -2,7 +2,11 @@ import React from 'react'
 import Footer from './footer'
 import Header from './header'
 
-const Layout: React.FC = ({ children }) => {
+type LayoutType = {
+    children: React.ReactChild
+}
+
+const Layout = ({ children }: LayoutType) => {
     return (
         <>
             <Header />
