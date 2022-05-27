@@ -9,7 +9,6 @@ import Layout from 'common/components/layout/layout'
 export type IconProps = {
     active?: number
     setActive?: (number) => void
-    active_data?: { icon: any }[]
 }
 
 const Home = () => {
@@ -17,10 +16,12 @@ const Home = () => {
 
     return (
         <Layout>
-            <Carousel active={active} setActive={setActive} />
-            <Welcome active={active} />
-            <TechStack />
-            <JoinUs active={active} />
+            <>
+                <Carousel active={active} setActive={setActive} />
+                <Welcome active={active} />
+                <TechStack />
+                <JoinUs active={active} />
+            </>
         </Layout>
     )
 }

@@ -6,7 +6,6 @@ export const DefaultFooter = styled.footer`
     background-color: #22365e;
     color: white;
     width: 100%;
-    margin-bottom: 7.3rem;
 
     @media ${device.mobileL} {
         padding-bottom: 6rem;

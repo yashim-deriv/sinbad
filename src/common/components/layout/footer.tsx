@@ -20,7 +20,6 @@ const Returner = styled.img`
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 350%;
     left: 50%;
 `
 
