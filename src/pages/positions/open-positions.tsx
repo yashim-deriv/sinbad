@@ -9,6 +9,14 @@ import LeftArrow from 'images/svg/left-arrow.svg'
 import RightArrow from 'images/svg/right-arrow.svg'
 import Flex from 'common/components/containers/flex'
 
+type CardProps = {
+    index?: number
+}
+
+type PositionsType = {
+    title?: string
+    text?: string
+}
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
@@ -23,6 +31,13 @@ const HeaderContainer = styled.div`
 const StyledHeader = styled(Header)`
     border-bottom: 1px solid gray;
     width: 100px;
+    padding: 25px 0;
+    text-transform: uppercase;
+`
+
+const StyledText = styled(Text)`
+    padding: ${(props) => (props.padding ? props.padding : '5px 0')};
+    text-transform: uppercase;
 `
 
 const PositionsCarouselContainer = styled.div`
@@ -34,7 +49,7 @@ const PositionsCarouselContainer = styled.div`
 
 const PositionsCarousel = styled.div``
 
-const Card = styled(Flex)`
+const Card = styled(Flex)<CardProps>`
     display: flex;
     max-width: 324px;
     height: 290px;
@@ -79,7 +94,7 @@ const OpenPositionsInfo = styled.div`
     flex-direction: column;
 `
 
-const positions = [
+const positions: PositionsType[] = [
     {
         title: 'some_one',
         text: "We're looking for a some_one",
@@ -207,13 +222,13 @@ const OpenPositions = () => {
                     )}
                 </PositionsCarouselContainer>
                 <OpenPositionsInfo>
-                    <StyledHeader padding="25px 0">OPEN POSITIONS</StyledHeader>
-                    <Text padding="25px 0 5px">BACK-END DEVELOPMENT</Text>
-                    <Text padding="5px 0">BUSINESS INTELLIGENCE</Text>
-                    <Text padding="5px 0">DEVOPS</Text>
-                    <Text padding="5px 0">QUANTITATIVE</Text>
-                    <Text padding="5px 0 25px">MOBILE APP DEVELOPMENT</Text>
-                    <Header color="red" font_size="18px" font_weight="normal">
+                    <StyledHeader>Open Positions</StyledHeader>
+                    <StyledText padding="25px 0 5px">Back-end Development</StyledText>
+                    <StyledText>Business Intelligence</StyledText>
+                    <StyledText>DevOps</StyledText>
+                    <StyledText>Quantitative</StyledText>
+                    <StyledText>Mobile app Development</StyledText>
+                    <Header color="red" font_size="18px" font_weight="normal" padding="25px 0">
                         and more...
                     </Header>
                 </OpenPositionsInfo>
