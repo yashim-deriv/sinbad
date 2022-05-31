@@ -1,17 +1,69 @@
 import styled, { css } from 'styled-components'
-import Box, { generateResponsiveStyles } from './box'
-import device from 'themes/device'
+import device, { size } from 'themes/device'
 
-export const flexStyles = ({ jc, ai, fw, fd }) => css`
+type FlexBoxProps = {
+    width?: string
+    height?: string
+    min_height?: string
+    max_width?: string
+    position?: string
+    background?: string
+    wrap?: string
+    jc?: string
+    fw?: string
+    bg?: string
+    fd?: string
+    ai?: string
+    direction?: string
+    tablet_direction?: string
+    tablet_ai?: string
+    tablet_jc?: string
+    tablet_fw?: string
+}
+
+const flexStyles = ({ jc, ai, fw, fd }) => css`
     justify-content: ${jc};
     align-items: ${ai};
     flex-wrap: ${fw};
     flex-direction: ${fd};
 `
 
+const mediaqueries = Object.keys(size)
+    .sort(function (a, b) {
+        return size[b] - size[a]
+    })
+    .reduce((accumulator, label) => {
+        accumulator[label] = (...args) => css`
+            @media (max-width: ${size[label]}px) {
+                ${css(...args)};
+            }
+        `
+        return accumulator
+    }, {})
+
+const generateResponsiveStyles = (stylesGenerator) => (props) => {
+    return Object.keys(mediaqueries).reduce((rules, mq) => {
+        if (!props[mq]) return rules
+        const styles = mediaqueries[mq]`        
+        ${stylesGenerator(props[mq])}
+        `
+        return [...rules, styles]
+    }, [])
+}
+
 const responsiveStyles = generateResponsiveStyles(flexStyles)
 
-const Flex = styled(Box)`
+export const Box = styled.div<FlexBoxProps>`
+    width: ${(props) => (props.width ? props.width : '')};
+    height: ${(props) => (props.height ? props.height : '')};
+    min-height: ${(props) => (props.min_height ? props.min_height : '')};
+    max-width: ${(props) => (props.max_width ? props.max_width : '')};
+    position: ${(props) => (props.position ? props.position : '')};
+    background: ${(props) => (props.background || props.bg ? props.background || props.bg : '')};
+    ${responsiveStyles}
+`
+
+const Flex = styled(Box)<FlexBoxProps>`
     display: flex;
     width: ${(props) => (props.width ? props.width : '100%')};
     height: ${(props) => (props.height ? props.height : '100%')};
