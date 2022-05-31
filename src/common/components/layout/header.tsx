@@ -24,7 +24,7 @@ const StyledHeader = styled.div`
 
 const HeaderTitle = styled.div<HeaderProps>`
     color: black;
-    font-weight: ${(props) => (props.size ? props.size : 'normal')};
+    font-weight: ${(props) => props.size || 'normal'};
     font-size: 24px;
     padding-left: 15px;
 `
