@@ -40,8 +40,8 @@ const JoinUs = () => {
 
                 <Header font_size="28px">JOIN OUR TEAM!</Header>
                 <Text padding="5px 0">
-                    Is your dream to build great products using leading technologies? Join Sinbad
-                    Software, where creativity, talent, and a passion for challenges come together
+                    To apply for this position please send us your CV with a cover letter to
+                    hr@sinbad.dev
                 </Text>
             </JoinUsInfo>
         </JoinUsContainer>

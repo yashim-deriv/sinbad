@@ -43,8 +43,8 @@ const JoinUs = ({ active }: IconProps) => {
                 <Header color="red">Sinbad Software</Header>
                 <Header font_size="28px">JOIN OUR TEAM!</Header>
                 <Text>
-                    Is your dream to build great products using leading technologies? Join Sinbad
-                    Software, where creativity, talent, and a passion for challenges come together
+                    To apply for this position please send us your CV with a cover letter to
+                    hr@sinbad.dev
                 </Text>
                 <ContactUsButton>SEE OUR OPEN POSITIONS</ContactUsButton>
             </JoinUsInfo>
