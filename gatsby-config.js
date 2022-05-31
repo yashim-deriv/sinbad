@@ -5,6 +5,7 @@ require('dotenv').config({
 const site_url = 'https://sinbad.dev'
 
 module.exports = {
+    pathPrefix: '/sinbad',
     flags: {
         FAST_DEV: true,
     },
@@ -28,7 +29,7 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'images',
-                path: `${__dirname}/src/images/common`,
+                path: `${__dirname}/src/images`,
             },
         },
         'gatsby-transformer-sharp',
