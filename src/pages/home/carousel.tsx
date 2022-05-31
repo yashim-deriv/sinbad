@@ -9,7 +9,7 @@ import Image2 from 'images/svg/carousel/carousel-2.svg'
 import Sinbad0 from 'images/common/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/carousel/sinbad-2.png'
-import { ImageContainer, Text } from 'common/components/containers/main'
+import { ImageContainer, Text } from 'common/components/containers'
 
 type PickerProps = {
     is_active?: boolean

@@ -6,10 +6,11 @@ import Sinbad0 from 'images/common/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/carousel/sinbad-2.png'
 import Flex from 'common/components/containers/flex'
-import { Text, Header, ImageContainer } from 'common/components/containers/main'
+import { Text, Header, ImageContainer } from 'common/components/containers'
 
-type TermProps = {
+type StyledProps = {
     index?: number
+    margin?: string
     border_left?: boolean
 }
 
@@ -38,7 +39,7 @@ const CardContainer = styled.div`
     padding-bottom: 25px;
 `
 
-const Card = styled(Flex)`
+const Card = styled(Flex)<StyledProps>`
     max-width: 324px;
     height: 290px;
     padding: 32px 44px 32px 32px;
@@ -116,7 +117,7 @@ const TermText = styled.div`
     font-weight: normal;
 `
 
-const Term = styled.div<TermProps>`
+const Term = styled.div<StyledProps>`
     display: flex;
     align-items: center;
     height: 70px;

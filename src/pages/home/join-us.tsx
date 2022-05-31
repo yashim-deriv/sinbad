@@ -4,7 +4,7 @@ import { IconProps } from '../index'
 import Sinbad0 from 'images/common/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/carousel/sinbad-2.png'
-import { ContactUsButton, Header, ImageContainer, Text } from 'common/components/containers/main'
+import { ContactUsButton, Header, ImageContainer, Text } from 'common/components/containers'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
