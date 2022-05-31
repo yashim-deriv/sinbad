@@ -5,7 +5,6 @@ import { Link } from 'gatsby'
 import { ImageContainer, Header, Text } from 'common/components/containers/main'
 import Dasboard from 'images/common/dashboard.png'
 import Sinbad0 from 'images/common/sinbad-positions-0.png'
-import LeftArrow from 'images/svg/left-arrow.svg'
 import RightArrow from 'images/svg/right-arrow.svg'
 import Flex from 'common/components/containers/flex'
 
@@ -36,7 +35,7 @@ const StyledHeader = styled(Header)`
 `
 
 const StyledText = styled(Text)`
-    padding: ${(props) => (props.padding ? props.padding : '5px 0')};
+    padding: ${(props) => props.padding || '5px 0'};
     text-transform: uppercase;
 `
 
@@ -56,8 +55,7 @@ const Card = styled(Flex)<CardProps>`
     padding: 30px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: var(--color-white);
-    margin-right: ${(props) => (props.index == 0 ? '40px' : props.index == 2 ? '40px' : 'unset')};
-    margin-bottom: ${(props) => (props.index < 2 ? '40px' : 'unset')};
+    margin: 20px;
     border-radius: 8px;
     justify-content: space-between;
 
@@ -143,6 +141,10 @@ const positions: PositionsType[] = [
         title: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
+    {
+        title: 'Mobile App Development',
+        text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
+    },
 ]
 
 const OpenPositions = () => {
@@ -165,61 +167,29 @@ const OpenPositions = () => {
             </PositionsHeader>
             <OpenPositionsContainer>
                 <PositionsCarouselContainer>
-                    {show_positions.first == 0 ? (
-                        ''
-                    ) : (
-                        <ImageContainer
-                            src={LeftArrow}
-                            width="40px"
-                            height="40px"
-                            onClick={() =>
-                                setShowPositions({
-                                    first: show_positions.first - 4,
-                                    second: show_positions.second - 4,
-                                })
-                            }
-                        />
-                    )}
                     <PositionsCarousel>
-                        <StyledFlex width="720px" wrap="wrap">
-                            {positions
-                                .slice(show_positions.first, show_positions.second)
-                                .map(({ title, text }, index) => {
-                                    return (
-                                        <Card
-                                            key={index}
-                                            index={index}
-                                            direction="column"
-                                            ai="center"
-                                            jc="start"
-                                        >
-                                            <Header color="red" text_align="center">
-                                                {title}
-                                            </Header>
-                                            <Text font_size="14px" text_align="center">
-                                                {text}
-                                            </Text>
-                                            <CardButton to="/some-postition">MORE</CardButton>
-                                        </Card>
-                                    )
-                                })}
+                        <StyledFlex width="760px" wrap="wrap">
+                            {positions.map(({ title, text }, index) => {
+                                return (
+                                    <Card
+                                        key={index}
+                                        index={index}
+                                        direction="column"
+                                        ai="center"
+                                        jc="start"
+                                    >
+                                        <Header color="red" text_align="center">
+                                            {title}
+                                        </Header>
+                                        <Text font_size="14px" text_align="center">
+                                            {text}
+                                        </Text>
+                                        <CardButton to="/some-postition">MORE</CardButton>
+                                    </Card>
+                                )
+                            })}
                         </StyledFlex>
                     </PositionsCarousel>
-                    {show_positions.second >= positions.length ? (
-                        ''
-                    ) : (
-                        <ImageContainer
-                            src={RightArrow}
-                            width="40px"
-                            height="40px"
-                            onClick={() =>
-                                setShowPositions({
-                                    first: show_positions.first + 4,
-                                    second: show_positions.second + 4,
-                                })
-                            }
-                        />
-                    )}
                 </PositionsCarouselContainer>
                 <OpenPositionsInfo>
                     <StyledHeader>Open Positions</StyledHeader>

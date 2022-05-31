@@ -45,7 +45,7 @@ const Card = styled(Flex)<StyledProps>`
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: var(--color-white);
-    margin: ${(props) => (props.margin ? props.margin : '0 40px 40px 0')};
+    margin: ${(props) => props.margin || '0 40px 40px 0'};
     border-radius: 8px;
     justify-content: flex-end;
 

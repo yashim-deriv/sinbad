@@ -54,28 +54,28 @@ const generateResponsiveStyles = (stylesGenerator) => (props) => {
 const responsiveStyles = generateResponsiveStyles(flexStyles)
 
 export const Box = styled.div<FlexBoxProps>`
-    width: ${(props) => (props.width ? props.width : '')};
-    height: ${(props) => (props.height ? props.height : '')};
-    min-height: ${(props) => (props.min_height ? props.min_height : '')};
-    max-width: ${(props) => (props.max_width ? props.max_width : '')};
-    position: ${(props) => (props.position ? props.position : '')};
+    width: ${(props) => props.width || ''};
+    height: ${(props) => props.height || ''};
+    min-height: ${(props) => props.min_height || ''};
+    max-width: ${(props) => props.max_width || ''};
+    position: ${(props) => props.position || ''};
     background: ${(props) => (props.background || props.bg ? props.background || props.bg : '')};
     ${responsiveStyles}
 `
 
 const Flex = styled(Box)<FlexBoxProps>`
     display: flex;
-    width: ${(props) => (props.width ? props.width : '100%')};
-    height: ${(props) => (props.height ? props.height : '100%')};
+    width: ${(props) => props.width || '100%'};
+    height: ${(props) => props.height || '100%'};
     flex-wrap: ${(props) => (props.wrap || props.fw ? props.wrap || props.fw : '')};
-    justify-content: ${(props) => (props.jc ? props.jc : 'center')};
-    align-items: ${(props) => (props.ai ? props.ai : '')};
+    justify-content: ${(props) => props.jc || 'center'};
+    align-items: ${(props) => props.ai || ''};
     flex-direction: ${(props) => (props.direction || props.fd ? props.direction || props.fd : '')};
 
     @media ${device.tablet} {
-        flex-direction: ${(props) => (props.tablet_direction ? props.tablet_direction : '')};
-        align-items: ${(props) => (props.tablet_ai ? props.tablet_ai : '')};
-        justify-content: ${(props) => (props.tablet_jc ? props.tablet_jc : '')};
+        flex-direction: ${(props) => props.tablet_direction || ''};
+        align-items: ${(props) => props.tablet_ai || ''};
+        justify-content: ${(props) => props.tablet_jc || ''};
         flex-wrap: ${(props) => props.tablet_fw};
     }
 
