@@ -16,12 +16,10 @@ const Home = () => {
 
     return (
         <Layout>
-            <>
-                <Carousel active={active} setActive={setActive} />
-                <Welcome active={active} />
-                <TechStack />
-                <JoinUs active={active} />
-            </>
+            <Carousel active={active} setActive={setActive} />
+            <Welcome active={active} />
+            <TechStack />
+            <JoinUs active={active} />
         </Layout>
     )
 }

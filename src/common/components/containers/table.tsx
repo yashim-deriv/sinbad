@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export type StyledProps = {
+export type TermProps = {
     index?: number
     margin?: string
     border_left?: boolean
@@ -9,9 +9,19 @@ export type StyledProps = {
 
 type TermsServiceType = { header?: string; text: string; icon: string }
 
-type OurServiceType = { first?: TermsServiceType; other?: TermsServiceType[] }
+type OurServiceType = {
+    first?: TermsServiceType
+    other?: TermsServiceType[]
+}
 
-type OurTermsType = { first_column?: TermsServiceType[]; second_column?: TermsServiceType[] }
+type OurTermsType = {
+    first_column?: TermsServiceType[]
+    second_column?: TermsServiceType[]
+}
+
+export type PBType = {
+    our_terms?: OurTermsType
+}
 
 type DataType = {
     data?: {
@@ -41,7 +51,7 @@ const TermText = styled.div`
     text-align: left;
 `
 
-const Term = styled.div<StyledProps>`
+const Term = styled.div<TermProps>`
     display: flex;
     align-items: center;
     width: 170px;

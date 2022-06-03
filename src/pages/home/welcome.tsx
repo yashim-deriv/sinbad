@@ -7,7 +7,7 @@ import Sinbad1 from 'images/common/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/carousel/sinbad-2.png'
 import Flex from 'common/components/containers/flex'
 import { Text, Header, ImageContainer } from 'common/components/containers'
-import Table, { StyledProps } from 'common/components/containers/table'
+import Table, { TermProps } from 'common/components/containers/table'
 
 const WelcomeContainer = styled.div`
     width: 100%;
@@ -34,7 +34,7 @@ const CardContainer = styled.div`
     padding-bottom: 25px;
 `
 
-const Card = styled(Flex)<StyledProps>`
+const Card = styled(Flex)<TermProps>`
     max-width: 324px;
     height: 290px;
     padding: 32px 44px 32px 32px;

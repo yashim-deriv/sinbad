@@ -42,7 +42,14 @@ const CardInfo = styled.div`
     flex-direction: column;
 `
 
-const data = [
+type DataType = {
+    number: number
+    icon: string
+    header: string
+    text: string
+}
+
+const data: DataType[] = [
     {
         number: 1,
         icon: Random,

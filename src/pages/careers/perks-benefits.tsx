@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Random from 'images/svg/random.svg'
 import Sinbad1 from 'images/common/careers/sinbad-1.png'
 import { Text, Header, ImageContainer } from 'common/components/containers'
-import Table from 'common/components/containers/table'
+import Table, { PBType } from 'common/components/containers/table'
 
 const PBContainer = styled.div`
     display: flex;
@@ -32,7 +32,7 @@ const PBTable = styled.div`
     font-weight: bold;
 `
 
-const data = {
+const pb_data: PBType = {
     our_terms: {
         first_column: [
             {
@@ -94,7 +94,7 @@ const PerksBenefits = () => {
             <ImageContainer src={Sinbad1} />
             <PBTable>
                 Our Terms
-                <Table data={data} />
+                <Table data={pb_data} />
             </PBTable>
         </PBContainer>
     )

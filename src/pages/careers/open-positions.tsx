@@ -20,6 +20,10 @@ const HeaderContainer = styled.div`
     padding: 5px 0;
 `
 
+const StyledHeader = styled(Header)`
+    text-transform: uppercase;
+`
+
 const Card = styled(Flex)`
     display: flex;
     justify-content: space-between;
@@ -41,9 +45,16 @@ const CardButton = styled(Link)`
     background-size: 15px 15px;
     background-position: right;
     text-decoration: none;
+    text-transform: uppercase;
 `
+type PositionsType = {
+    icon: string
+    position: string
+    text: string
+    link: string
+}
 
-const positions = [
+const positions: PositionsType[] = [
     {
         icon: Random,
         position: 'Information security',
@@ -86,7 +97,7 @@ const OpenPositions = () => {
     return (
         <OpenPositionsContainer>
             <HeaderContainer>
-                <Header>OPEN POSITIONS</Header>
+                <StyledHeader>OPEN POSITIONS</StyledHeader>
                 <Header font_weight="normal">Make your passon in your career</Header>
             </HeaderContainer>
             <Flex width="1100px" wrap="wrap">

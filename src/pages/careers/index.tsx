@@ -9,13 +9,11 @@ import JoinUs from 'pages/join-us'
 const Careers = () => {
     return (
         <Layout>
-            <>
-                <WorkWithUs />
-                <PerksBenefits />
-                <OpenPositions />
-                <HiringProcess />
-                <JoinUs active={3} />
-            </>
+            <WorkWithUs />
+            <PerksBenefits />
+            <OpenPositions />
+            <HiringProcess />
+            <JoinUs active={3} />
         </Layout>
     )
 }
