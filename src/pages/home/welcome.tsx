@@ -7,12 +7,7 @@ import Sinbad1 from 'images/common/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/carousel/sinbad-2.png'
 import Flex from 'common/components/containers/flex'
 import { Text, Header, ImageContainer } from 'common/components/containers'
-
-type StyledProps = {
-    index?: number
-    margin?: string
-    border_left?: boolean
-}
+import Table, { StyledProps } from 'common/components/containers/table'
 
 const WelcomeContainer = styled.div`
     width: 100%;
@@ -48,11 +43,6 @@ const Card = styled(Flex)<StyledProps>`
     margin: ${(props) => props.margin || '0 40px 40px 0'};
     border-radius: 8px;
     justify-content: flex-end;
-
-    @media (max-width: 930px) {
-        order: ${(props) => (props.index === 2 ? 1 : props.index === 1 ? 2 : props.index)};
-        margin: 0 0 19px;
-    }
 `
 
 const CardHeader = styled.div`
@@ -87,46 +77,11 @@ const TermsTextContainer = styled.div`
     height: 200px;
     padding: 30px 0 30px 150px;
 `
-
 const OurTermsTable = styled.div`
     width: 140px;
     height: 340px;
     font-size: 20px;
     font-weight: bold;
-`
-
-const OurTerms = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding: 15px;
-`
-
-const OurTermsColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
-const TermImage = styled.img`
-    width: 40px;
-    height: 40px;
-    padding-left: 10px;
-`
-const TermText = styled.div`
-    font-size: 14px;
-    padding-left: 10px;
-    font-weight: normal;
-`
-
-const Term = styled.div<StyledProps>`
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding: 10px;
-    border-top: ${(props) =>
-        props.index === 0 ? 'unset' : props.index === 4 ? 'unset' : '1px solid gray'};
-    border-bottom: ${(props) =>
-        props.index === 3 ? 'unset' : props.index === 7 ? 'unset' : '1px solid gray'};
-    border-left: ${(props) => (props.border_left ? '1px solid gray' : 'unset')};
 `
 
 const data = {
@@ -254,24 +209,7 @@ const Welcome = ({ active }: IconProps) => {
                 )}
                 <OurTermsTable>
                     Our Terms
-                    <OurTerms>
-                        <OurTermsColumn>
-                            {data.our_terms.first_column.map((item, index) => (
-                                <Term key={index} index={index}>
-                                    <TermImage src={item.icon} />
-                                    <TermText>{item.text}</TermText>
-                                </Term>
-                            ))}
-                        </OurTermsColumn>
-                        <OurTermsColumn>
-                            {data.our_terms.second_column.map((item, index) => (
-                                <Term key={index} index={index} border_left={true}>
-                                    <TermImage src={item.icon} />
-                                    <TermText>{item.text}</TermText>
-                                </Term>
-                            ))}
-                        </OurTermsColumn>
-                    </OurTerms>
+                    <Table data={data} />
                 </OurTermsTable>
             </OurTermsContainer>
         </WelcomeContainer>

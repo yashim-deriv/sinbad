@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import SeeOurPositionsImage from 'images/common/see-our-positions-image.png'
+import ContactUs from 'images/common/contact-us-button.png'
 
 type HeaderProps = {
     font_size?: string
@@ -12,19 +14,27 @@ type TextProps = {
     width?: string
     text_align?: string
     padding?: string
+    line_height?: string
 }
 type ImageProps = {
     width?: string
     height?: string
 }
 
-export const ContactUsButton = styled.button`
-    width: fit-content;
+export const ContactUsButton = styled.div`
+    width: 90px;
     height: 25px;
-    color: black;
-    background-color: orange;
-    border-radius: 10px;
-    font-size: 10px;
+    background-image: url(${ContactUs});
+    background-repeat: no-repeat;
+    background-size: 90px 25px;
+`
+
+export const SeeOurPositions = styled.div`
+    width: 150px;
+    height: 25px;
+    background-image: url(${SeeOurPositionsImage});
+    background-repeat: no-repeat;
+    background-size: 150px 25px;
 `
 
 export const ImageContainer = styled.img<ImageProps>`
@@ -41,7 +51,7 @@ export const Header = styled.div<HeaderProps>`
 `
 export const Text = styled.div<TextProps>`
     font-size: ${(props) => props.font_size || '16px'};
-    line-height: 18px;
+    line-height: ${(props) => props.line_height || '18px'};
     width: ${(props) => props.width || '300px'};
     text-align: ${(props) => props.text_align || 'left'};
     padding: ${(props) => props.padding || '15px 0'};

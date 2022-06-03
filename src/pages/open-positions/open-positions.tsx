@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { ImageContainer, Header, Text } from 'common/components/containers/main'
@@ -13,7 +12,7 @@ type CardProps = {
 }
 
 type PositionsType = {
-    title?: string
+    position?: string
     text?: string
 }
 const PositionsHeader = styled.div`
@@ -72,6 +71,7 @@ const CardButton = styled(Link)`
     background-repeat: no-repeat;
     background-size: 15px 15px;
     background-position: right;
+    text-decoration: none;
 `
 
 const StyledFlex = styled(Flex)`
@@ -94,62 +94,60 @@ const OpenPositionsInfo = styled.div`
 
 const positions: PositionsType[] = [
     {
-        title: 'some_one',
+        position: 'some_one',
         text: "We're looking for a some_one",
     },
     {
-        title: 'some_second',
+        position: 'some_second',
         text: "We're looking for a talented some_second",
     },
     {
-        title: 'Back-End Developer',
+        position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
-        title: 'Data Engineer',
+        position: 'Data Engineer',
         text: "We're looking for a detail oriented Data Engineer to convert data into analyses and practical recommendations for fast-paced, global fintech companies",
     },
     {
-        title: 'Quantitative Analyst',
+        position: 'Quantitative Analyst',
         text: "We're looking for a talented Quantitative Analyst to develop strong pricing and risk management algorithms for fintech companies with fully automated transactions",
     },
     {
-        title: 'Mobile App Development',
+        position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        title: 'some_one',
+        position: 'some_one',
         text: "We're looking for a some_one",
     },
     {
-        title: 'some_second',
+        position: 'some_second',
         text: "We're looking for a talented some_second",
     },
     {
-        title: 'Back-End Developer',
+        position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
-        title: 'Data Engineer',
+        position: 'Data Engineer',
         text: "We're looking for a detail oriented Data Engineer to convert data into analyses and practical recommendations for fast-paced, global fintech companies",
     },
     {
-        title: 'Quantitative Analyst',
+        position: 'Quantitative Analyst',
         text: "We're looking for a talented Quantitative Analyst to develop strong pricing and risk management algorithms for fintech companies with fully automated transactions",
     },
     {
-        title: 'Mobile App Development',
+        position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        title: 'Mobile App Development',
+        position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
 ]
 
 const OpenPositions = () => {
-    const [show_positions, setShowPositions] = useState({ first: 0, second: 4 })
-
     return (
         <>
             <PositionsHeader>
@@ -169,7 +167,7 @@ const OpenPositions = () => {
                 <PositionsCarouselContainer>
                     <PositionsCarousel>
                         <StyledFlex width="760px" wrap="wrap">
-                            {positions.map(({ title, text }, index) => {
+                            {positions.map(({ position, text }, index) => {
                                 return (
                                     <Card
                                         key={index}
@@ -179,7 +177,7 @@ const OpenPositions = () => {
                                         jc="start"
                                     >
                                         <Header color="red" text_align="center">
-                                            {title}
+                                            {position}
                                         </Header>
                                         <Text font_size="14px" text_align="center">
                                             {text}

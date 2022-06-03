@@ -35,8 +35,12 @@ const StyledHeaderLink = styled(Link)`
 `
 
 export const PagesWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 360px;
     color: white;
-    padding-right: 15px;
+    padding-right: 35px;
 `
 
 const Header = () => {
@@ -47,10 +51,10 @@ const Header = () => {
                 <HeaderTitle>Software</HeaderTitle>
             </StyledHeader>
             <PagesWrapper>
-                <StyledHeaderLink to="/">Home | </StyledHeaderLink>
-                <StyledHeaderLink to="/careers"> Careers | </StyledHeaderLink>
-                <StyledHeaderLink to="/openpositions"> Open Positions </StyledHeaderLink>
-                <ContactUsButton> Contact us </ContactUsButton>
+                <StyledHeaderLink to="/">Home </StyledHeaderLink>
+                <StyledHeaderLink to="/careers"> Careers </StyledHeaderLink>
+                <StyledHeaderLink to="/open-positions"> Open Positions </StyledHeaderLink>
+                <ContactUsButton />
             </PagesWrapper>
         </HeaderContainer>
     )

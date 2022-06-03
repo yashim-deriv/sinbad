@@ -1,4 +1,4 @@
 import Flex, { Box } from './flex'
-import { ContactUsButton, Header, Text, ImageContainer } from './main'
+import { ContactUsButton, SeeOurPositions, Header, Text, ImageContainer } from './main'
 
-export { Flex, Box, ContactUsButton, Header, Text, ImageContainer }
+export { Flex, Box, ContactUsButton, SeeOurPositions, Header, Text, ImageContainer }
