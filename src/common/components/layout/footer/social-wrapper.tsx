@@ -7,21 +7,24 @@ import PhoneSvg from 'images/svg/phone.svg'
 import EmailSvg from 'images/svg/mail.svg'
 
 const ContactLink = styled(GatsbyLink)`
-    width: 60px;
-    padding-right: 25px;
+    align-self: center;
+    padding: 8px;
+    border-radius: 31px;
+    display: flex;
 `
 
 const ContactText = styled.div`
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     padding-top: 10px;
+    padding-left: 10px;
 `
 
 const ContactImage = styled.img`
-    background-color: white;
     width: 40px;
     height: 40px;
-    border-radius: 20px;
+    border-radius: 10px;
+    background: white;
 `
 
 const ContactContainer = styled.div`
