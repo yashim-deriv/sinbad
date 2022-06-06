@@ -1,16 +1,7 @@
 /* eslint-disable import/order */
 const path = require('path')
 
-exports.onCreatePage = async ({ page, actions }) => {
-    const { createPage } = actions
-
-    if (page.path.match(/^\/job-description/)) {
-        page.matchPath = '/job-description/*'
-
-        // Update the page.
-        createPage(page)
-    }
-}
+exports.onCreatePage = () => {}
 
 const StylelintPlugin = require('stylelint-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
