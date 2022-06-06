@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IconProps } from '../index'
-import Sinbad0 from 'images/common/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/carousel/sinbad-2.png'
-import { ContactUsButton, Header, ImageContainer, Text } from 'common/components/containers'
+import { IconProps } from './index'
+import { Sinbad0, Sinbad1, Sinbad2, Sinbad3 } from 'images/common/careers'
+import { SeeOurPositions, Header, ImageContainer, Text } from 'common/components/containers'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
@@ -12,7 +10,7 @@ const JoinUsContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 400px;
+    height: 600px;
     background-color: #f7cd43;
 `
 
@@ -28,13 +26,7 @@ const JoinUsInfo = styled.div`
     padding: 50px 40px 0;
 `
 
-const TechDashboard = styled.img`
-    width: 600px;
-    height: 400px;
-    padding: 20px 0;
-`
-
-const join_team = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }]
+const join_team = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }, { icon: Sinbad3 }]
 
 const JoinUs = ({ active }: IconProps) => {
     return (
@@ -46,9 +38,9 @@ const JoinUs = ({ active }: IconProps) => {
                     To apply for this position please send us your CV with a cover letter to
                     hr@sinbad.dev
                 </Text>
-                <ContactUsButton>SEE OUR OPEN POSITIONS</ContactUsButton>
+                <SeeOurPositions />
             </JoinUsInfo>
-            <TechDashboard src={Dashboard} />
+            <ImageContainer src={Dashboard} width="600px" height="400px" />
             {join_team.map(
                 (current_item, index) =>
                     index == active && <ImageContainer key={active} src={current_item.icon} />,

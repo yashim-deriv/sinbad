@@ -38,7 +38,7 @@ const Footer = () => {
                         <div>
                             <StyledFooterLink to="/">Home | </StyledFooterLink>
                             <StyledFooterLink to="/careers"> Careers | </StyledFooterLink>
-                            <StyledFooterLink to="/openpositions">Open Positions</StyledFooterLink>
+                            <StyledFooterLink to="/open-positions">Open Positions</StyledFooterLink>
                         </div>
                     </PagesWrapper>
                 </DisclaimerWrapper>

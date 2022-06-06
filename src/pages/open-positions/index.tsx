@@ -6,10 +6,8 @@ import Layout from 'common/components/layout/layout'
 const Positions = () => {
     return (
         <Layout>
-            <>
-                <OpenPositions />
-                <JoinUs />
-            </>
+            <OpenPositions />
+            <JoinUs />
         </Layout>
     )
 }

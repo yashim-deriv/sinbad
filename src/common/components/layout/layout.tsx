@@ -3,7 +3,7 @@ import Footer from './footer'
 import Header from './header'
 
 type LayoutType = {
-    children: React.ReactChild
+    children: React.ReactChild | React.ReactChild[]
 }
 
 const Layout = ({ children }: LayoutType) => {

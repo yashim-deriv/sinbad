@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Carousel from './home/carousel'
 import Welcome from './home/welcome'
 import TechStack from './home/tech-stack'
-import JoinUs from './home/join-us'
+import JoinUs from './join-us'
 import Layout from 'common/components/layout/layout'
 
 export type IconProps = {
@@ -16,12 +16,10 @@ const Home = () => {
 
     return (
         <Layout>
-            <>
-                <Carousel active={active} setActive={setActive} />
-                <Welcome active={active} />
-                <TechStack />
-                <JoinUs active={active} />
-            </>
+            <Carousel active={active} setActive={setActive} />
+            <Welcome active={active} />
+            <TechStack />
+            <JoinUs active={active} />
         </Layout>
     )
 }
