@@ -47,7 +47,7 @@ const PickerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 140px;
+    max-width: 140px;
 `
 
 const Picker = styled.div<PickerProps>`

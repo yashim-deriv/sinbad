@@ -32,13 +32,13 @@ const TableColumn = styled.div`
 `
 
 const TermImage = styled.img`
-    width: 70px;
-    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
     border-radius: 35px;
     filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
 `
 const TermText = styled.div<TermProps>`
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 22px;
     color: var(--color-black-3);
     font-weight: 480;

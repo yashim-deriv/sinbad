@@ -30,7 +30,7 @@ const StyledHeader = styled.div`
 `
 
 const HeaderTitle = styled.div<HeaderProps>`
-    font-size: 34px;
+    font-size: 3.4rem;
     line-height: 58px;
     color: var(--color-black-1);
     padding-left: 15px;
@@ -40,7 +40,7 @@ const HeaderTitle = styled.div<HeaderProps>`
 
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 30px;
     text-transform: uppercase;
     color: var(--color-black-2);

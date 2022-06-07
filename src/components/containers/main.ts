@@ -26,16 +26,16 @@ type ImageProps = {
 }
 
 export const ContactUsButton = styled.div`
-    width: 120px;
-    height: 35px;
+    max-width: 120px;
+    max-height: 35px;
     background-image: url(${ContactUs});
     background-repeat: no-repeat;
     background-size: 120px 35px;
 `
 
 export const SeeOurPositions = styled.div`
-    width: 150px;
-    height: 25px;
+    max-width: 150px;
+    max-height: 25px;
     background-image: url(${SeeOurPositionsImage});
     background-repeat: no-repeat;
     background-size: 150px 25px;
@@ -48,7 +48,7 @@ export const ImageContainer = styled.img<ImageProps>`
 `
 
 export const Header = styled.div<HeaderProps>`
-    font-size: ${(props) => props.font_size || '24px'};
+    font-size: ${(props) => props.font_size || '2.4rem'};
     line-height: ${(props) => props.line_height || '18px'};
     font-weight: ${(props) => props.font_weight || 'bold'};
     text-align: ${(props) => props.text_align || 'left'};
@@ -57,7 +57,7 @@ export const Header = styled.div<HeaderProps>`
     font-family: ${(props) => props.font_family || 'unset'};
 `
 export const Text = styled.div<TextProps>`
-    font-size: ${(props) => props.font_size || '16px'};
+    font-size: ${(props) => props.font_size || '1.6rem'};
     line-height: ${(props) => props.line_height || '18px'};
     width: ${(props) => props.width || '300px'};
     text-align: ${(props) => props.text_align || 'left'};

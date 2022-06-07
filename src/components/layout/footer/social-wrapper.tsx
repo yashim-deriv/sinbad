@@ -15,7 +15,7 @@ const ContactLink = styled(GatsbyLink)`
 `
 
 const ContactText = styled.div`
-    font-size: 16px;
+    font-size: 1.6rem;
     color: white;
     padding-top: 10px;
     padding-left: 10px;

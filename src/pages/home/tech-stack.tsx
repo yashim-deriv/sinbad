@@ -1,37 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 import Dashboard from 'images/common/dashboard.png'
-import { Header, Text } from 'components/containers'
+import { ContainerWrapper } from 'components/containers'
 
-const TechStackContainer = styled.div`
+type StyledTextProps = {
+    font_family?: string
+}
+
+const TechStackContainerWrapper = styled(ContainerWrapper)`
+    padding: 100px 0;
     width: 100%;
-    height: 600px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background-color: var(--color-blue-2);
+    justify-content: space-around;
+    background-color: var(--color-white);
 `
 
 const TechDashboard = styled.img`
-    width: 600px;
-    height: 400px;
-    padding: 0 40px;
-`
-
-const TechStackInfo = styled.div`
-    width: 400px;
+    max-width: 800px;
+    max-height: 600px;
 `
 
 const TermsTextContainer = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
     align-content: center;
     text-align: center;
-    align-items: center;
-    width: 100%;
-    height: 200px;
+    align-items: flex-start;
     margin: 30px 15px;
 `
 
@@ -55,40 +52,85 @@ const StackContainer = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    width: 500px;
-    height: 170px;
+    max-width: 500px;
+    max-height: 170px;
     padding: 20px 0;
 `
 
-const Stack = styled.div`
+const Stack = styled.div<StyledTextProps>`
     flex-direction: column;
-    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 320;
     padding: 15px 25px 0 0;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+`
+const StyledSSHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+const StyledSSText = styled.div<StyledTextProps>`
+    padding: unset;
+    color: var(--color-sand-4);
+    font-size: 3.3rem;
+    line-height: 62px;
+    font-weight: 656;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    padding-right: 5px;
+`
+const StyledText = styled.div<StyledTextProps>`
+    max-width: 350px;
+    font-size: 1.6rem;
+    line-height: 27px;
+    color: var(--color-black-3);
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Poppins'};
+    text-align: left;
+`
+const StyledHeader = styled.div<StyledTextProps>`
+    max-width: 425px;
+    font-size: 4.8rem;
+    line-height: 51px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: left;
+    padding: 10px 0 20px;
+`
+
+const StyledDescription = styled.div<StyledTextProps>`
+    max-width: 480px;
+    font-size: 2.4rem;
+    line-height: 27px;
+    color: var(--color-sand-4);
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: left;
+    padding-bottom: 120px;
 `
 
 const TechStack = () => {
     return (
-        <TechStackContainer>
+        <TechStackContainerWrapper>
             <TechDashboard src={Dashboard} />
-            <TechStackInfo>
-                <TermsTextContainer>
-                    <Header color="red">Sinbad Software</Header>
-                    <Header font_size="28px">Tech stack</Header>
-                    <Text>
-                        We leverage a wide range of programming languages and frameworks to create
-                        robus software for the fintech industry to meet our clients needs.
-                    </Text>
-                    <StackContainer>
-                        {tech_stack.map((item, index) => (
-                            <Stack key={index}>{item}</Stack>
-                        ))}
-                    </StackContainer>
-                    <Header color="red" font_size="18px" font_weight="normal">
-                        and more...
-                    </Header>
-                </TermsTextContainer>
-            </TechStackInfo>
-        </TechStackContainer>
+            <TermsTextContainer>
+                <StyledSSHeader>
+                    <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
+                    <StyledSSText>Sowtfare</StyledSSText>
+                </StyledSSHeader>
+                <StyledHeader>Tech stack</StyledHeader>
+                <StyledText>
+                    We leverage a wide range of programming languages and frameworks to create robus
+                    software for the fintech industry to meet our clients needs.
+                </StyledText>
+                <StackContainer>
+                    {tech_stack.map((item, index) => (
+                        <Stack key={index}>{item}</Stack>
+                    ))}
+                </StackContainer>
+                <StyledDescription>and more...</StyledDescription>
+            </TermsTextContainer>
+        </TechStackContainerWrapper>
     )
 }
 

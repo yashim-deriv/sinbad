@@ -24,7 +24,7 @@ const TextContainer = styled.div`
     padding: 100px 0;
 `
 const StyledHeader = styled(Header)<StyledTextProps>`
-    font-size: 48px;
+    font-size: 4.8rem;
     line-height: 50px;
     color: #1b1b1b;
     font-weight: 320;
@@ -34,9 +34,9 @@ const StyledHeader = styled(Header)<StyledTextProps>`
 `
 
 const StyledText = styled(Text)<StyledTextProps>`
-    width: 982px;
+    min-width: 982px;
     height: 96px;
-    font-size: 19px;
+    font-size: 1.9rem;
     line-height: 34px;
     color: #4c4c4c;
     font-weight: 320;
@@ -64,7 +64,7 @@ const Card = styled.div<TermProps>`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 350px;
+    max-width: 350px;
     height: 410px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
@@ -76,7 +76,7 @@ const Card = styled.div<TermProps>`
 
 const CardHeader = styled.div<StyledTextProps>`
     max-width: 241px;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 27px;
     color: #0a0a0a;
     font-weight: 560;
@@ -86,9 +86,9 @@ const CardHeader = styled.div<StyledTextProps>`
 `
 
 const CardText = styled.div<StyledTextProps>`
-    width: 241px;
+    max-width: 241px;
     height: 83px;
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 26px;
     color: #4c4c4c;
     font-weight: 320;
