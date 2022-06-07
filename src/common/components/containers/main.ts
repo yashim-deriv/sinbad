@@ -15,6 +15,8 @@ type TextProps = {
     text_align?: string
     padding?: string
     line_height?: string
+    font_family?: string
+    font_weight?: string
 }
 type ImageProps = {
     width?: string
@@ -56,4 +58,6 @@ export const Text = styled.div<TextProps>`
     text-align: ${(props) => props.text_align || 'left'};
     padding: ${(props) => props.padding || '15px 0'};
     color: ${(props) => props.color || 'black'};
+    font-family: ${(props) => props.font_family || 'unset'};
+    font-weight: ${(props) => props.font_weight || 'unset'};
 `
