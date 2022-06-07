@@ -10,10 +10,10 @@ type StyledTextProps = {
 }
 
 const WelcomeContainerWrapper = styled.div`
-    padding: 50px 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-sand-1);
+    background-color: var(--color-white);
     width: 100%;
 `
 
@@ -22,6 +22,7 @@ const TextContainer = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 100px 0;
+    background: var(--color-white);
 `
 const StyledHeader = styled(Header)<StyledTextProps>`
     font-size: 4.8rem;
@@ -53,10 +54,38 @@ const StyledFlex = styled(Flex)`
         width: unset;
     }
 `
+
 const CardContainer = styled.div`
     display: flex;
+    position: relative;
     justify-content: center;
-    padding-bottom: 25px;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        background: var(--color-sea-1);
+        width: 100%;
+        height: 600px;
+        z-index: 2;
+    }
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        background: var(--color-sand-1);
+        width: 100%;
+        height: 300px;
+        z-index: 1;
+    }
+`
+
+const CardContent = styled.div`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
 `
 
 const Card = styled.div<TermProps>`
@@ -128,18 +157,20 @@ const data = {
 
 const Welcome = () => {
     return (
-        <>
-            <WelcomeContainerWrapper>
-                <TextContainer>
-                    <StyledHeader>Welcome to Sinbad Software</StyledHeader>
-                    <StyledText>
-                        Sinbad Software LLC provides software development services and IT solutions
-                        for the fintech industri. At every step of the way, we aim to give our
-                        clients the power to go beyond digital boundaires and surpass their
-                        competitors in the ever-evolving fintech landscape
-                    </StyledText>
-                </TextContainer>
-                <CardContainer>
+        <WelcomeContainerWrapper>
+            <TextContainer>
+                <StyledHeader>
+                    Welcome to <strong>Sinbad Software</strong>
+                </StyledHeader>
+                <StyledText>
+                    Sinbad Software LLC provides software development services and IT solutions for
+                    the fintech industri. At every step of the way, we aim to give our clients the
+                    power to go beyond digital boundaires and surpass their competitors in the
+                    ever-evolving fintech landscape
+                </StyledText>
+            </TextContainer>
+            <CardContainer>
+                <CardContent>
                     <Card margin="240px 0">
                         <img src={data.first.icon} alt="icon" />
                         <CardHeader>{data.first.header}</CardHeader>
@@ -154,9 +185,9 @@ const Welcome = () => {
                             </Card>
                         ))}
                     </StyledFlex>
-                </CardContainer>
-            </WelcomeContainerWrapper>
-        </>
+                </CardContent>
+            </CardContainer>
+        </WelcomeContainerWrapper>
     )
 }
 

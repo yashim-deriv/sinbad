@@ -9,13 +9,7 @@ import Background from 'images/common/homepage/carousel/background.png'
 import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
-import ActiveButton from 'images/common/homepage/carousel/active_button.png'
-import UnActiveButton from 'images/common/homepage/carousel/unactive_button.png'
 import { ContainerWrapper } from 'components/containers/common/style'
-
-type PickerProps = {
-    is_active?: boolean
-}
 
 const CarouselContainer = styled.div`
     display: flex;
@@ -29,8 +23,9 @@ const CarouselContainer = styled.div`
 `
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 80px;
+    padding: 50px 0;
     justify-content: space-between;
+    margin: 0 0 100px 0;
 `
 
 const CarouselTextContainer = styled.div`
@@ -47,15 +42,52 @@ const PickerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 140px;
+    width: fit-content;
+    margin: 10px 0 0 0;
 `
 
-const Picker = styled.div<PickerProps>`
-    width: ${(props) => (props.is_active ? '54px' : '27px')};
-    height: ${(props) => (props.is_active ? '54px' : '27px')};
-    border-radius: ${(props) => (props.is_active ? '26px' : '14px')};
-    background-image: url(${(props) => (props.is_active ? ActiveButton : UnActiveButton)});
-    background-repeat: no-repeat;
+const CarouselDots = styled.span`
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0 8px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        border-radius: 100px;
+        border: solid 1px var(--color-sand-4);
+        width: 0%;
+        height: 0%;
+        position: absolute;
+        transition: all 0.5s ease-in;
+    }
+
+    /* stylelint-disable */
+
+    &.active {
+        &::before {
+            width: 100%;
+            height: 100%;
+        }
+        i {
+            background: var(--color-sand-4);
+        }
+    }
+
+    i {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+        background: var(--color-grey-1);
+        transition: all 0.5s ease-in;
+        border-radius: 100%;
+    }
 `
 
 const StyledText = styled(Text)`
@@ -126,11 +158,13 @@ const Carousel = ({ active, setActive }: IconProps) => {
 
                     <PickerContainer>
                         {[...Array(data.length).keys()].map((d, e) => (
-                            <Picker
+                            <CarouselDots
                                 key={e}
                                 onClick={() => setActive(e)}
-                                is_active={active == e ? true : false}
-                            ></Picker>
+                                className={active === e ? 'active' : ''}
+                            >
+                                <i />
+                            </CarouselDots>
                         ))}
                     </PickerContainer>
                 </CarouselTextContainer>
