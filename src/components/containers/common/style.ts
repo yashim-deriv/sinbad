@@ -55,15 +55,8 @@ export const PagesWrapper = styled(Flex)`
 
 export const ContainerWrapper = styled.div`
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     overflow: hidden;
-
-    @media (max-width: 1980px) {
-        max-width: 1200px;
-    }
-
-    @media (max-width: 1200px) {
-        max-width: 90%;
-    }
+    max-width: 1200px;
 `

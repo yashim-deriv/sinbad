@@ -7,13 +7,14 @@ type StyledTextProps = {
     font_family?: string
 }
 
+const TechStackContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
 const TechStackContainerWrapper = styled(ContainerWrapper)`
     padding: 100px 0;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
     background-color: var(--color-white);
 `
 
@@ -111,26 +112,28 @@ const StyledDescription = styled.div<StyledTextProps>`
 
 const TechStack = () => {
     return (
-        <TechStackContainerWrapper>
-            <TechDashboard src={Dashboard} />
-            <TermsTextContainer>
-                <StyledSSHeader>
-                    <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                    <StyledSSText>Sowtfare</StyledSSText>
-                </StyledSSHeader>
-                <StyledHeader>Tech stack</StyledHeader>
-                <StyledText>
-                    We leverage a wide range of programming languages and frameworks to create robus
-                    software for the fintech industry to meet our clients needs.
-                </StyledText>
-                <StackContainer>
-                    {tech_stack.map((item, index) => (
-                        <Stack key={index}>{item}</Stack>
-                    ))}
-                </StackContainer>
-                <StyledDescription>and more...</StyledDescription>
-            </TermsTextContainer>
-        </TechStackContainerWrapper>
+        <TechStackContainer>
+            <TechStackContainerWrapper>
+                <TechDashboard src={Dashboard} />
+                <TermsTextContainer>
+                    <StyledSSHeader>
+                        <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
+                        <StyledSSText>Sowtfare</StyledSSText>
+                    </StyledSSHeader>
+                    <StyledHeader>Tech stack</StyledHeader>
+                    <StyledText>
+                        We leverage a wide range of programming languages and frameworks to create
+                        robus software for the fintech industry to meet our clients needs.
+                    </StyledText>
+                    <StackContainer>
+                        {tech_stack.map((item, index) => (
+                            <Stack key={index}>{item}</Stack>
+                        ))}
+                    </StackContainer>
+                    <StyledDescription>and more...</StyledDescription>
+                </TermsTextContainer>
+            </TechStackContainerWrapper>
+        </TechStackContainer>
     )
 }
 

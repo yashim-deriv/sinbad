@@ -106,7 +106,7 @@
         "test": "npm run eslint && npm run stylelint",
         "deploy": "npm run build && gh-pages -d public -b master",
         "deploy-dev": "npm run build && gh-pages -d public",
-        "deploy-branch": "PATH_PREFIX=sinbad/br/$npm_config_branch gatsby build --prefix-paths && gh-pages -d public -e br/$npm_config_branch",
+        "deploy-branch": "gatsby clean && PATH_PREFIX=sinbad/br/$npm_config_branch gatsby build --prefix-paths && gh-pages -d public -e br/$npm_config_branch",
         "prepare": "husky install",
         "pre-commit-lint": "lint-staged",
         "type-check": "tsc --noEmit",
