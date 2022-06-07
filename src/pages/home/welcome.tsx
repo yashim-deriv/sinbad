@@ -4,17 +4,17 @@ import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/we
 import Flex from 'components/containers/flex'
 import { Text, Header } from 'components/containers'
 import { TermProps } from 'components/containers/table'
-import { ContainerWrapper } from 'components/containers/common/style'
 
 type StyledTextProps = {
     font_family?: string
 }
 
-const WelcomeContainerWrapper = styled(ContainerWrapper)`
+const WelcomeContainerWrapper = styled.div`
     padding: 50px 0;
     display: flex;
     flex-direction: column;
     background-color: #fef5e6;
+    width: 100%;
 `
 
 const TextContainer = styled.div`
@@ -75,7 +75,7 @@ const Card = styled.div<TermProps>`
 `
 
 const CardHeader = styled.div<StyledTextProps>`
-    width: 241px;
+    max-width: 241px;
     font-size: 22px;
     line-height: 27px;
     color: #0a0a0a;
