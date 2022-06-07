@@ -55,7 +55,10 @@ export const PagesWrapper = styled(Flex)`
 
 export const ContainerWrapper = styled.div`
     display: flex;
+    width: 100%;
     justify-content: center;
+    overflow: hidden;
+
     @media (max-width: 1440px) {
         width: 90%;
     }

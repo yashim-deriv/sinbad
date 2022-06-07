@@ -60,11 +60,12 @@ const CardText = styled.div`
 
 const OurTermsContainer = styled.div`
     display: flex;
-    width: 1140px;
+    width: 100%;
     height: 480px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 `
 
 const TermsTextContainer = styled.div`
