@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
-import { ContainerWrapper, Header, ImageContainer, Text } from 'components/containers'
+import { Header, ImageContainer, Text } from 'components/containers'
 import Image0 from 'images/common/homepage/carousel/carousel-0.png'
 import Image1 from 'images/common/homepage/carousel/carousel-1.png'
 import Image2 from 'images/common/homepage/carousel/carousel-2.png'
@@ -11,9 +11,14 @@ import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
 import ActiveButton from 'images/common/homepage/carousel/active_button.png'
 import UnActiveButton from 'images/common/homepage/carousel/unactive_button.png'
+import { ContainerWrapper } from 'components/containers/common/style'
 
 type PickerProps = {
     is_active?: boolean
+}
+
+type HeaderProps = {
+    font_family?: string
 }
 
 const CarouselContainer = styled.div`
@@ -28,14 +33,14 @@ const CarouselContainer = styled.div`
 `
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 0;
+    padding: 50px 80px;
     justify-content: space-between;
 `
 
 const CarouselTextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 50px 0 170px;
 `
 
 const CarouselImage = styled.div`
@@ -46,7 +51,6 @@ const PickerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
     width: 140px;
 `
 
@@ -61,7 +65,6 @@ const Picker = styled.div<PickerProps>`
 const StyledText = styled(Text)`
     padding: unset;
 `
-
 const StyledUpperText = styled(Header)`
     padding: unset;
     text-transform: uppercase;

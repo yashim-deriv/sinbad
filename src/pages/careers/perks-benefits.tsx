@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Random from 'images/svg/random.svg'
 import Sinbad1 from 'images/common/careers/sinbad-1.png'
 import { Text, Header, ImageContainer } from 'components/containers'
-import Table, { PBType } from 'components/containers/table'
+import Table, { OurTermsType } from 'components/containers/table'
 
 const PBContainer = styled.div`
     display: flex;
@@ -32,45 +32,43 @@ const PBTable = styled.div`
     font-weight: bold;
 `
 
-const pb_data: PBType = {
-    our_terms: {
-        first_column: [
-            {
-                icon: Random,
-                text: 'Full medical insurance',
-            },
-            {
-                icon: Random,
-                text: 'Education assistance & training programms',
-            },
-            {
-                icon: Random,
-                text: '22 days annual leave',
-            },
-            {
-                icon: Random,
-                text: 'Chic, comfy office in the heart of Dubai',
-            },
-        ],
-        second_column: [
-            {
-                icon: Random,
-                text: 'Social security',
-            },
-            {
-                icon: Random,
-                text: 'Corporate laptops, monitors, and other hardware',
-            },
-            {
-                icon: Random,
-                text: 'Annual bonus',
-            },
-            {
-                icon: Random,
-                text: 'Well-stocked pantry, coffee machines, and more',
-            },
-        ],
-    },
+const data: OurTermsType = {
+    first_column: [
+        {
+            icon: Random,
+            text: 'Full medical insurance',
+        },
+        {
+            icon: Random,
+            text: 'Education assistance & training programms',
+        },
+        {
+            icon: Random,
+            text: '22 days annual leave',
+        },
+        {
+            icon: Random,
+            text: 'Chic, comfy office in the heart of Dubai',
+        },
+    ],
+    second_column: [
+        {
+            icon: Random,
+            text: 'Social security',
+        },
+        {
+            icon: Random,
+            text: 'Corporate laptops, monitors, and other hardware',
+        },
+        {
+            icon: Random,
+            text: 'Annual bonus',
+        },
+        {
+            icon: Random,
+            text: 'Well-stocked pantry, coffee machines, and more',
+        },
+    ],
 }
 
 const PerksBenefits = () => {
@@ -94,7 +92,7 @@ const PerksBenefits = () => {
             <ImageContainer src={Sinbad1} />
             <PBTable>
                 Our Terms
-                <Table data={pb_data} />
+                <Table data={data} />
             </PBTable>
         </PBContainer>
     )
