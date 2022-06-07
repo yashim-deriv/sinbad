@@ -23,8 +23,8 @@ const ContactText = styled.div`
 `
 
 const ContactImage = styled.img`
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
 `
 
 const ContactContainer = styled.div`
