@@ -12,7 +12,7 @@ import Table, { TermProps } from 'common/components/containers/table'
 const WelcomeContainer = styled.div`
     width: 100%;
     height: 100%;
-    background-color: #f7cd43;
+    background-color: var(--color-sand-3);
 `
 const TextContainer = styled.div`
     display: flex;
@@ -39,7 +39,7 @@ const Card = styled(Flex)<TermProps>`
     height: 290px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: var(--color-white);
+    background-color: var(white);
     margin: ${(props) => props.margin || '0 40px 40px 0'};
     border-radius: 8px;
     justify-content: flex-end;

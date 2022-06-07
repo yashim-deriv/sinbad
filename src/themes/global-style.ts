@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'IBM Plex Sans', sans-serif;
         margin: 0;
         padding: 0;
-        background: var(--color-white);
+        background: var(white);
     }
 `
 

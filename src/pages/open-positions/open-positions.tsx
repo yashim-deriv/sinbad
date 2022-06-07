@@ -53,7 +53,7 @@ const Card = styled(Flex)<CardProps>`
     height: 290px;
     padding: 30px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: var(--color-white);
+    background-color: var(white);
     margin: 20px;
     border-radius: 8px;
     justify-content: space-between;

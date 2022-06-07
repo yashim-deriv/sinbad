@@ -10,14 +10,14 @@ type HeaderProps = {
 
 const Container = styled.div`
     width: 100%;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
 `
 const HeaderContainer = styled.div`
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     max-width: 1200px;
     border-radius: 5px;
     width: 100%;
@@ -32,7 +32,7 @@ const StyledHeader = styled.div`
 const HeaderTitle = styled.div<HeaderProps>`
     font-size: 34px;
     line-height: 58px;
-    color: #2a2a2a;
+    color: var(--color-black-1);
     padding-left: 15px;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
 `
@@ -43,7 +43,7 @@ const StyledHeaderLink = styled(Link)`
     font-size: 16px;
     line-height: 30px;
     text-transform: uppercase;
-    color: #242424;
+    color: var(--color-black-2);
     font-weight: 900;
     text-align: left;
     font-family: 'Maven Pro Bold';

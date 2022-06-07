@@ -20,7 +20,7 @@ const CarouselContainer = styled.div`
     height: 400px;
     display: flex;
     align-items: center;
-    background-color: #fae9a7;
+    background-color: var(--color-sand-2);
     background-repeat: no-repeat;
     background-size: 100%;
     padding-left: 50px;
@@ -43,7 +43,7 @@ const Picker = styled.button<PickerProps>`
     border: none;
     background-image: url(${(props) => (props.is_active ? ActiveButton : UnActiveButton)});
     background-repeat: no-repeat;
-    background-color: #fae9a7;
+    background-color: var(--color-sand-2);
     padding-right: 45px;
 `
 

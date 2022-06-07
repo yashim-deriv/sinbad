@@ -32,7 +32,7 @@ const Card = styled(Flex)`
     height: 150px;
     padding: 10px 20px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: var(--color-white);
+    background-color: var(white);
     margin: 5px;
     border-radius: 8px;
 `
