@@ -13,7 +13,7 @@ const WelcomeContainerWrapper = styled.div`
     padding: 50px 0;
     display: flex;
     flex-direction: column;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     width: 100%;
 `
 
@@ -68,7 +68,7 @@ const Card = styled.div<TermProps>`
     height: 410px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     margin: ${(props) => props.margin || '0 40px 40px 0'};
     border-radius: 4px;
     filter: drop-shadow(0 13px 17.5px rgba(0, 0, 0, 0.13));

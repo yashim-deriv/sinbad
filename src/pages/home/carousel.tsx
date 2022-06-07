@@ -17,15 +17,11 @@ type PickerProps = {
     is_active?: boolean
 }
 
-type HeaderProps = {
-    font_family?: string
-}
-
 const CarouselContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     background-image: url(${Background});
     background-repeat: no-repeat;
     background-size: contain;
@@ -118,7 +114,7 @@ const Carousel = ({ active, setActive }: IconProps) => {
                         (current_item, index) =>
                             index == active && (
                                 <TextLabel
-                                    color="#f47c48"
+                                    color="var(--color-sand-4)"
                                     font_size="4.2rem"
                                     line_height="57px"
                                     width="100%"

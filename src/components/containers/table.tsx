@@ -40,7 +40,7 @@ const TermImage = styled.img`
 const TermText = styled.div<TermProps>`
     font-size: 18px;
     line-height: 22px;
-    color: #232323;
+    color: var(--color-black-3);
     font-weight: 480;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
