@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { PageProps } from 'gatsby'
-import Layout from 'common/components/layout/layout'
+import Layout from 'components/layout/layout'
 
 const JobDescription = (props: PageProps) => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Sinbad0 from 'images/common/sinbad-positions-0.png'
-import { Header, ImageContainer, Text } from 'common/components/containers/main'
+import { Header, ImageContainer, Text } from 'components/containers/main'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`

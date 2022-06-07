@@ -12,8 +12,8 @@ import {
     OurTermsSinbad,
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
-import { ImageContainer } from 'common/components/containers'
-import Table from 'common/components/containers/table'
+import { ImageContainer } from 'components/containers'
+import Table from 'components/containers/table'
 
 type StyledTextProps = {
     font_family?: string

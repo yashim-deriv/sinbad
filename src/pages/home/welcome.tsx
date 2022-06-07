@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/welcome'
-import Flex from 'common/components/containers/flex'
-import { Text, Header } from 'common/components/containers'
-import { TermProps } from 'common/components/containers/table'
+import Flex from 'components/containers/flex'
+import { Text, Header } from 'components/containers'
+import { TermProps } from 'components/containers/table'
 
 type StyledTextProps = {
     font_family?: string

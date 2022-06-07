@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Flex, Header, ImageContainer, Text } from 'common/components/containers'
+import { Flex, Header, ImageContainer, Text } from 'components/containers'
 import RightArrow from 'images/svg/right-arrow.svg'
 import Random from 'images/svg/random.svg'
 

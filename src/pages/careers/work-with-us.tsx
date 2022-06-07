@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Header, ImageContainer, Text } from 'common/components/containers'
+import { Header, ImageContainer, Text } from 'components/containers'
 import Dashboard from 'images/common/dashboard.png'
 import Sinbad0 from 'images/common/careers/sinbad-0.png'
 import Words from 'images/common/careers/word.png'
