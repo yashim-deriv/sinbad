@@ -4,6 +4,7 @@ import Carousel from './home/carousel'
 import Welcome from './home/welcome'
 import TechStack from './home/tech-stack'
 import JoinUs from './join-us'
+import OurTerms from './home/our-terms'
 import Layout from 'common/components/layout/layout'
 
 export type IconProps = {
@@ -17,7 +18,8 @@ const Home = () => {
     return (
         <Layout>
             <Carousel active={active} setActive={setActive} />
-            <Welcome active={active} />
+            <Welcome />
+            <OurTerms active={active} />
             <TechStack />
             <JoinUs active={active} />
         </Layout>

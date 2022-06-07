@@ -1,24 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IconProps } from '../index'
-import Random from 'images/svg/random.svg'
-import Sinbad0 from 'images/common/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/carousel/sinbad-2.png'
+import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/welcome'
 import Flex from 'common/components/containers/flex'
-import { Text, Header, ImageContainer } from 'common/components/containers'
-import Table, { TermProps } from 'common/components/containers/table'
+import { Text, Header } from 'common/components/containers'
+import { TermProps } from 'common/components/containers/table'
+
+type StyledTextProps = {
+    font_family?: string
+}
 
 const WelcomeContainer = styled.div`
     width: 100%;
     height: 100%;
-    background-color: var(--color-sand-3);
+    background-color: #fef5e6;
 `
 const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
+    padding: 100px 0;
+`
+const StyledHeader = styled(Header)<StyledTextProps>`
+    font-size: 48px;
+    line-height: 50px;
+    color: #1b1b1b;
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    text-align: center;
+    text-transform: uppercase;
+`
+
+const StyledText = styled(Text)<StyledTextProps>`
+    width: 982px;
+    height: 96px;
+    font-size: 19px;
+    line-height: 34px;
+    color: #4c4c4c;
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Poppins'};
+    text-align: center;
 `
 
 const StyledFlex = styled(Flex)`
@@ -34,150 +54,94 @@ const CardContainer = styled.div`
     padding-bottom: 25px;
 `
 
-const Card = styled(Flex)<TermProps>`
-    max-width: 324px;
-    height: 290px;
+const Card = styled.div<TermProps>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 399px;
+    height: 445px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: white;
+    background-color: #ffffff;
     margin: ${(props) => props.margin || '0 40px 40px 0'};
-    border-radius: 8px;
-    justify-content: flex-end;
+    border-radius: 4px;
+    filter: drop-shadow(0 13px 17.5px rgba(0, 0, 0, 0.13));
 `
 
-const CardHeader = styled.div`
-    font-size: 18px;
-    padding: 20px;
+const CardHeader = styled.div<StyledTextProps>`
+    width: 241px;
+    font-size: 22px;
+    line-height: 27px;
+    color: #0a0a0a;
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
+    padding: 20px 0;
 `
 
-const CardText = styled.div`
-    width: 240px;
-    font-size: 14px;
-    line-height: 20px;
+const CardText = styled.div<StyledTextProps>`
+    width: 241px;
+    height: 83px;
+    font-size: 17px;
+    line-height: 26px;
+    color: #4c4c4c;
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
-`
-
-const OurTermsContainer = styled.div`
-    display: flex;
-    width: 1140px;
-    height: 480px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-`
-
-const TermsTextContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-    width: 100%;
-    height: 200px;
-    padding: 30px 0 30px 150px;
-`
-const OurTermsTable = styled.div`
-    width: 140px;
-    height: 340px;
-    font-size: 20px;
-    font-weight: bold;
 `
 
 const data = {
-    our_service: {
-        first: {
-            header: 'App development & integration',
-            text: 'We create desktop and mobile software and also manage complex integrations with existing systems',
-            icon: Random,
+    first: {
+        header: 'App development & integration',
+        text: 'We create desktop and mobile software and also manage complex integrations with existing systems',
+        icon: First,
+    },
+    other: [
+        {
+            header: 'Ideation',
+            text: 'With research, analysis, ideation, and strategising, we translate our clients needs into opportunities for digital innovation',
+            icon: Other0,
         },
-        other: [
-            {
-                header: 'Ideation',
-                text: 'With research, analysis, ideation, and strategising, we translate our clients needs into opportunities for digital innovation',
-                icon: Random,
-            },
-            {
-                header: 'Quality assurance',
-                text: 'Whatever we build goes through rigorous to make sure its quality and security meet our tough standarts',
-                icon: Random,
-            },
-            {
-                header: 'Product design',
-                text: 'The journey from vision to intuitive software starts here. We design winning products for the fintech industry',
-                icon: Random,
-            },
-            {
-                header: 'Software maintenance',
-                text: 'Offering lifetime maintenance and upgrading services, we continue to 0pxain our clients digital partner',
-                icon: Random,
-            },
-        ],
-    },
-    our_terms: {
-        first_column: [
-            {
-                icon: Random,
-                text: 'Mobile App development',
-            },
-            {
-                icon: Random,
-                text: 'Full-stack Development',
-            },
-            {
-                icon: Random,
-                text: 'UI/UX',
-            },
-            {
-                icon: Random,
-                text: 'Business Intelligence',
-            },
-        ],
-
-        second_column: [
-            {
-                icon: Random,
-                text: 'Quantitative Analysis',
-            },
-            {
-                icon: Random,
-                text: 'Data Science',
-            },
-            {
-                icon: Random,
-                text: 'DevOps',
-            },
-            {
-                icon: Random,
-                text: 'Quality Assurance',
-            },
-        ],
-    },
+        {
+            header: 'Quality assurance',
+            text: 'Whatever we build goes through rigorous to make sure its quality and security meet our tough standarts',
+            icon: Other1,
+        },
+        {
+            header: 'Product design',
+            text: 'The journey from vision to intuitive software starts here. We design winning products for the fintech industry',
+            icon: Other2,
+        },
+        {
+            header: 'Software maintenance',
+            text: 'Offering lifetime maintenance and upgrading services, we continue to 0pxain our clients digital partner',
+            icon: Other3,
+        },
+    ],
 }
 
-const carousel = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }]
-
-const Welcome = ({ active }: IconProps) => {
+const Welcome = () => {
     return (
         <WelcomeContainer>
             <TextContainer>
-                <Header>WELCOME TO THE SINBAD SOFTWARE</Header>
-                <Text width="720px" text_align="center">
+                <StyledHeader>Welcome to Sinbad Software</StyledHeader>
+                <StyledText>
                     Sinbad Software LLC provides software development services and IT solutions for
                     the fintech industri. At every step of the way, we aim to give our clients the
                     power to go beyond digital boundaires and surpass their competitors in the
                     ever-evolving fintech landscape
-                </Text>
+                </StyledText>
             </TextContainer>
             <CardContainer>
-                <Card direction="column" ai="center" jc="start" margin="170px 0">
-                    <img src={data.our_service.first.icon} alt="icon" />
-                    <CardHeader>{data.our_service.first.header}</CardHeader>
-                    <CardText>{data.our_service.first.text}</CardText>
+                <Card margin="170px 0">
+                    <img src={data.first.icon} alt="icon" />
+                    <CardHeader>{data.first.header}</CardHeader>
+                    <CardText>{data.first.text}</CardText>
                 </Card>
-                <StyledFlex width="820px" wrap="wrap">
-                    {data.our_service.other.map(({ header, text, icon }, index) => (
-                        <Card key={index} index={index} direction="column" ai="center" jc="start">
+                <StyledFlex width="970px" wrap="wrap">
+                    {data.other.map(({ header, text, icon }, index) => (
+                        <Card key={index} index={index}>
                             <img src={icon} alt="icon" />
                             <CardHeader>{header}</CardHeader>
                             <CardText>{text}</CardText>
@@ -185,33 +149,6 @@ const Welcome = ({ active }: IconProps) => {
                     ))}
                 </StyledFlex>
             </CardContainer>
-            <OurTermsContainer>
-                <TermsTextContainer>
-                    <Header color="red">Sinbad Software</Header>
-                    <Header font_size="28px">Revolutionising fintech needs amazing software</Header>
-                    <Text padding="15px 0 15px">
-                        Our mission is to develop world-class fintech software solutions taht will
-                        give our clients a cutting edge.
-                    </Text>
-                    <Text padding="0 0 20px">
-                        With a deep undestanding of the fintech industry and a talented team, we are
-                        ready to provide clients around the world with they need - from custom
-                        software to mobile applications, websites, web applications, information
-                        architecture, and more.
-                    </Text>
-                    <Header color="red" font_size="18px" font_weight="normal">
-                        Where others see gaps, we see an opportunity to build a powerhouse
-                    </Header>
-                </TermsTextContainer>
-                {carousel.map(
-                    (current_item, index) =>
-                        index == active && <ImageContainer key={active} src={current_item.icon} />,
-                )}
-                <OurTermsTable>
-                    Our Terms
-                    <Table data={data} />
-                </OurTermsTable>
-            </OurTermsContainer>
         </WelcomeContainer>
     )
 }

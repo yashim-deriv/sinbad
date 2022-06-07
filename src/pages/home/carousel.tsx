@@ -6,9 +6,9 @@ import UnActiveButton from 'images/svg/carousel/unactive_button.svg'
 import Image0 from 'images/svg/carousel/carousel-0.svg'
 import Image1 from 'images/svg/carousel/carousel-1.svg'
 import Image2 from 'images/svg/carousel/carousel-2.svg'
-import Sinbad0 from 'images/common/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/carousel/sinbad-2.png'
+import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
+import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
+import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
 import { ImageContainer, Text } from 'common/components/containers'
 
 type PickerProps = {
