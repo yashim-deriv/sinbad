@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
 import Random from 'images/svg/random.svg'
-import Sinbad0 from 'images/common/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/carousel/sinbad-2.png'
-import Flex from 'common/components/containers/flex'
-import { Text, Header, ImageContainer } from 'common/components/containers'
-import Table, { TermProps } from 'common/components/containers/table'
+import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
+import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
+import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
+import Flex from 'components/containers/flex'
+import { Text, Header, ImageContainer } from 'components/containers'
+import Table, { TermProps } from 'components/containers/table'
 
 const WelcomeContainer = styled.div`
     width: 100%;

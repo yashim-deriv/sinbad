@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from './index'
 import { Sinbad0, Sinbad1, Sinbad2, Sinbad3 } from 'images/common/careers'
-import { SeeOurPositions, Header, ImageContainer, Text } from 'common/components/containers'
+import { SeeOurPositions, Header, ImageContainer, Text } from 'components/containers'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`

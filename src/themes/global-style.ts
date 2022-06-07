@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     body {
-        font-family: 'IBM Plex Sans', sans-serif;
+        font-family: 'Maven Pro Bold', sans-serif;
         margin: 0;
         padding: 0;
         background: white;

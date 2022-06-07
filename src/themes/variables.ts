@@ -3,6 +3,7 @@ import { css } from 'styled-components'
 const Variables = css`
     :root {
         /* colors */
+        --color-white: #ffffff;
         --color-black-1: #2a2a2a;
         --color-black-2: #242424;
         --color-blue-1: #0e2432;
@@ -10,6 +11,7 @@ const Variables = css`
         --color-sand-1: #fef5e6;
         --color-sand-2: #fae9a7;
         --color-sand-3: #f7cd43;
+        --color-sand-4: #f47c48;
 
         /* sizes */
         --text-size-xxs: 1.2rem;

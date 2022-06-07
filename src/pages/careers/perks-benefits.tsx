@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Random from 'images/svg/random.svg'
 import Sinbad1 from 'images/common/careers/sinbad-1.png'
-import { Text, Header, ImageContainer } from 'common/components/containers'
-import Table, { PBType } from 'common/components/containers/table'
+import { Text, Header, ImageContainer } from 'components/containers'
+import Table, { PBType } from 'components/containers/table'
 
 const PBContainer = styled.div`
     display: flex;
