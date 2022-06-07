@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { RoundRight } from 'images/svg'
+import { RoundRight } from 'images/svg'
 
 /* stylelint-disable */
 
@@ -37,7 +37,7 @@ const ButtonItem = styled.button`
 const Button = ({ has_icon = true, label, onClick }: ButtonProps) => {
     return (
         <ButtonItem onClick={onClick}>
-            {has_icon && <img src="" />}
+            {has_icon && <img src={RoundRight} />}
             <span>{label}</span>
         </ButtonItem>
     )
