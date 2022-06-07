@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Flex from 'common/components/containers/flex'
+import Flex from 'components/containers/flex'
 import device from 'themes/device'
 
 export const DefaultFooter = styled.footer`

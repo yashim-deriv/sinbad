@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Header, ImageContainer, Text } from 'common/components/containers'
+import { Flex, Header, ImageContainer, Text } from 'components/containers'
 import Random from 'images/svg/random.svg'
 
 const HiringProcessContainer = styled.div`

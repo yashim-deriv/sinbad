@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { ImageContainer, Header, Text } from 'common/components/containers/main'
+import { ImageContainer, Header, Text } from 'components/containers/main'
 import Dasboard from 'images/common/dashboard.png'
 import Sinbad0 from 'images/common/sinbad-positions-0.png'
 import RightArrow from 'images/svg/right-arrow.svg'
-import Flex from 'common/components/containers/flex'
+import Flex from 'components/containers/flex'
 
 type CardProps = {
     index?: number

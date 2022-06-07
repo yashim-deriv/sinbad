@@ -1,7 +1,7 @@
 import React from 'react'
 import OpenPositions from './open-positions'
 import JoinUs from './join-us'
-import Layout from 'common/components/layout/layout'
+import Layout from 'components/layout/layout'
 
 const Positions = () => {
     return (

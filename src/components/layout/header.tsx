@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { ContactUsButton } from '../containers/main'
 import { ContainerWrapper } from '../containers/common/style'
+import { Button } from 'components/elements'
 
 type HeaderProps = {
     font_family?: string
@@ -72,7 +72,7 @@ const Header = () => {
                         <StyledHeaderLink to="/">Home </StyledHeaderLink>
                         <StyledHeaderLink to="/careers"> Careers </StyledHeaderLink>
                         <StyledHeaderLink to="/open-positions"> Open Positions </StyledHeaderLink>
-                        <ContactUsButton />
+                        <Button label="Contact Us" onClick={() => alert('')} />
                     </NavWrapper>
                 </HeaderContainer>
             </ContainerWrapper>

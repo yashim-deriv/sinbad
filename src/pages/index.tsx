@@ -4,7 +4,7 @@ import Carousel from './home/carousel'
 import Welcome from './home/welcome'
 import TechStack from './home/tech-stack'
 import JoinUs from './join-us'
-import Layout from 'common/components/layout/layout'
+import Layout from 'components/layout/layout'
 
 export type IconProps = {
     active?: number

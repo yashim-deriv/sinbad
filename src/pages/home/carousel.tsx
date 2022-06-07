@@ -10,7 +10,7 @@ import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
 import ActiveButton from 'images/common/homepage/carousel/active_button.png'
 import UnActiveButton from 'images/common/homepage/carousel/unactive_button.png'
-import { Header, ImageContainer, Text } from 'common/components/containers'
+import { Header, ImageContainer, Text } from 'components/containers'
 
 type PickerProps = {
     is_active?: boolean
