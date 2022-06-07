@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper } from '../containers/common/style'
+import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
 
 type HeaderProps = {
@@ -9,8 +9,10 @@ type HeaderProps = {
 }
 
 const Container = styled.div`
+    display: flex;
     width: 100%;
     background-color: var(--color-sand-1);
+    justify-content: center;
 `
 const HeaderContainer = styled.div`
     height: 60px;
@@ -18,7 +20,6 @@ const HeaderContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-sand-1);
-    max-width: 1200px;
     border-radius: 5px;
     width: 100%;
 `

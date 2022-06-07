@@ -11,6 +11,7 @@ const JoinUsContainer = styled.div`
     width: 100%;
     height: 400px;
     background-color: var(--color-sand-3);
+    overflow: hidden;
 `
 
 const JoinUsInfo = styled.div`
