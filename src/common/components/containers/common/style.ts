@@ -3,7 +3,7 @@ import Flex from 'common/components/containers/flex'
 import device from 'themes/device'
 
 export const DefaultFooter = styled.footer`
-    background-color: #0e2432;
+    background-color: var(--color-blue-1);
     color: white;
     width: 100%;
 
@@ -19,7 +19,7 @@ export const DefaultFooter = styled.footer`
 export const SocialWrapper = styled.div`
     align-items: center;
     height: 175px;
-    background: #0e2432;
+    background: var(--color-blue-1);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -39,7 +39,7 @@ export const SocialWrapper = styled.div`
 
 export const DisclaimerWrapper = styled.div`
     height: 100px;
-    background: #0e2432;
+    background: var(--color-blue-1);
     color: white;
     border-top: 1px solid gray;
     display: flex;

@@ -11,7 +11,7 @@ const JoinUsContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 600px;
-    background-color: #f7cd43;
+    background-color: var(--color-sand-3);
 `
 
 const JoinUsInfo = styled.div`
