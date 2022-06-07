@@ -24,10 +24,6 @@ export const SocialWrapper = styled.div`
     display: flex;
     justify-content: space-between;
 
-    img {
-        margin-left: 1.6rem;
-    }
-
     @media ${device.tabletL} {
         display: flex;
         justify-content: center;

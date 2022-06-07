@@ -36,6 +36,7 @@ const HeaderTitle = styled.div<HeaderProps>`
     padding-left: 15px;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
 `
+/* stylelint-disable */
 
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
@@ -46,7 +47,6 @@ const StyledHeaderLink = styled(Link)`
     font-weight: 900;
     text-align: left;
     font-family: 'Maven Pro Bold';
-    letter-spacing: 0px;
     padding-right: 30px;
 `
 

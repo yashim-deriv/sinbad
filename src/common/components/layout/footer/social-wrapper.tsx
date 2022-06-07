@@ -9,8 +9,9 @@ import EmailSvg from 'images/svg/mail.svg'
 const ContactLink = styled(GatsbyLink)`
     align-self: center;
     padding: 8px;
-    border-radius: 31px;
     display: flex;
+    background: white;
+    border-radius: 30px;
 `
 
 const ContactText = styled.div`
@@ -18,13 +19,12 @@ const ContactText = styled.div`
     color: white;
     padding-top: 10px;
     padding-left: 10px;
+    justify-content: center;
 `
 
 const ContactImage = styled.img`
     width: 40px;
     height: 40px;
-    border-radius: 10px;
-    background: white;
 `
 
 const ContactContainer = styled.div`
