@@ -3,7 +3,7 @@ import Flex from 'common/components/containers/flex'
 import device from 'themes/device'
 
 export const DefaultFooter = styled.footer`
-    background-color: #22365e;
+    background-color: #0e2432;
     color: white;
     width: 100%;
 
@@ -19,14 +19,10 @@ export const DefaultFooter = styled.footer`
 export const SocialWrapper = styled.div`
     align-items: center;
     height: 175px;
-    background: #22365e;
+    background: #0e2432;
     color: white;
     display: flex;
     justify-content: space-between;
-
-    img {
-        margin-left: 1.6rem;
-    }
 
     @media ${device.tabletL} {
         display: flex;
@@ -43,7 +39,7 @@ export const SocialWrapper = styled.div`
 
 export const DisclaimerWrapper = styled.div`
     height: 100px;
-    background: #22365e;
+    background: #0e2432;
     color: white;
     border-top: 1px solid gray;
     display: flex;
@@ -55,4 +51,12 @@ export const PagesWrapper = styled(Flex)`
     display: flex;
     justify-content: space-between;
     width: 1000px;
+`
+
+export const ContainerWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    @media (max-width: 1440px) {
+        width: 90%;
+    }
 `
