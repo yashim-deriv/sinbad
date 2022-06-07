@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+//import { ContainerWrapper } from 'common/components/containers/common/style'
 import { ImageContainer, Header, Text } from 'common/components/containers/main'
-import Dasboard from 'images/common/dashboard.png'
-import Sinbad0 from 'images/common/sinbad-positions-0.png'
+import Sinbad0 from 'pages/open-positions/images/first-section.png'
 import RightArrow from 'images/svg/right-arrow.svg'
 import Flex from 'common/components/containers/flex'
 
@@ -15,15 +15,28 @@ type PositionsType = {
     position?: string
     text?: string
 }
+
+const ContainerWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     padding-bottom: 40px;
+    background-color: var(--color-sand-1);
 `
+const Image = styled.div`
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+`
+
 const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
+    padding-right: 8rem;
 `
 
 const StyledHeader = styled(Header)`
@@ -149,19 +162,22 @@ const positions: PositionsType[] = [
 
 const OpenPositions = () => {
     return (
-        <>
+        <ContainerWrapper>
             <PositionsHeader>
                 <HeaderContainer>
-                    <Header padding="5px 20px">IT CAREERS FOR</Header>
-                    <Header padding="5px 20px" color="red">
+                    <Header padding="5px 20px" font_size="50px">
+                        IT CAREERS FOR
+                    </Header>
+                    <Header padding="5px 20px" font_size="50px" color="--color-orange-1">
                         CHALLENGE
                     </Header>
-                    <Header padding="5px 20px">SEEKERS</Header>
+                    <Header padding="5px 20px" font_size="50px">
+                        SEEKERS
+                    </Header>
                 </HeaderContainer>
-                <>
-                    <ImageContainer src={Dasboard} />
-                    <ImageContainer src={Sinbad0} />
-                </>
+                <Image>
+                    <ImageContainer src={Sinbad0} width="60%" />
+                </Image>
             </PositionsHeader>
             <OpenPositionsContainer>
                 <PositionsCarouselContainer>
@@ -201,7 +217,7 @@ const OpenPositions = () => {
                     </Header>
                 </OpenPositionsInfo>
             </OpenPositionsContainer>
-        </>
+        </ContainerWrapper>
     )
 }
 
