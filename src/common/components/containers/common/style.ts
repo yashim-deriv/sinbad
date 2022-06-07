@@ -40,14 +40,14 @@ export const SocialWrapper = styled.div`
 export const DisclaimerWrapper = styled.div`
     height: 100px;
     background: var(--color-blue-1);
-    color: var(white);
+    color: white;
     border-top: 1px solid gray;
     display: flex;
 `
 
 export const PagesWrapper = styled(Flex)`
     align-items: center;
-    color: var(white);
+    color: white;
     display: flex;
     justify-content: space-between;
     width: 1000px;
