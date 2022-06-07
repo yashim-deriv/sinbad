@@ -10,6 +10,7 @@ type HeaderProps = {
     padding?: string
     line_height?: string
     font_family?: string
+    border_bottom?: string
 }
 type TextProps = {
     font_size?: string
@@ -23,6 +24,7 @@ type TextProps = {
 type ImageProps = {
     width?: string
     height?: string
+    padding_bottom?: string
 }
 
 export const ContactUsButton = styled.div`
@@ -44,9 +46,11 @@ export const SeeOurPositions = styled.div`
 export const ImageContainer = styled.img<ImageProps>`
     width: ${(props) => props.width || '400px'};
     height: ${(props) => props.height || '100%'};
+    padding-bottom: ${(props) => props.padding_bottom || '0px'};
 `
 
 export const Header = styled.div<HeaderProps>`
+    white-space: nowrap;
     font-size: ${(props) => props.font_size || '24px'};
     line-height: ${(props) => props.line_height || '18px'};
     font-weight: ${(props) => props.font_weight || 'bold'};
@@ -54,6 +58,7 @@ export const Header = styled.div<HeaderProps>`
     padding: ${(props) => props.padding || '10px 40px 10px 0'};
     color: ${(props) => props.color || 'black'};
     font-family: ${(props) => props.font_family || 'unset'};
+    border-bottom: ${(props) => props.border_bottom || ''};
 `
 export const Text = styled.div<TextProps>`
     font-size: ${(props) => props.font_size || '16px'};
@@ -62,6 +67,6 @@ export const Text = styled.div<TextProps>`
     text-align: ${(props) => props.text_align || 'left'};
     padding: ${(props) => props.padding || '15px 0'};
     color: ${(props) => props.color || 'black'};
-    font-family: ${(props) => props.font_family || 'unset'};
-    font-weight: ${(props) => props.font_weight || 'unset'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    font-weight: ${(props) => props.font_weight || 'normal'};
 `

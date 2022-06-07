@@ -1,12 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper } from '../containers/common/style'
+import { ContainerWrapper, HeaderTitle } from '../containers/common/style'
 import { Button } from 'components/elements'
-
-type HeaderProps = {
-    font_family?: string
-}
 
 const Container = styled.div`
     width: 100%;
@@ -29,13 +25,6 @@ const StyledHeader = styled.div`
     padding-left: 15px;
 `
 
-const HeaderTitle = styled.div<HeaderProps>`
-    font-size: 34px;
-    line-height: 58px;
-    color: var(--color-black-1);
-    padding-left: 15px;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-`
 /* stylelint-disable */
 
 const StyledHeaderLink = styled(Link)`
@@ -65,8 +54,10 @@ const Header = () => {
             <ContainerWrapper>
                 <HeaderContainer>
                     <StyledHeader>
-                        <HeaderTitle font_family="Maven Pro Bold">Sinbad</HeaderTitle>
-                        <HeaderTitle>Software</HeaderTitle>
+                        <HeaderTitle font_family="Maven Pro Bold" padding_left="15px">
+                            Sinbad
+                        </HeaderTitle>
+                        <HeaderTitle padding_left="15px">Software</HeaderTitle>
                     </StyledHeader>
                     <NavWrapper>
                         <StyledHeaderLink to="/">Home </StyledHeaderLink>

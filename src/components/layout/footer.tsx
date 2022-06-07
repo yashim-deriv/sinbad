@@ -26,7 +26,8 @@ const FooterContainer = styled.div`
 const Returner = styled.img`
     width: 40px;
     height: 40px;
-    position: absolute;
+    position: relative;
+    top: -20px;
     left: 50%;
 `
 

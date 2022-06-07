@@ -2,6 +2,22 @@ import styled from 'styled-components'
 import Flex from 'components/containers/flex'
 import device from 'themes/device'
 
+type HeaderProps = {
+    font_family?: string
+    color?: string
+    padding_left?: string
+    padding_right?: string
+}
+
+export const HeaderTitle = styled.div<HeaderProps>`
+    font-size: 34px;
+    line-height: 58px;
+    color: ${(props) => props.color || 'var(--color-black-1)'};
+    padding-left: ${(props) => props.padding_left || '0px'};
+    padding-right: ${(props) => props.padding_right || '0px'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+`
+
 export const DefaultFooter = styled.footer`
     background-color: var(--color-blue-1);
     color: white;

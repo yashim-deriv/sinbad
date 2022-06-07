@@ -24,7 +24,6 @@ const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: end;
-    padding-bottom: 40px;
     background-color: var(--color-sand-1);
 `
 const Image = styled.div`
@@ -36,19 +35,21 @@ const Image = styled.div`
 const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding-right: 8rem;
+    padding-right: 6rem;
+    width: '60%';
 `
 
 const StyledHeader = styled(Header)`
-    border-bottom: 1px solid gray;
     width: 100px;
-    padding: 25px 0;
     text-transform: uppercase;
 `
+
+/* stylelint-disable */
 
 const StyledText = styled(Text)`
     padding: ${(props) => props.padding || '5px 0'};
     text-transform: uppercase;
+    font-family: 'Maven Pro Bold';
 `
 
 const PositionsCarouselContainer = styled.div`
@@ -103,16 +104,18 @@ const OpenPositionsContainer = styled.div`
 const OpenPositionsInfo = styled.div`
     display: flex;
     flex-direction: column;
+    position: sticky;
+    align-self: start;
 `
 
 const positions: PositionsType[] = [
     {
-        position: 'some_one',
-        text: "We're looking for a some_one",
+        position: 'Mobile App Development',
+        text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        position: 'some_second',
-        text: "We're looking for a talented some_second",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
         position: 'Back-End Developer',
@@ -131,12 +134,13 @@ const positions: PositionsType[] = [
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        position: 'some_one',
-        text: "We're looking for a some_one",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
+
     {
-        position: 'some_second',
-        text: "We're looking for a talented some_second",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
         position: 'Back-End Developer',
@@ -165,13 +169,13 @@ const OpenPositions = () => {
         <ContainerWrapper>
             <PositionsHeader>
                 <HeaderContainer>
-                    <Header padding="5px 20px" font_size="50px">
+                    <Header padding="20px 20px" font_size="50px">
                         IT CAREERS FOR
                     </Header>
-                    <Header padding="5px 20px" font_size="50px" color="--color-orange-1">
+                    <Header padding="20px 20px" font_size="50px" color="var(--color-sand-4)">
                         CHALLENGE
                     </Header>
-                    <Header padding="5px 20px" font_size="50px">
+                    <Header padding="20px 20px" font_size="50px">
                         SEEKERS
                     </Header>
                 </HeaderContainer>
@@ -192,7 +196,11 @@ const OpenPositions = () => {
                                         ai="center"
                                         jc="start"
                                     >
-                                        <Header color="red" text_align="center">
+                                        <Header
+                                            color="var(--color-sand-4)"
+                                            text_align="center"
+                                            padding="10px 0px"
+                                        >
                                             {position}
                                         </Header>
                                         <Text font_size="14px" text_align="center">
@@ -206,7 +214,10 @@ const OpenPositions = () => {
                     </PositionsCarousel>
                 </PositionsCarouselContainer>
                 <OpenPositionsInfo>
-                    <StyledHeader>Open Positions</StyledHeader>
+                    <StyledHeader padding="20px 0 0 0">Open</StyledHeader>
+                    <StyledHeader border_bottom="1px solid var(--color-sand-1)" padding="25px 0">
+                        Positions
+                    </StyledHeader>
                     <StyledText padding="25px 0 5px">Back-end Development</StyledText>
                     <StyledText>Business Intelligence</StyledText>
                     <StyledText>DevOps</StyledText>
