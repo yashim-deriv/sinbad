@@ -10,15 +10,11 @@ export type TermProps = {
 
 type TermsType = { header?: string; text?: string; icon?: string }
 
-type OurTermsType = {
+export type OurTermsType = {
     first_column?: TermsType[]
     second_column?: TermsType[]
     first?: TermsType
     other?: TermsType[]
-}
-
-export type PBType = {
-    our_terms?: OurTermsType
 }
 
 type DataType = {
