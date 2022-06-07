@@ -10,7 +10,7 @@ import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
 import ActiveButton from 'images/common/homepage/carousel/active_button.png'
 import UnActiveButton from 'images/common/homepage/carousel/unactive_button.png'
-import { ImageContainer, Text } from 'common/components/containers'
+import { Header, ImageContainer, Text } from 'common/components/containers'
 
 type PickerProps = {
     is_active?: boolean
@@ -38,21 +38,20 @@ const FirstHeroContainer = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding-left: 520px;
+    padding-left: 220px;
 `
 const SecondHeroContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding-left: 550px;
+    padding-left: 250px;
 `
 const ThirdHeroContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    padding-left: 400px;
 `
 
 const PickerContainer = styled.div`
@@ -75,8 +74,8 @@ const StyledText = styled(Text)`
     padding: unset;
 `
 
-const StyledUpperText = styled(StyledText)`
-    text-transform: uppercase;
+const StyledUpperText = styled(Header)`
+    padding: unset;
 `
 
 const data = [
@@ -117,7 +116,7 @@ const Carousel = ({ active, setActive }: IconProps) => {
                     font_weight="656"
                     font_family="Maven Pro"
                 >
-                    Transform ideas into solutions
+                    Transforming ideas into solutions
                 </StyledUpperText>
                 {data.map(
                     (current_item, index) =>
