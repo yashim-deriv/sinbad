@@ -29,6 +29,7 @@ const CarouselContainer = styled.div`
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
+    justify-content: space-between;
 `
 
 const CarouselTextContainer = styled.div`
@@ -37,25 +38,8 @@ const CarouselTextContainer = styled.div`
     padding: 50px 0;
 `
 
-const FirstHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 220px;
-`
-const SecondHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 250px;
-`
-const ThirdHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+const CarouselImage = styled.div`
+    margin-right: 10rem;
 `
 
 const PickerContainer = styled.div`
@@ -80,6 +64,11 @@ const StyledText = styled(Text)`
 
 const StyledUpperText = styled(Header)`
     padding: unset;
+    text-transform: uppercase;
+`
+
+const TextLabel = styled(Text)`
+    max-width: 400px;
 `
 
 const data = [
@@ -106,87 +95,54 @@ const Carousel = ({ active, setActive }: IconProps) => {
             <CarouselContainerWrapper>
                 <CarouselTextContainer>
                     <StyledText
-                        color="#f47c48"
-                        font_size="33px"
+                        color="var(--color-sand-4)"
+                        font_size="3.2rem"
                         line_height="62px"
-                        font_weight="656"
                         font_family="Maven Pro"
                     >
-                        Sinbad Sowtfare
+                        <strong>Sinbad</strong> Software
                     </StyledText>
                     <StyledUpperText
-                        color="#232323"
-                        font_size="49px"
+                        color="var(--color-black-3)"
+                        font_size="4.2rem"
                         line_height="59px"
-                        font_weight="656"
-                        font_family="Maven Pro"
                     >
-                        Transforming ideas into solutions
+                        Transforming <br />
+                        ideas into <br />
+                        solutions
                     </StyledUpperText>
                     {data.map(
                         (current_item, index) =>
                             index == active && (
-                                <StyledText
+                                <TextLabel
                                     color="#f47c48"
-                                    font_size="46px"
+                                    font_size="4.2rem"
                                     line_height="57px"
-                                    font_weight="574"
-                                    font_family="Maven Pro"
-                                    width="400px"
+                                    width="100%"
                                 >
                                     {current_item.text}
-                                </StyledText>
+                                </TextLabel>
                             ),
                     )}
 
                     <PickerContainer>
-                        <Picker
-                            onClick={() => setActive(0)}
-                            is_active={active == 0 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(1)}
-                            is_active={active == 1 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(2)}
-                            is_active={active == 2 ? true : false}
-                        ></Picker>
+                        {[...Array(data.length).keys()].map((d, e) => (
+                            <Picker
+                                key={e}
+                                onClick={() => setActive(e)}
+                                is_active={active == e ? true : false}
+                            ></Picker>
+                        ))}
                     </PickerContainer>
                 </CarouselTextContainer>
 
-                {data.map((current_item, index) =>
-                    index == active && index == 0 ? (
-                        <FirstHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="650px"
-                                height="650px"
-                            />
-                        </FirstHeroContainer>
-                    ) : index == active && index == 1 ? (
-                        <SecondHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="650px"
-                                height="650px"
-                            />
-                        </SecondHeroContainer>
-                    ) : index == active && index == 2 ? (
-                        <ThirdHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="900px"
-                                height="650px"
-                            />
-                        </ThirdHeroContainer>
-                    ) : (
-                        ''
-                    ),
-                )}
+                <CarouselImage>
+                    {data.map((current_item, index) => {
+                        if (index === active) {
+                            return <ImageContainer key={index} src={current_item.background} />
+                        }
+                    })}
+                </CarouselImage>
             </CarouselContainerWrapper>
         </CarouselContainer>
     )
