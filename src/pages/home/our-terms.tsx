@@ -87,7 +87,7 @@ const StyledDescription = styled.div<StyledTextProps>`
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
-    padding-bottom: 270px;
+    padding-bottom: 120px;
 `
 
 const StyledSSHeader = styled.div`

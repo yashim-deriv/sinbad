@@ -59,6 +59,10 @@ export const ContainerWrapper = styled.div`
     justify-content: center;
     overflow: hidden;
 
+    @media (min-width: 1440px) {
+        max-width: 1440px;
+    }
+
     @media (max-width: 1440px) {
         width: 90%;
     }

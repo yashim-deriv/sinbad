@@ -27,7 +27,6 @@ const HeaderContainer = styled.div`
 const StyledHeader = styled.div`
     display: flex;
     white-space: nowrap;
-    padding-left: 15px;
 `
 
 const HeaderTitle = styled.div<HeaderProps>`
@@ -57,7 +56,6 @@ export const NavWrapper = styled.div`
     justify-content: space-between;
     width: fit-content;
     color: white;
-    padding-right: 65px;
 `
 
 const Header = () => {

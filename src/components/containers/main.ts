@@ -42,8 +42,9 @@ export const SeeOurPositions = styled.div`
 `
 
 export const ImageContainer = styled.img<ImageProps>`
-    width: ${(props) => props.width || '400px'};
-    height: ${(props) => props.height || '100%'};
+    width: 100%;
+    height: 100%;
+    max-height: 512px;
 `
 
 export const Header = styled.div<HeaderProps>`

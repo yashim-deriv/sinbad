@@ -34,40 +34,23 @@ const CarouselContainer = styled.div`
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 80px;
+    justify-content: space-between;
 `
 
 const CarouselTextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 50px 0;
+    padding: 50px 0 170px;
 `
 
-const FirstHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 220px;
-`
-const SecondHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 250px;
-`
-const ThirdHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+const CarouselImage = styled.div`
+    margin-right: 10rem;
 `
 
 const PickerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
     width: 140px;
 `
 
@@ -79,33 +62,16 @@ const Picker = styled.div<PickerProps>`
     background-repeat: no-repeat;
 `
 
-const StyledSSHeader = styled.div`
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-`
-
-const StyledSSText = styled.div<HeaderProps>`
-    padding: unset;
-    color: #f47c48;
-    font-size: 33px;
-    line-height: 62px;
-    font-weight: 656;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-    padding-right: 5px;
-`
-
 const StyledText = styled(Text)`
     padding: unset;
 `
 const StyledUpperText = styled(Header)`
+    padding: unset;
     text-transform: uppercase;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
-    color: #232323;
-    font-size: 49px;
-    line-height: 59px;
-    font-weight: 656;
-    padding: 15px 0;
+`
+
+const TextLabel = styled(Text)`
+    max-width: 400px;
 `
 
 const data = [
@@ -131,75 +97,55 @@ const Carousel = ({ active, setActive }: IconProps) => {
         <CarouselContainer>
             <CarouselContainerWrapper>
                 <CarouselTextContainer>
-                    <StyledSSHeader>
-                        <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText> Sowtfare</StyledSSText>
-                    </StyledSSHeader>
-                    <StyledUpperText>Transforming ideas into solutions</StyledUpperText>
+                    <StyledText
+                        color="var(--color-sand-4)"
+                        font_size="3.2rem"
+                        line_height="62px"
+                        font_family="Maven Pro"
+                    >
+                        <strong>Sinbad</strong> Software
+                    </StyledText>
+                    <StyledUpperText
+                        color="var(--color-black-3)"
+                        font_size="4.2rem"
+                        line_height="59px"
+                    >
+                        Transforming <br />
+                        ideas into <br />
+                        solutions
+                    </StyledUpperText>
                     {data.map(
                         (current_item, index) =>
                             index == active && (
-                                <StyledText
+                                <TextLabel
                                     color="#f47c48"
-                                    font_size="46px"
+                                    font_size="4.2rem"
                                     line_height="57px"
-                                    font_weight="574"
-                                    font_family="Maven Pro Bold"
-                                    width="400px"
+                                    width="100%"
                                 >
                                     {current_item.text}
-                                </StyledText>
+                                </TextLabel>
                             ),
                     )}
 
                     <PickerContainer>
-                        <Picker
-                            onClick={() => setActive(0)}
-                            is_active={active == 0 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(1)}
-                            is_active={active == 1 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(2)}
-                            is_active={active == 2 ? true : false}
-                        ></Picker>
+                        {[...Array(data.length).keys()].map((d, e) => (
+                            <Picker
+                                key={e}
+                                onClick={() => setActive(e)}
+                                is_active={active == e ? true : false}
+                            ></Picker>
+                        ))}
                     </PickerContainer>
                 </CarouselTextContainer>
 
-                {data.map((current_item, index) =>
-                    index == active && index == 0 ? (
-                        <FirstHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="650px"
-                                height="650px"
-                            />
-                        </FirstHeroContainer>
-                    ) : index == active && index == 1 ? (
-                        <SecondHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="650px"
-                                height="650px"
-                            />
-                        </SecondHeroContainer>
-                    ) : index == active && index == 2 ? (
-                        <ThirdHeroContainer>
-                            <ImageContainer
-                                key={index}
-                                src={current_item.background}
-                                width="900px"
-                                height="650px"
-                            />
-                        </ThirdHeroContainer>
-                    ) : (
-                        ''
-                    ),
-                )}
+                <CarouselImage>
+                    {data.map((current_item, index) => {
+                        if (index === active) {
+                            return <ImageContainer key={index} src={current_item.background} />
+                        }
+                    })}
+                </CarouselImage>
             </CarouselContainerWrapper>
         </CarouselContainer>
     )
