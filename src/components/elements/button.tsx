@@ -17,9 +17,14 @@ const ButtonItem = styled.button`
     height: 45px;
     background: var(--color-sand-4);
     border-radius: 30px 0px 0px 30px;
+    transition: 0.2s ease-in background;
     padding: 6px;
     cursor: pointer;
     border: none;
+
+    &:hover {
+        background: var(--color-sand-5);
+    }
 
     img {
         height: 32px;

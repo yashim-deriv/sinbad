@@ -13,7 +13,7 @@ const WelcomeContainerWrapper = styled.div`
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: #fef5e6;
+    background-color: var(--color-white);
     width: 100%;
 `
 
@@ -21,7 +21,7 @@ const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 0 250px;
+    padding: 100px 0;
     background: var(--color-white);
 `
 const StyledHeader = styled(Header)<StyledTextProps>`
@@ -54,10 +54,38 @@ const StyledFlex = styled(Flex)`
         width: unset;
     }
 `
+
 const CardContainer = styled.div`
     display: flex;
+    position: relative;
     justify-content: center;
-    padding-bottom: 25px;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        background: var(--color-sea-1);
+        width: 100%;
+        height: 600px;
+        z-index: 2;
+    }
+    &::after {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        background: var(--color-sand-1);
+        width: 100%;
+        height: 300px;
+        z-index: 1;
+    }
+`
+
+const CardContent = styled.div`
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
 `
 
 const Card = styled.div<TermProps>`
@@ -142,20 +170,22 @@ const Welcome = () => {
                 </StyledText>
             </TextContainer>
             <CardContainer>
-                <Card margin="240px 0">
-                    <img src={data.first.icon} alt="icon" />
-                    <CardHeader>{data.first.header}</CardHeader>
-                    <CardText>{data.first.text}</CardText>
-                </Card>
-                <StyledFlex wrap="wrap">
-                    {data.other.map(({ header, text, icon }, index) => (
-                        <Card key={index} index={index}>
-                            <img src={icon} alt="icon" />
-                            <CardHeader>{header}</CardHeader>
-                            <CardText>{text}</CardText>
-                        </Card>
-                    ))}
-                </StyledFlex>
+                <CardContent>
+                    <Card margin="240px 0">
+                        <img src={data.first.icon} alt="icon" />
+                        <CardHeader>{data.first.header}</CardHeader>
+                        <CardText>{data.first.text}</CardText>
+                    </Card>
+                    <StyledFlex wrap="wrap">
+                        {data.other.map(({ header, text, icon }, index) => (
+                            <Card key={index} index={index}>
+                                <img src={icon} alt="icon" />
+                                <CardHeader>{header}</CardHeader>
+                                <CardText>{text}</CardText>
+                            </Card>
+                        ))}
+                    </StyledFlex>
+                </CardContent>
             </CardContainer>
         </WelcomeContainerWrapper>
     )

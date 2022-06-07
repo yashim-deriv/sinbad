@@ -33,7 +33,6 @@ const HeaderTitle = styled.div<HeaderProps>`
     font-size: 34px;
     line-height: 58px;
     color: var(--color-black-1);
-    padding-left: 15px;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
 `
 /* stylelint-disable */
