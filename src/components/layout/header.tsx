@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
+import device from 'themes/device'
 
 type HeaderProps = {
     font_family?: string
@@ -30,10 +31,14 @@ const StyledHeader = styled.div`
 `
 
 const HeaderTitle = styled.div<HeaderProps>`
-    font-size: 34px;
+    font-size: 3.4rem;
     line-height: 58px;
     color: var(--color-black-1);
     font-family: ${(props) => props.font_family || 'Maven Pro'};
+
+    @media ${device.mobileL} {
+        font-size: 24px;
+    }
 `
 /* stylelint-disable */
 
@@ -55,6 +60,12 @@ export const NavWrapper = styled.div`
     justify-content: space-between;
     width: fit-content;
     color: white;
+
+    @media ${device.tabletL} {
+        a {
+            display: none;
+        }
+    }
 `
 
 const Header = () => {

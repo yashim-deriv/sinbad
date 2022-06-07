@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export type TermProps = {
     index?: number
     margin?: string
-    font_family?: string
+    fontamily?: string
     border_left?: boolean
 }
 

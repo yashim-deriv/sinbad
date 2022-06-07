@@ -10,32 +10,50 @@ import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
 import { ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
 
 const CarouselContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     background-image: url(${Background});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 35% bottom 0%;
+
+    @media ${device.mobileL} {
+        background-image: none;
+    }
 `
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     justify-content: space-between;
     margin: 0 0 100px 0;
+
+    @media ${device.tabletL} {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 `
 
 const CarouselTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 50px 0 170px;
+
+    @media ${device.mobileL} {
+        padding: 50px 0 0;
+    }
 `
 
 const CarouselImage = styled.div`
     margin-right: 10rem;
+
+    @media ${device.mobileL} {
+        margin-right: 0;
+    }
 `
 
 const PickerContainer = styled.div`
