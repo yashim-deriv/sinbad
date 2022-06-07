@@ -22,11 +22,11 @@ type ImageProps = {
 }
 
 export const ContactUsButton = styled.div`
-    width: 90px;
-    height: 25px;
+    width: 120px;
+    height: 35px;
     background-image: url(${ContactUs});
     background-repeat: no-repeat;
-    background-size: 90px 25px;
+    background-size: 120px 35px;
 `
 
 export const SeeOurPositions = styled.div`

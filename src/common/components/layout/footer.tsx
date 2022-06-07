@@ -8,6 +8,13 @@ import UpArrow from 'images/svg/up-arrow.svg'
 const StyledFooterLink = styled(Link)`
     text-decoration: none;
     color: white;
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: left;
+`
+const StyledFooterText = styled.div`
+    font-size: 16px;
 `
 
 const FooterContainer = styled.div`
@@ -34,7 +41,9 @@ const Footer = () => {
                 <SocialWrapperComponent />
                 <DisclaimerWrapper>
                     <PagesWrapper>
-                        <div> © 2022 Sinbad Software LLC. All rights reserved.</div>
+                        <StyledFooterText>
+                            © 2022 Sinbad Software LLC. All rights reserved.
+                        </StyledFooterText>
                         <div>
                             <StyledFooterLink to="/">Home | </StyledFooterLink>
                             <StyledFooterLink to="/careers"> Careers | </StyledFooterLink>

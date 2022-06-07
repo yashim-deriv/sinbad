@@ -10,7 +10,7 @@ const TechStackContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #3bc8f7;
+    background-color: var(--color-blue-2);
 `
 
 const TechDashboard = styled.img`
