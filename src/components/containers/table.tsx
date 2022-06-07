@@ -27,7 +27,7 @@ type DataType = {
 const TableContainer = styled.div`
     display: flex;
     flex-direction: row;
-    padding-right: 150px;
+    padding-right: 50px;
 `
 
 const TableColumn = styled.div`
@@ -54,7 +54,7 @@ const TermText = styled.div<TermProps>`
 const Term = styled.div<TermProps>`
     display: flex;
     align-items: center;
-    max-width: 240px;
+    max-width: 210px;
     max-height: 90px;
     padding: 10px;
     border-top: ${(props) =>

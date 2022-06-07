@@ -4,16 +4,19 @@ import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/we
 import Flex from 'components/containers/flex'
 import { Text, Header } from 'components/containers'
 import { TermProps } from 'components/containers/table'
+import { ContainerWrapper } from 'components/containers/common/style'
 
 type StyledTextProps = {
     font_family?: string
 }
 
-const WelcomeContainer = styled.div`
-    width: 100%;
-    height: 100%;
+const WelcomeContainerWrapper = styled(ContainerWrapper)`
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
     background-color: #fef5e6;
 `
+
 const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -42,6 +45,8 @@ const StyledText = styled(Text)<StyledTextProps>`
 `
 
 const StyledFlex = styled(Flex)`
+    max-width: 850px;
+
     @media (max-width: 930px) {
         flex-direction: column;
         align-items: center;
@@ -59,8 +64,8 @@ const Card = styled.div<TermProps>`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 399px;
-    height: 445px;
+    width: 350px;
+    height: 410px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: #ffffff;
@@ -123,33 +128,35 @@ const data = {
 
 const Welcome = () => {
     return (
-        <WelcomeContainer>
-            <TextContainer>
-                <StyledHeader>Welcome to Sinbad Software</StyledHeader>
-                <StyledText>
-                    Sinbad Software LLC provides software development services and IT solutions for
-                    the fintech industri. At every step of the way, we aim to give our clients the
-                    power to go beyond digital boundaires and surpass their competitors in the
-                    ever-evolving fintech landscape
-                </StyledText>
-            </TextContainer>
-            <CardContainer>
-                <Card margin="170px 0">
-                    <img src={data.first.icon} alt="icon" />
-                    <CardHeader>{data.first.header}</CardHeader>
-                    <CardText>{data.first.text}</CardText>
-                </Card>
-                <StyledFlex width="970px" wrap="wrap">
-                    {data.other.map(({ header, text, icon }, index) => (
-                        <Card key={index} index={index}>
-                            <img src={icon} alt="icon" />
-                            <CardHeader>{header}</CardHeader>
-                            <CardText>{text}</CardText>
-                        </Card>
-                    ))}
-                </StyledFlex>
-            </CardContainer>
-        </WelcomeContainer>
+        <>
+            <WelcomeContainerWrapper>
+                <TextContainer>
+                    <StyledHeader>Welcome to Sinbad Software</StyledHeader>
+                    <StyledText>
+                        Sinbad Software LLC provides software development services and IT solutions
+                        for the fintech industri. At every step of the way, we aim to give our
+                        clients the power to go beyond digital boundaires and surpass their
+                        competitors in the ever-evolving fintech landscape
+                    </StyledText>
+                </TextContainer>
+                <CardContainer>
+                    <Card margin="240px 0">
+                        <img src={data.first.icon} alt="icon" />
+                        <CardHeader>{data.first.header}</CardHeader>
+                        <CardText>{data.first.text}</CardText>
+                    </Card>
+                    <StyledFlex wrap="wrap">
+                        {data.other.map(({ header, text, icon }, index) => (
+                            <Card key={index} index={index}>
+                                <img src={icon} alt="icon" />
+                                <CardHeader>{header}</CardHeader>
+                                <CardText>{text}</CardText>
+                            </Card>
+                        ))}
+                    </StyledFlex>
+                </CardContainer>
+            </WelcomeContainerWrapper>
+        </>
     )
 }
 
