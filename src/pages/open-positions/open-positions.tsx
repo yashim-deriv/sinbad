@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-//import { ContainerWrapper } from 'common/components/containers/common/style'
 import { ImageContainer, Header, Text } from 'components/containers/main'
 import Sinbad0 from 'pages/open-positions/images/first-section.png'
 import RightArrow from 'pages/open-positions/images/arrow.png'
@@ -90,7 +89,7 @@ const CardButton = styled.img`
     width: 10px;
     height: 10px;
 `
-const MoreContainer = styled.div`
+const LinkContainer = styled.div`
     display: flex;
 `
 
@@ -212,7 +211,7 @@ const OpenPositions = () => {
                                         <Text font_size="14px" text_align="center">
                                             {text}
                                         </Text>
-                                        <MoreContainer>
+                                        <LinkContainer>
                                             <Text
                                                 font_size="11px"
                                                 text_align="center"
@@ -225,7 +224,7 @@ const OpenPositions = () => {
                                             <CardButtonContainer to="/some-postition">
                                                 <CardButton src={RightArrow} />
                                             </CardButtonContainer>
-                                        </MoreContainer>
+                                        </LinkContainer>
                                     </Card>
                                 )
                             })}
