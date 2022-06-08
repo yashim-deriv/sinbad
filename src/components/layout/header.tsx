@@ -29,7 +29,7 @@ const StyledHeader = styled.div`
 /* stylelint-disable */
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 30px;
     text-transform: uppercase;
     color: var(--color-black-2);

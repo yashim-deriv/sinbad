@@ -8,13 +8,13 @@ import UpArrow from 'images/svg/up-arrow.svg'
 const StyledFooterLink = styled(Link)`
     text-decoration: none;
     color: white;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 36px;
     font-weight: 400;
     text-align: left;
 `
 const StyledFooterText = styled.div`
-    font-size: 16px;
+    font-size: 1.6rem;
 `
 
 const FooterContainer = styled.div`

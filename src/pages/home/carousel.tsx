@@ -164,7 +164,7 @@ const Carousel = ({ active, setActive }: IconProps) => {
                         (current_item, index) =>
                             index == active && (
                                 <TextLabel
-                                    color="#f47c48"
+                                    color="var(--color-sand-4)"
                                     font_size="4.2rem"
                                     line_height="57px"
                                     width="100%"

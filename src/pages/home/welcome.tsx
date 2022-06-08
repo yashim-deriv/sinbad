@@ -43,7 +43,7 @@ const StyledText = styled(Text)<StyledTextProps>`
     width: 100%;
     max-width: 982px;
     height: 96px;
-    font-size: 19px;
+    font-size: 1.9rem;
     line-height: 34px;
     color: #4c4c4c;
     font-weight: 320;
@@ -126,8 +126,8 @@ const Card = styled.div<CSSElementProps>`
     height: 410px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: #ffffff;
-    margin: ${(props) => props.margin || '20px'};
+    background-color: var(--color-white);
+    margin: ${(props) => props.margin || '0 40px 40px 0'};
     border-radius: 4px;
     filter: drop-shadow(0 13px 17.5px rgba(0, 0, 0, 0.13));
     align-self: ${(props) => props.alignSelf || 'start'};
@@ -142,7 +142,7 @@ const Card = styled.div<CSSElementProps>`
 
 const CardHeader = styled.div<StyledTextProps>`
     max-width: 241px;
-    font-size: 22px;
+    font-size: 2.2rem;
     line-height: 27px;
     color: #0a0a0a;
     font-weight: 560;
@@ -152,9 +152,7 @@ const CardHeader = styled.div<StyledTextProps>`
 `
 
 const CardText = styled.div<StyledTextProps>`
-    width: 241px;
-    height: fit-content;
-    font-size: 17px;
+    font-size: 1.7rem;
     line-height: 26px;
     color: #4c4c4c;
     font-weight: 320;

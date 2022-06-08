@@ -28,7 +28,7 @@ const TextAboutCareer = styled.div`
 const PBTable = styled.div`
     width: 140px;
     height: 340px;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: bold;
 `
 
