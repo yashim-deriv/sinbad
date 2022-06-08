@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import extend from 'extend'
 
+export const getPathName = () => window.location.pathname
+
 export const trimSpaces = (value) => value?.trim()
 
 export const toISOFormat = (date) => {
