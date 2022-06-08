@@ -48,12 +48,18 @@ const CarouselTextContainer = styled.div`
     }
 `
 
-const CarouselImage = styled.div`
+const CarouselImageContainer = styled.div`
     margin-right: 10rem;
 
     @media ${device.mobileL} {
         margin-right: 0;
     }
+`
+
+const CarouselImage = styled(ImageContainer)`
+    object-fit: contain;
+    max-width: 700px;
+    max-height: none;
 `
 
 const PickerContainer = styled.div`
@@ -164,7 +170,7 @@ const Carousel = ({ active, setActive }: IconProps) => {
                         (current_item, index) =>
                             index == active && (
                                 <TextLabel
-                                    color="#f47c48"
+                                    color="var(--color-sand-4)"
                                     font_size="4.2rem"
                                     line_height="57px"
                                     width="100%"
@@ -187,13 +193,13 @@ const Carousel = ({ active, setActive }: IconProps) => {
                     </PickerContainer>
                 </CarouselTextContainer>
 
-                <CarouselImage>
+                <CarouselImageContainer>
                     {data.map((current_item, index) => {
                         if (index === active) {
-                            return <ImageContainer key={index} src={current_item.background} />
+                            return <CarouselImage key={index} src={current_item.background} />
                         }
                     })}
-                </CarouselImage>
+                </CarouselImageContainer>
             </CarouselContainerWrapper>
         </CarouselContainer>
     )

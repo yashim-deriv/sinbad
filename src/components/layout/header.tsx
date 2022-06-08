@@ -4,10 +4,8 @@ import styled from 'styled-components'
 import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
 import device from 'themes/device'
-
-type HeaderProps = {
-    font_family?: string
-}
+import { getPathName } from 'common/utility'
+import { HeaderTitle } from 'components/containers/common/style'
 
 const Container = styled.div`
     display: flex;
@@ -29,22 +27,10 @@ const StyledHeader = styled.div`
     display: flex;
     white-space: nowrap;
 `
-
-const HeaderTitle = styled.div<HeaderProps>`
-    font-size: 3.4rem;
-    line-height: 58px;
-    color: var(--color-black-1);
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-
-    @media ${device.mobileL} {
-        font-size: 24px;
-    }
-`
 /* stylelint-disable */
-
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 30px;
     text-transform: uppercase;
     color: var(--color-black-2);
@@ -52,6 +38,11 @@ const StyledHeaderLink = styled(Link)`
     text-align: left;
     font-family: 'Maven Pro Bold';
     padding-right: 30px;
+
+    &.active,
+    &:hover {
+        color: var(--color-sand-4);
+    }
 `
 
 export const NavWrapper = styled.div`
@@ -69,18 +60,33 @@ export const NavWrapper = styled.div`
 `
 
 const Header = () => {
+    const pathname = getPathName()
     return (
         <Container>
             <ContainerWrapper>
                 <HeaderContainer>
                     <StyledHeader>
-                        <HeaderTitle font_family="Maven Pro Bold">Sinbad</HeaderTitle>
-                        <HeaderTitle>Software</HeaderTitle>
+                        <HeaderTitle font_family="Maven Pro Bold" padding_left="15px">
+                            Sinbad
+                        </HeaderTitle>
+                        <HeaderTitle padding_left="15px">Software</HeaderTitle>
                     </StyledHeader>
                     <NavWrapper>
-                        <StyledHeaderLink to="/">Home </StyledHeaderLink>
-                        <StyledHeaderLink to="/careers"> Careers </StyledHeaderLink>
-                        <StyledHeaderLink to="/open-positions"> Open Positions </StyledHeaderLink>
+                        <StyledHeaderLink to="/" className={pathname === '/' ? 'active' : ''}>
+                            Home
+                        </StyledHeaderLink>
+                        <StyledHeaderLink
+                            to="/careers"
+                            className={pathname === '/careers' ? 'active' : ''}
+                        >
+                            Careers
+                        </StyledHeaderLink>
+                        <StyledHeaderLink
+                            to="/open-positions"
+                            className={pathname === '/open-positions' ? 'active' : ''}
+                        >
+                            Open Positions
+                        </StyledHeaderLink>
                         <Button label="Contact Us" onClick={() => alert('')} />
                     </NavWrapper>
                 </HeaderContainer>

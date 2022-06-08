@@ -6,11 +6,9 @@ import Header from './header'
 type LayoutType = {
     children: React.ReactChild | React.ReactChild[]
 }
-const LayoutContainer = styled.section`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+
+const LayoutContainer = styled.div`
+    max-width: 100%;
 `
 
 const Layout = ({ children }: LayoutType) => {

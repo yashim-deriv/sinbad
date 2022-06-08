@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { useState } from 'react'
+import OurTerms from './home/our-terms'
 import Carousel from './home/carousel'
 import Welcome from './home/welcome'
 import TechStack from './home/tech-stack'
-import JoinUs from './join-us'
-import OurTerms from './home/our-terms'
+import JoinUs from 'components/layout/join-us'
 import Layout from 'components/layout/layout'
 
 export type IconProps = {
@@ -21,7 +21,7 @@ const Home = () => {
             <Welcome />
             <OurTerms />
             <TechStack />
-            <JoinUs active={active} />
+            <JoinUs appearance="home" />
         </Layout>
     )
 }
