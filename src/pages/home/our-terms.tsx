@@ -29,7 +29,7 @@ const OurTermsContainer = styled.div`
     text-align: center;
     justify-content: center;
     align-items: flex-start;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     background-image: url(${OurTermsBackground});
     background-repeat: no-repeat;
     background-size: contain;
@@ -44,9 +44,9 @@ const TermsTextContainer = styled.div`
     padding: 30px 0 30px 50px;
 `
 const OurTermsTable = styled.div<StyledTextProps>`
-    font-size: 38px;
+    font-size: 3.8rem;
     line-height: 53px;
-    color: #232323;
+    color: var(--color-black-3);
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
@@ -59,9 +59,9 @@ const TermsAndSinbadContainer = styled.div`
 
 const StyledHeader = styled.div<StyledTextProps>`
     max-width: 425px;
-    font-size: 48px;
+    font-size: 4.8rem;
     line-height: 53px;
-    color: #232323;
+    color: var(--color-black-3);
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
@@ -70,9 +70,9 @@ const StyledHeader = styled.div<StyledTextProps>`
 
 const StyledText = styled.div<StyledTextProps>`
     max-width: 350px;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 27px;
-    color: #232323;
+    color: var(--color-black-3);
     font-weight: 320;
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: left;
@@ -81,9 +81,9 @@ const StyledText = styled.div<StyledTextProps>`
 
 const StyledDescription = styled.div<StyledTextProps>`
     max-width: 480px;
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 33px;
-    color: #f47c48;
+    color: var(--color-sand-4);
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
@@ -98,10 +98,10 @@ const StyledSSHeader = styled.div`
 
 const StyledSSText = styled.div<StyledTextProps>`
     padding: unset;
-    color: #f47c48;
-    font-size: 33px;
-    line-height: 62px;
-    font-weight: 656;
+    color: var(--color-sand-4);
+    font-size: 3.8rem;
+    line-height: 61px;
+    font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     padding-right: 5px;
 `

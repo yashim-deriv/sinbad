@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export type TermProps = {
     index?: number
     margin?: string
-    fontamily?: string
+    font_family?: string
     border_left?: boolean
 }
 
@@ -32,15 +32,15 @@ const TableColumn = styled.div`
 `
 
 const TermImage = styled.img`
-    width: 70px;
-    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
     border-radius: 35px;
     filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
 `
 const TermText = styled.div<TermProps>`
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 22px;
-    color: #232323;
+    color: var(--color-black-3);
     font-weight: 480;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
