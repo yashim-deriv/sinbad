@@ -118,7 +118,7 @@ const TechStack = () => {
                 <TermsTextContainer>
                     <StyledSSHeader>
                         <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText>Sowtfare</StyledSSText>
+                        <StyledSSText>Software</StyledSSText>
                     </StyledSSHeader>
                     <StyledHeader>Tech stack</StyledHeader>
                     <StyledText>
