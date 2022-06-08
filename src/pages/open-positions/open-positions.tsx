@@ -23,11 +23,12 @@ const ContainerWrapper = styled.div`
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: center;
     background-color: var(--color-sand-1);
 `
 const Image = styled.div`
     padding-bottom: 10px;
+    padding-left: 100px;
     display: flex;
     flex-direction: row;
 `
@@ -169,18 +170,18 @@ const OpenPositions = () => {
         <ContainerWrapper>
             <PositionsHeader>
                 <HeaderContainer>
-                    <Header padding="20px 20px" font_size="50px">
+                    <Header padding="20px 100px 20px 0px" font_size="50px">
                         IT CAREERS FOR
                     </Header>
-                    <Header padding="20px 20px" font_size="50px" color="var(--color-sand-4)">
+                    <Header padding="20px 0px" font_size="50px" color="var(--color-sand-4)">
                         CHALLENGE
                     </Header>
-                    <Header padding="20px 20px" font_size="50px">
+                    <Header padding="20px 100px 20px 0px" font_size="50px">
                         SEEKERS
                     </Header>
                 </HeaderContainer>
                 <Image>
-                    <ImageContainer src={Sinbad0} width="60%" />
+                    <ImageContainer src={Sinbad0} height="400px" />
                 </Image>
             </PositionsHeader>
             <OpenPositionsContainer>

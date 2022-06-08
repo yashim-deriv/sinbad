@@ -4,35 +4,26 @@ import styled from 'styled-components'
 export type TermProps = {
     index?: number
     margin?: string
+    fontamily?: string
     border_left?: boolean
 }
 
-type TermsServiceType = { header?: string; text: string; icon: string }
+type TermsType = { header?: string; text?: string; icon?: string }
 
-type OurServiceType = {
-    first?: TermsServiceType
-    other?: TermsServiceType[]
-}
-
-type OurTermsType = {
-    first_column?: TermsServiceType[]
-    second_column?: TermsServiceType[]
-}
-
-export type PBType = {
-    our_terms?: OurTermsType
+export type OurTermsType = {
+    first_column?: TermsType[]
+    second_column?: TermsType[]
+    first?: TermsType
+    other?: TermsType[]
 }
 
 type DataType = {
-    data?: {
-        our_service?: OurServiceType
-        our_terms?: OurTermsType
-    }
+    data?: OurTermsType
 }
 const TableContainer = styled.div`
     display: flex;
     flex-direction: row;
-    padding: 15px;
+    padding-right: 50px;
 `
 
 const TableColumn = styled.div`
@@ -41,21 +32,26 @@ const TableColumn = styled.div`
 `
 
 const TermImage = styled.img`
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
 `
-const TermText = styled.div`
-    font-size: 14px;
-    padding-left: 20px;
-    font-weight: normal;
+const TermText = styled.div<TermProps>`
+    font-size: 18px;
+    line-height: 22px;
+    color: #232323;
+    font-weight: 480;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
+    padding-left: 10px;
 `
 
 const Term = styled.div<TermProps>`
     display: flex;
     align-items: center;
-    width: 170px;
-    height: 70px;
+    max-width: 210px;
+    max-height: 90px;
     padding: 10px;
     border-top: ${(props) =>
         props.index === 0 ? 'unset' : props.index === 4 ? 'unset' : '1px solid gray'};
@@ -68,7 +64,7 @@ const Table = ({ data }: DataType) => {
     return (
         <TableContainer>
             <TableColumn>
-                {data.our_terms.first_column.map((item, index) => (
+                {data.first_column.map((item, index) => (
                     <Term key={index} index={index}>
                         <TermImage src={item.icon} />
                         <TermText>{item.text}</TermText>
@@ -76,7 +72,7 @@ const Table = ({ data }: DataType) => {
                 ))}
             </TableColumn>
             <TableColumn>
-                {data.our_terms.second_column.map((item, index) => (
+                {data.second_column.map((item, index) => (
                     <Term key={index} index={index} border_left={true}>
                         <TermImage src={item.icon} />
                         <TermText>{item.text}</TermText>

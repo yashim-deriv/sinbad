@@ -6,12 +6,16 @@ const Variables = css`
         --color-white: #ffffff;
         --color-black-1: #2a2a2a;
         --color-black-2: #242424;
+        --color-black-3: #232323;
         --color-blue-1: #0e2432;
         --color-blue-2: #3bc8f7;
         --color-sand-1: #fef5e6;
         --color-sand-2: #fae9a7;
         --color-sand-3: #f7cd43;
         --color-sand-4: #f47c48;
+        --color-sand-5: #d15824;
+        --color-sea-1: #ecf6f8;
+        --color-grey-1: #5d5d5d;
 
         /* sizes */
         --text-size-xxs: 1.2rem;

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
+import { Header, ImageContainer, Text } from 'components/containers'
 import Image0 from 'images/common/homepage/carousel/carousel-0.png'
 import Image1 from 'images/common/homepage/carousel/carousel-1.png'
 import Image2 from 'images/common/homepage/carousel/carousel-2.png'
@@ -8,74 +9,115 @@ import Background from 'images/common/homepage/carousel/background.png'
 import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
 import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
 import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
-import ActiveButton from 'images/common/homepage/carousel/active_button.png'
-import UnActiveButton from 'images/common/homepage/carousel/unactive_button.png'
-import { Header, ImageContainer, Text } from 'components/containers'
-
-type PickerProps = {
-    is_active?: boolean
-}
+import { ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
 
 const CarouselContainer = styled.div`
     display: flex;
+    justify-content: center;
     align-items: flex-start;
-    height: 800px;
-    padding: 50px 50px;
-    background-color: #fef5e6;
+    background-color: var(--color-sand-1);
     background-image: url(${Background});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 35% bottom 0%;
+
+    @media ${device.mobileL} {
+        background-image: none;
+    }
+`
+
+const CarouselContainerWrapper = styled(ContainerWrapper)`
+    padding: 50px 0;
+    justify-content: space-between;
+    margin: 0 0 100px 0;
+
+    @media ${device.tabletL} {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 `
 
 const CarouselTextContainer = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 50px 0 170px;
+
+    @media ${device.mobileL} {
+        padding: 50px 0 0;
+    }
 `
 
-const FirstHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 220px;
-`
-const SecondHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-left: 250px;
-`
-const ThirdHeroContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
+const CarouselImage = styled.div`
+    margin-right: 10rem;
+
+    @media ${device.mobileL} {
+        margin-right: 0;
+    }
 `
 
 const PickerContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-    width: 140px;
+    width: fit-content;
+    margin: 10px 0 0 0;
 `
 
-const Picker = styled.div<PickerProps>`
-    width: ${(props) => (props.is_active ? '54px' : '27px')};
-    height: ${(props) => (props.is_active ? '54px' : '27px')};
-    border-radius: ${(props) => (props.is_active ? '26px' : '14px')};
-    background-image: url(${(props) => (props.is_active ? ActiveButton : UnActiveButton)});
-    background-repeat: no-repeat;
+const CarouselDots = styled.span`
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 0 8px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        border-radius: 100px;
+        border: solid 1px var(--color-sand-4);
+        width: 0%;
+        height: 0%;
+        position: absolute;
+        transition: all 0.5s ease-in;
+    }
+
+    /* stylelint-disable */
+
+    &.active {
+        &::before {
+            width: 100%;
+            height: 100%;
+        }
+        i {
+            background: var(--color-sand-4);
+        }
+    }
+
+    i {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+        background: var(--color-grey-1);
+        transition: all 0.5s ease-in;
+        border-radius: 100%;
+    }
 `
 
 const StyledText = styled(Text)`
     padding: unset;
 `
-
 const StyledUpperText = styled(Header)`
     padding: unset;
+    text-transform: uppercase;
+`
+
+const TextLabel = styled(Text)`
+    max-width: 400px;
 `
 
 const data = [
@@ -99,89 +141,60 @@ const data = [
 const Carousel = ({ active, setActive }: IconProps) => {
     return (
         <CarouselContainer>
-            <CarouselTextContainer>
-                <StyledText
-                    color="#f47c48"
-                    font_size="33px"
-                    line_height="62px"
-                    font_weight="656"
-                    font_family="Maven Pro"
-                >
-                    Sinbad Sowtfare
-                </StyledText>
-                <StyledUpperText
-                    color="#232323"
-                    font_size="49px"
-                    line_height="59px"
-                    font_weight="656"
-                    font_family="Maven Pro"
-                >
-                    Transforming ideas into solutions
-                </StyledUpperText>
-                {data.map(
-                    (current_item, index) =>
-                        index == active && (
-                            <StyledText
-                                color="#f47c48"
-                                font_size="46px"
-                                line_height="57px"
-                                font_weight="574"
-                                font_family="Maven Pro"
-                                width="400px"
+            <CarouselContainerWrapper>
+                <CarouselTextContainer>
+                    <StyledText
+                        color="var(--color-sand-4)"
+                        font_size="3.2rem"
+                        line_height="62px"
+                        font_family="Maven Pro"
+                    >
+                        <strong>Sinbad</strong> Software
+                    </StyledText>
+                    <StyledUpperText
+                        color="var(--color-black-3)"
+                        font_size="4.2rem"
+                        line_height="59px"
+                    >
+                        Transforming <br />
+                        ideas into <br />
+                        solutions
+                    </StyledUpperText>
+                    {data.map(
+                        (current_item, index) =>
+                            index == active && (
+                                <TextLabel
+                                    color="#f47c48"
+                                    font_size="4.2rem"
+                                    line_height="57px"
+                                    width="100%"
+                                >
+                                    {current_item.text}
+                                </TextLabel>
+                            ),
+                    )}
+
+                    <PickerContainer>
+                        {[...Array(data.length).keys()].map((d, e) => (
+                            <CarouselDots
+                                key={e}
+                                onClick={() => setActive(e)}
+                                className={active === e ? 'active' : ''}
                             >
-                                {current_item.text}
-                            </StyledText>
-                        ),
-                )}
+                                <i />
+                            </CarouselDots>
+                        ))}
+                    </PickerContainer>
+                </CarouselTextContainer>
 
-                <PickerContainer>
-                    <Picker
-                        onClick={() => setActive(0)}
-                        is_active={active == 0 ? true : false}
-                    ></Picker>
-                    <Picker
-                        onClick={() => setActive(1)}
-                        is_active={active == 1 ? true : false}
-                    ></Picker>
-                    <Picker
-                        onClick={() => setActive(2)}
-                        is_active={active == 2 ? true : false}
-                    ></Picker>
-                </PickerContainer>
-            </CarouselTextContainer>
-
-            {data.map((current_item, index) =>
-                index == active && index == 0 ? (
-                    <FirstHeroContainer>
-                        <ImageContainer
-                            key={index}
-                            src={current_item.background}
-                            width="650px"
-                            height="650px"
-                        />
-                    </FirstHeroContainer>
-                ) : index == active && index == 1 ? (
-                    <SecondHeroContainer>
-                        <ImageContainer
-                            key={index}
-                            src={current_item.background}
-                            width="650px"
-                            height="650px"
-                        />
-                    </SecondHeroContainer>
-                ) : index == active && index == 2 ? (
-                    <ThirdHeroContainer>
-                        <ImageContainer
-                            key={index}
-                            src={current_item.background}
-                            width="900px"
-                            height="650px"
-                        />
-                    </ThirdHeroContainer>
-                ) : (
-                    ''
-                ),
-            )}
+                <CarouselImage>
+                    {data.map((current_item, index) => {
+                        if (index === active) {
+                            return <ImageContainer key={index} src={current_item.background} />
+                        }
+                    })}
+                </CarouselImage>
+            </CarouselContainerWrapper>
         </CarouselContainer>
     )
 }

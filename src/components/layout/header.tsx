@@ -1,12 +1,16 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper, HeaderTitle } from '../containers/common/style'
+import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
+import device from 'themes/device'
+import { HeaderTitle } from 'components/containers/common/style'
 
 const Container = styled.div`
+    display: flex;
     width: 100%;
     background-color: var(--color-sand-1);
+    justify-content: center;
 `
 const HeaderContainer = styled.div`
     height: 60px;
@@ -14,7 +18,6 @@ const HeaderContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-sand-1);
-    max-width: 1200px;
     border-radius: 5px;
     width: 100%;
 `
@@ -22,11 +25,8 @@ const HeaderContainer = styled.div`
 const StyledHeader = styled.div`
     display: flex;
     white-space: nowrap;
-    padding-left: 15px;
 `
-
 /* stylelint-disable */
-
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
     font-size: 16px;
@@ -45,7 +45,12 @@ export const NavWrapper = styled.div`
     justify-content: space-between;
     width: fit-content;
     color: white;
-    padding-right: 65px;
+
+    @media ${device.tabletL} {
+        a {
+            display: none;
+        }
+    }
 `
 
 const Header = () => {

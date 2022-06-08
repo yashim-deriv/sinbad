@@ -38,7 +38,12 @@ const JoinUs = () => {
         <>
             <JoinUsContainer>
                 <>
-                    <ImageContainer src={Sinbad0} height="550px" padding_bottom="100px" />
+                    <ImageContainer
+                        src={Sinbad0}
+                        height="550px"
+                        width="400px"
+                        padding_bottom="100px"
+                    />
                 </>
                 <JoinUsInfo>
                     <StyledHeader>
