@@ -138,6 +138,12 @@ const Card = styled.div<CSSElementProps>`
         margin: 10px;
         width: 100vw;
     }
+
+    @media ${device.laptopL} {
+        &.first {
+            margin: 0 0 40px 0;
+        }
+    }
 `
 
 const CardHeader = styled.div<StyledTextProps>`
@@ -206,7 +212,7 @@ const Welcome = () => {
             </TextContainer>
             <CardContainer>
                 <CardContent>
-                    <Card alignSelf="center">
+                    <Card className="first" alignSelf="center" margin="0">
                         <img src={data.first.icon} alt="icon" />
                         <CardHeader>{data.first.header}</CardHeader>
                         <CardText>{data.first.text}</CardText>

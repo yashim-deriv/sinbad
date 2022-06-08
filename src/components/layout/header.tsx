@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
 import device from 'themes/device'
+import { getPathName } from 'common/utility'
 import { HeaderTitle } from 'components/containers/common/style'
 
 const Container = styled.div`
@@ -37,6 +38,11 @@ const StyledHeaderLink = styled(Link)`
     text-align: left;
     font-family: 'Maven Pro Bold';
     padding-right: 30px;
+
+    &.active,
+    &:hover {
+        color: var(--color-sand-4);
+    }
 `
 
 export const NavWrapper = styled.div`
@@ -54,6 +60,7 @@ export const NavWrapper = styled.div`
 `
 
 const Header = () => {
+    const pathname = getPathName()
     return (
         <Container>
             <ContainerWrapper>
@@ -65,9 +72,21 @@ const Header = () => {
                         <HeaderTitle padding_left="15px">Software</HeaderTitle>
                     </StyledHeader>
                     <NavWrapper>
-                        <StyledHeaderLink to="/">Home </StyledHeaderLink>
-                        <StyledHeaderLink to="/careers"> Careers </StyledHeaderLink>
-                        <StyledHeaderLink to="/open-positions"> Open Positions </StyledHeaderLink>
+                        <StyledHeaderLink to="/" className={pathname === '/' ? 'active' : ''}>
+                            Home
+                        </StyledHeaderLink>
+                        <StyledHeaderLink
+                            to="/careers"
+                            className={pathname === '/careers' ? 'active' : ''}
+                        >
+                            Careers
+                        </StyledHeaderLink>
+                        <StyledHeaderLink
+                            to="/open-positions"
+                            className={pathname === '/open-positions' ? 'active' : ''}
+                        >
+                            Open Positions
+                        </StyledHeaderLink>
                         <Button label="Contact Us" onClick={() => alert('')} />
                     </NavWrapper>
                 </HeaderContainer>

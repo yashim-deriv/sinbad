@@ -10,7 +10,7 @@ type HeaderProps = {
 }
 
 export const HeaderTitle = styled.div<HeaderProps>`
-    font-size: 34px;
+    font-size: 3.4rem;
     line-height: 58px;
     color: ${(props) => props.color || 'var(--color-black-1)'};
     padding-left: ${(props) => props.padding_left || '0px'};
