@@ -38,6 +38,10 @@ const StyledHeader = styled(Header)<StyledTextProps>`
 
     @media ${device.mobileL} {
         padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        white-space: pre-wrap;
+        justify-content: center;
     }
 `
 
@@ -54,6 +58,7 @@ const StyledText = styled(Text)<StyledTextProps>`
 
     @media ${device.tablet} {
         padding: 10px;
+        height: fit-content;
     }
 `
 
@@ -180,6 +185,11 @@ const CardText = styled.div<StyledTextProps>`
     font-weight: 320;
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
+
+    @media ${device.mobileL} {
+        height: auto;
+        padding: 20px;
+    }
 `
 
 const data = {

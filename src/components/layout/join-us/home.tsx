@@ -5,6 +5,7 @@ import Sinbad0 from 'pages/images/home-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
 
 const Wrapper = styled.div`
     display: flex;
@@ -29,6 +30,13 @@ const JoinUsContainer = styled.div`
     justify-content: space-evenly;
     width: 100%;
     height: 600px;
+
+    @media ${device.tabletL} {
+        flex-direction: column-reverse;
+        height: auto;
+        justify-content: center;
+        padding-top: 20px;
+    }
 `
 const TextContainer = styled.div`
     padding-bottom: 190px;
@@ -57,7 +65,9 @@ const JoinUsHome = () => {
                             <HeaderTitle color="var(--color-sand-4)">Software</HeaderTitle>
                         </StyledHeader>
                         <TextContainer>
-                            <Header font_size="28px">JOIN OUR TEAM!</Header>
+                            <Header font_size="28px" text_transform="uppercase">
+                                Join Our Team!
+                            </Header>
                             <Text padding="20px 0">
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.dev
@@ -65,9 +75,8 @@ const JoinUsHome = () => {
                             <Button label="See Our Open Positions" onClick={() => alert('')} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <>
-                        <ImageContainer src={Sinbad0} width="500px" padding_bottom="100px" />
-                    </>
+
+                    <ImageContainer src={Sinbad0} width="500px" padding_bottom="100px" />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>
