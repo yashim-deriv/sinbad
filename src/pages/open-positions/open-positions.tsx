@@ -223,7 +223,12 @@ const OpenPositions = () => {
                     <StyledText>DevOps</StyledText>
                     <StyledText>Quantitative</StyledText>
                     <StyledText>Mobile app Development</StyledText>
-                    <Header color="red" font_size="18px" font_weight="normal" padding="25px 0">
+                    <Header
+                        color="var(--color-sand-4)"
+                        font_size="18px"
+                        font_weight="normal"
+                        padding="25px 0"
+                    >
                         and more...
                     </Header>
                 </OpenPositionsInfo>
