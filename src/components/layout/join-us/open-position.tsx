@@ -11,6 +11,7 @@ const Wrapper = styled.div`
     background-repeat: no-repeat;
     background-image: url(${Sinbad});
     background-position: bottom center;
+    background-size: contain;
     justify-content: center;
     width: 100%;
 `
