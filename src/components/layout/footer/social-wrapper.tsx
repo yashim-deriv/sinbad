@@ -5,6 +5,7 @@ import { SocialWrapper } from '../../containers/common/style'
 import MapSvg from 'images/svg/map.svg'
 import PhoneSvg from 'images/svg/phone.svg'
 import EmailSvg from 'images/svg/mail.svg'
+import device from 'themes/device'
 
 const ContactLink = styled(GatsbyLink)`
     align-self: center;
@@ -32,6 +33,12 @@ const ContactContainer = styled.div`
     flex-direction: row;
     width: fit-content;
     padding-right: 45px;
+
+    @media ${device.tabletL} {
+        padding: 0;
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
 `
 
 const SocialWrapperComponent = () => {

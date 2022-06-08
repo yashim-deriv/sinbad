@@ -22,6 +22,8 @@ export const DefaultFooter = styled.footer`
     background-color: var(--color-blue-1);
     color: white;
     width: 100%;
+    display: flex;
+    justify-content: center;
 
     @media ${device.mobileL} {
         padding-bottom: 6rem;
@@ -42,6 +44,7 @@ export const SocialWrapper = styled.div`
 
     @media ${device.tabletL} {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         margin: 3rem 0 1rem;
 
@@ -54,6 +57,7 @@ export const SocialWrapper = styled.div`
 `
 
 export const DisclaimerWrapper = styled.div`
+    width: 100%;
     height: 100px;
     background: var(--color-blue-1);
     color: white;
@@ -66,7 +70,7 @@ export const PagesWrapper = styled(Flex)`
     color: white;
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    width: 100%;
 `
 
 export const ContainerWrapper = styled.div`

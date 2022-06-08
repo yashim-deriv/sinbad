@@ -12,16 +12,23 @@ import {
     OurTermsSinbad,
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
-import { ImageContainer } from 'components/containers'
+import { Header, ImageContainer } from 'components/containers'
 import Table from 'components/containers/table'
 import { ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
 
 type StyledTextProps = {
     font_family?: string
 }
 
+/* stylelint-disable */
+
 const OurTermsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
+
+    @media ${device.laptopM} {
+        flex-wrap: wrap;
+    }
 `
 
 const OurTermsContainer = styled.div`
@@ -88,6 +95,10 @@ const StyledDescription = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
     padding-bottom: 120px;
+
+    @media ${device.laptopM} {
+        padding-bottom: 0px;
+    }
 `
 
 const StyledSSHeader = styled.div`
@@ -104,6 +115,15 @@ const StyledSSText = styled.div<StyledTextProps>`
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     padding-right: 5px;
+`
+
+const SinbadImage = styled(ImageContainer)`
+    max-width: 270px;
+    object-fit: scale-down;
+
+    @media ${device.tablet} {
+        display: none;
+    }
 `
 
 const data = {
@@ -171,9 +191,9 @@ const OurTerms = () => {
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
-                    <ImageContainer src={OurTermsSinbad} width="270px" height="700px" />,
+                    <SinbadImage src={OurTermsSinbad} />,
                     <OurTermsTable>
-                        Our Terms
+                        <Header>Our Terms</Header>
                         <Table data={data} />
                     </OurTermsTable>
                 </TermsAndSinbadContainer>
