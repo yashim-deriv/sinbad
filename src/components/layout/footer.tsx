@@ -12,6 +12,7 @@ const StyledFooterLink = styled(Link)`
     line-height: 36px;
     font-weight: 400;
     text-align: left;
+    cursor: pointer;
 `
 const StyledFooterText = styled.div`
     font-size: 1.6rem;
@@ -29,6 +30,7 @@ const Returner = styled.img`
     position: relative;
     top: -20px;
     left: 50%;
+    cursor: pointer;
 `
 
 const Footer = () => {
