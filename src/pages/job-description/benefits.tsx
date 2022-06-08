@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper, Flex, Header, Text } from 'components/containers'
-import Benefits from 'images/common/jd/benefits.png'
-import Salary from 'images/common/jd/salary.png'
-import Bonus from 'images/common/jd/bonus.png'
-import Insurance from 'images/common/jd/insurance.png'
-import House from 'images/common/jd/house.png'
-import DressCode from 'images/common/jd/dress-code.png'
-import Contract from 'images/common/jd/contract.png'
-import Location from 'images/common/jd/location.png'
+import { ContainerWrapper, Flex, Header } from 'components/containers'
+import {
+    Benefits,
+    Salary,
+    Bonus,
+    Insurance,
+    House,
+    DressCode,
+    Contract,
+    Location,
+} from 'images/common/jd'
 
 const JobTitleContainer = styled.div`
     display: flex;
@@ -76,8 +78,8 @@ const LocationContainer = styled(Flex)`
 
 const StyledSSText = styled.div<{ font_family?: string }>`
     padding: unset;
-    color: #f47c48;
-    font-size: 33px;
+    color: var(--color-sand-4);
+    font-size: 3.3rem;
     line-height: 62px;
     font-weight: 656;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
@@ -85,9 +87,9 @@ const StyledSSText = styled.div<{ font_family?: string }>`
 `
 const StyledText = styled.div<{ font_family?: string }>`
     max-width: 350px;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 27px;
-    color: #232323;
+    color: #1b1b1b;
     font-weight: 320;
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: left;
@@ -111,7 +113,6 @@ const BenefitsList = () => {
                     <StyledHeader padding="40px 0">Benefits</StyledHeader>
                     <StyledImg src={Benefits} />
                 </BenefitsImageContainer>
-
                 <Flex wrap="wrap" jc="center">
                     {data.map(({ icon, text }, index) => {
                         return (
@@ -132,7 +133,6 @@ const BenefitsList = () => {
                             <StyledSSText font_family="Maven Pro Bold">Location</StyledSSText>
                             <StyledText>Dubai, the UAE</StyledText>
                         </LocationImageContainer>
-
                         <img src={Location} />
                     </Card>
                 </LocationContainer>

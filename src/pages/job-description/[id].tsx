@@ -3,8 +3,8 @@ import type { PageProps } from 'gatsby'
 import Description from './description'
 import JobTitle from './job-title'
 import BenefitsList from './benefits'
-import JoinUs from './join-us'
 import Layout from 'components/layout/layout'
+import JoinUs from 'components/layout/join-us'
 
 const JobDescription = (props: PageProps) => {
     return (
@@ -13,7 +13,7 @@ const JobDescription = (props: PageProps) => {
                 <JobTitle />
                 <Description />
                 <BenefitsList />
-                <JoinUs />
+                <JoinUs appearance="job" />
                 {props.params.id}
             </>
         </Layout>

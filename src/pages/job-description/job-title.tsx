@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper, Header, ImageContainer } from 'components/containers'
+import { ContainerWrapper, ImageContainer } from 'components/containers'
 import AnalyticBackground from 'images/common/jd/analytic-background.png'
-import Background from 'images/common//background.png'
+import Background from 'images/common/background.png'
 
 const JobTitleContainer = styled.div`
     display: flex;
@@ -17,21 +17,27 @@ const JobTitleContainer = styled.div`
 `
 
 const JobTitleContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 0;
     flex-direction: column;
     align-items: center;
 `
 
-const StyledHeader = styled(Header)`
-    text-transform: uppercase;
+const StyledHeader = styled.div<{ font_family?: string }>`
+    max-width: 600px;
+    font-size: 4.8rem;
+    line-height: 58px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: left;
+    padding-top: 100px;
 `
 
 const JobTitle = () => {
     return (
         <JobTitleContainer>
             <JobTitleContainerWrapper>
-                <StyledHeader padding="40px 0">Front-end developer</StyledHeader>
-                <ImageContainer src={AnalyticBackground} />
+                <StyledHeader>Front-end developer</StyledHeader>
+                <ImageContainer src={AnalyticBackground} max_height="unset" />
             </JobTitleContainerWrapper>
         </JobTitleContainer>
     )
