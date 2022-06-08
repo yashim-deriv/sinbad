@@ -1,106 +1,201 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
-import ActiveButton from 'images/svg/carousel/active_button.svg'
-import UnActiveButton from 'images/svg/carousel/unactive_button.svg'
-import Image0 from 'images/svg/carousel/carousel-0.svg'
-import Image1 from 'images/svg/carousel/carousel-1.svg'
-import Image2 from 'images/svg/carousel/carousel-2.svg'
-import Sinbad0 from 'images/common/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/carousel/sinbad-2.png'
-import { ImageContainer, Text } from 'common/components/containers'
-
-type PickerProps = {
-    is_active?: boolean
-}
+import { Header, ImageContainer, Text } from 'components/containers'
+import Image0 from 'images/common/homepage/carousel/carousel-0.png'
+import Image1 from 'images/common/homepage/carousel/carousel-1.png'
+import Image2 from 'images/common/homepage/carousel/carousel-2.png'
+import Background from 'images/common/homepage/carousel/background.png'
+import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
+import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
+import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
+import { ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
 
 const CarouselContainer = styled.div`
-    width: 100%;
-    height: 400px;
     display: flex;
-    align-items: center;
-    background-color: #fae9a7;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--color-sand-1);
+    background-image: url(${Background});
     background-repeat: no-repeat;
-    background-size: 100%;
-    padding-left: 50px;
+    background-size: contain;
+    background-position: right 35% bottom 0%;
+
+    @media ${device.mobileL} {
+        background-image: none;
+    }
+`
+
+const CarouselContainerWrapper = styled(ContainerWrapper)`
+    padding: 50px 0;
+    justify-content: space-between;
+    margin: 0 0 100px 0;
+
+    @media ${device.tabletL} {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 `
 
 const CarouselTextContainer = styled.div`
-    width: 400px;
     display: flex;
     flex-direction: column;
+    padding: 50px 0 170px;
+
+    @media ${device.mobileL} {
+        padding: 50px 0 0;
+    }
+`
+
+const CarouselImage = styled.div`
+    margin-right: 10rem;
+
+    @media ${device.mobileL} {
+        margin-right: 0;
+    }
 `
 
 const PickerContainer = styled.div`
-    width: 400px;
-    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: 10px 0 0 0;
 `
 
-const Picker = styled.button<PickerProps>`
+const CarouselDots = styled.span`
     width: 30px;
     height: 30px;
-    border: none;
-    background-image: url(${(props) => (props.is_active ? ActiveButton : UnActiveButton)});
-    background-repeat: no-repeat;
-    background-color: #fae9a7;
-    padding-right: 45px;
+    cursor: pointer;
+    margin: 0 8px 0 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        border-radius: 100px;
+        border: solid 1px var(--color-sand-4);
+        width: 0%;
+        height: 0%;
+        position: absolute;
+        transition: all 0.5s ease-in;
+    }
+
+    /* stylelint-disable */
+
+    &.active {
+        &::before {
+            width: 100%;
+            height: 100%;
+        }
+        i {
+            background: var(--color-sand-4);
+        }
+    }
+
+    i {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        z-index: 2;
+        background: var(--color-grey-1);
+        transition: all 0.5s ease-in;
+        border-radius: 100%;
+    }
+`
+
+const StyledText = styled(Text)`
+    padding: unset;
+`
+const StyledUpperText = styled(Header)`
+    padding: unset;
+    text-transform: uppercase;
+`
+
+const TextLabel = styled(Text)`
+    max-width: 400px;
 `
 
 const data = [
     {
         text: 'Designing scalable apps',
-        img: Image0,
+        background: Image0,
+        sinbad: Sinbad0,
     },
     {
         text: 'Creating reliable platforms',
-        img: Image1,
+        background: Image1,
+        sinbad: Sinbad1,
     },
     {
         text: 'Building powerful software',
-        img: Image2,
+        background: Image2,
+        sinbad: Sinbad2,
     },
 ]
 
-const join_team = [{ icon: Sinbad0 }, { icon: Sinbad1 }, { icon: Sinbad2 }]
-
 const Carousel = ({ active, setActive }: IconProps) => {
     return (
-        <>
-            <CarouselContainer>
+        <CarouselContainer>
+            <CarouselContainerWrapper>
                 <CarouselTextContainer>
-                    <Text color="red">Sinbad Sowtfare</Text>
-                    <Text font_size="24px">TRANSFORMING IDEAS INTO SOLUTIONS</Text>
+                    <StyledText
+                        color="var(--color-sand-4)"
+                        font_size="3.2rem"
+                        line_height="62px"
+                        font_family="Maven Pro"
+                    >
+                        <strong>Sinbad</strong> Software
+                    </StyledText>
+                    <StyledUpperText
+                        color="var(--color-black-3)"
+                        font_size="4.2rem"
+                        line_height="59px"
+                    >
+                        Transforming <br />
+                        ideas into <br />
+                        solutions
+                    </StyledUpperText>
                     {data.map(
                         (current_item, index) =>
-                            index == active && <Text color="red">{current_item.text}</Text>,
+                            index == active && (
+                                <TextLabel
+                                    color="#f47c48"
+                                    font_size="4.2rem"
+                                    line_height="57px"
+                                    width="100%"
+                                >
+                                    {current_item.text}
+                                </TextLabel>
+                            ),
                     )}
 
                     <PickerContainer>
-                        <Picker
-                            onClick={() => setActive(0)}
-                            is_active={active == 0 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(1)}
-                            is_active={active == 1 ? true : false}
-                        ></Picker>
-                        <Picker
-                            onClick={() => setActive(2)}
-                            is_active={active == 2 ? true : false}
-                        ></Picker>
+                        {[...Array(data.length).keys()].map((d, e) => (
+                            <CarouselDots
+                                key={e}
+                                onClick={() => setActive(e)}
+                                className={active === e ? 'active' : ''}
+                            >
+                                <i />
+                            </CarouselDots>
+                        ))}
                     </PickerContainer>
                 </CarouselTextContainer>
-                {join_team.map(
-                    (current_item, index) =>
-                        index == active && <ImageContainer key={active} src={current_item.icon} />,
-                )}
-                {data.map(
-                    (current_item, index) =>
-                        index == active && <ImageContainer src={current_item.img} />,
-                )}
-            </CarouselContainer>
-        </>
+
+                <CarouselImage>
+                    {data.map((current_item, index) => {
+                        if (index === active) {
+                            return <ImageContainer key={index} src={current_item.background} />
+                        }
+                    })}
+                </CarouselImage>
+            </CarouselContainerWrapper>
+        </CarouselContainer>
     )
 }
 

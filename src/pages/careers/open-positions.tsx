@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { Flex, Header, ImageContainer, Text } from 'common/components/containers'
+import { Flex, Header, ImageContainer, Text } from 'components/containers'
 import RightArrow from 'images/svg/right-arrow.svg'
 import Random from 'images/svg/random.svg'
 
@@ -31,7 +31,7 @@ const Card = styled(Flex)`
     height: 290px;
     padding: 30px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: var(--color-white);
+    background-color: white;
     margin: 20px;
     border-radius: 8px;
 `

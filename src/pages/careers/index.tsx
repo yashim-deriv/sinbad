@@ -3,7 +3,7 @@ import WorkWithUs from './work-with-us'
 import PerksBenefits from './perks-benefits'
 import OpenPositions from './open-positions'
 import HiringProcess from './hiring-process'
-import Layout from 'common/components/layout/layout'
+import Layout from 'components/layout/layout'
 import JoinUs from 'pages/join-us'
 
 const Careers = () => {

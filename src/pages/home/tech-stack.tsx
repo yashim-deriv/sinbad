@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Dashboard from 'images/common/dashboard.png'
-import { Header, Text } from 'common/components/containers'
+import { Header, Text } from 'components/containers'
 
 const TechStackContainer = styled.div`
     width: 100%;
@@ -10,7 +10,7 @@ const TechStackContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: #3bc8f7;
+    background-color: var(--color-blue-2);
 `
 
 const TechDashboard = styled.img`

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Header, ImageContainer, Text } from 'common/components/containers'
+import { Flex, Header, ImageContainer, Text } from 'components/containers'
 import Random from 'images/svg/random.svg'
 
 const HiringProcessContainer = styled.div`
@@ -32,7 +32,7 @@ const Card = styled(Flex)`
     height: 150px;
     padding: 10px 20px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: var(--color-white);
+    background-color: white;
     margin: 5px;
     border-radius: 8px;
 `

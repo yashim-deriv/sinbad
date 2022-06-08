@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Sinbad0 from 'images/common/sinbad-positions-0.png'
-import { Header, ImageContainer, Text } from 'common/components/containers/main'
+import { Header, ImageContainer, Text } from 'components/containers/main'
 import Dashboard from 'images/common/dashboard.png'
 
 const JoinUsContainer = styled.div`
@@ -10,7 +10,8 @@ const JoinUsContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 400px;
-    background-color: #f7cd43;
+    background-color: var(--color-sand-3);
+    overflow: hidden;
 `
 
 const JoinUsInfo = styled.div`
