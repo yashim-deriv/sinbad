@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { ImageContainer, Header, Text } from 'components/containers/main'
-import Dasboard from 'images/common/dashboard.png'
-import Sinbad0 from 'images/common/sinbad-positions-0.png'
-import RightArrow from 'images/svg/right-arrow.svg'
+import Sinbad0 from 'pages/open-positions/images/first-section.png'
+import RightArrow from 'pages/open-positions/images/arrow.png'
 import Flex from 'components/containers/flex'
 
 type CardProps = {
@@ -15,27 +14,41 @@ type PositionsType = {
     position?: string
     text?: string
 }
+
+const ContainerWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 40px;
+    background-color: var(--color-sand-1);
 `
+const Image = styled.div`
+    padding-bottom: 10px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: row;
+`
+
 const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
+    padding-right: 6rem;
+    width: '60%';
 `
 
 const StyledHeader = styled(Header)`
-    border-bottom: 1px solid gray;
     width: 100px;
-    padding: 25px 0;
-    text-transform: uppercase;
 `
+
+/* stylelint-disable */
 
 const StyledText = styled(Text)`
     padding: ${(props) => props.padding || '5px 0'};
     text-transform: uppercase;
+    font-family: 'Maven Pro Bold';
 `
 
 const PositionsCarouselContainer = styled.div`
@@ -63,15 +76,20 @@ const Card = styled(Flex)<CardProps>`
         margin: 0 0 19px;
     }
 `
-const CardButton = styled(Link)`
+const CardButtonContainer = styled(Link)`
     display: flex;
-    width: 45px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background: var(--color-blue-3);
+    padding: 5px;
+`
+const CardButton = styled.img`
+    width: 10px;
     height: 10px;
-    background-image: url(${RightArrow});
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
-    background-position: right;
-    text-decoration: none;
+`
+const LinkContainer = styled.div`
+    display: flex;
 `
 
 const StyledFlex = styled(Flex)`
@@ -84,22 +102,25 @@ const StyledFlex = styled(Flex)`
 
 const OpenPositionsContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 `
+
 const OpenPositionsInfo = styled.div`
     display: flex;
     flex-direction: column;
+    position: sticky;
+    align-self: start;
 `
 
 const positions: PositionsType[] = [
     {
-        position: 'some_one',
-        text: "We're looking for a some_one",
+        position: 'Mobile App Development',
+        text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        position: 'some_second',
-        text: "We're looking for a talented some_second",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
         position: 'Back-End Developer',
@@ -118,12 +139,13 @@ const positions: PositionsType[] = [
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
-        position: 'some_one',
-        text: "We're looking for a some_one",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
+
     {
-        position: 'some_second',
-        text: "We're looking for a talented some_second",
+        position: 'Back-End Developer',
+        text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
         position: 'Back-End Developer',
@@ -149,19 +171,35 @@ const positions: PositionsType[] = [
 
 const OpenPositions = () => {
     return (
-        <>
+        <ContainerWrapper>
             <PositionsHeader>
                 <HeaderContainer>
-                    <Header padding="5px 20px">IT CAREERS FOR</Header>
-                    <Header padding="5px 20px" color="red">
-                        CHALLENGE
+                    <Header
+                        padding="20px 100px 20px 0px"
+                        font_size="50px"
+                        text_transform="uppercase"
+                    >
+                        It Careers For
                     </Header>
-                    <Header padding="5px 20px">SEEKERS</Header>
+                    <Header
+                        padding="20px 0px"
+                        font_size="50px"
+                        color="var(--color-sand-4)"
+                        text_transform="uppercase"
+                    >
+                        Challenge
+                    </Header>
+                    <Header
+                        padding="20px 100px 20px 0px"
+                        font_size="50px"
+                        text_transform="uppercase"
+                    >
+                        Seekers
+                    </Header>
                 </HeaderContainer>
-                <>
-                    <ImageContainer src={Dasboard} />
-                    <ImageContainer src={Sinbad0} />
-                </>
+                <Image>
+                    <ImageContainer src={Sinbad0} height="400px" />
+                </Image>
             </PositionsHeader>
             <OpenPositionsContainer>
                 <PositionsCarouselContainer>
@@ -176,13 +214,31 @@ const OpenPositions = () => {
                                         ai="center"
                                         jc="start"
                                     >
-                                        <Header color="red" text_align="center">
+                                        <Header
+                                            color="var(--color-sand-4)"
+                                            text_align="center"
+                                            padding="10px 0px"
+                                        >
                                             {position}
                                         </Header>
                                         <Text font_size="14px" text_align="center">
                                             {text}
                                         </Text>
-                                        <CardButton to="/some-postition">MORE</CardButton>
+                                        <LinkContainer>
+                                            <Text
+                                                font_size="11px"
+                                                text_align="center"
+                                                width="50px"
+                                                padding="0px"
+                                                font_family="Maven Pro Bold"
+                                                text_transform="uppercase"
+                                            >
+                                                More
+                                            </Text>
+                                            <CardButtonContainer to="/some-postition">
+                                                <CardButton src={RightArrow} />
+                                            </CardButtonContainer>
+                                        </LinkContainer>
                                     </Card>
                                 )
                             })}
@@ -190,18 +246,34 @@ const OpenPositions = () => {
                     </PositionsCarousel>
                 </PositionsCarouselContainer>
                 <OpenPositionsInfo>
-                    <StyledHeader>Open Positions</StyledHeader>
-                    <StyledText padding="25px 0 5px">Back-end Development</StyledText>
-                    <StyledText>Business Intelligence</StyledText>
-                    <StyledText>DevOps</StyledText>
-                    <StyledText>Quantitative</StyledText>
-                    <StyledText>Mobile app Development</StyledText>
-                    <Header color="red" font_size="18px" font_weight="normal" padding="25px 0">
+                    <StyledHeader padding="20px 0 0 0" text_transform="uppercase">
+                        Open
+                    </StyledHeader>
+                    <StyledHeader
+                        border_bottom="1px solid var(--color-sand-1)"
+                        padding="25px 0"
+                        text_transform="uppercase"
+                    >
+                        Positions
+                    </StyledHeader>
+                    <StyledText padding="25px 0 5px" text_transform="uppercase">
+                        Back-end Development
+                    </StyledText>
+                    <StyledText text_transform="uppercase">Business Intelligence</StyledText>
+                    <StyledText text_transform="uppercase">DevOps</StyledText>
+                    <StyledText text_transform="uppercase">Quantitative</StyledText>
+                    <StyledText text_transform="uppercase">Mobile app Development</StyledText>
+                    <Header
+                        color="var(--color-sand-4)"
+                        font_size="18px"
+                        font_weight="normal"
+                        padding="25px 0"
+                    >
                         and more...
                     </Header>
                 </OpenPositionsInfo>
             </OpenPositionsContainer>
-        </>
+        </ContainerWrapper>
     )
 }
 
