@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 //import { ContainerWrapper } from 'common/components/containers/common/style'
 import { ImageContainer, Header, Text } from 'components/containers/main'
 import Sinbad0 from 'pages/open-positions/images/first-section.png'
-import RightArrow from 'images/svg/right-arrow.svg'
+import RightArrow from 'pages/open-positions/images/arrow.png'
 import Flex from 'components/containers/flex'
 
 type CardProps = {
@@ -78,15 +78,20 @@ const Card = styled(Flex)<CardProps>`
         margin: 0 0 19px;
     }
 `
-const CardButton = styled(Link)`
+const CardButtonContainer = styled(Link)`
     display: flex;
-    width: 45px;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background: var(--color-blue-3);
+    padding: 5px;
+`
+const CardButton = styled.img`
+    width: 10px;
     height: 10px;
-    background-image: url(${RightArrow});
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
-    background-position: right;
-    text-decoration: none;
+`
+const MoreContainer = styled.div`
+    display: flex;
 `
 
 const StyledFlex = styled(Flex)`
@@ -207,7 +212,20 @@ const OpenPositions = () => {
                                         <Text font_size="14px" text_align="center">
                                             {text}
                                         </Text>
-                                        <CardButton to="/some-postition">MORE</CardButton>
+                                        <MoreContainer>
+                                            <Text
+                                                font_size="11px"
+                                                text_align="center"
+                                                width="50px"
+                                                padding="0px"
+                                                font_family="Maven Pro Bold"
+                                            >
+                                                MORE
+                                            </Text>
+                                            <CardButtonContainer to="/some-postition">
+                                                <CardButton src={RightArrow} />
+                                            </CardButtonContainer>
+                                        </MoreContainer>
                                     </Card>
                                 )
                             })}
