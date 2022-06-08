@@ -11,6 +11,7 @@ type HeaderProps = {
     line_height?: string
     font_family?: string
     border_bottom?: string
+    text_transform?: string
 }
 type TextProps = {
     font_size?: string
@@ -20,6 +21,7 @@ type TextProps = {
     line_height?: string
     font_family?: string
     font_weight?: string
+    text_transform?: string
 }
 type ImageProps = {
     width?: string
@@ -60,6 +62,7 @@ export const Header = styled.div<HeaderProps>`
     color: ${(props) => props.color || 'black'};
     font-family: ${(props) => props.font_family || 'unset'};
     border-bottom: ${(props) => props.border_bottom || ''};
+    text-transform: ${(props) => props.text_transform || ''};
 `
 export const Text = styled.div<TextProps>`
     font-size: ${(props) => props.font_size || '1.6rem'};
@@ -70,4 +73,5 @@ export const Text = styled.div<TextProps>`
     color: ${(props) => props.color || 'black'};
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     font-weight: ${(props) => props.font_weight || 'normal'};
+    text-transform: ${(props) => props.text_transform || ''};
 `

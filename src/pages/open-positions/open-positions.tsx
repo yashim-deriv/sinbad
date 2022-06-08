@@ -41,7 +41,6 @@ const HeaderContainer = styled.div`
 
 const StyledHeader = styled(Header)`
     width: 100px;
-    text-transform: uppercase;
 `
 
 /* stylelint-disable */
@@ -103,9 +102,10 @@ const StyledFlex = styled(Flex)`
 
 const OpenPositionsContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 `
+
 const OpenPositionsInfo = styled.div`
     display: flex;
     flex-direction: column;
@@ -174,14 +174,27 @@ const OpenPositions = () => {
         <ContainerWrapper>
             <PositionsHeader>
                 <HeaderContainer>
-                    <Header padding="20px 100px 20px 0px" font_size="50px">
-                        IT CAREERS FOR
+                    <Header
+                        padding="20px 100px 20px 0px"
+                        font_size="50px"
+                        text_transform="uppercase"
+                    >
+                        It Careers For
                     </Header>
-                    <Header padding="20px 0px" font_size="50px" color="var(--color-sand-4)">
-                        CHALLENGE
+                    <Header
+                        padding="20px 0px"
+                        font_size="50px"
+                        color="var(--color-sand-4)"
+                        text_transform="uppercase"
+                    >
+                        Challenge
                     </Header>
-                    <Header padding="20px 100px 20px 0px" font_size="50px">
-                        SEEKERS
+                    <Header
+                        padding="20px 100px 20px 0px"
+                        font_size="50px"
+                        text_transform="uppercase"
+                    >
+                        Seekers
                     </Header>
                 </HeaderContainer>
                 <Image>
@@ -218,8 +231,9 @@ const OpenPositions = () => {
                                                 width="50px"
                                                 padding="0px"
                                                 font_family="Maven Pro Bold"
+                                                text_transform="uppercase"
                                             >
-                                                MORE
+                                                More
                                             </Text>
                                             <CardButtonContainer to="/some-postition">
                                                 <CardButton src={RightArrow} />
@@ -232,15 +246,23 @@ const OpenPositions = () => {
                     </PositionsCarousel>
                 </PositionsCarouselContainer>
                 <OpenPositionsInfo>
-                    <StyledHeader padding="20px 0 0 0">Open</StyledHeader>
-                    <StyledHeader border_bottom="1px solid var(--color-sand-1)" padding="25px 0">
+                    <StyledHeader padding="20px 0 0 0" text_transform="uppercase">
+                        Open
+                    </StyledHeader>
+                    <StyledHeader
+                        border_bottom="1px solid var(--color-sand-1)"
+                        padding="25px 0"
+                        text_transform="uppercase"
+                    >
                         Positions
                     </StyledHeader>
-                    <StyledText padding="25px 0 5px">Back-end Development</StyledText>
-                    <StyledText>Business Intelligence</StyledText>
-                    <StyledText>DevOps</StyledText>
-                    <StyledText>Quantitative</StyledText>
-                    <StyledText>Mobile app Development</StyledText>
+                    <StyledText padding="25px 0 5px" text_transform="uppercase">
+                        Back-end Development
+                    </StyledText>
+                    <StyledText text_transform="uppercase">Business Intelligence</StyledText>
+                    <StyledText text_transform="uppercase">DevOps</StyledText>
+                    <StyledText text_transform="uppercase">Quantitative</StyledText>
+                    <StyledText text_transform="uppercase">Mobile app Development</StyledText>
                     <Header
                         color="var(--color-sand-4)"
                         font_size="18px"
