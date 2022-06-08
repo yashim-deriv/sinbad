@@ -15,6 +15,7 @@ const StyledFooterLink = styled(Link)`
     line-height: 36px;
     font-weight: 400;
     text-align: left;
+    cursor: pointer;
 `
 const StyledFooterText = styled.div`
     font-size: 1.6rem;

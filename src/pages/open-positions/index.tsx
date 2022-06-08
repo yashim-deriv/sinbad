@@ -7,7 +7,7 @@ const Positions = () => {
     return (
         <Layout>
             <OpenPositions />
-            <JoinUs />
+            <JoinUs appearance="openPositions" />
         </Layout>
     )
 }

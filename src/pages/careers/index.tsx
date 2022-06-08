@@ -13,7 +13,7 @@ const Careers = () => {
             <PerksBenefits />
             <OpenPositions />
             <HiringProcess />
-            <JoinUs />
+            <JoinUs appearance="careers" />
         </Layout>
     )
 }
