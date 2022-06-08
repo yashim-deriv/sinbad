@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import device from 'themes/device'
 
 export type TermProps = {
     index?: number
@@ -20,10 +21,17 @@ export type OurTermsType = {
 type DataType = {
     data?: OurTermsType
 }
+
+/* stylelint-disable */
+
 const TableContainer = styled.div`
     display: flex;
     flex-direction: row;
     padding-right: 50px;
+
+    @media ${device.mobileL} {
+        padding-right: 0px;
+    }
 `
 
 const TableColumn = styled.div`

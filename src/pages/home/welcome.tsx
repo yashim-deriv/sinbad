@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/welcome'
 import Flex from 'components/containers/flex'
 import { Text, Header } from 'components/containers'
+import { ContainerWrapper } from 'components/containers/common/style'
 import { CSSElementProps } from 'types/generics'
 import device from 'themes/device'
 
@@ -10,10 +11,11 @@ type StyledTextProps = {
     font_family?: string
 }
 
-const WelcomeContainerWrapper = styled.div`
+const WelcomeContainer = styled.div`
+    align-items: center;
+    flex-direction: column;
     padding: 0;
     display: flex;
-    flex-direction: column;
     background-color: var(--color-white);
     width: 100%;
 `
@@ -50,15 +52,16 @@ const StyledText = styled(Text)<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
 
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
         padding: 10px;
     }
 `
 
 const StyledFlex = styled(Flex)`
-    max-width: 875px;
+    max-width: 700px;
     flex-wrap: wrap;
     height: auto;
+    margin: 20px 0;
 
     @media (max-width: 930px) {
         flex-direction: column;
@@ -68,9 +71,14 @@ const StyledFlex = styled(Flex)`
 `
 
 const CardContainer = styled.div`
+    width: 100%;
     display: flex;
     position: relative;
     justify-content: center;
+
+    @media ${device.laptopM} {
+        padding: 35px 0 0 0;
+    }
 
     &::before {
         position: absolute;
@@ -79,10 +87,10 @@ const CardContainer = styled.div`
         content: '';
         background: var(--color-sea-1);
         width: 100%;
-        height: 600px;
+        height: 400px;
         z-index: 2;
 
-        @media ${device.mobileL} {
+        @media ${device.laptopM} {
             height: 100%;
         }
     }
@@ -122,15 +130,23 @@ const Card = styled.div<CSSElementProps>`
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    max-width: 350px;
-    height: 410px;
+    max-width: 320px;
+    height: 320px;
     padding: 32px 44px 32px 32px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: var(--color-white);
-    margin: ${(props) => props.margin || '0 40px 40px 0'};
+    margin: ${(props) => props.margin || '0 15px 20px 15px'};
     border-radius: 4px;
     filter: drop-shadow(0 13px 17.5px rgba(0, 0, 0, 0.13));
     align-self: ${(props) => props.alignSelf || 'start'};
+
+    &.first {
+        margin: 0 15px 0 0;
+    }
+    img {
+        width: 100%;
+        max-width: 100px;
+    }
 
     @media ${device.mobileL} {
         padding: 10px 0 30px;
@@ -139,9 +155,9 @@ const Card = styled.div<CSSElementProps>`
         width: 100vw;
     }
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         &.first {
-            margin: 0 0 40px 0;
+            margin: 0 0 10px 0;
         }
     }
 `
@@ -198,37 +214,42 @@ const data = {
 
 const Welcome = () => {
     return (
-        <WelcomeContainerWrapper>
-            <TextContainer>
-                <StyledHeader>
-                    Welcome to <strong>Sinbad Software</strong>
-                </StyledHeader>
-                <StyledText>
-                    Sinbad Software LLC provides software development services and IT solutions for
-                    the fintech industri. At every step of the way, we aim to give our clients the
-                    power to go beyond digital boundaires and surpass their competitors in the
-                    ever-evolving fintech landscape
-                </StyledText>
-            </TextContainer>
+        <WelcomeContainer>
+            <ContainerWrapper>
+                <TextContainer>
+                    <StyledHeader>
+                        Welcome to <strong>Sinbad Software</strong>
+                    </StyledHeader>
+                    <StyledText>
+                        Sinbad Software LLC provides software development services and IT solutions
+                        for the fintech industri. At every step of the way, we aim to give our
+                        clients the power to go beyond digital boundaires and surpass their
+                        competitors in the ever-evolving fintech landscape
+                    </StyledText>
+                </TextContainer>
+            </ContainerWrapper>
+
             <CardContainer>
-                <CardContent>
-                    <Card className="first" alignSelf="center" margin="0">
-                        <img src={data.first.icon} alt="icon" />
-                        <CardHeader>{data.first.header}</CardHeader>
-                        <CardText>{data.first.text}</CardText>
-                    </Card>
-                    <StyledFlex wrap="wrap">
-                        {data.other.map(({ header, text, icon }, index) => (
-                            <Card key={index}>
-                                <img src={icon} alt="icon" />
-                                <CardHeader>{header}</CardHeader>
-                                <CardText>{text}</CardText>
-                            </Card>
-                        ))}
-                    </StyledFlex>
-                </CardContent>
+                <ContainerWrapper>
+                    <CardContent>
+                        <Card className="first" alignSelf="center" margin="0">
+                            <img src={data.first.icon} alt="icon" />
+                            <CardHeader>{data.first.header}</CardHeader>
+                            <CardText>{data.first.text}</CardText>
+                        </Card>
+                        <StyledFlex wrap="wrap">
+                            {data.other.map(({ header, text, icon }, index) => (
+                                <Card key={index}>
+                                    <img src={icon} alt="icon" />
+                                    <CardHeader>{header}</CardHeader>
+                                    <CardText>{text}</CardText>
+                                </Card>
+                            ))}
+                        </StyledFlex>
+                    </CardContent>
+                </ContainerWrapper>
             </CardContainer>
-        </WelcomeContainerWrapper>
+        </WelcomeContainer>
     )
 }
 

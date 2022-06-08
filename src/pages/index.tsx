@@ -21,7 +21,7 @@ const Home = () => {
             <Welcome />
             <OurTerms />
             <TechStack />
-            <JoinUs />
+            {/* <JoinUs /> */}
         </Layout>
     )
 }
