@@ -37,10 +37,6 @@ const ButtonItem = styled.button`
         font-weight: bold;
         margin: 0 10px 0 10px;
     }
-
-    @media ${`(max-width: 992px)`} {
-        display: none;
-    }
 `
 
 const Button = ({ has_icon = true, label, onClick }: ButtonProps) => {

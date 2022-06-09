@@ -36,7 +36,7 @@ const HeaderContainer = styled.div`
     border-radius: 5px;
     width: 100%;
 
-    @media ${`(max-width: 992px)`} {
+    @media ${device.tabletL} {
         justify-content: flex-end;
     }
 `
@@ -71,7 +71,8 @@ export const NavWrapper = styled.div`
     color: white;
 
     @media ${device.tabletL} {
-        a {
+        a,
+        button {
             display: none;
         }
     }
