@@ -126,6 +126,14 @@ const SinbadImage = styled(ImageContainer)`
     }
 `
 
+const TableTitle = styled(Header)`
+    @media ${device.tablet} {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
+`
+
 const data = {
     first_column: [
         {
@@ -173,7 +181,7 @@ const OurTerms = () => {
                 <TermsTextContainer>
                     <StyledSSHeader>
                         <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText> Sowtfare</StyledSSText>
+                        <StyledSSText> Software</StyledSSText>
                     </StyledSSHeader>
                     <StyledHeader>Revolutionising fintech needs amazing software</StyledHeader>
                     <StyledText>
@@ -193,7 +201,7 @@ const OurTerms = () => {
                 <TermsAndSinbadContainer>
                     <SinbadImage src={OurTermsSinbad} />,
                     <OurTermsTable>
-                        <Header>Our Terms</Header>
+                        <TableTitle>Our Terms</TableTitle>
                         <Table data={data} />
                     </OurTermsTable>
                 </TermsAndSinbadContainer>

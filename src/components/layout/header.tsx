@@ -7,11 +7,20 @@ import device from 'themes/device'
 import { getPathName } from 'common/utility'
 import { HeaderTitle } from 'components/containers/common/style'
 
+/* stylelint-disable */
+
 const Container = styled.div`
     display: flex;
     width: 100%;
     background-color: var(--color-sand-1);
     justify-content: center;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+
+    @media ${device.mobileL} {
+        position: static;
+    }
 `
 const HeaderContainer = styled.div`
     height: 60px;
@@ -27,7 +36,7 @@ const StyledHeader = styled.div`
     display: flex;
     white-space: nowrap;
 `
-/* stylelint-disable */
+
 const StyledHeaderLink = styled(Link)`
     text-decoration: none;
     font-size: 1.6rem;
@@ -54,6 +63,12 @@ export const NavWrapper = styled.div`
 
     @media ${device.tabletL} {
         a {
+            display: none;
+        }
+    }
+
+    @media ${device.mobileL} {
+        button {
             display: none;
         }
     }

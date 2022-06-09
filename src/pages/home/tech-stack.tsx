@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Dashboard from 'images/common/dashboard.png'
 import { ContainerWrapper } from 'components/containers'
+import device from 'themes/device'
 
 type StyledTextProps = {
     font_family?: string
@@ -16,6 +17,11 @@ const TechStackContainerWrapper = styled(ContainerWrapper)`
     padding: 100px 0;
     width: 100%;
     background-color: var(--color-white);
+
+    @media ${device.laptopM} {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const TechDashboard = styled.img`
@@ -118,7 +124,7 @@ const TechStack = () => {
                 <TermsTextContainer>
                     <StyledSSHeader>
                         <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText>Sowtfare</StyledSSText>
+                        <StyledSSText>Software</StyledSSText>
                     </StyledSSHeader>
                     <StyledHeader>Tech stack</StyledHeader>
                     <StyledText>

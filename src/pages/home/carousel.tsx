@@ -58,7 +58,7 @@ const CarouselImageContainer = styled.div`
 
 const CarouselImage = styled(ImageContainer)`
     object-fit: contain;
-    max-width: 700px;
+    max-width: 500px;
     max-height: none;
 `
 
