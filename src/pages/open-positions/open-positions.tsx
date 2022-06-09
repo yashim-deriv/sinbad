@@ -12,7 +12,8 @@ type CardProps = {
     index?: number
 }
 
-type PositionsType = {
+export type PositionsType = {
+    id: string
     position?: string
     text?: string
 }
@@ -101,7 +102,7 @@ const CardButton = styled.img`
     width: 10px;
     height: 10px;
 `
-const LinkContainer = styled.div`
+const LinkContainer = styled(Link)`
     display: flex;
 `
 
@@ -129,57 +130,70 @@ const OpenPositionsInfo = styled.div`
     top: 10px;
 `
 
-const positions: PositionsType[] = [
+export const positions: PositionsType[] = [
     {
+        id: 'mobile-app-dev',
         position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
+        id: 'back-end-dev',
         position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
+        id: 'back-end-dev',
         position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
+        id: 'data-engineer',
         position: 'Data Engineer',
         text: "We're looking for a detail oriented Data Engineer to convert data into analyses and practical recommendations for fast-paced, global fintech companies",
     },
     {
+        id: 'quantitative-analyst',
         position: 'Quantitative Analyst',
         text: "We're looking for a talented Quantitative Analyst to develop strong pricing and risk management algorithms for fintech companies with fully automated transactions",
     },
     {
+        id: 'mobile-app-dev',
         position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
+        id: 'back-end-dev',
         position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
 
     {
+        id: 'back-end-dev',
         position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
+        id: 'back-end-dev',
         position: 'Back-End Developer',
         text: "We're looking for an expirienced Back-end Developer to develop complex back-end solutions for fast-paced fintech companies.",
     },
     {
+        id: 'data-engineer',
         position: 'Data Engineer',
         text: "We're looking for a detail oriented Data Engineer to convert data into analyses and practical recommendations for fast-paced, global fintech companies",
     },
     {
+        id: 'quantitative-analyst',
         position: 'Quantitative Analyst',
         text: "We're looking for a talented Quantitative Analyst to develop strong pricing and risk management algorithms for fintech companies with fully automated transactions",
     },
     {
+        id: 'mobile-app-dev',
         position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
     {
+        id: 'mobile-app-dev',
         position: 'Mobile App Development',
         text: "We're looking for a talented Mobile App Developer to design and develop fintech applications for iOS and Android platforms",
     },
@@ -226,7 +240,7 @@ const OpenPositions = () => {
                     <PositionsCarouselContainer>
                         <PositionsCarousel>
                             <StyledFlex width="760px" wrap="wrap">
-                                {positions.map(({ position, text }, index) => {
+                                {positions.map(({ position, text, id }, index) => {
                                     return (
                                         <Card
                                             key={index}
@@ -245,7 +259,7 @@ const OpenPositions = () => {
                                             <Text font_size="14px" text_align="center">
                                                 {text}
                                             </Text>
-                                            <LinkContainer>
+                                            <LinkContainer to={`/job-description/${id}`}>
                                                 <Text
                                                     font_size="11px"
                                                     text_align="center"
