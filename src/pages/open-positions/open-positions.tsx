@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { ImageContainer, Header, Text } from 'components/containers/main'
+import { ContainerWrapper } from 'components/containers/common/style'
 import Sinbad0 from 'pages/open-positions/images/first-section.png'
+import Background from 'images/common/homepage/carousel/background.png'
 import RightArrow from 'pages/open-positions/images/arrow.png'
 import Flex from 'components/containers/flex'
 
@@ -15,28 +17,37 @@ type PositionsType = {
     text?: string
 }
 
-const ContainerWrapper = styled.div`
+const ContainersWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: var(--color-sand-1);
+    background-image: url(${Background});
+    background-position: bottom center;
+    background-size: contain;
+    justify-content: center;
+    background-repeat: no-repeat;
+    width: 100%;
 `
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-sand-1);
+    margin-bottom: 50px;
+    width: 100%;
 `
 const Image = styled.div`
-    padding-bottom: 10px;
     padding-left: 100px;
     display: flex;
     flex-direction: row;
+    padding-top: 85px;
 `
 
 const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding-right: 6rem;
-    width: '60%';
+    width: 100%;
+    margin-bottom: 140px;
 `
 
 const StyledHeader = styled(Header)`
@@ -56,6 +67,8 @@ const PositionsCarouselContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding-bottom: 25px;
+    align-items: center;
+    padding-right: 60px;
 `
 
 const PositionsCarousel = styled.div``
@@ -102,8 +115,9 @@ const StyledFlex = styled(Flex)`
 
 const OpenPositionsContainer = styled.div`
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    justify-content: center;
 `
 
 const OpenPositionsInfo = styled.div`
@@ -111,6 +125,8 @@ const OpenPositionsInfo = styled.div`
     flex-direction: column;
     position: sticky;
     align-self: start;
+    padding-left: 31px;
+    top: 10px;
 `
 
 const positions: PositionsType[] = [
@@ -171,109 +187,115 @@ const positions: PositionsType[] = [
 
 const OpenPositions = () => {
     return (
-        <ContainerWrapper>
-            <PositionsHeader>
-                <HeaderContainer>
-                    <Header
-                        padding="20px 100px 20px 0px"
-                        font_size="50px"
-                        text_transform="uppercase"
-                    >
-                        It Careers For
-                    </Header>
-                    <Header
-                        padding="20px 0px"
-                        font_size="50px"
-                        color="var(--color-sand-4)"
-                        text_transform="uppercase"
-                    >
-                        Challenge
-                    </Header>
-                    <Header
-                        padding="20px 100px 20px 0px"
-                        font_size="50px"
-                        text_transform="uppercase"
-                    >
-                        Seekers
-                    </Header>
-                </HeaderContainer>
-                <Image>
-                    <ImageContainer src={Sinbad0} height="400px" />
-                </Image>
-            </PositionsHeader>
+        <>
+            <ContainersWrapper>
+                <ContainerWrapper>
+                    <PositionsHeader>
+                        <HeaderContainer>
+                            <Header
+                                padding="20px 0px 20px 0px"
+                                font_size="50px"
+                                text_transform="uppercase"
+                            >
+                                It Careers For
+                            </Header>
+                            <Header
+                                padding="20px 0px"
+                                font_size="50px"
+                                color="var(--color-sand-4)"
+                                text_transform="uppercase"
+                            >
+                                Challenge
+                            </Header>
+                            <Header
+                                padding="20px 0px 20px 0px"
+                                font_size="50px"
+                                text_transform="uppercase"
+                            >
+                                Seekers
+                            </Header>
+                        </HeaderContainer>
+                        <Image>
+                            <ImageContainer src={Sinbad0} width="auto" height="100%" />
+                        </Image>
+                    </PositionsHeader>
+                </ContainerWrapper>
+            </ContainersWrapper>
             <OpenPositionsContainer>
-                <PositionsCarouselContainer>
-                    <PositionsCarousel>
-                        <StyledFlex width="760px" wrap="wrap">
-                            {positions.map(({ position, text }, index) => {
-                                return (
-                                    <Card
-                                        key={index}
-                                        index={index}
-                                        direction="column"
-                                        ai="center"
-                                        jc="start"
-                                    >
-                                        <Header
-                                            color="var(--color-sand-4)"
-                                            text_align="center"
-                                            padding="10px 0px"
+                <ContainerWrapper>
+                    <PositionsCarouselContainer>
+                        <PositionsCarousel>
+                            <StyledFlex width="760px" wrap="wrap">
+                                {positions.map(({ position, text }, index) => {
+                                    return (
+                                        <Card
+                                            key={index}
+                                            index={index}
+                                            direction="column"
+                                            ai="center"
+                                            jc="start"
                                         >
-                                            {position}
-                                        </Header>
-                                        <Text font_size="14px" text_align="center">
-                                            {text}
-                                        </Text>
-                                        <LinkContainer>
-                                            <Text
-                                                font_size="11px"
+                                            <Header
+                                                color="var(--color-sand-4)"
                                                 text_align="center"
-                                                width="50px"
-                                                padding="0px"
-                                                font_family="Maven Pro Bold"
-                                                text_transform="uppercase"
+                                                padding="10px 0px"
                                             >
-                                                More
+                                                {position}
+                                            </Header>
+                                            <Text font_size="14px" text_align="center">
+                                                {text}
                                             </Text>
-                                            <CardButtonContainer to="/some-postition">
-                                                <CardButton src={RightArrow} />
-                                            </CardButtonContainer>
-                                        </LinkContainer>
-                                    </Card>
-                                )
-                            })}
-                        </StyledFlex>
-                    </PositionsCarousel>
-                </PositionsCarouselContainer>
-                <OpenPositionsInfo>
-                    <StyledHeader padding="20px 0 0 0" text_transform="uppercase">
-                        Open
-                    </StyledHeader>
-                    <StyledHeader
-                        border_bottom="1px solid var(--color-sand-1)"
-                        padding="25px 0"
-                        text_transform="uppercase"
-                    >
-                        Positions
-                    </StyledHeader>
-                    <StyledText padding="25px 0 5px" text_transform="uppercase">
-                        Back-end Development
-                    </StyledText>
-                    <StyledText text_transform="uppercase">Business Intelligence</StyledText>
-                    <StyledText text_transform="uppercase">DevOps</StyledText>
-                    <StyledText text_transform="uppercase">Quantitative</StyledText>
-                    <StyledText text_transform="uppercase">Mobile app Development</StyledText>
-                    <Header
-                        color="var(--color-sand-4)"
-                        font_size="18px"
-                        font_weight="normal"
-                        padding="25px 0"
-                    >
-                        and more...
-                    </Header>
-                </OpenPositionsInfo>
+                                            <LinkContainer>
+                                                <Text
+                                                    font_size="11px"
+                                                    text_align="center"
+                                                    width="50px"
+                                                    padding="0px"
+                                                    font_family="Maven Pro Bold"
+                                                    text_transform="uppercase"
+                                                >
+                                                    More
+                                                </Text>
+                                                <CardButtonContainer to="/some-postition">
+                                                    <CardButton src={RightArrow} />
+                                                </CardButtonContainer>
+                                            </LinkContainer>
+                                        </Card>
+                                    )
+                                })}
+                            </StyledFlex>
+                        </PositionsCarousel>
+                    </PositionsCarouselContainer>
+                    <OpenPositionsInfo>
+                        <StyledHeader padding="20px 0 0 0" text_transform="uppercase">
+                            Open
+                        </StyledHeader>
+                        <StyledHeader
+                            border_bottom="1px solid var(--color-sand-1)"
+                            padding="25px 0"
+                            text_transform="uppercase"
+                        >
+                            Positions
+                        </StyledHeader>
+                        <StyledText padding="25px 0 5px" text_transform="uppercase">
+                            Back-end Development
+                        </StyledText>
+                        <StyledText text_transform="uppercase">Business Intelligence</StyledText>
+                        <StyledText text_transform="uppercase">DevOps</StyledText>
+                        <StyledText text_transform="uppercase">Quantitative</StyledText>
+                        <StyledText text_transform="uppercase">Mobile app Development</StyledText>
+                        <Header
+                            color="var(--color-sand-4)"
+                            font_size="18px"
+                            font_weight="normal"
+                            padding="25px 0"
+                        >
+                            and more...
+                        </Header>
+                    </OpenPositionsInfo>
+                </ContainerWrapper>
             </OpenPositionsContainer>
-        </ContainerWrapper>
+        </>
     )
 }
 

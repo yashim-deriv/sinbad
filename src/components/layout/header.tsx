@@ -81,9 +81,7 @@ const Header = () => {
             <ContainerWrapper>
                 <HeaderContainer>
                     <StyledHeader>
-                        <HeaderTitle font_family="Maven Pro Bold" padding_left="15px">
-                            Sinbad
-                        </HeaderTitle>
+                        <HeaderTitle font_family="Maven Pro Bold">Sinbad</HeaderTitle>
                         <HeaderTitle padding_left="5px">Software</HeaderTitle>
                     </StyledHeader>
                     <NavWrapper>
