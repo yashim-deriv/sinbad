@@ -27,6 +27,7 @@ type ImageProps = {
     width?: string
     height?: string
     padding_bottom?: string
+    max_height?: string
 }
 
 export const ContactUsButton = styled.div`
@@ -49,7 +50,7 @@ export const ImageContainer = styled.img<ImageProps>`
     width: ${(props) => props.width || '100%'};
     height: ${(props) => props.height || '100%'};
     padding-bottom: ${(props) => props.padding_bottom || '0px'};
-    max-height: 512px;
+    max-height: ${(props) => props.max_height || '512px'};
 `
 
 export const Header = styled.div<HeaderProps>`

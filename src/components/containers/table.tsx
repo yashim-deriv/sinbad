@@ -16,6 +16,8 @@ export type OurTermsType = {
     second_column?: TermsType[]
     first?: TermsType
     other?: TermsType[]
+    title?: string
+    icon?: string
 }
 
 type DataType = {
