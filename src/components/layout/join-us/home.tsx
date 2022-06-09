@@ -6,6 +6,7 @@ import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
+import { contactUsAction } from 'common/utility'
 
 const Wrapper = styled.div`
     display: flex;
@@ -24,7 +25,7 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const JoinUsContainer = styled.div`
+export const JoinUsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -72,7 +73,7 @@ const JoinUsHome = () => {
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.dev
                             </Text>
-                            <Button label="See Our Open Positions" onClick={() => alert('')} />
+                            <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>
                     </JoinUsInfo>
 

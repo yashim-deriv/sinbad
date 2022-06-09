@@ -5,6 +5,7 @@ import Sinbad0 from 'pages/careers/images/careers-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
+import { contactUsAction } from 'common/utility'
 
 const Wrapper = styled.div`
     display: flex;
@@ -62,7 +63,7 @@ const JoinUsCareers = () => {
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.dev
                             </Text>
-                            <Button label="See Our Open Positions" onClick={() => alert('')} />
+                            <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>
                     </JoinUsInfo>
                     <>

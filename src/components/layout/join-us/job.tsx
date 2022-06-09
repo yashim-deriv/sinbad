@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JoinUsContainer } from './home'
 import { Button } from 'components/elements'
 import Sinbad0 from 'pages/job-description/images/job-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
+import device from 'themes/device'
+import { contactUsAction } from 'common/utility'
 
 const Wrapper = styled.div`
     display: flex;
@@ -23,15 +26,12 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const JoinUsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 600px;
-`
 const TextContainer = styled.div`
     padding-bottom: 190px;
+
+    @media ${device.tabletL} {
+        padding-bottom: 30px;
+    }
 `
 
 const JoinUsInfo = styled.div`
@@ -40,19 +40,18 @@ const JoinUsInfo = styled.div`
     flex-wrap: wrap;
 `
 
+const SinbadImage = styled(ImageContainer)`
+    @media ${device.tabletL} {
+        display: none;
+    }
+`
+
 const JoinUsJob = () => {
     return (
         <Wrapper>
             <ContainerWrapper>
                 <JoinUsContainer>
-                    <>
-                        <ImageContainer
-                            src={Sinbad0}
-                            height="550px"
-                            width="400px"
-                            padding_bottom="100px"
-                        />
-                    </>
+                    <SinbadImage src={Sinbad0} height="550px" width="auto" padding_bottom="100px" />
                     <JoinUsInfo>
                         <StyledHeader>
                             <HeaderTitle
@@ -65,12 +64,14 @@ const JoinUsJob = () => {
                             <HeaderTitle color="var(--color-sand-4)">Software</HeaderTitle>
                         </StyledHeader>
                         <TextContainer>
-                            <Header font_size="28px">JOIN OUR TEAM!</Header>
+                            <Header font_size="28px" text_transform="uppercase">
+                                Join Our Team!
+                            </Header>
                             <Text padding="20px 0">
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.dev
                             </Text>
-                            <Button label="See Our Open Positions" onClick={() => alert('')} />
+                            <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>
                     </JoinUsInfo>
                 </JoinUsContainer>

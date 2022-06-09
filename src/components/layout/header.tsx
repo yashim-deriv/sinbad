@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { ContainerWrapper } from 'components/containers'
 import { Button } from 'components/elements'
 import device from 'themes/device'
-import { getPathName } from 'common/utility'
+import { getPathName, contactUsAction } from 'common/utility'
 import { HeaderTitle } from 'components/containers/common/style'
 
 /* stylelint-disable */
@@ -100,7 +100,7 @@ const Header = () => {
                         >
                             Open Positions
                         </StyledHeaderLink>
-                        <Button label="Contact Us" onClick={() => alert('')} />
+                        <Button label="Contact Us" onClick={contactUsAction} />
                     </NavWrapper>
                 </HeaderContainer>
             </ContainerWrapper>

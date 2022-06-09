@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import extend from 'extend'
+import { EMAIL } from 'common/constants'
 
 export const getPathName = () => typeof window !== 'undefined' && window.location.pathname
 
@@ -224,3 +225,7 @@ export const useCallbackRef = (callback) => {
 }
 
 export const isLocalhost = () => !!(isBrowser() && process.env.NODE_ENV === 'development')
+
+export const contactUsAction = () => {
+    window.location = `mailto:${EMAIL}`
+}

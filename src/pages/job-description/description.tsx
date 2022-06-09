@@ -168,7 +168,7 @@ const Description = () => {
                     </Card>
                     <Card direction="column">
                         <HeaderImageContainer>
-                            <StyledHeader>What’s good to ahve</StyledHeader>
+                            <StyledHeader>What’s good to have</StyledHeader>
                             <StyledImg src={GoodToHave} />
                         </HeaderImageContainer>
                         <StyledList>

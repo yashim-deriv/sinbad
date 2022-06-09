@@ -11,6 +11,7 @@ import {
     Contract,
     Location,
 } from 'images/common/jd'
+import device from 'themes/device'
 
 const JobTitleContainer = styled.div`
     display: flex;
@@ -30,6 +31,7 @@ const StyledHeader = styled(Header)`
     text-transform: uppercase;
     color: var(--color-sand-4);
     padding-right: 40px;
+    font-size: 3.8rem;
 `
 
 const BenefitsImageContainer = styled.div`
@@ -45,6 +47,11 @@ const LocationImageContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     padding-top: 30px;
+
+    div:nth-child(1) {
+        text-transform: uppercase;
+        font-size: 3.8rem;
+    }
 `
 
 const StyledImg = styled.img`
@@ -74,6 +81,10 @@ const LocationContainer = styled(Flex)`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
+
+    @media ${device.laptopL} {
+        justify-content: center;
+    }
 `
 
 const StyledSSText = styled.div<{ font_family?: string }>`
