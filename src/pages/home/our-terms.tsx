@@ -13,6 +13,7 @@ import {
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
 import { Header, ImageContainer } from 'components/containers'
+import { SectionLabel } from 'components/chunks'
 import Table from 'components/containers/table'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
@@ -101,22 +102,6 @@ const StyledDescription = styled.div<StyledTextProps>`
     }
 `
 
-const StyledSSHeader = styled.div`
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-`
-
-const StyledSSText = styled.div<StyledTextProps>`
-    padding: unset;
-    color: var(--color-sand-4);
-    font-size: 3.8rem;
-    line-height: 61px;
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-    padding-right: 5px;
-`
-
 const SinbadImage = styled(ImageContainer)`
     max-width: 270px;
     object-fit: scale-down;
@@ -179,10 +164,7 @@ const OurTerms = () => {
         <OurTermsContainer>
             <OurTermsContainerWrapper>
                 <TermsTextContainer>
-                    <StyledSSHeader>
-                        <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText> Software</StyledSSText>
-                    </StyledSSHeader>
+                    <SectionLabel />
                     <StyledHeader>Revolutionising fintech needs amazing software</StyledHeader>
                     <StyledText>
                         Our mission is to develop world-class fintech software solutions taht will

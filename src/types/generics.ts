@@ -5,6 +5,12 @@ export type StringObjectType = {
 export type CSSElementProps = {
     margin?: string
     padding?: string
-    fontamily?: string
+    fontFamily?: string
     alignSelf?: string
+}
+
+export type TableDataProps = {
+    title?: string
+    text?: string
+    icon?: string
 }

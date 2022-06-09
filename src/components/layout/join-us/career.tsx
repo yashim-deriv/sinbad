@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JoinUsContainer } from './home'
 import { Button } from 'components/elements'
 import Sinbad0 from 'pages/careers/images/careers-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
@@ -24,13 +25,6 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const JoinUsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 600px;
-`
 const TextContainer = styled.div`
     padding-bottom: 190px;
 `
@@ -58,7 +52,9 @@ const JoinUsCareers = () => {
                             <HeaderTitle color="var(--color-sand-4)">Software</HeaderTitle>
                         </StyledHeader>
                         <TextContainer>
-                            <Header font_size="28px">JOIN OUR TEAM!</Header>
+                            <Header font_size="28px" text_transform="uppercase">
+                                Join Our Team!
+                            </Header>
                             <Text padding="20px 0">
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.dev
@@ -66,9 +62,7 @@ const JoinUsCareers = () => {
                             <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <>
-                        <ImageContainer src={Sinbad0} width="400px" padding_bottom="100px" />
-                    </>
+                    <ImageContainer src={Sinbad0} width="400px" padding_bottom="100px" />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>

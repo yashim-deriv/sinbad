@@ -11,8 +11,8 @@ const Careers = () => {
         <Layout>
             <WorkWithUs />
             <PerksBenefits />
-            <OpenPositions />
-            <HiringProcess />
+            {/* <OpenPositions />
+            <HiringProcess /> */}
             <JoinUs appearance="careers" />
         </Layout>
     )

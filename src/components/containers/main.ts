@@ -54,7 +54,6 @@ export const ImageContainer = styled.img<ImageProps>`
 `
 
 export const Header = styled.div<HeaderProps>`
-    white-space: nowrap;
     font-size: ${(props) => props.font_size || '2.4rem'};
     line-height: ${(props) => props.line_height || '18px'};
     font-weight: ${(props) => props.font_weight || 'bold'};
