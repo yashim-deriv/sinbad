@@ -68,6 +68,7 @@ const PositionsCarouselContainer = styled.div`
     align-items: center;
     padding-bottom: 25px;
     align-items: center;
+    padding-right: 60px;
 `
 
 const PositionsCarousel = styled.div``
@@ -117,8 +118,6 @@ const OpenPositionsContainer = styled.div`
     align-items: center;
     width: 100%;
     justify-content: center;
-    padding-left: 31px;
-    top: 10px;
 `
 
 const OpenPositionsInfo = styled.div`
@@ -126,6 +125,8 @@ const OpenPositionsInfo = styled.div`
     flex-direction: column;
     position: sticky;
     align-self: start;
+    padding-left: 31px;
+    top: 10px;
 `
 
 const positions: PositionsType[] = [
