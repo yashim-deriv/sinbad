@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet'
 import { useState } from 'react'
 import OurTerms from './home/our-terms'
 import Carousel from './home/carousel'
@@ -17,6 +18,9 @@ const Home = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Sinbad | Home</title>
+            </Helmet>
             <Carousel active={active} setActive={setActive} />
             <Welcome />
             <OurTerms />
