@@ -14,7 +14,7 @@ const JobDescription = (props: PageProps) => {
     return (
         <Layout>
             <Helmet>
-                <title>Sinbad | Job Description</title>
+                <title>Sinbad | {position?.position}</title>
             </Helmet>
             <JobTitle position={position} />
             <Description />
