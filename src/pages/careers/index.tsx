@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import WorkWithUs from './work-with-us'
 import PerksBenefits from './perks-benefits'
 import OpenPositions from './open-positions'
@@ -9,6 +10,9 @@ import JoinUs from 'components/layout/join-us'
 const Careers = () => {
     return (
         <Layout>
+            <Helmet>
+                <title>Sinbad | Careers</title>
+            </Helmet>
             <WorkWithUs />
             <PerksBenefits />
             {/* <OpenPositions />
