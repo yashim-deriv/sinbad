@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { navigate } from 'gatsby'
 import extend from 'extend'
 import { EMAIL } from 'common/constants'
 
@@ -228,4 +229,8 @@ export const isLocalhost = () => !!(isBrowser() && process.env.NODE_ENV === 'dev
 
 export const contactUsAction = () => {
     window.location = `mailto:${EMAIL}`
+}
+
+export const openPositionActions = () => {
+    navigate('/open-positions')
 }
