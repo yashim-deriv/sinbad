@@ -7,6 +7,7 @@ import Sinbad0 from 'pages/open-positions/images/first-section.png'
 import Background from 'images/common/homepage/carousel/background.png'
 import RightArrow from 'pages/open-positions/images/arrow.png'
 import Flex from 'components/containers/flex'
+import device from 'themes/device'
 
 type CardProps = {
     index?: number
@@ -17,6 +18,8 @@ export type PositionsType = {
     position?: string
     text?: string
 }
+
+/* stylelint-disable */
 
 const ContainersWrapper = styled.div`
     display: flex;
@@ -30,12 +33,19 @@ const ContainersWrapper = styled.div`
     background-repeat: no-repeat;
     width: 100%;
 `
+
+const HeroWrapper = styled(ContainerWrapper)``
+
 const PositionsHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 50px;
     width: 100%;
+
+    @media ${device.laptopM} {
+        flex-direction: column;
+    }
 `
 const Image = styled.div`
     padding-left: 100px;
@@ -49,13 +59,17 @@ const HeaderContainer = styled.div`
     flex-direction: column;
     width: 100%;
     margin-bottom: 140px;
+
+    @media ${device.laptopM} {
+        margin-top: 100px;
+        margin-bottom: 0px;
+        align-items: center;
+    }
 `
 
 const StyledHeader = styled(Header)`
     width: 100px;
 `
-
-/* stylelint-disable */
 
 const StyledText = styled(Text)`
     padding: ${(props) => props.padding || '5px 0'};
@@ -70,6 +84,11 @@ const PositionsCarouselContainer = styled.div`
     padding-bottom: 25px;
     align-items: center;
     padding-right: 60px;
+
+    @media ${device.tablet} {
+        padding-top: 20px;
+        padding-right: 0;
+    }
 `
 
 const PositionsCarousel = styled.div``
@@ -128,6 +147,10 @@ const OpenPositionsInfo = styled.div`
     align-self: start;
     padding-left: 31px;
     top: 10px;
+
+    @media ${device.tablet} {
+        display: none;
+    }
 `
 
 export const positions: PositionsType[] = [
@@ -203,21 +226,23 @@ const OpenPositions = () => {
     return (
         <>
             <ContainersWrapper>
-                <ContainerWrapper>
+                <HeroWrapper>
                     <PositionsHeader>
                         <HeaderContainer>
                             <Header
                                 padding="20px 0px 20px 0px"
-                                font_size="50px"
+                                font_size="5rem"
                                 text_transform="uppercase"
+                                line_height="42px"
                             >
                                 It Careers For
                             </Header>
                             <Header
                                 padding="20px 0px"
-                                font_size="50px"
+                                font_size="5rem"
                                 color="var(--color-sand-4)"
                                 text_transform="uppercase"
+                                line_height="42px"
                             >
                                 Challenge
                             </Header>
@@ -233,7 +258,7 @@ const OpenPositions = () => {
                             <ImageContainer src={Sinbad0} width="auto" height="100%" />
                         </Image>
                     </PositionsHeader>
-                </ContainerWrapper>
+                </HeroWrapper>
             </ContainersWrapper>
             <OpenPositionsContainer>
                 <ContainerWrapper>
@@ -252,6 +277,7 @@ const OpenPositions = () => {
                                             <Header
                                                 color="var(--color-sand-4)"
                                                 text_align="center"
+                                                line_height="24px"
                                                 padding="10px 0px"
                                             >
                                                 {position}

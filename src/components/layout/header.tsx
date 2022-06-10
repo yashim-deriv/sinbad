@@ -197,27 +197,18 @@ const Header = () => {
                 <Burger open={open} setOpen={setOpen} />
                 <StyledMenu open={open}>
                     <StyledHeaderLink to="/" className={pathname === '/' ? 'active' : ''}>
-                        <span role="img" aria-label="about us">
-                            💁🏻‍♂️
-                        </span>
                         Home
                     </StyledHeaderLink>
                     <StyledHeaderLink
                         to="/careers"
                         className={pathname === '/careers' ? 'active' : ''}
                     >
-                        <span role="img" aria-label="price">
-                            💸
-                        </span>
                         Careers
                     </StyledHeaderLink>
                     <StyledHeaderLink
                         to="/open-positions"
                         className={pathname === '/open-positions' ? 'active' : ''}
                     >
-                        <span role="img" aria-label="contact">
-                            📩
-                        </span>
                         Open Positions
                     </StyledHeaderLink>
                 </StyledMenu>
