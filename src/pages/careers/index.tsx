@@ -1,5 +1,6 @@
 import React from 'react'
 import WorkWithUs from './work-with-us'
+import WhyWithUs from './why-with-us'
 import PerksBenefits from './perks-benefits'
 import OpenPositions from './open-positions'
 import HiringProcess from './hiring-process'
@@ -10,6 +11,7 @@ const Careers = () => {
     return (
         <Layout>
             <WorkWithUs />
+            <WhyWithUs />
             <PerksBenefits />
             <OpenPositions />
             <HiringProcess />

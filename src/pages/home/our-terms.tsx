@@ -13,7 +13,7 @@ import {
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
 import { Header, ImageContainer } from 'components/containers'
-import Table from 'components/containers/table'
+import Table, { TableType } from 'components/containers/table'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 
@@ -134,45 +134,40 @@ const TableTitle = styled(Header)`
     }
 `
 
-const data = {
-    first_column: [
-        {
-            icon: Term0,
-            text: 'Mobile App development',
-        },
-        {
-            icon: Term1,
-            text: 'Full-stack Development',
-        },
-        {
-            icon: Term2,
-            text: 'UI/UX',
-        },
-        {
-            icon: Term3,
-            text: 'Business Intelligence',
-        },
-    ],
-
-    second_column: [
-        {
-            icon: Term4,
-            text: 'Quantitative Analysis',
-        },
-        {
-            icon: Term5,
-            text: 'Data Science',
-        },
-        {
-            icon: Term6,
-            text: 'DevOps',
-        },
-        {
-            icon: Term7,
-            text: 'Quality Assurance',
-        },
-    ],
-}
+const data: TableType[] = [
+    {
+        icon: Term0,
+        text: 'Mobile App development',
+    },
+    {
+        icon: Term1,
+        text: 'Full-stack Development',
+    },
+    {
+        icon: Term2,
+        text: 'UI/UX',
+    },
+    {
+        icon: Term3,
+        text: 'Business Intelligence',
+    },
+    {
+        icon: Term4,
+        text: 'Quantitative Analysis',
+    },
+    {
+        icon: Term5,
+        text: 'Data Science',
+    },
+    {
+        icon: Term6,
+        text: 'DevOps',
+    },
+    {
+        icon: Term7,
+        text: 'Quality Assurance',
+    },
+]
 
 const OurTerms = () => {
     return (

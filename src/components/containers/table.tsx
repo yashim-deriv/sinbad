@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import device from 'themes/device'
 
+/* stylelint-disable */
+
 export type TermProps = {
     index?: number
     margin?: string
@@ -11,40 +13,33 @@ export type TermProps = {
 
 type TermsType = { header?: string; text?: string; icon?: string }
 
-export type OurTermsType = {
+export type TableType = {
     first_column?: TermsType[]
     second_column?: TermsType[]
     first?: TermsType
     other?: TermsType[]
-    title?: string
+    header?: string
+    text?: string
     icon?: string
 }
 
 type DataType = {
-    data?: OurTermsType
+    data?: TableType[]
 }
-
-/* stylelint-disable */
 
 const TableContainer = styled.div`
     display: flex;
     flex-direction: row;
-    padding-right: 50px;
+    flex-wrap: wrap;
 
     @media ${device.mobileL} {
         padding-right: 0px;
     }
 `
 
-const TableColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-
 const TermImage = styled.img`
-    max-width: 70px;
-    max-height: 70px;
-    border-radius: 35px;
+    max-width: 100px;
+    max-height: 100px;
     filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
 `
 const TermText = styled.div<TermProps>`
@@ -52,43 +47,32 @@ const TermText = styled.div<TermProps>`
     line-height: 22px;
     color: var(--color-black-3);
     font-weight: 480;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
     padding-left: 10px;
 `
 
 const Term = styled.div<TermProps>`
+    max-width: 235px;
+    width: 100%;
+    height: 120px;
     display: flex;
     align-items: center;
-    max-width: 210px;
-    max-height: 90px;
-    padding: 10px;
     border-top: ${(props) =>
-        props.index === 0 ? 'unset' : props.index === 4 ? 'unset' : '1px solid gray'};
-    border-bottom: ${(props) =>
-        props.index === 3 ? 'unset' : props.index === 7 ? 'unset' : '1px solid gray'};
-    border-left: ${(props) => (props.border_left ? '1px solid gray' : 'unset')};
+        props.index === 0 ? 'unset' : props.index < 2 ? 'unset' : '1px solid gray'};
+    border-bottom: ${(props) => (props.index > 5 ? 'unset' : '1px solid gray')};
+    border-left: ${(props) => (props.index % 2 ? '1px solid gray' : 'unset')};
 `
 
 const Table = ({ data }: DataType) => {
     return (
         <TableContainer>
-            <TableColumn>
-                {data.first_column.map((item, index) => (
-                    <Term key={index} index={index}>
-                        <TermImage src={item.icon} />
-                        <TermText>{item.text}</TermText>
-                    </Term>
-                ))}
-            </TableColumn>
-            <TableColumn>
-                {data.second_column.map((item, index) => (
-                    <Term key={index} index={index} border_left={true}>
-                        <TermImage src={item.icon} />
-                        <TermText>{item.text}</TermText>
-                    </Term>
-                ))}
-            </TableColumn>
+            {data.map((item, index) => (
+                <Term key={index} index={index}>
+                    <TermImage src={item.icon} />
+                    <TermText>{item.text}</TermText>
+                </Term>
+            ))}
         </TableContainer>
     )
 }

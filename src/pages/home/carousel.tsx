@@ -2,13 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
 import { Header, ImageContainer, Text } from 'components/containers'
-import Image0 from 'images/common/homepage/carousel/carousel-0.png'
-import Image1 from 'images/common/homepage/carousel/carousel-1.png'
-import Image2 from 'images/common/homepage/carousel/carousel-2.png'
-import Background from 'images/common//background.png'
-import Sinbad0 from 'images/common/homepage/carousel/sinbad-0.png'
-import Sinbad1 from 'images/common/homepage/carousel/sinbad-1.png'
-import Sinbad2 from 'images/common/homepage/carousel/sinbad-2.png'
+import Background from 'images/common/background.png'
+import { Image0, Image1, Image2 } from 'images/common/homepage/carousel'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 
@@ -130,17 +125,14 @@ const data = [
     {
         text: 'Designing scalable apps',
         background: Image0,
-        sinbad: Sinbad0,
     },
     {
         text: 'Creating reliable platforms',
         background: Image1,
-        sinbad: Sinbad1,
     },
     {
         text: 'Building powerful software',
         background: Image2,
-        sinbad: Sinbad2,
     },
 ]
 

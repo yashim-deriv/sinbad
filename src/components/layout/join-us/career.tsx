@@ -60,8 +60,9 @@ const JoinUsCareers = () => {
                         <TextContainer>
                             <Header font_size="28px">JOIN OUR TEAM!</Header>
                             <Text padding="20px 0">
-                                To apply for this position please send us your CV with a cover
-                                letter to hr@sinbad.dev
+                                Is your dream to build great products using leading technologies?
+                                Join Sinbad Software, where creativity, talent, and a passion for
+                                challenges come together
                             </Text>
                             <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>

@@ -69,7 +69,7 @@ const JoinUsJob = () => {
                             </Header>
                             <Text padding="20px 0">
                                 To apply for this position please send us your CV with a cover
-                                letter to hr@sinbad.dev
+                                letter to hr@sinbad.software
                             </Text>
                             <Button label="See Our Open Positions" onClick={contactUsAction} />
                         </TextContainer>
