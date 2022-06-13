@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JoinUsContainer } from './home'
 import { Button } from 'components/elements'
 import Sinbad0 from 'pages/careers/images/careers-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
-import { contactUsAction } from 'common/utility'
+import { openPositionActions } from 'common/utility'
 
 const Wrapper = styled.div`
     display: flex;
@@ -24,13 +25,6 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const JoinUsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 600px;
-`
 const TextContainer = styled.div`
     padding-bottom: 190px;
 `
@@ -58,18 +52,18 @@ const JoinUsCareers = () => {
                             <HeaderTitle color="var(--color-sand-4)">Software</HeaderTitle>
                         </StyledHeader>
                         <TextContainer>
-                            <Header font_size="28px">JOIN OUR TEAM!</Header>
+                            <Header font_size="28px" text_transform="uppercase">
+                                Join Our Team!
+                            </Header>
                             <Text padding="20px 0">
                                 Is your dream to build great products using leading technologies?
                                 Join Sinbad Software, where creativity, talent, and a passion for
                                 challenges come together
                             </Text>
-                            <Button label="See Our Open Positions" onClick={contactUsAction} />
+                            <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <>
-                        <ImageContainer src={Sinbad0} width="400px" padding_bottom="100px" />
-                    </>
+                    <ImageContainer src={Sinbad0} width="400px" padding_bottom="100px" />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>

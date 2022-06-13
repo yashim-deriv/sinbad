@@ -6,7 +6,7 @@ import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
-import { contactUsAction } from 'common/utility'
+import { openPositionActions } from 'common/utility'
 
 const Wrapper = styled.div`
     display: flex;
@@ -74,7 +74,7 @@ const JoinUsHome = () => {
                                 Join Sinbad Software, where creativity, talent, and a passion for
                                 challenges come together
                             </Text>
-                            <Button label="See Our Open Positions" onClick={contactUsAction} />
+                            <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
 

@@ -41,7 +41,7 @@ const JobTitle = ({ position }: JobTitleProps) => {
     return (
         <JobTitleContainer>
             <JobTitleContainerWrapper>
-                <StyledHeader>{position.position}</StyledHeader>
+                <StyledHeader>{position?.position}</StyledHeader>
                 <ImageContainer src={AnalyticBackground} max_height="unset" />
             </JobTitleContainerWrapper>
         </JobTitleContainer>

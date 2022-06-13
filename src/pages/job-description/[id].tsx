@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Helmet } from 'react-helmet'
 import type { PageProps } from 'gatsby'
 import Description from './description'
 import JobTitle from './job-title'
@@ -12,6 +13,9 @@ const JobDescription = (props: PageProps) => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Sinbad | {position?.position}</title>
+            </Helmet>
             <JobTitle position={position} />
             <Description />
             <BenefitsList />
