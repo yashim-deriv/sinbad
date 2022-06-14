@@ -17,7 +17,7 @@ const JobDescription = (props: PageProps) => {
                 <title>Sinbad | {position?.position}</title>
             </Helmet>
             <JobTitle position={position} />
-            <Description />
+            <Description position={position} />
             <BenefitsList />
             <JoinUs appearance="job" />
         </Layout>
