@@ -18,7 +18,6 @@ const JobTitleContainer = styled.div`
 `
 
 const JobTitleContainerWrapper = styled(ContainerWrapper)`
-    display: flex;
     flex-direction: column;
     align-items: center;
 `
