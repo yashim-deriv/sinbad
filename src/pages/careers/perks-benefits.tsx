@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Text, Header, Flex } from 'components/containers'
 import { SectionLabel, SectionTable } from 'components/chunks'
 import { TableDataProps } from 'types/generics'
-import Sand from 'pages/open-positions/images/join-us-background.png'
+import Sand from 'images/common/openpositions/join-us-background.png'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 import {
