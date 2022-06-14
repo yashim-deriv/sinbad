@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { JoinUsContainer, TextContainer } from './home'
-import Sinbad0 from 'pages/open-positions/images/join-team.png'
-import Sinbad from 'pages/open-positions/images/join-us-background.png'
 import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
+import Sinbad0 from 'images/common/openpositions/join-team.png'
+import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 
 const Wrapper = styled.div`
