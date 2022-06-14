@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JobTitleProps } from './data'
 import { ContainerWrapper, Flex, Header } from 'components/containers'
-import { Challenges, Team, Requirements, GoodToHave } from 'images/common/jd'
-import { JobTitleProps } from 'pages/open-positions/open-positions'
+import { Challenges, Team, Requirements, GoodToHave, Arrow } from 'images/common/jd'
 
 const DescriptionContainer = styled.div`
     display: flex;
@@ -43,7 +43,8 @@ const JDContainer = styled.div`
 
 const Card = styled(Flex)`
     display: flex;
-    max-width: 1200px;
+    flex-direction: column;
+    max-width: 1190px;
     min-height: 243px;
     margin: 20px 0;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
@@ -59,10 +60,17 @@ const StyledImg = styled.img`
 `
 
 const StyledList = styled.ul`
-    list-style: disc;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
     padding: 50px 0 50px 75px;
 `
 const StyledListItem = styled.li<{ pb?: string }>`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
     color: var(--color-black-3);
     padding-left: 5px;
     max-width: 850px;
@@ -71,12 +79,18 @@ const StyledListItem = styled.li<{ pb?: string }>`
 
 const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     font-size: 1.9rem;
-    line-height: 43px;
+    line-height: 33px;
     color: var(--color-black-2);
     font-weight: 320;
     text-align: left;
     font-family: ${(props) => props.font_family || 'Poppins'};
     padding: ${(props) => props.padding || 'unset'};
+`
+
+const ArrowImage = styled.img<{ margin?: string }>`
+    width: 23px;
+    height: 23px;
+    margin: ${(props) => props.margin || '-5px 10px -5px 0'};
 `
 
 const Description = ({ position }: JobTitleProps) => {
@@ -87,8 +101,8 @@ const Description = ({ position }: JobTitleProps) => {
                     <Card ai="center">
                         {position.description.map((paragraph, index) => {
                             return (
-                                <StyledText padding="15px 75px " key={index}>
-                                    {paragraphn}
+                                <StyledText padding="15px 75px" key={index}>
+                                    {paragraph}
                                 </StyledText>
                             )
                         })}
@@ -103,6 +117,7 @@ const Description = ({ position }: JobTitleProps) => {
                             {position.challenges.map((challenge, index) => {
                                 return (
                                     <StyledListItem key={index}>
+                                        <ArrowImage src={Arrow} margin="5px 10px 0 0" />
                                         <StyledText>{challenge}</StyledText>
                                     </StyledListItem>
                                 )
@@ -125,27 +140,35 @@ const Description = ({ position }: JobTitleProps) => {
                             {position.requirements.map((requirement, index) => {
                                 return (
                                     <StyledListItem key={index}>
-                                        <StyledText>{requirement}</StyledText>
+                                        <StyledText>
+                                            <ArrowImage src={Arrow} />
+                                            {requirement}
+                                        </StyledText>
                                     </StyledListItem>
                                 )
                             })}
                         </StyledList>
                     </Card>
-                    <Card direction="column">
-                        <HeaderImageContainer>
-                            <StyledHeader>What’s good to have</StyledHeader>
-                            <StyledImg src={GoodToHave} />
-                        </HeaderImageContainer>
-                        <StyledList>
-                            {position.good_to_have.map((ability, index) => {
-                                return (
-                                    <StyledListItem key={index}>
-                                        <StyledText>{ability}</StyledText>
-                                    </StyledListItem>
-                                )
-                            })}
-                        </StyledList>
-                    </Card>
+                    {position.good_to_have.length > 1 ? (
+                        <Card direction="column">
+                            <HeaderImageContainer>
+                                <StyledHeader>What’s good to have</StyledHeader>
+                                <StyledImg src={GoodToHave} />
+                            </HeaderImageContainer>
+                            <StyledList>
+                                {position.good_to_have.map((ability, index) => {
+                                    return (
+                                        <StyledListItem key={index}>
+                                            <StyledText>
+                                                <ArrowImage src={Arrow} />
+                                                {ability}
+                                            </StyledText>
+                                        </StyledListItem>
+                                    )
+                                })}
+                            </StyledList>
+                        </Card>
+                    ) : null}
                 </JDContainer>
             </DescriptionContainerWrapper>
         </DescriptionContainer>

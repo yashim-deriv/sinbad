@@ -11,6 +11,7 @@ import Location from './location.png'
 import Requirements from './requirements.png'
 import Salary from './salary.png'
 import Team from './team.png'
+import Arrow from './arrow.png'
 
 export {
     AnalyticBackground,
@@ -26,4 +27,5 @@ export {
     Requirements,
     Salary,
     Team,
+    Arrow,
 }
