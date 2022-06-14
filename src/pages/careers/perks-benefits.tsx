@@ -37,6 +37,20 @@ const PBContainer = styled.div`
 const PBContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
+
+    @media ${device.bp1060} {
+        justify-content: space-between;
+        padding-bottom: 200px;
+    }
+    @media ${device.tablet} {
+        padding-bottom: 150px;
+    }
+    @media ${device.tabletS} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 60px;
+    }
 `
 const TextAboutCareer = styled.div`
     display: flex;
@@ -44,22 +58,11 @@ const TextAboutCareer = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
-    padding-right: 50px;
-`
+    padding-right: 40px;
 
-const PBTable = styled.div`
-    max-width: 500px;
-    width: 100%;
-    height: 440px;
-`
-const PBText = styled.div<StyledTextProps>`
-    font-size: 3.8rem;
-    line-height: 53px;
-    color: var(--color-black-3);
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
-    text-align: left;
-    padding-bottom: 30px;
+    @media ${device.tablet} {
+        padding-right: 0;
+    }
 `
 
 const StyledSSHeader = styled.div`
@@ -68,13 +71,20 @@ const StyledSSHeader = styled.div`
 `
 
 const StyledSSText = styled.div<StyledTextProps>`
-    padding: unset;
     color: var(--color-sand-4);
     font-size: 3.8rem;
     line-height: 61px;
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro'};
     padding-right: 5px;
+
+    @media ${device.laptopM} {
+        font-size: 3.4rem;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 3rem;
+    }
 `
 const StyledText = styled.div<StyledTextProps>`
     max-width: 305px;
@@ -86,6 +96,16 @@ const StyledText = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: left;
     padding: 15px 0;
+
+    @media ${device.laptopM} {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 1.3rem;
+        line-height: 18px;
+    }
 `
 const StyledHeader = styled.div<StyledTextProps>`
     max-width: 305px;
@@ -97,6 +117,26 @@ const StyledHeader = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
     padding: 10px 0 20px;
+
+    @media ${device.laptopM} {
+        font-size: 4.2rem;
+        line-height: 46px;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 3.8rem;
+        line-height: 40px;
+    }
+`
+
+const StyledImage = styled(ImageContainer)`
+    width: 275px;
+    height: 780px;
+    max-height: unset;
+
+    @media ${device.bp1060} {
+        display: none;
+    }
 `
 
 const data: TableType[] = [
@@ -154,11 +194,8 @@ const PerksBenefits = () => {
                         of your career development as it can broaden and deepen your expirience.
                     </StyledText>
                 </TextAboutCareer>
-                <ImageContainer src={PBSinbad} width="unset" max_height="unset" height="810px" />
-                <PBTable>
-                    <PBText>Perks and benefits</PBText>
-                    <Table data={data} />
-                </PBTable>
+                <StyledImage src={PBSinbad} />
+                <Table data={data} text={'Perks and benefits'} />
             </PBContainerWrapper>
         </PBContainer>
     )

@@ -27,7 +27,6 @@ const CareersContainerWrapper = styled(ContainerWrapper)`
     align-items: center;
 
     @media ${device.tabletL} {
-        flex-direction: column-reverse;
         align-items: center;
     }
 `
@@ -39,21 +38,45 @@ const StyledHeader = styled.div<{ font_family?: string; color?: string; padding?
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: center;
-    padding: ${(props) => props.padding || 'unset'}; ;
+    padding: ${(props) => props.padding || '2px 0'};
+
+    @media ${device.tabletL} {
+        font-size: 3rem;
+        line-height: 20px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+    }
+`
+
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 2px 0 2px 252px;
+
+    @media ${device.tabletL} {
+        padding: 2px 0 2px 130px;
+    }
+
+    @media ${device.tabletS} {
+        padding: 0 10px;
+    }
 `
 
 const WorkWithUs = () => {
     return (
         <WorkWithUsContainer>
             <CareersContainerWrapper>
-                <StyledHeader color="var(--color-sand-4)" padding="2px 0">
+                <StyledHeader color="var(--color-sand-4)">
                     Work <StyledHeader padding="0 10px">with talented teams.</StyledHeader>
                 </StyledHeader>
-
-                <StyledHeader padding="2px 0 2px 250px">with the latest tech stack.</StyledHeader>
-                <StyledHeader padding="2px 0 2px 200px" color="var(--color-sand-4)">
-                    on challenging projects.
-                </StyledHeader>
+                <StyledContainer>
+                    <StyledHeader>with the latest tech stack.</StyledHeader>
+                    <StyledHeader color="var(--color-sand-4)">
+                        on challenging projects.
+                    </StyledHeader>
+                </StyledContainer>
 
                 <ImageContainer src={WorkWithUsDashboard} max_height="unset" />
             </CareersContainerWrapper>

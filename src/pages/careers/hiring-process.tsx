@@ -10,6 +10,7 @@ import {
     Offer,
     YouIn,
 } from 'images/common/careers'
+import device from 'themes/device'
 
 const HiringProcessContainer = styled.div`
     display: flex;
@@ -43,12 +44,16 @@ const StyledBorder = styled.div`
     width: 174px;
 `
 
-const StyleFlex = styled.div`
+const StyledFlex = styled.div`
     padding: 50px 0 80px;
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+
+    @media ${device.laptopM} {
+        justify-content: center;
+    }
 `
 
 const Card = styled(Flex)`
@@ -154,7 +159,7 @@ const HiringProcess = () => {
             <HiringProcessContainerWrapper>
                 <StyledHeader>Our hiring process</StyledHeader>
                 <StyledBorder />
-                <StyleFlex>
+                <StyledFlex>
                     {data.map(({ icon, header, text }, index) => {
                         return (
                             <Card key={index} direction="row" ai="flex-start" jc="space-between">
@@ -167,7 +172,7 @@ const HiringProcess = () => {
                             </Card>
                         )
                     })}
-                </StyleFlex>
+                </StyledFlex>
             </HiringProcessContainerWrapper>
         </HiringProcessContainer>
     )

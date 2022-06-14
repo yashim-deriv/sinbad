@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Button } from 'components/elements'
 import Sinbad0 from 'pages/images/home-join-us.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
-import { Header, ImageContainer, Text } from 'components/containers/main'
+import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 import { openPositionActions } from 'common/utility'
@@ -33,14 +33,19 @@ export const JoinUsContainer = styled.div`
     height: 600px;
 
     @media ${device.tabletL} {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
         height: auto;
         justify-content: center;
         padding-top: 20px;
     }
 `
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
     padding-bottom: 190px;
+
+    @media ${device.tabletL} {
+        padding-bottom: 20px;
+    }
 `
 
 const JoinUsInfo = styled.div`
@@ -78,7 +83,7 @@ const JoinUsHome = () => {
                         </TextContainer>
                     </JoinUsInfo>
 
-                    <ImageContainer src={Sinbad0} width="500px" padding_bottom="100px" />
+                    <JoinUsImageContainer src={Sinbad0} />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>

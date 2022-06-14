@@ -12,7 +12,7 @@ import {
     OurTermsSinbad,
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
-import { Header, ImageContainer } from 'components/containers'
+import { ImageContainer } from 'components/containers'
 import Table, { TableType } from 'components/containers/table'
 import { SectionLabel } from 'components/chunks'
 import { ContainerWrapper } from 'components/containers/common/style'
@@ -28,7 +28,10 @@ const OurTermsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
 
     @media ${device.laptopM} {
-        flex-wrap: wrap;
+        display: flex;
+    }
+    @media ${device.tabletS} {
+        flex-direction: column;
     }
 `
 
@@ -49,24 +52,26 @@ const TermsTextContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 30px 0 30px 50px;
-`
-const OurTermsTable = styled.div<StyledTextProps>`
-    font-size: 3.8rem;
-    line-height: 53px;
-    color: var(--color-black-3);
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-    text-align: left;
+    padding: 30px 0;
+
+    @media ${device.tabletS} {
+        flex-wrap: wrap;
+        align-content: center;
+    }
 `
 
 const TermsAndSinbadContainer = styled.div`
-    padding-top: 120px;
+    padding: 120px 0 0;
     display: flex;
+
+    @media ${device.tabletS} {
+        justify-content: center;
+        padding: 0 0 30px;
+    }
 `
 
 const StyledHeader = styled.div<StyledTextProps>`
-    max-width: 425px;
+    max-width: 520px;
     font-size: 4.8rem;
     line-height: 53px;
     color: var(--color-black-3);
@@ -74,6 +79,12 @@ const StyledHeader = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
     padding: 10px 0 20px;
+
+    @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 4.4rem;
+        line-height: 48px;
+    }
 `
 
 const StyledText = styled.div<StyledTextProps>`
@@ -85,6 +96,12 @@ const StyledText = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: left;
     padding-bottom: 10px;
+
+    @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
 `
 
 const StyledDescription = styled.div<StyledTextProps>`
@@ -98,24 +115,19 @@ const StyledDescription = styled.div<StyledTextProps>`
     padding-bottom: 120px;
 
     @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 2.2rem;
+        line-height: 30px;
         padding-bottom: 0px;
     }
 `
 
 const SinbadImage = styled(ImageContainer)`
-    max-width: 270px;
+    max-width: 200px;
     object-fit: scale-down;
 
-    @media ${device.tablet} {
+    @media ${device.bp1060} {
         display: none;
-    }
-`
-
-const TableTitle = styled(Header)`
-    @media ${device.tablet} {
-        display: flex;
-        justify-content: center;
-        padding: 10px;
     }
 `
 
@@ -177,10 +189,7 @@ const OurTerms = () => {
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
                     <SinbadImage src={OurTermsSinbad} />,
-                    <OurTermsTable>
-                        <TableTitle>Our Terms</TableTitle>
-                        <Table data={data} />
-                    </OurTermsTable>
+                    <Table data={data} text={'Our Terms'} />
                 </TermsAndSinbadContainer>
             </OurTermsContainerWrapper>
         </OurTermsContainer>

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { IconProps } from '../index'
-import { Header, ImageContainer, Text } from 'components/containers'
+import { ImageContainer } from 'components/containers'
 import Background from 'images/common/background.png'
 import { Image0, Image1, Image2 } from 'images/common/homepage/carousel'
 import { ContainerWrapper } from 'components/containers/common/style'
@@ -17,18 +17,17 @@ const CarouselContainer = styled.div`
     background-size: contain;
     background-position: right 35% bottom 0%;
 
-    @media ${device.mobileL} {
+    @media ${device.tabletS} {
         background-image: none;
     }
 `
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 0;
     justify-content: space-between;
-    margin: 0 0 100px 0;
+    margin: 0 0 75px 0;
 
     @media ${device.tabletL} {
-        flex-direction: column-reverse;
+        flex-direction: row;
         align-items: center;
     }
 `
@@ -36,9 +35,9 @@ const CarouselContainerWrapper = styled(ContainerWrapper)`
 const CarouselTextContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 50px 0 170px;
+    padding-top: 50px;
 
-    @media ${device.mobileL} {
+    @media ${device.tabletS} {
         padding: 50px 0 0;
     }
 `
@@ -46,14 +45,14 @@ const CarouselTextContainer = styled.div`
 const CarouselImageContainer = styled.div`
     margin-right: 10rem;
 
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
         margin-right: 0;
     }
 `
 
 const CarouselImage = styled(ImageContainer)`
     object-fit: contain;
-    max-width: 500px;
+    max-width: 700px;
     max-height: none;
 `
 
@@ -109,16 +108,79 @@ const CarouselDots = styled.span`
     }
 `
 
-const StyledText = styled(Text)`
-    padding: unset;
+const StyledText = styled.div<{ font_family?: string }>`
+    font-size: 3.2rem;
+    line-height: 62px;
+    color: var(--color-sand-4);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+
+    @media ${device.laptop} {
+        font-size: 3rem;
+        line-height: 52px;
+    }
+    @media ${device.tabletL} {
+        font-size: 2.6rem;
+        line-height: 46px;
+    }
+    @media ${device.tablet} {
+        font-size: 2.4rem;
+        line-height: 40px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.2rem;
+        line-height: 36px;
+    }
 `
-const StyledUpperText = styled(Header)`
-    padding: unset;
+const StyledUpperText = styled.div<{ font_family?: string }>`
+    font-size: 4.2rem;
+    line-height: 59px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-transform: uppercase;
+
+    @media ${device.laptop} {
+        font-size: 3.6rem;
+        line-height: 52px;
+    }
+    @media ${device.tabletL} {
+        font-size: 3.2rem;
+        line-height: 44px;
+    }
+    @media ${device.tablet} {
+        font-size: 2.8rem;
+        line-height: 38px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+        line-height: 34px;
+    }
 `
 
-const TextLabel = styled(Text)`
-    max-width: 400px;
+const TextLabel = styled.div<{ font_family?: string }>`
+    font-size: 4.2rem;
+    line-height: 57px;
+    color: var(--color-sand-4);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+
+    @media ${device.laptop} {
+        font-size: 3.6rem;
+        line-height: 52px;
+    }
+    @media ${device.tabletL} {
+        font-size: 3.2rem;
+        line-height: 44px;
+    }
+    @media ${device.tablet} {
+        font-size: 2.8rem;
+        line-height: 38px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+        line-height: 34px;
+    }
 `
 
 const data = [
@@ -141,35 +203,17 @@ const Carousel = ({ active, setActive }: IconProps) => {
         <CarouselContainer>
             <CarouselContainerWrapper>
                 <CarouselTextContainer>
-                    <StyledText
-                        color="var(--color-sand-4)"
-                        font_size="3.2rem"
-                        line_height="62px"
-                        font_family="Maven Pro"
-                    >
+                    <StyledText>
                         <strong>Sinbad</strong> Software
                     </StyledText>
-                    <StyledUpperText
-                        color="var(--color-black-3)"
-                        font_size="4.2rem"
-                        line_height="59px"
-                    >
+                    <StyledUpperText>
                         Transforming <br />
                         ideas into <br />
                         solutions
                     </StyledUpperText>
                     {data.map(
                         (current_item, index) =>
-                            index == active && (
-                                <TextLabel
-                                    color="var(--color-sand-4)"
-                                    font_size="4.2rem"
-                                    line_height="57px"
-                                    width="100%"
-                                >
-                                    {current_item.text}
-                                </TextLabel>
-                            ),
+                            index == active && <TextLabel>{current_item.text}</TextLabel>,
                     )}
 
                     <PickerContainer>

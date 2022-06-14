@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { ContainerWrapper, Flex, ImageContainer } from 'components/containers'
 import { BI, IT, LinkArrow, Product } from 'images/common/careers'
+import device from 'themes/device'
 
 type StyledTextProps = {
     font_family?: string
@@ -50,6 +51,7 @@ const CardContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     max-width: 1200px;
     width: 100%;
 `

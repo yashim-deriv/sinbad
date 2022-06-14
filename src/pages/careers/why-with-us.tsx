@@ -40,6 +40,14 @@ const StyledHeader = styled.div<{ font_family?: string }>`
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 20px;
+
+    @media ${device.tabletL} {
+        font-size: 3.4rem;
+    }
+
+    @media ${device.tabletS} {
+        font-size: 2.8rem;
+    }
 `
 const StyledText = styled.div<{ font_family?: string }>`
     max-width: 910px;
@@ -51,6 +59,21 @@ const StyledText = styled.div<{ font_family?: string }>`
     font-weight: 320;
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
+`
+const StyledImage = styled(ImageContainer)`
+    width: 900px;
+    height: 800px;
+    max-height: unset;
+
+    @media ${device.tabletL} {
+        width: 520px;
+        height: 500px;
+    }
+
+    @media ${device.tabletS} {
+        width: 400px;
+        height: 350px;
+    }
 `
 
 const WorkWithUs = () => {
@@ -67,7 +90,7 @@ const WorkWithUs = () => {
                         team.
                     </StyledText>
                 </WhyWithUsText>
-                <ImageContainer src={Words} width="900px" height="800px" max_height="unset" />
+                <StyledImage src={Words} />
             </CareersContainerWrapper>
         </WorkWithUsContainer>
     )

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JoinUsContainer, TextContainer } from './home'
 import Sinbad0 from 'pages/open-positions/images/join-team.png'
 import Sinbad from 'pages/open-positions/images/join-us-background.png'
-import { Header, ImageContainer, Text } from 'components/containers/main'
+import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 
 const Wrapper = styled.div`
@@ -22,17 +23,6 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const JoinUsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    height: 600px;
-`
-const TextContainer = styled.div`
-    padding-bottom: 190px;
-`
-
 const JoinUsInfo = styled.div`
     display: flex;
     flex-direction: column;
@@ -44,14 +34,6 @@ const JoinUsOpenPositions = () => {
         <Wrapper>
             <ContainerWrapper>
                 <JoinUsContainer>
-                    <>
-                        <ImageContainer
-                            src={Sinbad0}
-                            height="550px"
-                            width="400px"
-                            padding_bottom="100px"
-                        />
-                    </>
                     <JoinUsInfo>
                         <StyledHeader>
                             <HeaderTitle
@@ -72,6 +54,7 @@ const JoinUsOpenPositions = () => {
                             </Text>
                         </TextContainer>
                     </JoinUsInfo>
+                    <JoinUsImageContainer src={Sinbad0} />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>
