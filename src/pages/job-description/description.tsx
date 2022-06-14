@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JobTitleProps } from './data'
 import { ContainerWrapper, Flex, Header } from 'components/containers'
-import { Challenges, Team, Requirements, GoodToHave } from 'images/common/jd'
+import { Challenges, Team, Requirements, GoodToHave, Arrow } from 'images/common/jd'
 
 const DescriptionContainer = styled.div`
     display: flex;
@@ -42,13 +43,15 @@ const JDContainer = styled.div`
 
 const Card = styled(Flex)`
     display: flex;
-    max-width: 1200px;
+    flex-direction: column;
+    max-width: 1190px;
     min-height: 243px;
     margin: 20px 0;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: var(--color-white);
     border-radius: 4px;
     justify-content: center;
+    padding: 50px 0;
 `
 
 const StyledImg = styled.img`
@@ -56,11 +59,24 @@ const StyledImg = styled.img`
     align-items: flex-end;
 `
 
+const ArrowImage = styled.img<{ margin?: string }>`
+    width: 23px;
+    height: 23px;
+    margin-top: 3px;
+`
+
 const StyledList = styled.ul`
-    list-style: disc;
-    padding-left: 75px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 50px 0 50px 75px;
 `
 const StyledListItem = styled.li<{ pb?: string }>`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
     color: var(--color-black-3);
     padding-left: 5px;
     max-width: 850px;
@@ -69,26 +85,30 @@ const StyledListItem = styled.li<{ pb?: string }>`
 
 const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     font-size: 1.9rem;
-    line-height: 43px;
+    line-height: 33px;
     color: var(--color-black-2);
     font-weight: 320;
     text-align: left;
     font-family: ${(props) => props.font_family || 'Poppins'};
     padding: ${(props) => props.padding || 'unset'};
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 `
 
-const Description = () => {
+const Description = ({ position }: JobTitleProps) => {
     return (
         <DescriptionContainer>
             <DescriptionContainerWrapper>
                 <JDContainer>
                     <Card ai="center">
-                        <StyledText padding="15px 75px ">
-                            You’ll build powerful front-end systems with an improved user experience
-                            for our clients worldwide. You‘ll advocate for clients’ needs in the
-                            design and development of our applications, especially when implementing
-                            new products and features.
-                        </StyledText>
+                        {position.description.map((paragraph, index) => {
+                            return (
+                                <StyledText padding="15px 75px" key={index}>
+                                    {paragraph}
+                                </StyledText>
+                            )
+                        })}
                     </Card>
 
                     <Card direction="column">
@@ -97,37 +117,14 @@ const Description = () => {
                             <StyledImg src={Challenges} />
                         </HeaderImageContainer>
                         <StyledList>
-                            <StyledListItem>
-                                <StyledText>
-                                    Find the balance between functional and aesthetic design, and
-                                    create engaging user interfaces for all our products.
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Ensure our products are accessible across all platforms by
-                                    optimising them for speed, scalability, and usability.
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Resolve web-development challenges by employing reusable
-                                    components and the latest front-end frameworks.
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Offer our clients the best user experience by performing
-                                    automated tests, troubleshooting issues, and making
-                                    improvements.
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem pb="50px">
-                                <StyledText>
-                                    Maintain clear and detailed technical design documentation
-                                    according to our style guide.
-                                </StyledText>
-                            </StyledListItem>
+                            {position.challenges.map((challenge, index) => {
+                                return (
+                                    <StyledListItem key={index}>
+                                        <ArrowImage src={Arrow} />
+                                        <StyledText>{challenge}</StyledText>
+                                    </StyledListItem>
+                                )
+                            })}
                         </StyledList>
                     </Card>
                     <Card direction="column">
@@ -135,13 +132,7 @@ const Description = () => {
                             <StyledHeader>Our Team</StyledHeader>
                             <StyledImg src={Team} />
                         </HeaderImageContainer>
-                        <StyledText padding="15px 75px 50px">
-                            You’ll be part of our Front-end team, where we build the client-side of
-                            our web applications by translating UI/UX design wireframes into a
-                            user-centric web experience. We advocate for our clients’ needs, and we
-                            collaborate with other teams to implement an engaging user interface for
-                            our trading platforms.
-                        </StyledText>
+                        <StyledText padding="15px 75px 50px">{position.team}</StyledText>
                     </Card>
                     <Card direction="column">
                         <HeaderImageContainer>
@@ -149,54 +140,34 @@ const Description = () => {
                             <StyledImg src={Requirements} />
                         </HeaderImageContainer>
                         <StyledList>
-                            <StyledListItem>
-                                <StyledText>
-                                    Hands-on experience with JavaScript, HTML, and CSS
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Good grasp of diverse testing and debugging methods
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem pb="50px">
-                                <StyledText>
-                                    Excellent spoken and written English communication skills
-                                </StyledText>
-                            </StyledListItem>
+                            {position.requirements.map((requirement, index) => {
+                                return (
+                                    <StyledListItem key={index}>
+                                        <ArrowImage src={Arrow} />
+                                        <StyledText>{requirement}</StyledText>
+                                    </StyledListItem>
+                                )
+                            })}
                         </StyledList>
                     </Card>
-                    <Card direction="column">
-                        <HeaderImageContainer>
-                            <StyledHeader>What’s good to have</StyledHeader>
-                            <StyledImg src={GoodToHave} />
-                        </HeaderImageContainer>
-                        <StyledList>
-                            <StyledListItem>
-                                <StyledText>Good grasp of UI/UX design processes</StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>Experience in working with React library</StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>Experience with Git</StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Working experience in open-source platforms like Linux
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem>
-                                <StyledText>
-                                    Strong knowledge of technologies such as Mobx, Gatsby,
-                                    WebSocket, and styled-components
-                                </StyledText>
-                            </StyledListItem>
-                            <StyledListItem pb="50px">
-                                <StyledText>Good understanding of back-end technologies</StyledText>
-                            </StyledListItem>
-                        </StyledList>
-                    </Card>
+                    {position.good_to_have.length > 1 ? (
+                        <Card direction="column">
+                            <HeaderImageContainer>
+                                <StyledHeader>What’s good to have</StyledHeader>
+                                <StyledImg src={GoodToHave} />
+                            </HeaderImageContainer>
+                            <StyledList>
+                                {position.good_to_have.map((ability, index) => {
+                                    return (
+                                        <StyledListItem key={index}>
+                                            <ArrowImage src={Arrow} />
+                                            <StyledText>{ability}</StyledText>
+                                        </StyledListItem>
+                                    )
+                                })}
+                            </StyledList>
+                        </Card>
+                    ) : null}
                 </JDContainer>
             </DescriptionContainerWrapper>
         </DescriptionContainer>
