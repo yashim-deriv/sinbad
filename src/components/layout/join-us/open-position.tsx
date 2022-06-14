@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Sinbad0 from 'pages/open-positions/images/join-team.png'
-import Sinbad from 'pages/open-positions/images/join-us-background.png'
+import Sinbad0 from 'images/common/openpositions/join-team.png'
+import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 
