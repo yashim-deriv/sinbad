@@ -59,6 +59,12 @@ const StyledImg = styled.img`
     align-items: flex-end;
 `
 
+const ArrowImage = styled.img<{ margin?: string }>`
+    width: 23px;
+    height: 23px;
+    margin-top: 3px;
+`
+
 const StyledList = styled.ul`
     display: flex;
     flex-direction: column;
@@ -70,7 +76,7 @@ const StyledListItem = styled.li<{ pb?: string }>`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-content: flex-start;
+    align-content: center;
     color: var(--color-black-3);
     padding-left: 5px;
     max-width: 850px;
@@ -85,12 +91,9 @@ const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     text-align: left;
     font-family: ${(props) => props.font_family || 'Poppins'};
     padding: ${(props) => props.padding || 'unset'};
-`
-
-const ArrowImage = styled.img<{ margin?: string }>`
-    width: 23px;
-    height: 23px;
-    margin: ${(props) => props.margin || '-5px 10px -5px 0'};
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
 `
 
 const Description = ({ position }: JobTitleProps) => {
@@ -117,7 +120,7 @@ const Description = ({ position }: JobTitleProps) => {
                             {position.challenges.map((challenge, index) => {
                                 return (
                                     <StyledListItem key={index}>
-                                        <ArrowImage src={Arrow} margin="5px 10px 0 0" />
+                                        <ArrowImage src={Arrow} />
                                         <StyledText>{challenge}</StyledText>
                                     </StyledListItem>
                                 )
@@ -140,10 +143,8 @@ const Description = ({ position }: JobTitleProps) => {
                             {position.requirements.map((requirement, index) => {
                                 return (
                                     <StyledListItem key={index}>
-                                        <StyledText>
-                                            <ArrowImage src={Arrow} />
-                                            {requirement}
-                                        </StyledText>
+                                        <ArrowImage src={Arrow} />
+                                        <StyledText>{requirement}</StyledText>
                                     </StyledListItem>
                                 )
                             })}
@@ -159,10 +160,8 @@ const Description = ({ position }: JobTitleProps) => {
                                 {position.good_to_have.map((ability, index) => {
                                     return (
                                         <StyledListItem key={index}>
-                                            <StyledText>
-                                                <ArrowImage src={Arrow} />
-                                                {ability}
-                                            </StyledText>
+                                            <ArrowImage src={Arrow} />
+                                            <StyledText>{ability}</StyledText>
                                         </StyledListItem>
                                     )
                                 })}
