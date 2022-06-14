@@ -27,6 +27,15 @@ const TechStackContainerWrapper = styled(ContainerWrapper)`
 const TechDashboard = styled.img`
     max-width: 800px;
     max-height: 600px;
+
+    @media ${device.tabletL} {
+        max-width: 600px;
+        max-height: 500px;
+    }
+    @media ${device.tabletS} {
+        max-width: 400px;
+        max-height: 400px;
+    }
 `
 
 const TermsTextContainer = styled.div`

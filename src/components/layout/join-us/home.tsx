@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Button } from 'components/elements'
+import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
 import Sinbad0 from 'images/common/homepage/join-us/home-join-us.png'
-import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 import { openPositionActions } from 'common/utility'
@@ -33,14 +33,19 @@ export const JoinUsContainer = styled.div`
     height: 600px;
 
     @media ${device.tabletL} {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
         height: auto;
         justify-content: center;
         padding-top: 20px;
     }
 `
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
     padding-bottom: 190px;
+
+    @media ${device.tabletL} {
+        padding-bottom: 20px;
+    }
 `
 
 const JoinUsInfo = styled.div`
@@ -70,14 +75,15 @@ const JoinUsHome = () => {
                                 Join Our Team!
                             </Header>
                             <Text padding="20px 0">
-                                To apply for this position please send us your CV with a cover
-                                letter to hr@sinbad.dev
+                                Is your dream to build great products using leading technologies?
+                                Join Sinbad Software, where creativity, talent, and a passion for
+                                challenges come together
                             </Text>
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
 
-                    <ImageContainer src={Sinbad0} width="500px" padding_bottom="100px" />
+                    <JoinUsImageContainer src={Sinbad0} />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>

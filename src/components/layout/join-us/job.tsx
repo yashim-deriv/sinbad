@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { JoinUsContainer } from './home'
+import { JoinUsContainer, TextContainer } from './home'
 import { Button } from 'components/elements'
+import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
 import Sinbad0 from 'images/common/jd/job-join-us.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
-import { Header, ImageContainer, Text } from 'components/containers/main'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
-import device from 'themes/device'
 import { openPositionActions } from 'common/utility'
 
 const Wrapper = styled.div`
@@ -26,24 +25,10 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-const TextContainer = styled.div`
-    padding-bottom: 190px;
-
-    @media ${device.tabletL} {
-        padding-bottom: 30px;
-    }
-`
-
 const JoinUsInfo = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-`
-
-const SinbadImage = styled(ImageContainer)`
-    @media ${device.tabletL} {
-        display: none;
-    }
 `
 
 const JoinUsJob = () => {
@@ -51,7 +36,6 @@ const JoinUsJob = () => {
         <Wrapper>
             <ContainerWrapper>
                 <JoinUsContainer>
-                    <SinbadImage src={Sinbad0} height="550px" width="auto" padding_bottom="100px" />
                     <JoinUsInfo>
                         <StyledHeader>
                             <HeaderTitle
@@ -69,11 +53,12 @@ const JoinUsJob = () => {
                             </Header>
                             <Text padding="20px 0">
                                 To apply for this position please send us your CV with a cover
-                                letter to hr@sinbad.dev
+                                letter to hr@sinbad.software
                             </Text>
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
+                    <JoinUsImageContainer src={Sinbad0} />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>
