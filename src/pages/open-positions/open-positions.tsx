@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { ImageContainer, Header, Text } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
-import Sinbad0 from 'pages/open-positions/images/first-section.png'
+import Sinbad0 from 'images/common/openpositions/first-section.png'
 import Background from 'images/common/homepage/carousel/background.png'
-import RightArrow from 'pages/open-positions/images/arrow.png'
+import RightArrow from 'images/common/openpositions/arrow.png'
 import Flex from 'components/containers/flex'
 import device from 'themes/device'
 import { positions } from 'pages/job-description/data'
@@ -42,11 +42,17 @@ const PositionsHeader = styled.div`
         flex-direction: column;
     }
 `
-const Image = styled.div`
-    padding-left: 100px;
+const OpenPositionImage = styled(ImageContainer)`
     display: flex;
     flex-direction: row;
-    padding-top: 85px;
+    padding: 50px 0;
+    object-fit: contain;
+    max-width: 700px;
+    max-height: none;
+
+    @media ${device.tabletL} {
+        padding: 50px 0 0;
+    }
 `
 
 const HeaderContainer = styled.div`
@@ -85,8 +91,6 @@ const PositionsCarouselContainer = styled.div`
         padding-right: 0;
     }
 `
-
-const PositionsCarousel = styled.div``
 
 const Card = styled(Flex)<CardProps>`
     display: flex;
@@ -180,57 +184,54 @@ const OpenPositions = () => {
                                 Seekers
                             </Header>
                         </HeaderContainer>
-                        <Image>
-                            <ImageContainer src={Sinbad0} width="auto" height="100%" />
-                        </Image>
+
+                        <OpenPositionImage src={Sinbad0} />
                     </PositionsHeader>
                 </HeroWrapper>
             </ContainersWrapper>
             <OpenPositionsContainer>
                 <ContainerWrapper>
                     <PositionsCarouselContainer>
-                        <PositionsCarousel>
-                            <StyledFlex width="760px" wrap="wrap">
-                                {positions.map(({ position, text, id }, index) => {
-                                    return (
-                                        <Card
-                                            key={index}
-                                            index={index}
-                                            direction="column"
-                                            ai="center"
-                                            jc="start"
+                        <StyledFlex width="760px" wrap="wrap">
+                            {positions.map(({ position, text, id }, index) => {
+                                return (
+                                    <Card
+                                        key={index}
+                                        index={index}
+                                        direction="column"
+                                        ai="center"
+                                        jc="start"
+                                    >
+                                        <Header
+                                            color="var(--color-sand-4)"
+                                            text_align="center"
+                                            line_height="24px"
+                                            padding="10px 0px"
                                         >
-                                            <Header
-                                                color="var(--color-sand-4)"
+                                            {position}
+                                        </Header>
+                                        <Text font_size="14px" text_align="center">
+                                            {text}
+                                        </Text>
+                                        <LinkContainer to={`/job-description/${id}`}>
+                                            <Text
+                                                font_size="11px"
                                                 text_align="center"
-                                                line_height="24px"
-                                                padding="10px 0px"
+                                                width="50px"
+                                                padding="0px"
+                                                font_family="Maven Pro Bold"
+                                                text_transform="uppercase"
                                             >
-                                                {position}
-                                            </Header>
-                                            <Text font_size="14px" text_align="center">
-                                                {text}
+                                                More
                                             </Text>
-                                            <LinkContainer to={`/job-description/${id}`}>
-                                                <Text
-                                                    font_size="11px"
-                                                    text_align="center"
-                                                    width="50px"
-                                                    padding="0px"
-                                                    font_family="Maven Pro Bold"
-                                                    text_transform="uppercase"
-                                                >
-                                                    More
-                                                </Text>
-                                                <CardButtonContainer to="/some-postition">
-                                                    <CardButton src={RightArrow} />
-                                                </CardButtonContainer>
-                                            </LinkContainer>
-                                        </Card>
-                                    )
-                                })}
-                            </StyledFlex>
-                        </PositionsCarousel>
+                                            <CardButtonContainer to="/some-postition">
+                                                <CardButton src={RightArrow} />
+                                            </CardButtonContainer>
+                                        </LinkContainer>
+                                    </Card>
+                                )
+                            })}
+                        </StyledFlex>
                     </PositionsCarouselContainer>
                     <OpenPositionsInfo>
                         <StyledHeader padding="20px 0 0 0" text_transform="uppercase">

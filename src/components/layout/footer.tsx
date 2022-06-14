@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { DefaultFooter, DisclaimerWrapper } from '../containers/common/style'
 import SocialWrapperComponent from './footer/social-wrapper'
 import { ContainerWrapper } from 'components/containers/common/style'
-import UpArrow from 'images/svg/up-arrow.svg'
+import UpArrow from 'images/common/layout/up-arrow.png'
 import Flex from 'components/containers/flex'
 import device from 'themes/device'
 

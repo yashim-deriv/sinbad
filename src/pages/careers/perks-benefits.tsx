@@ -1,48 +1,56 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Header, Flex } from 'components/containers'
-import { SectionLabel, SectionTable } from 'components/chunks'
-import { TableDataProps } from 'types/generics'
-import Sand from 'pages/open-positions/images/join-us-background.png'
-import { ContainerWrapper } from 'components/containers/common/style'
-import device from 'themes/device'
+import { ContainerWrapper, ImageContainer } from 'components/containers'
+import Table, { TableType } from 'components/containers/table'
 import {
-    BuildingIcon,
-    CalendarIcon,
-    ClockIcon,
-    CoffeeMachineIcon,
-    InsuranceIcon,
-    LaptopIcon,
-    SecurityIcon,
-    TrainingIcon,
-} from 'images/common/careers/perks'
+    Annual,
+    OpacityBackground,
+    Bonus,
+    Education,
+    Insurance,
+    Office,
+    Pantry,
+    Security,
+    Tech,
+    PBSinbad,
+} from 'images/common/careers'
+import device from 'themes/device'
+
+type StyledTextProps = {
+    font_family?: string
+}
 
 const PBContainer = styled.div`
     display: flex;
     width: 100%;
-    height: fit-content;
-    text-align: center;
     justify-content: center;
-    align-items: center;
-    padding: 30px 0 120px;
     background-color: var(--color-sand-1);
-    background-image: url(${Sand});
+    background-image: url(${OpacityBackground});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 35% bottom 0%;
-`
 
-const PBWrapper = styled(ContainerWrapper)`
-    justify-content: space-between;
-
-    @media ${device.tabletL} {
-        flex-direction: column;
+    @media ${device.mobileL} {
+        background-image: none;
     }
 `
+const PBContainerWrapper = styled(ContainerWrapper)`
+    padding: 50px 0;
+    display: flex;
 
-const HeaderContainer = styled.div`
-    width: 100%;
-    max-width: 250px;
+    @media ${device.bp1060} {
+        justify-content: space-between;
+        padding-bottom: 200px;
+    }
+    @media ${device.tablet} {
+        padding-bottom: 150px;
+    }
+    @media ${device.tabletS} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 60px;
+    }
 `
 const TextAboutCareer = styled.div`
     display: flex;
@@ -50,49 +58,118 @@ const TextAboutCareer = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
-`
+    padding-right: 40px;
 
-const TextCareer = styled(Text)`
-    max-width: 335px;
-`
-
-const PBTable = styled(Flex)`
-    @media ${device.tabletL} {
-        padding-top: 50px;
+    @media ${device.tablet} {
+        padding-right: 0;
     }
 `
 
-const data: TableDataProps[] = [
+const StyledSSHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+const StyledSSText = styled.div<StyledTextProps>`
+    color: var(--color-sand-4);
+    font-size: 3.8rem;
+    line-height: 61px;
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    padding-right: 5px;
+
+    @media ${device.laptopM} {
+        font-size: 3.4rem;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 3rem;
+    }
+`
+const StyledText = styled.div<StyledTextProps>`
+    max-width: 305px;
+    width: 100%;
+    font-size: 1.6rem;
+    line-height: 27px;
+    color: var(--color-black-3);
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Poppins'};
+    text-align: left;
+    padding: 15px 0;
+
+    @media ${device.laptopM} {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 1.3rem;
+        line-height: 18px;
+    }
+`
+const StyledHeader = styled.div<StyledTextProps>`
+    max-width: 305px;
+    width: 100%;
+    font-size: 4.8rem;
+    line-height: 53px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: left;
+    padding: 10px 0 20px;
+
+    @media ${device.laptopM} {
+        font-size: 4.2rem;
+        line-height: 46px;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 3.8rem;
+        line-height: 40px;
+    }
+`
+
+const StyledImage = styled(ImageContainer)`
+    width: 275px;
+    height: 780px;
+    max-height: unset;
+
+    @media ${device.bp1060} {
+        display: none;
+    }
+`
+
+const data: TableType[] = [
     {
-        icon: InsuranceIcon,
+        icon: Insurance,
         text: 'Full medical insurance',
     },
     {
-        icon: SecurityIcon,
-        text: 'Social security',
+        icon: Education,
+        text: 'Education assistance & training programms',
     },
     {
-        icon: TrainingIcon,
-        text: 'Education assistance & training programmes',
-    },
-    {
-        icon: LaptopIcon,
-        text: 'Corporate laptops, monitors, and other hardware',
-    },
-    {
-        icon: ClockIcon,
+        icon: Annual,
         text: '22 days annual leave',
     },
     {
-        icon: CalendarIcon,
-        text: 'Annual bonus',
-    },
-    {
-        icon: BuildingIcon,
+        icon: Office,
         text: 'Chic, comfy office in the heart of Dubai',
     },
     {
-        icon: CoffeeMachineIcon,
+        icon: Security,
+        text: 'Social security',
+    },
+    {
+        icon: Tech,
+        text: 'Corporate laptops, monitors, and other hardware',
+    },
+    {
+        icon: Bonus,
+        text: 'Annual bonus',
+    },
+    {
+        icon: Pantry,
         text: 'Well-stocked pantry, coffee machines, and more',
     },
 ]
@@ -100,16 +177,14 @@ const data: TableDataProps[] = [
 const PerksBenefits = () => {
     return (
         <PBContainer>
-            <PBWrapper>
+            <PBContainerWrapper>
                 <TextAboutCareer>
-                    <HeaderContainer>
-                        <SectionLabel />
-                        <Header font_size="28px" line_height="36px">
-                            Helping you grow in your career
-                        </Header>
-                    </HeaderContainer>
-
-                    <TextCareer padding="15px 0 15px" line_height="20px">
+                    <StyledSSHeader>
+                        <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
+                        <StyledSSText>Software</StyledSSText>
+                    </StyledSSHeader>
+                    <StyledHeader>Helping you grow in your career</StyledHeader>
+                    <StyledText>
                         We offer a robust training programme to help you with seamless onboarding
                         when you join us. Depending on your needs, your team lead might provide you
                         with technical training, too. Most importantly, we have an ongoing education
@@ -117,12 +192,11 @@ const PerksBenefits = () => {
                         work-related courses - to encourage colleagues to boost their knowledge and
                         skills. Lateral moving is also a practice that we warmly welcome as a part
                         of your career development as it can broaden and deepen your expirience.
-                    </TextCareer>
+                    </StyledText>
                 </TextAboutCareer>
-                <PBTable>
-                    <SectionTable title={'Perks and benefits'} data={data} />
-                </PBTable>
-            </PBWrapper>
+                <StyledImage src={PBSinbad} />
+                <Table data={data} text={'Perks and benefits'} />
+            </PBContainerWrapper>
         </PBContainer>
     )
 }

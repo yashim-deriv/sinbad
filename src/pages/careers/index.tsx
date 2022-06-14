@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import WorkWithUs from './work-with-us'
+import WhyWithUs from './why-with-us'
 import PerksBenefits from './perks-benefits'
 import OpenPositions from './open-positions'
 import HiringProcess from './hiring-process'
@@ -14,6 +15,7 @@ const Careers = () => {
                 <title>Sinbad | Careers</title>
             </Helmet>
             <WorkWithUs />
+            <WhyWithUs />
             <PerksBenefits />
             <OpenPositions />
             <HiringProcess />

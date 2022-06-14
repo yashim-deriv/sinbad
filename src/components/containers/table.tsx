@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import device from 'themes/device'
 
+/* stylelint-disable */
+
 export type TermProps = {
     index?: number
     margin?: string
@@ -11,84 +13,148 @@ export type TermProps = {
 
 type TermsType = { header?: string; text?: string; icon?: string }
 
-export type OurTermsType = {
+export type TableType = {
     first_column?: TermsType[]
     second_column?: TermsType[]
     first?: TermsType
     other?: TermsType[]
-    title?: string
+    header?: string
+    text?: string
     icon?: string
 }
 
 type DataType = {
-    data?: OurTermsType
+    data?: TableType[]
+    text?: string
 }
-
-/* stylelint-disable */
 
 const TableContainer = styled.div`
     display: flex;
     flex-direction: row;
-    padding-right: 50px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: center;
+    max-width: 599px;
+    width: 100%;
 
+    @media ${device.bp1060} {
+        max-width: 530px;
+    }
+    @media ${device.laptopM} {
+        max-width: 410px;
+    }
+    @media ${device.laptop} {
+        max-width: 425px;
+    }
+    @media ${device.tabletL} {
+        max-width: 350px;
+    }
+    @media ${device.tablet} {
+        max-width: 300px;
+    }
+    @media ${device.tabletS} {
+        max-width: 250px;
+        justify-content: flex-start;
+    }
     @media ${device.mobileL} {
         padding-right: 0px;
     }
 `
 
-const TableColumn = styled.div`
-    display: flex;
-    flex-direction: column;
+const TermHeaderText = styled.div<TermProps>`
+    font-size: 3.8rem;
+    line-height: 53px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: left;
+    padding: 0 110px 30px 0;
+
+    @media ${device.laptopM} {
+        padding: 0 0 0 70px;
+        font-size: 3.4rem;
+    }
+    @media ${device.tablet} {
+        padding: 0 25px 0 0;
+        font-size: 3rem;
+    }
 `
 
 const TermImage = styled.img`
-    max-width: 70px;
-    max-height: 70px;
-    border-radius: 35px;
+    width: 95px;
+    height: 95px;
     filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
+
+    @media ${device.laptopM} {
+        width: 80px;
+        height: 80px;
+    }
+
+    @media ${device.tabletL} {
+        width: 60px;
+        height: 60px;
+    }
+
+    @media ${device.tabletS} {
+        width: 40px;
+        height: 40px;
+    }
 `
+
 const TermText = styled.div<TermProps>`
     font-size: 1.8rem;
     line-height: 22px;
     color: var(--color-black-3);
     font-weight: 480;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
-    padding-left: 10px;
+
+    @media ${device.laptopM} {
+        font-size: 1.4rem;
+        line-height: 18px;
+    }
+
+    @media ${device.tabletL} {
+        line-height: 14px;
+    }
 `
 
 const Term = styled.div<TermProps>`
+    max-width: 226px;
+    width: 100%;
+    height: 120px;
     display: flex;
     align-items: center;
-    max-width: 210px;
-    max-height: 90px;
-    padding: 10px;
     border-top: ${(props) =>
-        props.index === 0 ? 'unset' : props.index === 4 ? 'unset' : '1px solid gray'};
-    border-bottom: ${(props) =>
-        props.index === 3 ? 'unset' : props.index === 7 ? 'unset' : '1px solid gray'};
-    border-left: ${(props) => (props.border_left ? '1px solid gray' : 'unset')};
+        props.index === 0 ? 'unset' : props.index < 2 ? 'unset' : '1px solid gray'};
+    border-bottom: ${(props) => (props.index > 5 ? 'unset' : '1px solid gray')};
+    border-left: ${(props) => (props.index % 2 ? '1px solid gray' : 'unset')};
+
+    @media ${device.laptopM} {
+        max-width: 190px;
+    }
+    @media ${device.tabletL} {
+        max-width: 120px;
+        height: 90px;
+    }
+    @media ${device.tablet} {
+        max-width: 120px;
+    }
+    @media ${device.tabletS} {
+        height: 70px;
+    }
 `
 
-const Table = ({ data }: DataType) => {
+const Table = ({ data, text }: DataType) => {
     return (
         <TableContainer>
-            <TableColumn>
-                {data.first_column.map((item, index) => (
-                    <Term key={index} index={index}>
-                        <TermImage src={item.icon} />
-                        <TermText>{item.text}</TermText>
-                    </Term>
-                ))}
-            </TableColumn>
-            <TableColumn>
-                {data.second_column.map((item, index) => (
-                    <Term key={index} index={index} border_left={true}>
-                        <TermImage src={item.icon} />
-                        <TermText>{item.text}</TermText>
-                    </Term>
-                ))}
-            </TableColumn>
+            <TermHeaderText>{text}</TermHeaderText>
+            {data.map((item, index) => (
+                <Term key={index} index={index}>
+                    <TermImage src={item.icon} />
+                    <TermText>{item.text}</TermText>
+                </Term>
+            ))}
         </TableContainer>
     )
 }

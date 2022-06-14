@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SeeOurPositionsImage from 'images/common/see-our-positions-image.png'
 import ContactUs from 'images/common/contact-us-button.png'
+import device from 'themes/device'
 
 type HeaderProps = {
     font_size?: string
@@ -51,6 +52,16 @@ export const ImageContainer = styled.img<ImageProps>`
     height: ${(props) => props.height || '100%'};
     padding-bottom: ${(props) => props.padding_bottom || '0px'};
     max-height: ${(props) => props.max_height || '512px'};
+`
+
+export const JoinUsImageContainer = styled(ImageContainer)`
+    width: 500px;
+    padding-bottom: 100px;
+
+    @media ${device.tabletS} {
+        width: 400px;
+        padding-bottom: 40px;
+    }
 `
 
 export const Header = styled.div<HeaderProps>`

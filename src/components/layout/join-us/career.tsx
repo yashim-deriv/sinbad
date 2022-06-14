@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { JoinUsContainer } from './home'
+import { JoinUsContainer, TextContainer } from './home'
 import { Button } from 'components/elements'
-import Sinbad0 from 'pages/careers/images/careers-join-us.png'
-import Sinbad from 'pages/open-positions/images/join-us-background.png'
-import { Header, ImageContainer, Text } from 'components/containers/main'
+import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
+import Sinbad0 from 'images/common/careers/careers-join-us.png'
+import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
 import { openPositionActions } from 'common/utility'
 
@@ -23,10 +23,6 @@ const StyledHeader = styled.div`
     display: flex;
     white-space: nowrap;
     padding-right: 15px;
-`
-
-const TextContainer = styled.div`
-    padding-bottom: 190px;
 `
 
 const JoinUsInfo = styled.div`
@@ -56,13 +52,14 @@ const JoinUsCareers = () => {
                                 Join Our Team!
                             </Header>
                             <Text padding="20px 0">
-                                To apply for this position please send us your CV with a cover
-                                letter to hr@sinbad.dev
+                                Is your dream to build great products using leading technologies?
+                                Join Sinbad Software, where creativity, talent, and a passion for
+                                challenges come together
                             </Text>
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <ImageContainer src={Sinbad0} width="400px" padding_bottom="100px" />
+                    <JoinUsImageContainer src={Sinbad0} />
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>
