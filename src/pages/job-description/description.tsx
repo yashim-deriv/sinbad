@@ -102,7 +102,7 @@ const Description = ({ position }: JobTitleProps) => {
             <DescriptionContainerWrapper>
                 <JDContainer>
                     <Card ai="center">
-                        {position.description.map((paragraph, index) => {
+                        {position?.description.map((paragraph, index) => {
                             return (
                                 <StyledText padding="15px 75px" key={index}>
                                     {paragraph}
@@ -117,7 +117,7 @@ const Description = ({ position }: JobTitleProps) => {
                             <StyledImg src={Challenges} />
                         </HeaderImageContainer>
                         <StyledList>
-                            {position.challenges.map((challenge, index) => {
+                            {position?.challenges.map((challenge, index) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
@@ -132,7 +132,7 @@ const Description = ({ position }: JobTitleProps) => {
                             <StyledHeader>Our Team</StyledHeader>
                             <StyledImg src={Team} />
                         </HeaderImageContainer>
-                        <StyledText padding="15px 75px 50px">{position.team}</StyledText>
+                        <StyledText padding="15px 75px 50px">{position?.team}</StyledText>
                     </Card>
                     <Card direction="column">
                         <HeaderImageContainer>
@@ -140,7 +140,7 @@ const Description = ({ position }: JobTitleProps) => {
                             <StyledImg src={Requirements} />
                         </HeaderImageContainer>
                         <StyledList>
-                            {position.requirements.map((requirement, index) => {
+                            {position?.requirements.map((requirement, index) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
@@ -150,14 +150,14 @@ const Description = ({ position }: JobTitleProps) => {
                             })}
                         </StyledList>
                     </Card>
-                    {position.good_to_have.length > 1 ? (
+                    {position?.good_to_have.length > 1 ? (
                         <Card direction="column">
                             <HeaderImageContainer>
                                 <StyledHeader>What’s good to have</StyledHeader>
                                 <StyledImg src={GoodToHave} />
                             </HeaderImageContainer>
                             <StyledList>
-                                {position.good_to_have.map((ability, index) => {
+                                {position?.good_to_have.map((ability, index) => {
                                     return (
                                         <StyledListItem key={index}>
                                             <ArrowImage src={Arrow} />
