@@ -55,11 +55,13 @@ export const ImageContainer = styled.img<ImageProps>`
 `
 
 export const JoinUsImageContainer = styled(ImageContainer)`
-    width: 500px;
+    object-fit: contain;
+    max-height: none;
+    max-width: 500px;
     padding-bottom: 100px;
 
     @media ${device.tabletS} {
-        width: 400px;
+        max-width: 350px;
         padding-bottom: 40px;
     }
 `

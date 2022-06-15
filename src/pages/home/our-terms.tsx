@@ -26,17 +26,24 @@ type StyledTextProps = {
 
 const OurTermsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
+    display: flex;
+    @media ${device.bp1060} {
+        justify-content: center;
+        padding-bottom: 200px;
+    }
 
     @media ${device.laptopM} {
         display: flex;
     }
-    @media ${device.tabletS} {
+    @media (max-width: 620px) {
         flex-direction: column;
+        align-items: center;
     }
 `
 
 const OurTermsContainer = styled.div`
     display: flex;
+    width: 100%;
     text-align: center;
     justify-content: center;
     align-items: flex-start;
