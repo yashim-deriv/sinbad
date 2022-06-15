@@ -44,15 +44,15 @@ const TableContainer = styled.div`
         max-width: 410px;
     }
     @media ${device.laptop} {
-        max-width: 425px;
+        max-width: 415px;
     }
     @media ${device.tabletL} {
-        max-width: 350px;
+        max-width: 320px;
     }
     @media ${device.tablet} {
-        max-width: 300px;
+        max-width: 250px;
     }
-    @media ${device.tabletS} {
+    @media (max-width: 620px) {
         max-width: 250px;
         justify-content: flex-start;
     }
@@ -91,8 +91,8 @@ const TermImage = styled.img`
     }
 
     @media ${device.tabletL} {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     @media ${device.tabletS} {
@@ -110,7 +110,7 @@ const TermText = styled.div<TermProps>`
     text-align: left;
 
     @media ${device.laptopM} {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         line-height: 18px;
     }
 

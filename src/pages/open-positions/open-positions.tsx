@@ -103,7 +103,7 @@ const Card = styled(Flex)<CardProps>`
     border-radius: 8px;
     justify-content: space-between;
 
-    @media (max-width: 930px) {
+    @media (max-width: 1200px) {
         order: ${(props) => (props.index === 2 ? 1 : props.index === 1 ? 2 : props.index)};
         margin: 0 0 19px;
     }
@@ -125,7 +125,7 @@ const LinkContainer = styled(Link)`
 `
 
 const StyledFlex = styled(Flex)`
-    @media (max-width: 930px) {
+    @media (max-width: 1200px) {
         flex-direction: column;
         align-items: center;
         width: unset;
@@ -144,7 +144,7 @@ const OpenPositionsInfo = styled.div`
     flex-direction: column;
     position: sticky;
     align-self: start;
-    padding-left: 31px;
+    left: 30px;
     top: 10px;
 
     @media ${device.tablet} {

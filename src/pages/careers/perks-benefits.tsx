@@ -41,7 +41,7 @@ const PBContainerWrapper = styled(ContainerWrapper)`
     align-items: flex-start;
 
     @media ${device.bp1060} {
-        justify-content: space-between;
+        justify-content: center;
         padding-bottom: 200px;
     }
     @media ${device.tablet} {
