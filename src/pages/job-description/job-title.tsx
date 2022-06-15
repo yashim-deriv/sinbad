@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { JobTitleProps } from './data'
 import { ContainerWrapper, ImageContainer } from 'components/containers'
 import AnalyticBackground from 'images/common/jd/analytic-background.png'
 import Background from 'images/common/background.png'
-import { PositionsType } from 'pages/open-positions/open-positions'
 
 const JobTitleContainer = styled.div`
     display: flex;
@@ -32,10 +32,6 @@ const StyledHeader = styled.div<{ font_family?: string }>`
     text-align: left;
     padding-top: 100px;
 `
-
-type JobTitleProps = {
-    position: PositionsType
-}
 
 const JobTitle = ({ position }: JobTitleProps) => {
     return (

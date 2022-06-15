@@ -25,6 +25,10 @@ const JobTitleContainerWrapper = styled(ContainerWrapper)`
     display: flex;
     align-items: flex-end;
     flex-direction: column;
+
+    @media ${device.laptop} {
+        align-items: center;
+    }
 `
 
 const StyledHeader = styled(Header)`
