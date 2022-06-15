@@ -22,6 +22,7 @@ import YouIn from './you-in.png'
 import Words from './words.png'
 import WorkWithUsDashboard from './work-with-us.png'
 import PBSinbad from './sinbad-near-p&b.png'
+import Banner from './banner-bg.png'
 
 export {
     Insurance,
@@ -48,4 +49,5 @@ export {
     Words,
     WorkWithUsDashboard,
     PBSinbad,
+    Banner,
 }

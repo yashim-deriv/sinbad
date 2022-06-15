@@ -10,6 +10,7 @@ import {
     DressCode,
     Contract,
     Location,
+    Background,
 } from 'images/common/jd'
 import device from 'themes/device'
 
@@ -18,6 +19,11 @@ const JobTitleContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(${Background});
+    background-repeat: no-repeat;
+    background-size: 45% 100%;
+    width: 100%;
+    height: 100%;
 `
 
 const JobTitleContainerWrapper = styled(ContainerWrapper)`

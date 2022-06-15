@@ -1,28 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
-import { JoinUsContainer, TextContainer } from './home'
+import { JoinUsContainer, StyledHeader, StyledText } from './home'
 import { Button } from 'components/elements'
-import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
+import { JoinUsImageContainer } from 'components/containers/main'
 import Sinbad0 from 'images/common/jd/job-join-us.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
-import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
+import { ContainerWrapper } from 'components/containers/common/style'
 import { openPositionActions } from 'common/utility'
+import { Banner } from 'images/common/jd'
+import device from 'themes/device'
+import { SectionLabel } from 'components/chunks'
 
 const Wrapper = styled.div`
-    display: flex;
     background-color: var(--color-sand-1);
     background-repeat: no-repeat;
     background-image: url(${Sinbad});
     background-position: bottom center;
     background-size: contain;
-    justify-content: center;
     width: 100%;
 `
 
-const StyledHeader = styled.div`
+const JoinUsWrapper = styled(JoinUsContainer)`
     display: flex;
-    white-space: nowrap;
-    padding-right: 15px;
+    flex-direction: row;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-image: url(${Banner});
+    background-size: 47.5% 65%;
+    width: 100%;
+    height: 760px;
+`
+
+const TextContainer = styled.div`
+    padding-bottom: 75px;
+
+    @media ${device.tabletL} {
+        padding-bottom: 20px;
+    }
 `
 
 const JoinUsInfo = styled.div`
@@ -34,33 +48,27 @@ const JoinUsInfo = styled.div`
 const JoinUsJob = () => {
     return (
         <Wrapper>
-            <ContainerWrapper>
-                <JoinUsContainer>
+            <JoinUsWrapper>
+                <ContainerWrapper>
+                    <JoinUsImageContainer
+                        src={Sinbad0}
+                        padding_bottom="unset"
+                        width="600px"
+                        mobile_pb="unset"
+                    />
                     <JoinUsInfo>
-                        <StyledHeader>
-                            <HeaderTitle
-                                color="var(--color-sand-4)"
-                                font_family="Maven Pro Bold"
-                                padding_right="10px"
-                            >
-                                Sinbad
-                            </HeaderTitle>
-                            <HeaderTitle color="var(--color-sand-4)">Software</HeaderTitle>
-                        </StyledHeader>
+                        <SectionLabel />
                         <TextContainer>
-                            <Header font_size="28px" text_transform="uppercase">
-                                Join Our Team!
-                            </Header>
-                            <Text padding="20px 0">
+                            <StyledHeader>Join Our Team!</StyledHeader>
+                            <StyledText>
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.software
-                            </Text>
-                            <Button label="See Our Open Positions" onClick={openPositionActions} />
+                            </StyledText>
+                            <Button label="Apply for this job" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <JoinUsImageContainer src={Sinbad0} />
-                </JoinUsContainer>
-            </ContainerWrapper>
+                </ContainerWrapper>
+            </JoinUsWrapper>
         </Wrapper>
     )
 }

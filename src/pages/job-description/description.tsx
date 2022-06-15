@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { JobTitleProps } from './data'
 import { ContainerWrapper, Flex, Header } from 'components/containers'
-import { Challenges, Team, Requirements, GoodToHave, Arrow } from 'images/common/jd'
+import { Challenges, Team, Requirements, GoodToHave, Arrow, Background } from 'images/common/jd'
+import device from 'themes/device'
 
 const DescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-image: url(${Background});
+    background-repeat: no-repeat;
+    background-size: 45% 100%;
+    width: 100%;
+    height: 150%;
 `
 
 const DescriptionContainerWrapper = styled(ContainerWrapper)`
@@ -51,7 +57,7 @@ const Card = styled(Flex)`
     background-color: var(--color-white);
     border-radius: 4px;
     justify-content: center;
-    padding: 50px 0;
+    padding: 50px;
 `
 
 const StyledImg = styled.img`
@@ -60,9 +66,9 @@ const StyledImg = styled.img`
 `
 
 const ArrowImage = styled.img<{ margin?: string }>`
-    width: 23px;
-    height: 23px;
-    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
 `
 
 const StyledList = styled.ul`
@@ -70,7 +76,7 @@ const StyledList = styled.ul`
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
-    padding: 50px 0 50px 75px;
+    padding: 50px 0;
 `
 const StyledListItem = styled.li<{ pb?: string }>`
     display: flex;
@@ -79,8 +85,15 @@ const StyledListItem = styled.li<{ pb?: string }>`
     align-content: center;
     color: var(--color-black-3);
     padding-left: 5px;
-    max-width: 850px;
+    max-width: 1000px;
     padding-bottom: ${(props) => props.pb || 'unset'};
+
+    @media ${device.tabletL} {
+        max-width: 700px;
+    }
+    @media ${device.tablet} {
+        max-width: 500px;
+    }
 `
 
 const StyledText = styled.div<{ font_family?: string; padding?: string }>`

@@ -75,6 +75,10 @@ const CardHeader = styled.div<StyledTextProps>`
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     padding: 20px 0 10px;
+
+    @media ${device.laptop} {
+        font-size: 2.8rem;
+    }
 `
 const CardText = styled.div<StyledTextProps>`
     max-width: 267px;
@@ -86,6 +90,10 @@ const CardText = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
     padding: 15px 0;
+
+    @media ${device.laptop} {
+        font-size: 2.2rem;
+    }
 `
 
 const CardLinkText = styled.div<StyledTextProps>`
@@ -96,6 +104,10 @@ const CardLinkText = styled.div<StyledTextProps>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-transform: uppercase;
     padding-right: 20px;
+
+    @media ${device.laptop} {
+        font-size: 2rem;
+    }
 `
 
 const CardButton = styled(Link)`

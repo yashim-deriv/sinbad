@@ -15,6 +15,7 @@ import {
     PBSinbad,
 } from 'images/common/careers'
 import device from 'themes/device'
+import { SectionLabel } from 'components/chunks'
 
 type StyledTextProps = {
     font_family?: string
@@ -37,6 +38,7 @@ const PBContainer = styled.div`
 const PBContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
+    align-items: flex-start;
 
     @media ${device.bp1060} {
         justify-content: space-between;
@@ -64,28 +66,6 @@ const TextAboutCareer = styled.div`
         padding-right: 0;
     }
 `
-
-const StyledSSHeader = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
-const StyledSSText = styled.div<StyledTextProps>`
-    color: var(--color-sand-4);
-    font-size: 3.8rem;
-    line-height: 61px;
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
-    padding-right: 5px;
-
-    @media ${device.laptopM} {
-        font-size: 3.4rem;
-    }
-
-    @media ${device.tabletL} {
-        font-size: 3rem;
-    }
-`
 const StyledText = styled.div<StyledTextProps>`
     max-width: 305px;
     width: 100%;
@@ -98,12 +78,12 @@ const StyledText = styled.div<StyledTextProps>`
     padding: 15px 0;
 
     @media ${device.laptopM} {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         line-height: 20px;
     }
 
     @media ${device.tabletL} {
-        font-size: 1.3rem;
+        font-size: 2rem;
         line-height: 18px;
     }
 `
@@ -130,9 +110,10 @@ const StyledHeader = styled.div<StyledTextProps>`
 `
 
 const StyledImage = styled(ImageContainer)`
-    width: 275px;
-    height: 780px;
+    width: 290px;
+    height: 740px;
     max-height: unset;
+    margin-bottom: 70px;
 
     @media ${device.bp1060} {
         display: none;
@@ -179,10 +160,7 @@ const PerksBenefits = () => {
         <PBContainer>
             <PBContainerWrapper>
                 <TextAboutCareer>
-                    <StyledSSHeader>
-                        <StyledSSText font_family="Maven Pro Bold">Sinbad </StyledSSText>
-                        <StyledSSText>Software</StyledSSText>
-                    </StyledSSHeader>
+                    <SectionLabel />
                     <StyledHeader>Helping you grow in your career</StyledHeader>
                     <StyledText>
                         We offer a robust training programme to help you with seamless onboarding

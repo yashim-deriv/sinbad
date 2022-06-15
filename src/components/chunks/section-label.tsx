@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import device from 'themes/device'
 import { CSSElementProps } from 'types/generics'
 
 const StyledSSHeader = styled.div`
@@ -16,6 +17,14 @@ const StyledSSText = styled.div<CSSElementProps>`
     font-weight: 640;
     font-family: ${(props) => props.fontFamily || 'Maven Pro'};
     padding-right: 5px;
+
+    @media ${device.laptopM} {
+        font-size: 3.4rem;
+    }
+
+    @media ${device.tabletL} {
+        font-size: 3rem;
+    }
 `
 
 const SectionLabel = () => {

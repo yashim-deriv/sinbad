@@ -77,7 +77,6 @@ const WorkWithUs = () => {
                         on challenging projects.
                     </StyledHeader>
                 </StyledContainer>
-
                 <ImageContainer src={WorkWithUsDashboard} max_height="unset" />
             </CareersContainerWrapper>
         </WorkWithUsContainer>

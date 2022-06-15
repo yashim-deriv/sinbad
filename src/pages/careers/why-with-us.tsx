@@ -42,11 +42,10 @@ const StyledHeader = styled.div<{ font_family?: string }>`
     padding-bottom: 20px;
 
     @media ${device.tabletL} {
-        font-size: 3.4rem;
+        font-size: 3.8rem;
     }
-
     @media ${device.tabletS} {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
     }
 `
 const StyledText = styled.div<{ font_family?: string }>`
@@ -59,6 +58,13 @@ const StyledText = styled.div<{ font_family?: string }>`
     font-weight: 320;
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: center;
+
+    @media ${device.tabletL} {
+        font-size: 2.2rem;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+    }
 `
 const StyledImage = styled(ImageContainer)`
     width: 900px;
@@ -69,7 +75,6 @@ const StyledImage = styled(ImageContainer)`
         width: 520px;
         height: 500px;
     }
-
     @media ${device.tabletS} {
         width: 400px;
         height: 350px;

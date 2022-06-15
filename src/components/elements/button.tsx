@@ -21,6 +21,7 @@ const ButtonItem = styled.button`
     padding: 6px;
     cursor: pointer;
     border: none;
+    text-transform: uppercase;
 
     &:hover {
         background: var(--color-sand-5);

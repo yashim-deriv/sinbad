@@ -45,7 +45,7 @@ const StyledBorder = styled.div`
 `
 
 const StyledFlex = styled.div`
-    padding: 50px 0 80px;
+    padding: 60px 0 120px;
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
@@ -53,6 +53,9 @@ const StyledFlex = styled.div`
 
     @media ${device.laptopM} {
         justify-content: center;
+    }
+    @media ${device.laptop} {
+        padding: 40px 0 80px;
     }
 `
 
@@ -81,6 +84,10 @@ const CardHeader = styled.div<{ font_family?: string }>`
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
+
+    @media ${device.laptop} {
+        font-size: 2.4rem;
+    }
 `
 const CardText = styled.div<{ font_family?: string }>`
     max-width: 195px;
@@ -92,6 +99,10 @@ const CardText = styled.div<{ font_family?: string }>`
     font-family: ${(props) => props.font_family || 'Poppins'};
     text-align: left;
     padding: 15px 0;
+
+    @media ${device.laptop} {
+        font-size: 2.2rem;
+    }
 `
 
 const CardNumber = styled.div<{ font_family?: string }>`
