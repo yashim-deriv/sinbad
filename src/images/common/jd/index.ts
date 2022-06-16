@@ -12,7 +12,7 @@ import Requirements from './requirements.png'
 import Salary from './salary.png'
 import Team from './team.png'
 import Arrow from './arrow.png'
-import Background from './background.png'
+import BlueBackground from './blue-background.png'
 import Banner from './banner-bg.png'
 
 export {
@@ -30,6 +30,6 @@ export {
     Salary,
     Team,
     Arrow,
-    Background,
+    BlueBackground,
     Banner,
 }

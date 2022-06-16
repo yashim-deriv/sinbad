@@ -46,6 +46,7 @@ const StyledHeader = styled.div<StyledTextProps>`
     font-family: ${(props) => (props.uppercase ? 'Maven Pro Bold' : 'Maven Pro')};
     text-transform: ${(props) => props.uppercase || 'unset'};
     padding: 10px 0 20px;
+    text-align: center;
 `
 const CardContainer = styled.div`
     display: flex;

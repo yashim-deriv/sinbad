@@ -21,8 +21,12 @@ const Container = styled.div`
     justify-content: center;
     position: sticky;
     top: 0px;
+    padding: 30px 0;
     z-index: 999;
 
+    @media ${device.tabletL} {
+        padding: unset;
+    }
     @media ${device.mobileL} {
         position: static;
     }

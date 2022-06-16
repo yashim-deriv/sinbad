@@ -6,6 +6,7 @@ import Background from 'images/common/background.png'
 import { Image0, Image1, Image2 } from 'images/common/homepage/carousel'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
+import { SectionLabel } from 'components/chunks'
 
 const CarouselContainer = styled.div`
     display: flex;
@@ -108,30 +109,6 @@ const CarouselDots = styled.span`
     }
 `
 
-const StyledText = styled.div<{ font_family?: string }>`
-    font-size: 3.2rem;
-    line-height: 62px;
-    color: var(--color-sand-4);
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
-
-    @media ${device.laptop} {
-        font-size: 3rem;
-        line-height: 52px;
-    }
-    @media ${device.tabletL} {
-        font-size: 2.6rem;
-        line-height: 46px;
-    }
-    @media ${device.tablet} {
-        font-size: 2.4rem;
-        line-height: 40px;
-    }
-    @media ${device.tabletS} {
-        font-size: 2.2rem;
-        line-height: 36px;
-    }
-`
 const StyledUpperText = styled.div<{ font_family?: string }>`
     font-size: 4.2rem;
     line-height: 59px;
@@ -203,9 +180,7 @@ const Carousel = ({ active, setActive }: IconProps) => {
         <CarouselContainer>
             <CarouselContainerWrapper>
                 <CarouselTextContainer>
-                    <StyledText>
-                        <strong>Sinbad</strong> Software
-                    </StyledText>
+                    <SectionLabel />
                     <StyledUpperText>
                         Transforming <br />
                         ideas into <br />

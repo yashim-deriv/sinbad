@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { JoinUsContainer, StyledHeader, StyledText, TextContainer } from './home'
+import { JoinUsContainer, JoinUsInfo, StyledHeader, StyledText, TextContainer } from './home'
 import { JoinUsImageContainer } from 'components/containers/main'
 import Sinbad0 from 'images/common/openpositions/join-team.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
-import { ContainerWrapper } from 'components/containers/common/style'
 import { SectionLabel } from 'components/chunks'
 import { Banner } from 'images/common/jd'
 
@@ -20,24 +19,18 @@ const Wrapper = styled.div`
 const JoinUsWrapper = styled(JoinUsContainer)`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     background-repeat: no-repeat;
     background-image: url(${Banner});
     background-size: 47.5% 65%;
     width: 100%;
 `
 
-const JoinUsInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-`
-
 const JoinUsOpenPositions = () => {
     return (
         <Wrapper>
             <JoinUsWrapper>
-                <ContainerWrapper>
+                <JoinUsContainer>
                     <JoinUsInfo>
                         <SectionLabel />
                         <TextContainer>
@@ -49,8 +42,8 @@ const JoinUsOpenPositions = () => {
                             </StyledText>
                         </TextContainer>
                     </JoinUsInfo>
-                    <JoinUsImageContainer src={Sinbad0} />
-                </ContainerWrapper>
+                    <JoinUsImageContainer src={Sinbad0} padding_bottom="unset" />
+                </JoinUsContainer>
             </JoinUsWrapper>
         </Wrapper>
     )

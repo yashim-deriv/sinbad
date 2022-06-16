@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { JobTitleProps } from './data'
 import { ContainerWrapper, Flex, Header } from 'components/containers'
-import { Challenges, Team, Requirements, GoodToHave, Arrow, Background } from 'images/common/jd'
+import { Challenges, Team, Requirements, GoodToHave, Arrow, BlueBackground } from 'images/common/jd'
 import device from 'themes/device'
 
 const DescriptionContainer = styled.div`
@@ -10,11 +10,11 @@ const DescriptionContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-image: url(${Background});
+    background-image: url(${BlueBackground});
     background-repeat: no-repeat;
     background-size: 45% 100%;
     width: 100%;
-    height: 150%;
+    height: 100%;
 `
 
 const DescriptionContainerWrapper = styled(ContainerWrapper)`
@@ -51,13 +51,11 @@ const Card = styled(Flex)`
     display: flex;
     flex-direction: column;
     max-width: 1190px;
-    min-height: 243px;
     margin: 20px 0;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: var(--color-white);
     border-radius: 4px;
     justify-content: center;
-    padding: 50px;
 `
 
 const StyledImg = styled.img`
@@ -84,7 +82,7 @@ const StyledListItem = styled.li<{ pb?: string }>`
     flex-wrap: nowrap;
     align-content: center;
     color: var(--color-black-3);
-    padding-left: 5px;
+    padding-left: 75px;
     max-width: 1000px;
     padding-bottom: ${(props) => props.pb || 'unset'};
 
@@ -106,7 +104,10 @@ const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     padding: ${(props) => props.padding || 'unset'};
     display: flex;
     align-items: center;
-    padding-left: 10px;
+
+    @media ${device.tablet} {
+        text-align: center;
+    }
 `
 
 const Description = ({ position }: JobTitleProps) => {
@@ -117,7 +118,7 @@ const Description = ({ position }: JobTitleProps) => {
                     <Card ai="center">
                         {position?.description.map((paragraph, index) => {
                             return (
-                                <StyledText padding="15px 75px" key={index}>
+                                <StyledText padding="50px 75px" key={index}>
                                     {paragraph}
                                 </StyledText>
                             )
@@ -134,7 +135,7 @@ const Description = ({ position }: JobTitleProps) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
-                                        <StyledText>{challenge}</StyledText>
+                                        <StyledText padding="0 0 0 10px">{challenge}</StyledText>
                                     </StyledListItem>
                                 )
                             })}
@@ -157,7 +158,7 @@ const Description = ({ position }: JobTitleProps) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
-                                        <StyledText>{requirement}</StyledText>
+                                        <StyledText padding="0 0 0 10px">{requirement}</StyledText>
                                     </StyledListItem>
                                 )
                             })}
@@ -174,7 +175,7 @@ const Description = ({ position }: JobTitleProps) => {
                                     return (
                                         <StyledListItem key={index}>
                                             <ArrowImage src={Arrow} />
-                                            <StyledText>{ability}</StyledText>
+                                            <StyledText padding="0 0 0 10px">{ability}</StyledText>
                                         </StyledListItem>
                                     )
                                 })}

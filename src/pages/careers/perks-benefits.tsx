@@ -88,7 +88,6 @@ const StyledText = styled.div<StyledTextProps>`
     }
 `
 const StyledHeader = styled.div<StyledTextProps>`
-    max-width: 305px;
     width: 100%;
     font-size: 4.8rem;
     line-height: 53px;
@@ -99,11 +98,14 @@ const StyledHeader = styled.div<StyledTextProps>`
     padding: 10px 0 20px;
 
     @media ${device.laptopM} {
+        max-width: 450px;
         font-size: 4.2rem;
         line-height: 46px;
     }
 
     @media ${device.tabletL} {
+        text-align: center;
+        max-width: 305px;
         font-size: 3.8rem;
         line-height: 40px;
     }

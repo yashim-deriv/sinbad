@@ -1,81 +1,48 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { ImageContainer, Header, Text } from 'components/containers/main'
+import { Text } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
-import Sinbad0 from 'images/common/openpositions/first-section.png'
-import Background from 'images/common/homepage/carousel/background.png'
 import RightArrow from 'images/common/openpositions/arrow.png'
 import Flex from 'components/containers/flex'
 import device from 'themes/device'
 import { positions } from 'pages/job-description/data'
+import { BlueBackground } from 'images/common/jd'
 
 type CardProps = {
     index?: number
 }
 
+type StyledProps = {
+    font_family?: string
+    border_bottom?: string
+    color?: string
+    text_align?: string
+    line_height?: string
+    font_size?: string
+    padding?: string
+    text_transform?: string
+}
+
 /* stylelint-disable */
 
-const ContainersWrapper = styled.div`
+const OpenPositionsContainer = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    background-color: var(--color-sand-1);
-    background-image: url(${Background});
-    background-position: bottom center;
-    background-size: contain;
     justify-content: center;
+    background-image: url(${BlueBackground});
     background-repeat: no-repeat;
+    background-size: 45% 100%;
     width: 100%;
+    height: 100%;
 `
 
-const HeroWrapper = styled(ContainerWrapper)``
-
-const PositionsHeader = styled.div`
+const OpenPositionsContainerWrapper = styled(ContainerWrapper)`
+    padding: 50px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-    width: 100%;
-
-    @media ${device.laptopM} {
-        flex-direction: column;
-    }
-`
-const OpenPositionImage = styled(ImageContainer)`
-    display: flex;
     flex-direction: row;
-    padding: 50px 0;
-    object-fit: contain;
-    max-width: 700px;
-    max-height: none;
-
-    @media ${device.tabletL} {
-        padding: 50px 0 0;
-    }
-`
-
-const HeaderContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 140px;
-
-    @media ${device.laptopM} {
-        margin-top: 100px;
-        margin-bottom: 0px;
-        align-items: center;
-    }
-`
-
-const StyledHeader = styled(Header)`
-    width: 100px;
-`
-
-const StyledText = styled(Text)`
-    padding: ${(props) => props.padding || '5px 0'};
-    text-transform: uppercase;
-    font-family: 'Maven Pro Bold';
+    justify-content: center;
 `
 
 const PositionsCarouselContainer = styled.div`
@@ -87,21 +54,22 @@ const PositionsCarouselContainer = styled.div`
     padding-right: 60px;
 
     @media ${device.tablet} {
-        padding-top: 20px;
-        padding-right: 0;
+        padding: 60px 0;
     }
 `
 
 const Card = styled(Flex)<CardProps>`
     display: flex;
-    max-width: 324px;
-    height: 290px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 340px;
+    height: 300px;
     padding: 30px;
     box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
     background-color: white;
     margin: 20px;
     border-radius: 8px;
-    justify-content: space-between;
 
     @media (max-width: 1200px) {
         order: ${(props) => (props.index === 2 ? 1 : props.index === 1 ? 2 : props.index)};
@@ -122,6 +90,7 @@ const CardButton = styled.img`
 `
 const LinkContainer = styled(Link)`
     display: flex;
+    text-decoration: none;
 `
 
 const StyledFlex = styled(Flex)`
@@ -130,13 +99,6 @@ const StyledFlex = styled(Flex)`
         align-items: center;
         width: unset;
     }
-`
-
-const OpenPositionsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
 `
 
 const OpenPositionsInfo = styled.div`
@@ -152,70 +114,80 @@ const OpenPositionsInfo = styled.div`
     }
 `
 
+const StyledHeader = styled.div<StyledProps>`
+    font-size: ${(props) => props.font_size || '2.9rem'};
+    line-height: ${(props) => props.line_height || '34px'};
+    color: ${(props) => props.color || 'var(--color-black-3)'};
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    border-bottom: ${(props) => props.border_bottom || 'unset'};
+    padding: ${(props) => props.padding || '10px 0 20px'};
+    text-transform: ${(props) => props.text_transform || 'unset'};
+    text-align: ${(props) => props.text_align || 'center'};
+
+    @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 4.4rem;
+        line-height: 48px;
+    }
+`
+
+const StyledHeaderText = styled.div<StyledProps>`
+    font-size: 1.6rem;
+    line-height: 27px;
+    color: ${(props) => props.color || 'var(--color-black-3)'};
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: ${(props) => props.text_align || 'left'};
+    padding: ${(props) => props.padding || 'unset'};
+    padding-bottom: 10px;
+    text-transform: ${(props) => props.text_transform || 'uppercase'};
+
+    @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
+`
+
+const StyledText = styled.div<StyledProps>`
+    font-size: 1.5rem;
+    line-height: 24px;
+    color: var(--color-black-3);
+    font-weight: 320;
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    text-align: ${(props) => props.text_align || 'left'};
+    padding-bottom: 10px;
+
+    @media ${device.laptopM} {
+        max-width: 320px;
+        font-size: 1.5rem;
+        line-height: 25px;
+    }
+`
+
 const OpenPositions = () => {
     return (
         <>
-            <ContainersWrapper>
-                <HeroWrapper>
-                    <PositionsHeader>
-                        <HeaderContainer>
-                            <Header
-                                padding="20px 0px 20px 0px"
-                                font_size="5rem"
-                                text_transform="uppercase"
-                                line_height="42px"
-                            >
-                                It Careers For
-                            </Header>
-                            <Header
-                                padding="20px 0px"
-                                font_size="5rem"
-                                color="var(--color-sand-4)"
-                                text_transform="uppercase"
-                                line_height="42px"
-                            >
-                                Challenge
-                            </Header>
-                            <Header
-                                padding="20px 0px 20px 0px"
-                                font_size="50px"
-                                text_transform="uppercase"
-                            >
-                                Seekers
-                            </Header>
-                        </HeaderContainer>
-
-                        <OpenPositionImage src={Sinbad0} />
-                    </PositionsHeader>
-                </HeroWrapper>
-            </ContainersWrapper>
             <OpenPositionsContainer>
-                <ContainerWrapper>
+                <OpenPositionsContainerWrapper>
                     <PositionsCarouselContainer>
                         <StyledFlex width="760px" wrap="wrap">
                             {positions.map(({ position, text, id }, index) => {
                                 return (
-                                    <Card
-                                        key={index}
-                                        index={index}
-                                        direction="column"
-                                        ai="center"
-                                        jc="start"
-                                    >
-                                        <Header
+                                    <Card key={index} index={index}>
+                                        <StyledHeader
                                             color="var(--color-sand-4)"
-                                            text_align="center"
-                                            line_height="24px"
-                                            padding="10px 0px"
+                                            padding="20px 0px"
                                         >
                                             {position}
-                                        </Header>
-                                        <Text font_size="14px" text_align="center">
+                                        </StyledHeader>
+                                        <StyledText font_size="14px" text_align="center">
                                             {text}
-                                        </Text>
+                                        </StyledText>
                                         <LinkContainer to={`/job-description/${id}`}>
                                             <Text
-                                                font_size="11px"
+                                                font_size="1.5rem"
                                                 text_align="center"
                                                 width="50px"
                                                 padding="0px"
@@ -234,33 +206,32 @@ const OpenPositions = () => {
                         </StyledFlex>
                     </PositionsCarouselContainer>
                     <OpenPositionsInfo>
-                        <StyledHeader padding="20px 0 0 0" text_transform="uppercase">
+                        <StyledHeader text_align="left" padding="unset">
                             Open
                         </StyledHeader>
                         <StyledHeader
-                            border_bottom="1px solid var(--color-sand-1)"
-                            padding="25px 0"
-                            text_transform="uppercase"
+                            text_align="left"
+                            border_bottom="2px solid var(--color-sand-1)"
                         >
                             Positions
                         </StyledHeader>
-                        <StyledText padding="25px 0 5px" text_transform="uppercase">
+                        <StyledHeaderText padding="30px 0 10px">
                             Back-end Development
-                        </StyledText>
-                        <StyledText text_transform="uppercase">Business Intelligence</StyledText>
-                        <StyledText text_transform="uppercase">DevOps</StyledText>
-                        <StyledText text_transform="uppercase">Quantitative</StyledText>
-                        <StyledText text_transform="uppercase">Mobile app Development</StyledText>
-                        <Header
+                        </StyledHeaderText>
+                        <StyledHeaderText>Business Intelligence</StyledHeaderText>
+                        <StyledHeaderText>DevOps</StyledHeaderText>
+                        <StyledHeaderText>Quantitative</StyledHeaderText>
+                        <StyledHeaderText>Mobile app Development</StyledHeaderText>
+                        <StyledHeaderText
                             color="var(--color-sand-4)"
                             font_size="18px"
-                            font_weight="normal"
                             padding="25px 0"
+                            text_transform="unset"
                         >
                             and more...
-                        </Header>
+                        </StyledHeaderText>
                     </OpenPositionsInfo>
-                </ContainerWrapper>
+                </OpenPositionsContainerWrapper>
             </OpenPositionsContainer>
         </>
     )

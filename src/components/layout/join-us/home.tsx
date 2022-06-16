@@ -4,19 +4,17 @@ import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Button } from 'components/elements'
 import { JoinUsImageContainer } from 'components/containers/main'
 import Sinbad0 from 'images/common/homepage/join-us/home-join-us.png'
-import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
 import { openPositionActions } from 'common/utility'
 import { SectionLabel } from 'components/chunks'
+import { Banner } from 'images/common/careers'
 
 const Wrapper = styled.div`
-    display: flex;
     background-color: var(--color-sand-1);
     background-repeat: no-repeat;
     background-image: url(${Sinbad});
     background-position: bottom center;
     background-size: contain;
-    justify-content: center;
     width: 100%;
 `
 
@@ -30,9 +28,9 @@ export const StyledHeader = styled.div<{ font_family?: string }>`
 `
 
 export const StyledText = styled.div<{ font_family?: string }>`
-    max-width: 380px;
+    max-width: 432px;
     width: 100%;
-    font-size: 1.9rem;
+    font-size: 2.1rem;
     line-height: 34px;
     color: var(--color-black-3);
     font-weight: 320;
@@ -46,39 +44,53 @@ export const JoinUsContainer = styled.div<{ fd?: string; height?: string }>`
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: ${(props) => props.height || '760px'};
+    height: ${(props) => props.height || '700px'};
 
     @media ${device.tabletL} {
         display: flex;
-        flex-direction: ${(props) => props.fd || 'column-reverse'};
+        flex-direction: ${(props) => props.fd || 'column'};
         height: auto;
         justify-content: center;
-        padding: 30px 0;
     }
 `
-export const TextContainer = styled.div`
-    padding-bottom: 190px;
+export const TextContainer = styled.div<{ padding_bottom?: string }>`
+    padding-bottom: ${(props) => props.padding_bottom || '190px'};
 
     @media ${device.tabletL} {
         padding-bottom: 20px;
     }
 `
 
-const JoinUsInfo = styled.div`
+const JoinUsWrapper = styled(JoinUsContainer)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url(${Banner});
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 42% 70%;
+    width: 100%;
+`
+
+export const JoinUsInfo = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media ${device.tabletL} {
+        padding-top: 40px;
+    }
 `
 
 const JoinUsHome = () => {
     return (
         <Wrapper>
-            <ContainerWrapper>
+            <JoinUsWrapper>
                 <JoinUsContainer>
                     <JoinUsInfo>
                         <SectionLabel />
-                        <TextContainer>
+                        <TextContainer padding_bottom="80px">
                             <StyledHeader>Join Our Team!</StyledHeader>
                             <StyledText>
                                 Is your dream to build great products using leading technologies?
@@ -88,9 +100,9 @@ const JoinUsHome = () => {
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <JoinUsImageContainer src={Sinbad0} />
+                    <JoinUsImageContainer src={Sinbad0} padding_bottom="unset" />
                 </JoinUsContainer>
-            </ContainerWrapper>
+            </JoinUsWrapper>
         </Wrapper>
     )
 }

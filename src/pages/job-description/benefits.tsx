@@ -10,23 +10,23 @@ import {
     DressCode,
     Contract,
     Location,
-    Background,
+    BlueBackground,
 } from 'images/common/jd'
 import device from 'themes/device'
 
-const JobTitleContainer = styled.div`
+const BenefitsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url(${Background});
+    background-image: url(${BlueBackground});
     background-repeat: no-repeat;
     background-size: 45% 100%;
     width: 100%;
     height: 100%;
 `
 
-const JobTitleContainerWrapper = styled(ContainerWrapper)`
+const BenefitsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
     align-items: flex-end;
@@ -128,8 +128,8 @@ const data = [
 
 const BenefitsList = () => {
     return (
-        <JobTitleContainer>
-            <JobTitleContainerWrapper>
+        <BenefitsContainer>
+            <BenefitsContainerWrapper>
                 <BenefitsImageContainer>
                     <StyledHeader padding="40px 0">Benefits</StyledHeader>
                     <StyledImg src={Benefits} />
@@ -157,8 +157,8 @@ const BenefitsList = () => {
                         <img src={Location} />
                     </Card>
                 </LocationContainer>
-            </JobTitleContainerWrapper>
-        </JobTitleContainer>
+            </BenefitsContainerWrapper>
+        </BenefitsContainer>
     )
 }
 

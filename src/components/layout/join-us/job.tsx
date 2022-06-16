@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { JoinUsContainer, StyledHeader, StyledText } from './home'
+import { JoinUsContainer, JoinUsInfo, StyledHeader, StyledText, TextContainer } from './home'
 import { Button } from 'components/elements'
 import { JoinUsImageContainer } from 'components/containers/main'
 import Sinbad0 from 'images/common/jd/job-join-us.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
-import { ContainerWrapper } from 'components/containers/common/style'
 import { openPositionActions } from 'common/utility'
 import { Banner } from 'images/common/jd'
-import device from 'themes/device'
 import { SectionLabel } from 'components/chunks'
 
 const Wrapper = styled.div`
@@ -23,7 +21,7 @@ const Wrapper = styled.div`
 const JoinUsWrapper = styled(JoinUsContainer)`
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     background-repeat: no-repeat;
     background-image: url(${Banner});
     background-size: 47.5% 65%;
@@ -31,25 +29,11 @@ const JoinUsWrapper = styled(JoinUsContainer)`
     height: 760px;
 `
 
-const TextContainer = styled.div`
-    padding-bottom: 75px;
-
-    @media ${device.tabletL} {
-        padding-bottom: 20px;
-    }
-`
-
-const JoinUsInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-`
-
 const JoinUsJob = () => {
     return (
         <Wrapper>
             <JoinUsWrapper>
-                <ContainerWrapper>
+                <JoinUsContainer>
                     <JoinUsImageContainer
                         src={Sinbad0}
                         padding_bottom="unset"
@@ -67,7 +51,7 @@ const JoinUsJob = () => {
                             <Button label="Apply for this job" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                </ContainerWrapper>
+                </JoinUsContainer>
             </JoinUsWrapper>
         </Wrapper>
     )
