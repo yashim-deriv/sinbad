@@ -196,7 +196,7 @@ const OpenPositions = () => {
                                             >
                                                 More
                                             </Text>
-                                            <CardButtonContainer to="/some-postition">
+                                            <CardButtonContainer to={`/job-description/${id}`}>
                                                 <CardButton src={RightArrow} />
                                             </CardButtonContainer>
                                         </LinkContainer>
