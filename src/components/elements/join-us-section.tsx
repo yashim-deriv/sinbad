@@ -1,12 +1,12 @@
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Button } from 'components/elements'
 import { Header, JoinUsImageContainer, Text } from 'components/containers/main'
-import Sinbad0 from 'images/common/homepage/join-us/home-join-us.png'
-import { HeaderTitle, ContainerWrapper } from 'components/containers/common/style'
-import device from 'themes/device'
+import { ContainerWrapper, HeaderTitle } from 'components/containers/common/style'
 import { openPositionActions } from 'common/utility'
+import Sinbad from 'images/common/openpositions/join-us-background.png'
+import device from 'themes/device'
 
 const Wrapper = styled.div`
     display: flex;
@@ -17,6 +17,13 @@ const Wrapper = styled.div`
     background-size: contain;
     justify-content: center;
     width: 100%;
+    padding: 44px 0;
+`
+
+const JoinUsInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 `
 
 const StyledHeader = styled.div`
@@ -25,12 +32,11 @@ const StyledHeader = styled.div`
     padding-right: 15px;
 `
 
-export const JoinUsContainer = styled.div`
+const JoinUsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 600px;
 
     @media ${device.tabletL} {
         display: flex;
@@ -40,7 +46,8 @@ export const JoinUsContainer = styled.div`
         padding-top: 20px;
     }
 `
-export const TextContainer = styled.div`
+
+const TextContainer = styled.div`
     padding-bottom: 190px;
 
     @media ${device.tabletL} {
@@ -48,13 +55,43 @@ export const TextContainer = styled.div`
     }
 `
 
-const JoinUsInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-`
+type JoinUsSectionProps = {
+    appearance?: 'home' | 'careers' | 'open_positions' | 'jobs'
+}
 
-const JoinUsHome = () => {
+const image_data = [
+    {
+        home: (
+            <StaticImage
+                src="../../images/common/homepage/join-us/home-join-us.png"
+                alt="join us"
+            />
+        ),
+    },
+    {
+        careers: (
+            <StaticImage
+                src="../../images/common/homepage/join-us/careers-join-us.png"
+                alt="join us"
+            />
+        ),
+    },
+    {
+        open_positions: (
+            <StaticImage
+                src="../../images/common/homepage/join-us/join-team.png"
+                alt="join our team"
+            />
+        ),
+    },
+    {
+        jobs: (
+            <StaticImage src="../../images/common/homepage/join-us/job-join-us.png" alt="join us" />
+        ),
+    },
+]
+
+const JoinUsSection = ({ appearance }: JoinUsSectionProps) => {
     return (
         <Wrapper>
             <ContainerWrapper>
@@ -82,12 +119,11 @@ const JoinUsHome = () => {
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-
-                    <JoinUsImageContainer src={Sinbad0} />
+                    <JoinUsImageContainer>{image_data[appearance]}</JoinUsImageContainer>
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>
     )
 }
 
-export default JoinUsHome
+export default JoinUsSection

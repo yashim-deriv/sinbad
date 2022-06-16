@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { IconProps } from '../index'
-import { ImageContainer } from 'components/containers'
 import Background from 'images/common/background.png'
-import { Image0, Image1, Image2 } from 'images/common/homepage/carousel'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
+import { ImageContainer } from 'components/containers'
 
 const CarouselContainer = styled.div`
     display: flex;
@@ -42,18 +42,14 @@ const CarouselTextContainer = styled.div`
     }
 `
 
-const CarouselImageContainer = styled.div`
+const CarouselImageContainer = styled(ImageContainer)`
     margin-right: 10rem;
+    max-width: 700px;
+    max-height: none;
 
     @media ${device.tablet} {
         margin-right: 0;
     }
-`
-
-const CarouselImage = styled(ImageContainer)`
-    object-fit: contain;
-    max-width: 700px;
-    max-height: none;
 `
 
 const PickerContainer = styled.div`
@@ -108,6 +104,41 @@ const CarouselDots = styled.span`
     }
 `
 
+const BasicText = styled.div`
+    font-size: 4.2rem;
+    font-weight: 640;
+
+    @media ${device.laptop} {
+        font-size: 3.6rem;
+        line-height: 52px;
+    }
+    @media ${device.tabletL} {
+        font-size: 3.2rem;
+        line-height: 44px;
+    }
+    @media ${device.tablet} {
+        font-size: 2.8rem;
+        line-height: 38px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+        line-height: 34px;
+    }
+`
+
+const StyledUpperText = styled(BasicText)<{ font_family?: string }>`
+    line-height: 59px;
+    color: var(--color-black-3);
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-transform: uppercase;
+`
+
+const TextLabel = styled(BasicText)<{ font_family?: string }>`
+    line-height: 57px;
+    color: var(--color-sand-4);
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+`
+
 const StyledText = styled.div<{ font_family?: string }>`
     font-size: 3.2rem;
     line-height: 62px;
@@ -132,69 +163,46 @@ const StyledText = styled.div<{ font_family?: string }>`
         line-height: 36px;
     }
 `
-const StyledUpperText = styled.div<{ font_family?: string }>`
-    font-size: 4.2rem;
-    line-height: 59px;
-    color: var(--color-black-3);
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
-    text-transform: uppercase;
-
-    @media ${device.laptop} {
-        font-size: 3.6rem;
-        line-height: 52px;
-    }
-    @media ${device.tabletL} {
-        font-size: 3.2rem;
-        line-height: 44px;
-    }
-    @media ${device.tablet} {
-        font-size: 2.8rem;
-        line-height: 38px;
-    }
-    @media ${device.tabletS} {
-        font-size: 2.4rem;
-        line-height: 34px;
-    }
-`
-
-const TextLabel = styled.div<{ font_family?: string }>`
-    font-size: 4.2rem;
-    line-height: 57px;
-    color: var(--color-sand-4);
-    font-weight: 640;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
-
-    @media ${device.laptop} {
-        font-size: 3.6rem;
-        line-height: 52px;
-    }
-    @media ${device.tabletL} {
-        font-size: 3.2rem;
-        line-height: 44px;
-    }
-    @media ${device.tablet} {
-        font-size: 2.8rem;
-        line-height: 38px;
-    }
-    @media ${device.tabletS} {
-        font-size: 2.4rem;
-        line-height: 34px;
-    }
-`
 
 const data = [
     {
         text: 'Designing scalable apps',
-        background: Image0,
+        img: (
+            <StaticImage
+                key={0}
+                src="../../images/common/homepage/carousel/carousel-0.png"
+                alt="Designing scalable apps"
+                objectFit="contain"
+                loading="eager"
+                placeholder="none"
+            />
+        ),
     },
     {
         text: 'Creating reliable platforms',
-        background: Image1,
+        img: (
+            <StaticImage
+                key={1}
+                src="../../images/common/homepage/carousel/carousel-1.png"
+                alt="Creating reliable platforms"
+                objectFit="contain"
+                loading="eager"
+                placeholder="none"
+            />
+        ),
     },
     {
         text: 'Building powerful software',
-        background: Image2,
+        img: (
+            <StaticImage
+                key={2}
+                src="../../images/common/homepage/carousel/carousel-2.png"
+                alt="Building powerful software"
+                objectFit="contain"
+                loading="eager"
+                placeholder="none"
+            />
+        ),
     },
 ]
 
@@ -230,9 +238,9 @@ const Carousel = ({ active, setActive }: IconProps) => {
                 </CarouselTextContainer>
 
                 <CarouselImageContainer>
-                    {data.map((current_item, index) => {
+                    {data.map((slide, index) => {
                         if (index === active) {
-                            return <CarouselImage key={index} src={current_item.background} />
+                            return slide.img
                         }
                     })}
                 </CarouselImageContainer>
