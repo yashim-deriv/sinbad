@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import { ImageContainer } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
-import Sinbad0 from 'images/common/openpositions/first-section.png'
 import Background from 'images/common/homepage/carousel/background.png'
 import device from 'themes/device'
 /* stylelint-disable */
@@ -75,17 +73,6 @@ const StyledHeader = styled.div<{ font_family?: string; mobile_padding?: string;
         padding: ${(props) => props.mobile_padding || 'unset'};
     }
 `
-
-const data = {
-    img: (
-        <StaticImage
-            src="../../images/common/openpositions/first-section.png"
-            alt="selected people icon"
-            placeholder="none"
-            objectFit="fill"
-        />
-    ),
-}
 
 const Hero = () => {
     return (
