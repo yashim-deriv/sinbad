@@ -102,36 +102,6 @@ export const positions: PositionsType[] = [
         good_to_have: [],
     },
     {
-        id: 'data-engineer',
-        position: 'Data Engineer',
-        text: "We're looking for a detail oriented Data Engineer to convert data into analyses and practical recommendations for fast-paced, global fintech companies",
-        description: [
-            'You’ll be responsible for designing and developing applications for iOS and Android while working closely with the Product Development team to plan new app features. You will handle debugging and troubleshooting to improve mobile app functionality and create advanced applications.',
-        ],
-        challenges: [
-            'Develop iOS and Android mobile applications, writing high-quality code and tests.',
-            'Collaborate with cross-functional teams to analyse data and decide on the best strategies to improve customers’ interaction with our mobile apps.',
-            'Prioritise information security and process maintenance throughout the mobile app lifecycle.',
-            'Analyse, enhance, and support our existing mobile applications.',
-            'Work closely with Quality Assurance, Design, and Product Management teams to build the best possible UX for our mobile apps.',
-        ],
-        team: 'We are the Product Design team, a group of designers, researchers, and illustrators. We solve complex problems to create beautiful products with a seamless user experience. We test and iterate our designs while advocating for users throughout the product development cycle.',
-        requirements: [
-            'Experience in the Flutter framework or a keen eagerness to master it',
-            'High proficiency and experience in one or more of the following programming languages: Java, Dart, ES6, Kotlin, Objective-C, or Swif',
-            'Distinct competence in mobile app development for at least one platform',
-            'In-depth understanding of design guidelines and patterns in the Android and iOS platforms and their differences',
-            'Strong knowledge of the performance tools and optimisation techniques in Android or iOS SDKs',
-            'Proven work experience as a mobile developer in Android and iOS',
-            'Excellent spoken and written English communication skills',
-        ],
-        good_to_have: [
-            'Demonstrable portfolio of released applications for iOS and Android',
-            'Experience in implementing UI animations',
-            'Experience in working with finance-related companies',
-        ],
-    },
-    {
         id: 'flutter-developer',
         position: 'Flutter Developer',
         text: 'We are looking for a Flutter Developer to build advanced Android and iOS applications for fast-paced fintech companies.',
