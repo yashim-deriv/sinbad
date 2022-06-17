@@ -78,10 +78,9 @@ const WorkWithUs = () => {
                         on challenging projects.
                     </StyledHeader>
                 </StyledContainer>
-
                 <ImageContainer max_height="unset">
                     <StaticImage
-                        src="../..mages/common/careers/work-with-us.png"
+                        src="../../images/common/careers/work-with-us.png"
                         alt="work with us"
                     />
                 </ImageContainer>

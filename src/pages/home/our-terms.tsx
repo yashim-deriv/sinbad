@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import {
     Term0,
@@ -9,7 +10,6 @@ import {
     Term5,
     Term6,
     Term7,
-    OurTermsSinbad,
     OurTermsBackground,
 } from 'images/common/homepage/our-terms'
 import { ImageContainer } from 'components/containers'
@@ -22,9 +22,7 @@ type StyledTextProps = {
     font_family?: string
 }
 
-/* stylelint-disable */
-
-const OurTermsContainerWrapper = styled(ContainerWrapper)`
+const OurTeamsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
     @media ${device.bp1060} {
@@ -41,7 +39,7 @@ const OurTermsContainerWrapper = styled(ContainerWrapper)`
     }
 `
 
-const OurTermsContainer = styled.div`
+const OurTeamsContainer = styled.div`
     display: flex;
     width: 100%;
     text-align: center;
@@ -131,7 +129,6 @@ const StyledDescription = styled.div<StyledTextProps>`
 
 const SinbadImage = styled(ImageContainer)`
     max-width: 200px;
-    object-fit: scale-down;
 
     @media ${device.bp1060} {
         display: none;
@@ -173,10 +170,10 @@ const data: TableType[] = [
     },
 ]
 
-const OurTerms = () => {
+const OurTeams = () => {
     return (
-        <OurTermsContainer>
-            <OurTermsContainerWrapper>
+        <OurTeamsContainer>
+            <OurTeamsContainerWrapper>
                 <TermsTextContainer>
                     <SectionLabel />
                     <StyledHeader>Revolutionising fintech needs amazing software</StyledHeader>
@@ -195,12 +192,19 @@ const OurTerms = () => {
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
-                    <SinbadImage src={OurTermsSinbad} />,
-                    <Table data={data} text={'Our Terms'} />
+                    <SinbadImage>
+                        <StaticImage
+                            src="../../images/common/homepage/our-terms/sinbad-in-our-terms.png"
+                            alt="sinbad mascott"
+                            placeholder="none"
+                            objectFit="scale-down"
+                        />
+                    </SinbadImage>
+                    <Table data={data} text={'Our Teams'} />
                 </TermsAndSinbadContainer>
-            </OurTermsContainerWrapper>
-        </OurTermsContainer>
+            </OurTeamsContainerWrapper>
+        </OurTeamsContainer>
     )
 }
 
-export default OurTerms
+export default OurTeams

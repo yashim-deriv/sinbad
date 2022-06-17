@@ -61,32 +61,43 @@ type JoinUsSectionProps = {
 
 const image_data = [
     {
-        home: (
+        id: 'home',
+        img: (
             <StaticImage
                 src="../../images/common/homepage/join-us/home-join-us.png"
-                alt="join us"
+                alt="home join us image"
+                placeholder="none"
             />
         ),
     },
     {
-        careers: (
+        id: 'careers',
+        img: (
             <StaticImage
-                src="../../images/common/homepage/join-us/careers-join-us.png"
-                alt="join us"
+                src="../../images/common/careers/careers-join-us.png"
+                alt="career join us image"
+                placeholder="none"
             />
         ),
     },
     {
-        open_positions: (
+        id: 'open_positions',
+        img: (
             <StaticImage
-                src="../../images/common/homepage/join-us/join-team.png"
-                alt="join our team"
+                src="../../images/common/openpositions/join-team.png"
+                alt="open position join us image"
+                placeholder="none"
             />
         ),
     },
     {
-        jobs: (
-            <StaticImage src="../../images/common/homepage/join-us/job-join-us.png" alt="join us" />
+        id: 'jobs',
+        img: (
+            <StaticImage
+                src="../../images/common/jd/job-join-us.png"
+                alt="jobs join us image"
+                placeholder="none"
+            />
         ),
     },
 ]
@@ -119,7 +130,9 @@ const JoinUsSection = ({ appearance }: JoinUsSectionProps) => {
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <JoinUsImageContainer>{image_data[appearance]}</JoinUsImageContainer>
+                    <JoinUsImageContainer>
+                        {image_data.find((img) => img.id === appearance)?.img}
+                    </JoinUsImageContainer>
                 </JoinUsContainer>
             </ContainerWrapper>
         </Wrapper>

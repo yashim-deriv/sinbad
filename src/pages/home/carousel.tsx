@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import { IconProps } from '../index'
 import Background from 'images/common/background.png'
 import { ContainerWrapper } from 'components/containers/common/style'
 import device from 'themes/device'
@@ -43,9 +42,9 @@ const CarouselTextContainer = styled.div`
 `
 
 const CarouselImageContainer = styled(ImageContainer)`
-    margin-right: 10rem;
-    max-width: 700px;
+    max-width: 600px;
     max-height: none;
+    margin: 4rem 4rem 0 0;
 
     @media ${device.tablet} {
         margin-right: 0;
@@ -104,9 +103,10 @@ const CarouselDots = styled.span`
     }
 `
 
-const BasicText = styled.div`
+const BasicText = styled.div<{ font_family?: string }>`
     font-size: 4.2rem;
     font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
 
     @media ${device.laptop} {
         font-size: 3.6rem;
@@ -126,17 +126,15 @@ const BasicText = styled.div`
     }
 `
 
-const StyledUpperText = styled(BasicText)<{ font_family?: string }>`
+const StyledUpperText = styled(BasicText)`
     line-height: 59px;
     color: var(--color-black-3);
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-transform: uppercase;
 `
 
-const TextLabel = styled(BasicText)<{ font_family?: string }>`
+const TextLabel = styled(BasicText)`
     line-height: 57px;
     color: var(--color-sand-4);
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
 `
 
 const StyledText = styled.div<{ font_family?: string }>`
@@ -206,7 +204,9 @@ const data = [
     },
 ]
 
-const Carousel = ({ active, setActive }: IconProps) => {
+const Carousel = () => {
+    const [active, setActive] = useState(0)
+
     return (
         <CarouselContainer>
             <CarouselContainerWrapper>
@@ -236,7 +236,6 @@ const Carousel = ({ active, setActive }: IconProps) => {
                         ))}
                     </PickerContainer>
                 </CarouselTextContainer>
-
                 <CarouselImageContainer>
                     {data.map((slide, index) => {
                         if (index === active) {
