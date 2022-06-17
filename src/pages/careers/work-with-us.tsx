@@ -14,7 +14,7 @@ const WorkWithUsContainer = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 35% bottom 0%;
-    max-height: 790px;
+    max-height: 650px;
 
     @media ${device.mobileL} {
         background-image: none;

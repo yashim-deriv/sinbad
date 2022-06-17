@@ -24,11 +24,12 @@ const CarouselContainer = styled.div`
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
     justify-content: space-between;
-    margin: 75px 0 100px 0;
+    margin: 50px 0 75px 0;
 
     @media ${device.tabletL} {
         flex-direction: row;
         align-items: center;
+        margin: 0;
     }
 `
 
@@ -37,8 +38,8 @@ const CarouselTextContainer = styled.div`
     flex-direction: column;
     padding-top: 50px;
 
-    @media ${device.tabletS} {
-        padding: 50px 0 0;
+    @media ${device.tabletL} {
+        padding: 0;
     }
 `
 
@@ -111,6 +112,32 @@ const BasicText = styled.div<{ font_family?: string }>`
 
     @media ${device.laptop} {
         font-size: 3.6rem;
+        line-height: 40px;
+    }
+    @media ${device.tabletL} {
+        font-size: 3.2rem;
+        line-height: 34px;
+    }
+    @media ${device.tablet} {
+        font-size: 2.8rem;
+        line-height: 30px;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+        line-height: 26px;
+    }
+`
+
+const StyledUpperText = styled(BasicText)`
+    font-size: 4.2rem;
+    line-height: 59px;
+    color: var(--color-black-3);
+    font-weight: 640;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-transform: uppercase;
+
+    @media ${device.laptop} {
+        font-size: 3.6rem;
         line-height: 52px;
     }
     @media ${device.tabletL} {
@@ -127,39 +154,28 @@ const BasicText = styled.div<{ font_family?: string }>`
     }
 `
 
-const StyledUpperText = styled(BasicText)`
-    line-height: 59px;
-    color: var(--color-black-3);
-    text-transform: uppercase;
-`
-
 const TextLabel = styled(BasicText)`
+    font-size: 4.2rem;
     line-height: 57px;
-    color: var(--color-sand-4);
-`
-
-const StyledText = styled.div<{ font_family?: string }>`
-    font-size: 3.2rem;
-    line-height: 62px;
     color: var(--color-sand-4);
     font-weight: 640;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
 
     @media ${device.laptop} {
-        font-size: 3rem;
-        line-height: 52px;
+        font-size: 3.6rem;
+        line-height: 48px;
     }
     @media ${device.tabletL} {
-        font-size: 2.6rem;
-        line-height: 46px;
+        font-size: 3.2rem;
+        line-height: 38px;
     }
     @media ${device.tablet} {
-        font-size: 2.4rem;
-        line-height: 40px;
+        font-size: 2.8rem;
+        line-height: 34px;
     }
     @media ${device.tabletS} {
-        font-size: 2.2rem;
-        line-height: 36px;
+        font-size: 2.4rem;
+        line-height: 30px;
     }
 `
 

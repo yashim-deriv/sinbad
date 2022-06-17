@@ -49,7 +49,6 @@ export const JoinUsContainer = styled.div<{ fd?: string; height?: string }>`
     @media ${device.tabletL} {
         display: flex;
         flex-direction: ${(props) => props.fd || 'column'};
-        height: auto;
         justify-content: center;
     }
 `

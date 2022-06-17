@@ -61,9 +61,13 @@ const TextAboutCareer = styled.div`
     justify-content: flex-start;
     align-content: center;
     padding-right: 40px;
+    margin-bottom: 100px;
 
     @media ${device.tablet} {
         padding-right: 0;
+    }
+    @media ${device.tabletL} {
+        margin-bottom: 0;
     }
 `
 const StyledText = styled.div<StyledTextProps>`
@@ -112,13 +116,10 @@ const StyledHeader = styled.div<StyledTextProps>`
 `
 
 const StyledImage = styled(ImageContainer)`
-    width: 290px;
-    height: 740px;
-    max-height: unset;
-    margin-bottom: 70px;
+    max-width: 285px;
 
     @media ${`(max-width: 1072px)`} {
-        width: 250px;
+        width: 450px;
         height: 500px;
     }
     @media ${device.tabletL} {
