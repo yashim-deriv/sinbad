@@ -49,14 +49,13 @@ const StyledHeader = styled.div<{ font_family?: string }>`
     }
 `
 const StyledText = styled.div<{ font_family?: string }>`
-    max-width: 910px;
+    max-width: 940px;
     width: 100%;
-    height: 107px;
     font-size: 1.8rem;
     line-height: 34px;
     color: #4c4c4c;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
 
     @media ${device.tabletL} {

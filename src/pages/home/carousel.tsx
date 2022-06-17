@@ -25,7 +25,7 @@ const CarouselContainer = styled.div`
 
 const CarouselContainerWrapper = styled(ContainerWrapper)`
     justify-content: space-between;
-    margin: 0 0 75px 0;
+    margin: 75px 0 100px 0;
 
     @media ${device.tabletL} {
         flex-direction: row;

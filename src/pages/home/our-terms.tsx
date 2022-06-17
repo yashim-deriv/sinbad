@@ -27,11 +27,12 @@ type StyledTextProps = {
 const OurTermsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
+    align-items: flex-start;
+
     @media ${device.bp1060} {
         justify-content: center;
         padding-bottom: 200px;
     }
-
     @media ${device.laptopM} {
         display: flex;
     }
@@ -68,10 +69,10 @@ const TermsTextContainer = styled.div`
 `
 
 const TermsAndSinbadContainer = styled.div`
-    padding: 120px 0 0;
+    padding: 80px 0 0;
     display: flex;
 
-    @media ${device.tabletS} {
+    @media ${device.tablet} {
         justify-content: center;
         padding: 0 0 30px;
     }
@@ -100,7 +101,7 @@ const StyledText = styled.div<StyledTextProps>`
     line-height: 27px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding-bottom: 10px;
 
@@ -119,7 +120,7 @@ const StyledDescription = styled.div<StyledTextProps>`
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
-    padding-bottom: 120px;
+    padding-bottom: 190px;
 
     @media ${device.laptopM} {
         max-width: 320px;
@@ -133,7 +134,7 @@ const SinbadImage = styled(ImageContainer)`
     max-width: 200px;
     object-fit: scale-down;
 
-    @media ${device.bp1060} {
+    @media ${device.tabletL} {
         display: none;
     }
 `
@@ -191,7 +192,7 @@ const OurTerms = () => {
                         architecture, and more.
                     </StyledText>
                     <StyledDescription>
-                        Where others see gaps, we see an opportunity to build a powerhouse
+                        Where others see gaps, we see an opportunity to build a powerhouse.
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>

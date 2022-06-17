@@ -34,7 +34,7 @@ const TableContainer = styled.div`
     justify-content: flex-end;
     flex-wrap: wrap;
     align-content: center;
-    max-width: 599px;
+    max-width: 590px;
     width: 100%;
 
     @media ${device.bp1060} {
@@ -120,7 +120,7 @@ const TermText = styled.div<TermProps>`
 `
 
 const Term = styled.div<TermProps>`
-    max-width: 226px;
+    max-width: 224px;
     width: 100%;
     height: 120px;
     display: flex;

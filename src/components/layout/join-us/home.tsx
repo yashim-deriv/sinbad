@@ -34,7 +34,7 @@ export const StyledText = styled.div<{ font_family?: string }>`
     line-height: 34px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding: 25px 0;
 `

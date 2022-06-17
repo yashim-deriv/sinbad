@@ -12,6 +12,12 @@ import {
 } from 'images/common/careers'
 import device from 'themes/device'
 
+type DataType = {
+    icon: string
+    header: string
+    text: string
+}
+
 const HiringProcessContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -64,7 +70,7 @@ const Card = styled(Flex)`
     max-width: 390px;
     width: 100%;
     height: 220px;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
     background-color: var(--color-white);
     padding: 10px 10px 20px 20px;
     margin: 5px;
@@ -90,13 +96,13 @@ const CardHeader = styled.div<{ font_family?: string }>`
     }
 `
 const CardText = styled.div<{ font_family?: string }>`
-    max-width: 195px;
+    max-width: 300px;
     width: 100%;
     font-size: 1.7rem;
     line-height: 26px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding: 15px 0;
 
@@ -111,7 +117,7 @@ const CardNumber = styled.div<{ font_family?: string }>`
     line-height: 22px;
     color: #dae3e5;
     font-weight: 560;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
 `
 
 const StyledImageContainer = styled(ImageContainer)`
@@ -119,12 +125,6 @@ const StyledImageContainer = styled(ImageContainer)`
     height: 90px;
     margin-top: 30px;
 `
-
-type DataType = {
-    icon: string
-    header: string
-    text: string
-}
 
 const data: DataType[] = [
     {

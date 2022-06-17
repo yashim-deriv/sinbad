@@ -52,7 +52,7 @@ const Card = styled(Flex)`
     flex-direction: column;
     max-width: 1190px;
     margin: 20px 0;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
     background-color: var(--color-white);
     border-radius: 4px;
     justify-content: center;
@@ -100,7 +100,7 @@ const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     color: var(--color-black-2);
     font-weight: 320;
     text-align: left;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     padding: ${(props) => props.padding || 'unset'};
     display: flex;
     align-items: center;

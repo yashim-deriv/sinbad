@@ -5,7 +5,6 @@ import { Button } from 'components/elements'
 import { JoinUsImageContainer } from 'components/containers/main'
 import Sinbad0 from 'images/common/jd/job-join-us.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
-import { openPositionActions } from 'common/utility'
 import { Banner } from 'images/common/jd'
 import { SectionLabel } from 'components/chunks'
 
@@ -30,6 +29,11 @@ const JoinUsWrapper = styled(JoinUsContainer)`
 `
 
 const JoinUsJob = () => {
+    const sendMailToHR = () => {
+        const link = 'mailto:hr@sinbad.software'
+        window.location.href = link
+    }
+
     return (
         <Wrapper>
             <JoinUsWrapper>
@@ -48,7 +52,7 @@ const JoinUsJob = () => {
                                 To apply for this position please send us your CV with a cover
                                 letter to hr@sinbad.software
                             </StyledText>
-                            <Button label="Apply for this job" onClick={openPositionActions} />
+                            <Button label="Apply for this job" onClick={sendMailToHR} />
                         </TextContainer>
                     </JoinUsInfo>
                 </JoinUsContainer>

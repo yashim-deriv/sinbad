@@ -100,7 +100,7 @@ const StyledText = styled.div<StyledTextProps>`
     line-height: 27px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
 `
 const StyledHeader = styled.div<StyledTextProps>`

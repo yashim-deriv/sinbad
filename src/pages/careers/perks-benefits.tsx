@@ -73,7 +73,7 @@ const StyledText = styled.div<StyledTextProps>`
     line-height: 27px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding: 15px 0;
 
@@ -117,7 +117,11 @@ const StyledImage = styled(ImageContainer)`
     max-height: unset;
     margin-bottom: 70px;
 
-    @media ${device.bp1060} {
+    @media ${`(max-width: 1072px)`} {
+        width: 250px;
+        height: 500px;
+    }
+    @media ${device.tabletL} {
         display: none;
     }
 `

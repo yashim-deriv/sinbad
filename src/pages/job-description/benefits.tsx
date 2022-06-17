@@ -37,11 +37,14 @@ const BenefitsContainerWrapper = styled(ContainerWrapper)`
     }
 `
 
-const StyledHeader = styled(Header)`
+const StyledHeader = styled.div<{ font_family?: string }>`
     text-transform: uppercase;
     color: var(--color-sand-4);
-    padding-right: 40px;
+    padding: 40px 40px 40px 0;
     font-size: 3.8rem;
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: right;
 `
 
 const BenefitsImageContainer = styled.div`
@@ -68,22 +71,30 @@ const StyledImg = styled.img`
     padding-right: 50px;
 `
 
-const Card = styled(Flex)`
+const Card = styled(Flex)<{ margin?: string; height?: string }>`
     display: flex;
     flex-direction: ${(props) => props.direction || 'column'};
     justify-content: center;
     max-width: 370px;
-    height: 250px;
+    height: ${(props) => props.height || '280px'};
     padding: 55px 0;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
     background-color: white;
-    margin: 15px;
+    margin: ${(props) => props.margin || '15px'};
     border-radius: 5px;
 `
 
 const CardInfo = styled.div`
     display: flex;
     flex-direction: column;
+`
+const CardHeader = styled.div<{ font_family?: string }>`
+    font-size: 1.9rem;
+    line-height: 32px;
+    color: var(--color-black-3);
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    padding: 25px 10px 0;
 `
 
 const LocationContainer = styled(Flex)`
@@ -112,7 +123,7 @@ const StyledText = styled.div<{ font_family?: string }>`
     line-height: 27px;
     color: #1b1b1b;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding-bottom: 10px;
 `
@@ -131,7 +142,7 @@ const BenefitsList = () => {
         <BenefitsContainer>
             <BenefitsContainerWrapper>
                 <BenefitsImageContainer>
-                    <StyledHeader padding="40px 0">Benefits</StyledHeader>
+                    <StyledHeader>Benefits</StyledHeader>
                     <StyledImg src={Benefits} />
                 </BenefitsImageContainer>
                 <Flex wrap="wrap" jc="center">
@@ -140,16 +151,14 @@ const BenefitsList = () => {
                             <Card key={index} ai="center">
                                 <img src={icon} />
                                 <CardInfo>
-                                    <Header padding="10px 10px 0" font_size="14px">
-                                        {text}
-                                    </Header>
+                                    <CardHeader>{text}</CardHeader>
                                 </CardInfo>
                             </Card>
                         )
                     })}
                 </Flex>
                 <LocationContainer>
-                    <Card direction="row" ai="center">
+                    <Card direction="row" ai="center" margin="50px 15px 15px 15px" height="180px">
                         <LocationImageContainer>
                             <StyledSSText font_family="Maven Pro Bold">Location</StyledSSText>
                             <StyledText>Dubai, the UAE</StyledText>

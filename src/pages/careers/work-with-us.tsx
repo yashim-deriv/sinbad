@@ -21,7 +21,7 @@ const WorkWithUsContainer = styled.div`
 `
 
 const CareersContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 0;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,6 +64,18 @@ const StyledContainer = styled.div`
     }
 `
 
+const StyledImageContainer = styled(ImageContainer)`
+    max-height: unset;
+    width: 900px;
+
+    @media ${device.tabletL} {
+        width: 570px;
+    }
+    @media ${device.tabletS} {
+        width: 400px;
+    }
+`
+
 const WorkWithUs = () => {
     return (
         <WorkWithUsContainer>
@@ -77,7 +89,7 @@ const WorkWithUs = () => {
                         on challenging projects.
                     </StyledHeader>
                 </StyledContainer>
-                <ImageContainer src={WorkWithUsDashboard} max_height="unset" />
+                <StyledImageContainer src={WorkWithUsDashboard} />
             </CareersContainerWrapper>
         </WorkWithUsContainer>
     )

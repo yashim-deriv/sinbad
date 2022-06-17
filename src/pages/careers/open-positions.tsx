@@ -64,7 +64,7 @@ const Card = styled(Flex)`
     width: 100%;
     height: 444px;
     padding: 40px;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
     background-color: white;
     margin: 20px;
     border-radius: 8px;
@@ -82,13 +82,13 @@ const CardHeader = styled.div<StyledTextProps>`
     }
 `
 const CardText = styled.div<StyledTextProps>`
-    max-width: 267px;
+    max-width: 340px;
     width: 100%;
     font-size: 1.7rem;
     line-height: 26px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
     padding: 15px 0;
 
@@ -102,7 +102,7 @@ const CardLinkText = styled.div<StyledTextProps>`
     line-height: 22px;
     color: var(--color-black-3);
     font-weight: 560;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-transform: uppercase;
     padding-right: 20px;
 
