@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { JoinUsContainer, JoinUsInfo, StyledHeader, StyledText, TextContainer } from './home'
 import { Button } from 'components/elements'
 import { JoinUsImageContainer } from 'components/containers/main'
-import Sinbad0 from 'images/common/jd/job-join-us.png'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Banner } from 'images/common/jd'
 import { SectionLabel } from 'components/chunks'
@@ -38,12 +38,13 @@ const JoinUsJob = () => {
         <Wrapper>
             <JoinUsWrapper>
                 <JoinUsContainer>
-                    <JoinUsImageContainer
-                        src={Sinbad0}
-                        padding_bottom="unset"
-                        width="600px"
-                        mobile_pb="unset"
-                    />
+                    <JoinUsImageContainer padding_bottom="unset" width="600px" mobile_pb="unset">
+                        <StaticImage
+                            src="../../../images/common/jd/job-join-us.png"
+                            alt="jobs join us image"
+                            placeholder="none"
+                        />
+                    </JoinUsImageContainer>
                     <JoinUsInfo>
                         <SectionLabel />
                         <TextContainer>

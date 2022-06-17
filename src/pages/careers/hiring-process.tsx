@@ -1,19 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { ContainerWrapper, Flex, ImageContainer } from 'components/containers'
-import {
-    CV,
-    Questions,
-    Interview,
-    SecondInterview,
-    BackgroundChecking,
-    Offer,
-    YouIn,
-} from 'images/common/careers'
 import device from 'themes/device'
 
 type DataType = {
-    icon: string
+    icon: ReactNode
     header: string
     text: string
 }
@@ -79,6 +71,8 @@ const Card = styled(Flex)`
 
 const CardInfo = styled.div`
     display: flex;
+    width: calc(100% - 90px);
+    box-sizing: box;
     flex-direction: column;
     padding: 20px 0 0 20px;
 `
@@ -128,37 +122,86 @@ const StyledImageContainer = styled(ImageContainer)`
 
 const data: DataType[] = [
     {
-        icon: CV,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/cv.png"
+                alt="email icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: 'Send curriculum vitae (CV)',
         text: 'Send your CV and a cover letter to hr@sinbad.software to get started.',
     },
     {
-        icon: Questions,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/questions.png"
+                alt="question icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: 'Self-assessment questionnarie',
         text: "We'll send you a questionnaire to help us learn more about you.",
     },
     {
-        icon: Interview,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/interview.png"
+                alt="inteview icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: 'Interview with HR and Manager',
         text: 'An HR representative and your potential manager will interview you. They will',
     },
     {
-        icon: SecondInterview,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/interview2.png"
+                alt="second interview icon"
+                placeholder="none"
+                objectFit="contain"
+            />
+        ),
         header: 'Interview with COO/CTO/CEO',
         text: "In this round, you'll speak with our COO, CTO, CEO depending on the role.",
     },
     {
-        icon: BackgroundChecking,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/checking.png"
+                alt="background check icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: 'Background and reference check',
         text: 'Upon approval, our team will do a background and reference check.',
     },
     {
-        icon: Offer,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/offer.png"
+                alt="job offer icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: 'Job offer',
         text: "If everything goes well, you'll recieve a job offer. Be ready, as your new adventure with us is about to begin.",
     },
     {
-        icon: YouIn,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/you-in.png"
+                alt="selected people icon"
+                placeholder="none"
+                objectFit="fill"
+            />
+        ),
         header: "You're one of us",
         text: "Welcome to Sinbad! You'll recieve your start date and the details of your onboarding programme.",
     },
@@ -174,7 +217,7 @@ const HiringProcess = () => {
                     {data.map(({ icon, header, text }, index) => {
                         return (
                             <Card key={index} direction="row" ai="flex-start" jc="space-between">
-                                <StyledImageContainer src={icon} />
+                                <StyledImageContainer>{icon}</StyledImageContainer>
                                 <CardInfo>
                                     <CardHeader>{header}</CardHeader>
                                     <CardText>{text}</CardText>

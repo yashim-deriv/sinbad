@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ImageContainer } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
 import Sinbad0 from 'images/common/openpositions/first-section.png'
@@ -31,7 +32,7 @@ const PositionsHeader = styled.div`
         flex-direction: column;
     }
 `
-const OpenPositionImage = styled(ImageContainer)`
+const OpenPositionImage = styled.div`
     display: flex;
     flex-direction: row;
     padding: 50px 0;
@@ -75,6 +76,17 @@ const StyledHeader = styled.div<{ font_family?: string; mobile_padding?: string;
     }
 `
 
+const data = {
+    img: (
+        <StaticImage
+            src="../../images/common/openpositions/first-section.png"
+            alt="selected people icon"
+            placeholder="none"
+            objectFit="fill"
+        />
+    ),
+}
+
 const Hero = () => {
     return (
         <>
@@ -88,7 +100,14 @@ const Hero = () => {
                             </StyledHeader>
                             <StyledHeader>Seekers</StyledHeader>
                         </HeaderContainer>
-                        <OpenPositionImage src={Sinbad0} />
+                        <OpenPositionImage>
+                            <StaticImage
+                                src="../../images/common/openpositions/first-section.png"
+                                alt="selected people icon"
+                                placeholder="none"
+                                objectFit="fill"
+                            />
+                        </OpenPositionImage>
                     </PositionsHeader>
                 </ContainerWrapper>
             </ContainersWrapper>

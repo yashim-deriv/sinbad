@@ -1,7 +1,7 @@
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { ContainerWrapper, ImageContainer } from 'components/containers'
-import { Words } from 'images/common/careers'
 import device from 'themes/device'
 
 const WorkWithUsContainer = styled.div`
@@ -94,7 +94,14 @@ const WorkWithUs = () => {
                         team.
                     </StyledText>
                 </WhyWithUsText>
-                <StyledImage src={Words} />
+                <StyledImage>
+                    <StaticImage
+                        src="../../images/common/careers/words.png"
+                        alt="reasons to work at sinbad"
+                        placeholder="none"
+                        loading="eager"
+                    />
+                </StyledImage>
             </CareersContainerWrapper>
         </WorkWithUsContainer>
     )

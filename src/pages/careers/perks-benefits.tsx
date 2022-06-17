@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { ContainerWrapper, ImageContainer } from 'components/containers'
 import Table, { TableType } from 'components/containers/table'
@@ -12,7 +13,6 @@ import {
     Pantry,
     Security,
     Tech,
-    PBSinbad,
 } from 'images/common/careers'
 import device from 'themes/device'
 import { SectionLabel } from 'components/chunks'
@@ -178,7 +178,13 @@ const PerksBenefits = () => {
                         of your career development as it can broaden and deepen your expirience.
                     </StyledText>
                 </TextAboutCareer>
-                <StyledImage src={PBSinbad} />
+                <StyledImage>
+                    <StaticImage
+                        src={`../../images/common/careers/sinbad-near-p&b.png`}
+                        alt="sinbad mascott"
+                        placeholder="none"
+                    />
+                </StyledImage>
                 <Table data={data} text={'Perks and benefits'} />
             </PBContainerWrapper>
         </PBContainer>

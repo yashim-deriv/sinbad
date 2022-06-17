@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import Sinbad from 'images/common/openpositions/join-us-background.png'
 import { Button } from 'components/elements'
 import { JoinUsImageContainer } from 'components/containers/main'
-import Sinbad0 from 'images/common/homepage/join-us/home-join-us.png'
 import device from 'themes/device'
 import { openPositionActions } from 'common/utility'
 import { SectionLabel } from 'components/chunks'
@@ -100,7 +100,13 @@ const JoinUsHome = () => {
                             <Button label="See Our Open Positions" onClick={openPositionActions} />
                         </TextContainer>
                     </JoinUsInfo>
-                    <JoinUsImageContainer src={Sinbad0} padding_bottom="unset" />
+                    <JoinUsImageContainer padding_bottom="unset">
+                        <StaticImage
+                            src="../../../images/common/homepage/join-us/home-join-us.png"
+                            alt="home join us image"
+                            placeholder="none"
+                        />
+                    </JoinUsImageContainer>
                 </JoinUsContainer>
             </JoinUsWrapper>
         </Wrapper>

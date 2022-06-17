@@ -48,7 +48,7 @@ export const SeeOurPositions = styled.div`
     background-size: 150px 25px;
 `
 
-export const ImageContainer = styled.img<ImageProps>`
+export const ImageContainer = styled.div<ImageProps>`
     width: ${(props) => props.width || '100%'};
     height: ${(props) => props.height || '100%'};
     padding-bottom: ${(props) => props.padding_bottom || '0px'};
@@ -57,8 +57,7 @@ export const ImageContainer = styled.img<ImageProps>`
 
 export const JoinUsImageContainer = styled(ImageContainer)<ImageProps>`
     object-fit: contain;
-    max-height: none;
-    width: ${(props) => props.width || '500px'};
+    max-width: ${(props) => props.width || '500px'};
     padding-bottom: ${(props) => props.padding_bottom || '100px;'};
 
     @media ${device.tabletS} {

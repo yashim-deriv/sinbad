@@ -2,8 +2,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Hero from './hero'
 import OpenPositions from './open-positions'
-import JoinUs from 'components/layout/join-us'
 import Layout from 'components/layout/layout'
+import JoinUs from 'components/layout/join-us'
 
 const Positions = () => {
     return (

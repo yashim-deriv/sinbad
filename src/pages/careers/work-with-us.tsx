@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ContainerWrapper, ImageContainer } from 'components/containers'
-import { Background, WorkWithUsDashboard } from 'images/common/careers'
+import { Background } from 'images/common/careers'
 import device from 'themes/device'
 
 const WorkWithUsContainer = styled.div`
@@ -89,7 +90,14 @@ const WorkWithUs = () => {
                         on challenging projects.
                     </StyledHeader>
                 </StyledContainer>
-                <StyledImageContainer src={WorkWithUsDashboard} />
+                <StyledImageContainer>
+                    <StaticImage
+                        src="../../images/common/careers/work-with-us.png"
+                        alt="work with us"
+                        placeholder="none"
+                        loading="eager"
+                    />
+                </StyledImageContainer>
             </CareersContainerWrapper>
         </WorkWithUsContainer>
     )
