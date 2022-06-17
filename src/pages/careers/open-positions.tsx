@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -10,7 +10,7 @@ type StyledTextProps = {
 }
 
 type PositionsType = {
-    icon: any
+    icon: ReactNode
     position: string
     text: string
     link: string
