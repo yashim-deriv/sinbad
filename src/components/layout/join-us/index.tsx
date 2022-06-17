@@ -3,6 +3,7 @@ import JoinUsHome from 'components/layout/join-us/home'
 import JoinUsCareers from 'components/layout/join-us/career'
 import JoinUsOpenPositions from 'components/layout/join-us/open-position'
 import JoinUsJob from 'components/layout/join-us/job'
+import PageNotFound from 'pages/404'
 
 type JoinUsProps = {
     appearance: string
@@ -25,6 +26,8 @@ const JoinUs = ({ appearance }: JoinUsProps) => {
             return <JoinUsOpenPositions />
         case Appearance.job:
             return <JoinUsJob />
+        default:
+            <PageNotFound />
     }
 }
 
