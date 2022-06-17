@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import OpenPositions from './open-positions'
-import JoinUs from 'components/layout/join-us'
+import JoinUsSection from 'components/elements/join-us-section'
 import Layout from 'components/layout/layout'
 
 const Positions = () => {
@@ -11,7 +11,7 @@ const Positions = () => {
                 <title>Sinbad | Open Positions</title>
             </Helmet>
             <OpenPositions />
-            <JoinUs appearance="openPositions" />
+            <JoinUsSection appearance="open_positions" />
         </Layout>
     )
 }
