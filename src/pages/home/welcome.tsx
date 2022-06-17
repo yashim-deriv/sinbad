@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import Flex from 'components/containers/flex'
-import { Text, Header } from 'components/containers'
 import { ContainerWrapper } from 'components/containers/common/style'
 import { CSSElementProps } from 'types/generics'
 import device from 'themes/device'
@@ -27,7 +26,8 @@ const TextContainer = styled.div`
     padding: 100px 0;
     background: var(--color-white);
 `
-const StyledHeader = styled(Header)<StyledTextProps>`
+
+const StyledHeader = styled.div<StyledTextProps>`
     font-size: 4.8rem;
     line-height: 50px;
     color: #1b1b1b;
@@ -92,7 +92,7 @@ const CardContainer = styled.div`
         content: '';
         background: var(--color-sea-1);
         width: 100%;
-        height: 400px;
+        height: 525px;
         z-index: 2;
 
         @media ${device.laptopM} {
@@ -153,14 +153,12 @@ const Card = styled.div<CSSElementProps>`
         max-width: 100px;
         margin: 0 auto;
     }
-
     @media ${device.mobileL} {
         padding: 10px 0 30px;
         height: auto;
         margin: 10px;
         width: 100vw;
     }
-
     @media ${device.laptopM} {
         &.first {
             margin: 0 0 10px 0;

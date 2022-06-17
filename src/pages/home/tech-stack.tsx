@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Dashboard from 'images/common/dashboard.png'
 import { ContainerWrapper } from 'components/containers'
 import device from 'themes/device'
+import { BlueBackground } from 'images/common/jd'
 
 type StyledTextProps = {
     font_family?: string
@@ -10,13 +11,17 @@ type StyledTextProps = {
 
 const TechStackContainer = styled.div`
     display: flex;
+    align-items: center;
     justify-content: center;
+    background-image: url(${BlueBackground});
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    width: 100%;
+    height: 100%;
 `
 
 const TechStackContainerWrapper = styled(ContainerWrapper)`
     padding: 100px 0;
-    width: 100%;
-    background-color: var(--color-white);
 
     @media ${device.laptopM} {
         flex-direction: column;

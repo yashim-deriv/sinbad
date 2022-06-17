@@ -42,10 +42,6 @@ const PBContainerWrapper = styled(ContainerWrapper)`
 
     @media ${device.bp1060} {
         justify-content: center;
-        padding-bottom: 200px;
-    }
-    @media ${device.tablet} {
-        padding-bottom: 150px;
     }
     @media ${device.tabletS} {
         flex-direction: column;
@@ -54,6 +50,7 @@ const PBContainerWrapper = styled(ContainerWrapper)`
         padding: 0 0 60px;
     }
 `
+
 const TextAboutCareer = styled.div`
     display: flex;
     flex-direction: column;
@@ -70,8 +67,9 @@ const TextAboutCareer = styled.div`
         margin-bottom: 0;
     }
 `
+
 const StyledText = styled.div<StyledTextProps>`
-    max-width: 305px;
+    max-width: 350px;
     width: 100%;
     font-size: 1.6rem;
     line-height: 27px;
@@ -91,6 +89,7 @@ const StyledText = styled.div<StyledTextProps>`
         line-height: 18px;
     }
 `
+
 const StyledHeader = styled.div<StyledTextProps>`
     width: 100%;
     font-size: 4.8rem;
@@ -106,9 +105,7 @@ const StyledHeader = styled.div<StyledTextProps>`
         font-size: 4.2rem;
         line-height: 46px;
     }
-
     @media ${device.tabletL} {
-        text-align: center;
         max-width: 305px;
         font-size: 3.8rem;
         line-height: 40px;
@@ -116,11 +113,10 @@ const StyledHeader = styled.div<StyledTextProps>`
 `
 
 const StyledImage = styled(ImageContainer)`
-    max-width: 285px;
+    max-width: 260px;
 
-    @media ${`(max-width: 1072px)`} {
-        width: 450px;
-        height: 500px;
+    @media ${`(max-width: 1200px)`} {
+        max-width: 220px;
     }
     @media ${device.tabletL} {
         display: none;

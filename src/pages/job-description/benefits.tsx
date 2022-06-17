@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper, Flex, Header } from 'components/containers'
+import { ContainerWrapper, Flex } from 'components/containers'
 import {
     Benefits,
     Salary,

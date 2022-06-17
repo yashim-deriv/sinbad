@@ -76,10 +76,6 @@ export const JoinUsInfo = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-
-    @media ${device.tabletL} {
-        padding-top: 40px;
-    }
 `
 
 const JoinUsHome = () => {

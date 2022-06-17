@@ -34,9 +34,10 @@ const OurTeamsContainerWrapper = styled(ContainerWrapper)`
     @media ${device.laptopM} {
         display: flex;
     }
-    @media (max-width: 620px) {
+    @media (max-width: 720px) {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 50px;
     }
 `
 
@@ -58,7 +59,7 @@ const TermsTextContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 30px 0;
+    padding-top: 60px;
 
     @media ${device.tabletS} {
         flex-wrap: wrap;
@@ -88,13 +89,14 @@ const StyledHeader = styled.div<StyledTextProps>`
 
     @media ${device.laptopM} {
         max-width: 320px;
-        font-size: 4.4rem;
-        line-height: 48px;
+        font-size: 4rem;
+        line-height: 44px;
     }
 `
 
 const StyledText = styled.div<StyledTextProps>`
-    max-width: 350px;
+    max-width: 425px;
+    width: 100%;
     font-size: 1.6rem;
     line-height: 27px;
     color: var(--color-black-3);
@@ -129,7 +131,7 @@ const StyledDescription = styled.div<StyledTextProps>`
 `
 
 const SinbadImage = styled(ImageContainer)`
-    max-width: 200px;
+    max-width: 205px;
 
     @media ${device.tabletL} {
         display: none;

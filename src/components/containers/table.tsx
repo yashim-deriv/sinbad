@@ -54,7 +54,7 @@ const TableContainer = styled.div`
     }
     @media (max-width: 620px) {
         max-width: 250px;
-        justify-content: flex-start;
+        justify-content: center;
     }
     @media ${device.mobileL} {
         padding-right: 0px;
@@ -71,12 +71,14 @@ const TermHeaderText = styled.div<TermProps>`
     padding: 0 110px 30px 0;
 
     @media ${device.laptopM} {
-        padding: 0 0 0 70px;
         font-size: 3.4rem;
     }
-    @media ${device.tablet} {
-        padding: 0 25px 0 0;
+    @media ${device.tabletL} {
+        padding: 0 80px 0 0;
         font-size: 3rem;
+    }
+    @media (max-width: 620px) {
+        padding: 0 20px 0 0;
     }
 `
 
@@ -126,9 +128,13 @@ const Term = styled.div<TermProps>`
     display: flex;
     align-items: center;
     border-top: ${(props) =>
-        props.index === 0 ? 'unset' : props.index < 2 ? 'unset' : '1px solid gray'};
-    border-bottom: ${(props) => (props.index > 5 ? 'unset' : '1px solid gray')};
-    border-left: ${(props) => (props.index % 2 ? '1px solid gray' : 'unset')};
+        props.index === 0
+            ? 'unset'
+            : props.index < 2
+            ? 'unset'
+            : '1px solid rgb(168, 168, 168, 0.5)'};
+    border-bottom: ${(props) => (props.index > 5 ? 'unset' : '1px solid rgb(225, 225, 225, 0.5)')};
+    border-left: ${(props) => (props.index % 2 ? '1px solid rgb(225, 225, 225, 0.5)' : 'unset')};
 
     @media ${device.laptopM} {
         max-width: 190px;
