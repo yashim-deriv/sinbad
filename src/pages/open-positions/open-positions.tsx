@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ImageContainer, Header, Text } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
-import Sinbad0 from 'images/common/openpositions/first-section.png'
 import Background from 'images/common/homepage/carousel/background.png'
 import RightArrow from 'images/common/openpositions/arrow.png'
 import Flex from 'components/containers/flex'
@@ -184,8 +184,13 @@ const OpenPositions = () => {
                                 Seekers
                             </Header>
                         </HeaderContainer>
-
-                        <OpenPositionImage src={Sinbad0} />
+                        <OpenPositionImage>
+                            <StaticImage
+                                src="../../images/common/openpositions/first-section.png"
+                                alt=""
+                                placeholder="none"
+                            />
+                        </OpenPositionImage>
                     </PositionsHeader>
                 </HeroWrapper>
             </ContainersWrapper>

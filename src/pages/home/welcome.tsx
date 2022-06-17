@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { First, Other0, Other1, Other2, Other3 } from 'images/common/homepage/welcome'
+import { StaticImage } from 'gatsby-plugin-image'
 import Flex from 'components/containers/flex'
 import { Text, Header } from 'components/containers'
 import { ContainerWrapper } from 'components/containers/common/style'
@@ -151,6 +151,7 @@ const Card = styled.div<CSSElementProps>`
     img {
         width: 100%;
         max-width: 100px;
+        margin: 0 auto;
     }
 
     @media ${device.mobileL} {
@@ -196,28 +197,63 @@ const data = {
     first: {
         header: 'App development & integration',
         text: 'We create desktop and mobile software and also manage complex integrations with existing systems',
-        icon: First,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/welcome/first.png"
+                alt="ideation icon"
+                placeholder="none"
+                objectFit="contain"
+            />
+        ),
     },
     other: [
         {
             header: 'Ideation',
             text: 'With research, analysis, ideation, and strategising, we translate our clients needs into opportunities for digital innovation',
-            icon: Other0,
+            icon: (
+                <StaticImage
+                    src="../../images/common/homepage/welcome/other-0.png"
+                    alt="ideation icon"
+                    placeholder="none"
+                    objectFit="contain"
+                />
+            ),
         },
         {
             header: 'Quality assurance',
             text: 'Whatever we build goes through rigorous to make sure its quality and security meet our tough standarts',
-            icon: Other1,
+            icon: (
+                <StaticImage
+                    src="../../images/common/homepage/welcome/other-1.png"
+                    alt="quality assurance icon"
+                    placeholder="none"
+                    objectFit="contain"
+                />
+            ),
         },
         {
             header: 'Product design',
             text: 'The journey from vision to intuitive software starts here. We design winning products for the fintech industry',
-            icon: Other2,
+            icon: (
+                <StaticImage
+                    src="../../images/common/homepage/welcome/other-2.png"
+                    alt="product design icon"
+                    placeholder="none"
+                    objectFit="contain"
+                />
+            ),
         },
         {
             header: 'Software maintenance',
             text: 'Offering lifetime maintenance and upgrading services, we continue to 0pxain our clients digital partner',
-            icon: Other3,
+            icon: (
+                <StaticImage
+                    src="../../images/common/homepage/welcome/other-3.png"
+                    alt="software maintenance icon"
+                    placeholder="none"
+                    objectFit="contain"
+                />
+            ),
         },
     ],
 }
@@ -238,19 +274,18 @@ const Welcome = () => {
                     </StyledText>
                 </TextContainer>
             </ContainerWrapper>
-
             <CardContainer>
                 <ContainerWrapper>
                     <CardContent>
                         <Card className="first" alignSelf="center" margin="0">
-                            <img src={data.first.icon} alt="icon" />
+                            {data.first.icon}
                             <CardHeader>{data.first.header}</CardHeader>
                             <CardText>{data.first.text}</CardText>
                         </Card>
                         <StyledFlex wrap="wrap">
                             {data.other.map(({ header, text, icon }, index) => (
                                 <Card key={index}>
-                                    <img src={icon} alt="icon" />
+                                    {icon}
                                     <CardHeader>{header}</CardHeader>
                                     <CardText>{text}</CardText>
                                 </Card>

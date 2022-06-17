@@ -151,7 +151,7 @@ const Table = ({ data, text }: DataType) => {
             <TermHeaderText>{text}</TermHeaderText>
             {data.map((item, index) => (
                 <Term key={index} index={index}>
-                    <TermImage src={item.icon} />
+                    <TermImage src={item.icon} alt={item.text} />
                     <TermText>{item.text}</TermText>
                 </Term>
             ))}

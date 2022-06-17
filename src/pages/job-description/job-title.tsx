@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { JobTitleProps } from './data'
 import { ContainerWrapper, ImageContainer } from 'components/containers'
-import AnalyticBackground from 'images/common/jd/analytic-background.png'
 import Background from 'images/common/background.png'
 
 const JobTitleContainer = styled.div`
@@ -38,7 +38,15 @@ const JobTitle = ({ position }: JobTitleProps) => {
         <JobTitleContainer>
             <JobTitleContainerWrapper>
                 <StyledHeader>{position?.position}</StyledHeader>
-                <ImageContainer src={AnalyticBackground} max_height="unset" />
+                <ImageContainer max_height="unset">
+                    <StaticImage
+                        src="../../images/common/jd/analytic-background.png"
+                        alt="job description"
+                        loading="eager"
+                        objectFit="scale-down"
+                        placeholder="none"
+                    />
+                </ImageContainer>
             </JobTitleContainerWrapper>
         </JobTitleContainer>
     )

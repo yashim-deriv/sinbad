@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ContainerWrapper, Flex, ImageContainer } from 'components/containers'
-import { BI, IT, LinkArrow, Product } from 'images/common/careers'
-import device from 'themes/device'
 
 type StyledTextProps = {
     font_family?: string
@@ -11,7 +10,7 @@ type StyledTextProps = {
 }
 
 type PositionsType = {
-    icon: string
+    icon: ReactNode
     position: string
     text: string
     link: string
@@ -106,19 +105,19 @@ const CardButton = styled(Link)`
 
 const positions: PositionsType[] = [
     {
-        icon: IT,
+        icon: <StaticImage src="../../images/common/careers/it.png" alt="information security" />,
         position: 'Information security',
         text: 'Provide the best solutions for our clients by taking a hollstic view of our technical environment',
         link: '',
     },
     {
-        icon: Product,
+        icon: <StaticImage src="../../images/common/careers/product.png" alt="product design" />,
         position: 'Product design',
         text: 'Deliver intuitive and beautiful designs that will impress our clients and help them reach their goals',
         link: '',
     },
     {
-        icon: BI,
+        icon: <StaticImage src="../../images/common/careers/bi.png" alt="business intelligence" />,
         position: 'Business intelligence',
         text: 'Provide analytical and strategic insights that enchance the growth of our clients business, products, and services',
         link: '',
@@ -137,17 +136,16 @@ const OpenPositions = () => {
                     {positions.map(({ position, text, icon, link }, index) => {
                         return (
                             <Card key={index} direction="column" ai="center" jc="center">
-                                <ImageContainer src={icon} width="160px" height="160px" />
+                                <ImageContainer width="160px" height="160px">
+                                    {icon}
+                                </ImageContainer>
                                 <CardHeader>{position}</CardHeader>
                                 <CardText>{text}</CardText>
                                 <CardButton to={link}>
                                     <CardLinkText> See jobs</CardLinkText>
-                                    <ImageContainer
-                                        src={LinkArrow}
-                                        width="30px"
-                                        height="30px"
-                                        max_height="unset"
-                                    />
+                                    <ImageContainer width="30px" height="30px" max_height="unset">
+                                        {icon}
+                                    </ImageContainer>
                                 </CardButton>
                             </Card>
                         )
