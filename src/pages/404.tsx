@@ -39,7 +39,7 @@ const ButtonWrapper = styled.div`
     text-align: center;
 `
 const LinkButton = styled(Link)`
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     text-align: center;
     text-decoration: none;
     width: fit-content;
@@ -62,32 +62,36 @@ const Text = styled.div`
     text-align: center;
 `
 
+const browser = typeof window !== 'undefined' && window
+
 const PageNotFound = () => {
     return (
-        <Layout>
-            <DescriptionContainer>
-                <DescriptionContainerWrapper>
-                    <PageNotFoundContainer>
-                        <img
-                            src={ImageNotAvailable}
-                            alt="Page not found"
-                            width="600"
-                            height="600"
-                        />
-                        <PageNotFoundContainerInfo>
-                            <Header>We couldn’t find that page</Header>
-                            <Text>
-                                It may not be available in your country, or maybe a broken link has
-                                brought you here.
-                            </Text>
-                            <ButtonWrapper>
-                                <LinkButton to="/">Visit our homepage</LinkButton>
-                            </ButtonWrapper>
-                        </PageNotFoundContainerInfo>
-                    </PageNotFoundContainer>
-                </DescriptionContainerWrapper>
-            </DescriptionContainer>
-        </Layout>
+        browser && (
+            <Layout>
+                <DescriptionContainer>
+                    <DescriptionContainerWrapper>
+                        <PageNotFoundContainer>
+                            <img
+                                src={ImageNotAvailable}
+                                alt="Page not found"
+                                width="450"
+                                height="450"
+                            />
+                            <PageNotFoundContainerInfo>
+                                <Header>We couldn’t find that page</Header>
+                                <Text>
+                                    It may not be available in your country, or maybe a broken link
+                                    has brought you here.
+                                </Text>
+                                <ButtonWrapper>
+                                    <LinkButton to="/">Visit our homepage</LinkButton>
+                                </ButtonWrapper>
+                            </PageNotFoundContainerInfo>
+                        </PageNotFoundContainer>
+                    </DescriptionContainerWrapper>
+                </DescriptionContainer>
+            </Layout>
+        )
     )
 }
 
