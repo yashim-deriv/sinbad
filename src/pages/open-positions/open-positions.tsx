@@ -4,14 +4,10 @@ import { Link } from 'gatsby'
 import { Text } from 'components/containers/main'
 import { ContainerWrapper } from 'components/containers/common/style'
 import RightArrow from 'images/common/openpositions/arrow.png'
-import Flex from 'components/containers/flex'
+import Flex, { Card } from 'components/containers/flex'
 import device from 'themes/device'
 import { positions } from 'pages/job-description/data'
 import { BlueBackground } from 'images/common/jd'
-
-type CardProps = {
-    index?: number
-}
 
 type StyledProps = {
     font_family?: string
@@ -55,25 +51,6 @@ const PositionsCarouselContainer = styled.div`
 
     @media ${device.tablet} {
         padding: 60px 0;
-    }
-`
-
-const Card = styled(Flex)<CardProps>`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 340px;
-    height: 300px;
-    padding: 30px;
-    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-
-    @media (max-width: 1200px) {
-        order: ${(props) => (props.index === 2 ? 1 : props.index === 1 ? 2 : props.index)};
-        margin: 0 0 19px;
     }
 `
 const CardButtonContainer = styled(Link)`
@@ -174,7 +151,16 @@ const OpenPositions = () => {
                     <StyledFlex width="760px" wrap="wrap">
                         {positions.map(({ position, text, id }, index) => {
                             return (
-                                <Card key={index} index={index}>
+                                <Card
+                                    key={index}
+                                    fd="column"
+                                    ai="center"
+                                    jc="space-between"
+                                    max_width=" 340px"
+                                    height="300px"
+                                    padding="30px"
+                                    margin="20px"
+                                >
                                     <StyledHeader color="var(--color-sand-4)" padding="20px 0px">
                                         {position}
                                     </StyledHeader>

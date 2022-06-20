@@ -19,7 +19,7 @@ const JobDescription = (props: PageProps) => {
             <JobTitle position={position} />
             <Description position={position} />
             <BenefitsList />
-            <JoinUs appearance="jobs" />
+            <JoinUs appearance="job" />
         </Layout>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ContainerWrapper, Flex } from 'components/containers'
+import { Card } from 'components/containers/flex'
 import {
     Benefits,
     Salary,
@@ -71,19 +72,6 @@ const StyledImg = styled.img`
     padding-right: 50px;
 `
 
-const Card = styled(Flex)<{ margin?: string; height?: string }>`
-    display: flex;
-    flex-direction: ${(props) => props.direction || 'column'};
-    justify-content: center;
-    max-width: 370px;
-    height: ${(props) => props.height || '280px'};
-    padding: 55px 0;
-    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
-    background-color: white;
-    margin: ${(props) => props.margin || '15px'};
-    border-radius: 5px;
-`
-
 const CardInfo = styled.div`
     display: flex;
     flex-direction: column;
@@ -103,7 +91,7 @@ const LocationContainer = styled(Flex)`
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    @media ${device.laptopL} {
+    @media ${device.tabletL} {
         justify-content: center;
     }
 `
@@ -148,7 +136,17 @@ const BenefitsList = () => {
                 <Flex wrap="wrap" jc="center">
                     {data.map(({ icon, text }, index) => {
                         return (
-                            <Card key={index} ai="center">
+                            <Card
+                                key={index}
+                                ai="center"
+                                fd="column"
+                                jc="center"
+                                max_width="370px"
+                                height="280px"
+                                padding="55px 0"
+                                margin="15px"
+                                border_radius="5px"
+                            >
                                 <img src={icon} />
                                 <CardInfo>
                                     <CardHeader>{text}</CardHeader>
@@ -158,7 +156,15 @@ const BenefitsList = () => {
                     })}
                 </Flex>
                 <LocationContainer>
-                    <Card direction="row" ai="center" margin="50px 15px 15px 15px" height="180px">
+                    <Card
+                        direction="row"
+                        ai="center"
+                        jc="flex-end"
+                        width="auto"
+                        height="180px"
+                        margin="50px 15px 15px 15px"
+                        padding="0 20px"
+                    >
                         <LocationImageContainer>
                             <StyledSSText font_family="Maven Pro Bold">Location</StyledSSText>
                             <StyledText>Dubai, the UAE</StyledText>

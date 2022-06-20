@@ -2,8 +2,9 @@ import React, { ReactNode } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import { ContainerWrapper, Flex, ImageContainer } from 'components/containers'
+import { ContainerWrapper, ImageContainer } from 'components/containers'
 import device from 'themes/device'
+import { Card } from 'components/containers/flex'
 
 type StyledTextProps = {
     font_family?: string
@@ -57,18 +58,6 @@ const CardContainer = styled.div`
     width: 100%;
 `
 
-const Card = styled(Flex)`
-    display: flex;
-    justify-content: space-between;
-    max-width: 360px;
-    width: 100%;
-    height: 444px;
-    padding: 40px;
-    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 8px;
-`
 const CardHeader = styled.div<StyledTextProps>`
     font-size: 2.2rem;
     line-height: 34px;
@@ -149,7 +138,17 @@ const OpenPositions = () => {
                 <CardContainer>
                     {positions.map(({ position, text, icon, link }, index) => {
                         return (
-                            <Card key={index} direction="column" ai="center" jc="center">
+                            <Card
+                                key={index}
+                                direction="column"
+                                ai="center"
+                                jc="center"
+                                max_width="360px"
+                                height="444px"
+                                padding="40px"
+                                margin="20px"
+                                border_radius="8px"
+                            >
                                 <ImageContainer width="160px" height="160px">
                                     {icon}
                                 </ImageContainer>

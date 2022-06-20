@@ -44,12 +44,14 @@ export const JoinUsContainer = styled.div<{ fd?: string; height?: string }>`
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: ${(props) => props.height || '700px'};
+    height: ${(props) => props.height || '100%'};
+    padding: 70px 0;
 
     @media ${device.tabletL} {
         display: flex;
         flex-direction: ${(props) => props.fd || 'column'};
         justify-content: center;
+        padding: 20px 0;
     }
 `
 export const TextContainer = styled.div<{ padding_bottom?: string }>`

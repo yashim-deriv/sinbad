@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { JobTitleProps } from './data'
-import { ContainerWrapper, Flex, Header } from 'components/containers'
+import { Card } from 'components/containers/flex'
+import { ContainerWrapper, Header } from 'components/containers'
 import { Challenges, Team, Requirements, GoodToHave, Arrow, BlueBackground } from 'images/common/jd'
 import device from 'themes/device'
 
@@ -47,15 +48,11 @@ const JDContainer = styled.div`
     padding-bottom: 60px;
 `
 
-const Card = styled(Flex)`
+const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
     max-width: 1190px;
     margin: 20px 0;
-    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
-    background-color: var(--color-white);
-    border-radius: 4px;
-    justify-content: center;
 `
 
 const StyledImg = styled.img`
@@ -76,6 +73,7 @@ const StyledList = styled.ul`
     align-items: flex-start;
     padding: 50px 0;
 `
+
 const StyledListItem = styled.li<{ pb?: string }>`
     display: flex;
     flex-direction: row;
@@ -94,7 +92,7 @@ const StyledListItem = styled.li<{ pb?: string }>`
     }
 `
 
-const StyledText = styled.div<{ font_family?: string; padding?: string }>`
+const StyledText = styled.div<{ font_family?: string; padding?: string; mobile_ta?: string }>`
     font-size: 1.9rem;
     line-height: 33px;
     color: var(--color-black-2);
@@ -106,7 +104,7 @@ const StyledText = styled.div<{ font_family?: string; padding?: string }>`
     align-items: center;
 
     @media ${device.tablet} {
-        text-align: center;
+        text-align: ${(props) => props.mobile_ta || 'center'};
     }
 `
 
@@ -115,7 +113,7 @@ const Description = ({ position }: JobTitleProps) => {
         <DescriptionContainer>
             <DescriptionContainerWrapper>
                 <JDContainer>
-                    <Card ai="center">
+                    <StyledCard ai="center">
                         {position?.description.map((paragraph, index) => {
                             return (
                                 <StyledText padding="50px 75px" key={index}>
@@ -123,9 +121,9 @@ const Description = ({ position }: JobTitleProps) => {
                                 </StyledText>
                             )
                         })}
-                    </Card>
+                    </StyledCard>
 
-                    <Card direction="column">
+                    <StyledCard direction="column">
                         <HeaderImageContainer>
                             <StyledHeader>Your challenges</StyledHeader>
                             <StyledImg src={Challenges} />
@@ -135,20 +133,22 @@ const Description = ({ position }: JobTitleProps) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
-                                        <StyledText padding="0 0 0 10px">{challenge}</StyledText>
+                                        <StyledText padding="0 0 0 10px" mobile_ta="left">
+                                            {challenge}
+                                        </StyledText>
                                     </StyledListItem>
                                 )
                             })}
                         </StyledList>
-                    </Card>
-                    <Card direction="column">
+                    </StyledCard>
+                    <StyledCard direction="column">
                         <HeaderImageContainer>
                             <StyledHeader>Our Team</StyledHeader>
                             <StyledImg src={Team} />
                         </HeaderImageContainer>
                         <StyledText padding="15px 75px 50px">{position?.team}</StyledText>
-                    </Card>
-                    <Card direction="column">
+                    </StyledCard>
+                    <StyledCard direction="column">
                         <HeaderImageContainer>
                             <StyledHeader>Requirements</StyledHeader>
                             <StyledImg src={Requirements} />
@@ -158,14 +158,16 @@ const Description = ({ position }: JobTitleProps) => {
                                 return (
                                     <StyledListItem key={index}>
                                         <ArrowImage src={Arrow} />
-                                        <StyledText padding="0 0 0 10px">{requirement}</StyledText>
+                                        <StyledText padding="0 0 0 10px" mobile_ta="left">
+                                            {requirement}
+                                        </StyledText>
                                     </StyledListItem>
                                 )
                             })}
                         </StyledList>
-                    </Card>
+                    </StyledCard>
                     {position?.good_to_have.length > 1 ? (
-                        <Card direction="column">
+                        <StyledCard direction="column">
                             <HeaderImageContainer>
                                 <StyledHeader>What’s good to have</StyledHeader>
                                 <StyledImg src={GoodToHave} />
@@ -175,12 +177,14 @@ const Description = ({ position }: JobTitleProps) => {
                                     return (
                                         <StyledListItem key={index}>
                                             <ArrowImage src={Arrow} />
-                                            <StyledText padding="0 0 0 10px">{ability}</StyledText>
+                                            <StyledText padding="0 0 0 10px" mobile_ta="left">
+                                                {ability}
+                                            </StyledText>
                                         </StyledListItem>
                                     )
                                 })}
                             </StyledList>
-                        </Card>
+                        </StyledCard>
                     ) : null}
                 </JDContainer>
             </DescriptionContainerWrapper>

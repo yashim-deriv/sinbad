@@ -21,6 +21,13 @@ type FlexBoxProps = {
     tablet_fw?: string
 }
 
+type CardProps = {
+    margin?: string
+    padding?: string
+    alignSelf?: string
+    border_radius?: string
+}
+
 const flexStyles = ({ jc, ai, fw, fd }) => css`
     justify-content: ${jc};
     align-items: ${ai};
@@ -80,6 +87,15 @@ const Flex = styled(Box)<FlexBoxProps>`
     }
 
     ${responsiveStyles}
+`
+
+export const Card = styled(Flex)<CardProps>`
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
+    background-color: var(--color-white);
+    padding: ${(props) => props.padding || 'unset'};
+    margin: ${(props) => props.margin || 'unset'};
+    align-self: ${(props) => props.alignSelf || 'start'};
+    border-radius: ${(props) => props.border_radius || '4px'};
 `
 
 export default Flex

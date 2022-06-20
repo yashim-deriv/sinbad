@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import { ContainerWrapper, Flex, ImageContainer } from 'components/containers'
+import { ContainerWrapper, ImageContainer } from 'components/containers'
 import device from 'themes/device'
+import { Card } from 'components/containers/flex'
 
 type DataType = {
     icon: ReactNode
@@ -55,18 +56,6 @@ const StyledFlex = styled.div`
     @media ${device.laptop} {
         padding: 40px 0 80px;
     }
-`
-
-const Card = styled(Flex)`
-    display: flex;
-    max-width: 390px;
-    width: 100%;
-    height: 220px;
-    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
-    background-color: var(--color-white);
-    padding: 10px 10px 20px 20px;
-    margin: 5px;
-    border-radius: 5px;
 `
 
 const CardInfo = styled.div`
@@ -216,7 +205,17 @@ const HiringProcess = () => {
                 <StyledFlex>
                     {data.map(({ icon, header, text }, index) => {
                         return (
-                            <Card key={index} direction="row" ai="flex-start" jc="space-between">
+                            <Card
+                                key={index}
+                                direction="row"
+                                ai="flex-start"
+                                jc="space-between"
+                                max_width="390px"
+                                height="220px"
+                                padding="10px 10px 20px 20px"
+                                margin="5px"
+                                border-radius="5px"
+                            >
                                 <StyledImageContainer>{icon}</StyledImageContainer>
                                 <CardInfo>
                                     <CardHeader>{header}</CardHeader>
