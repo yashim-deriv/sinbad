@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import Layout from 'components/layout/layout'
 import { ContainerWrapper } from 'components/containers/common/style'
 import ImageNotAvailable from 'images/common/sinbad-thinking.png'
@@ -65,6 +65,12 @@ const Text = styled.div`
 const browser = typeof window !== 'undefined' && window
 
 const PageNotFound = () => {
+    useEffect(() => {
+        setTimeout(() => {
+            navigate('/404')
+        })
+    }, [])
+
     return (
         browser && (
             <Layout>
