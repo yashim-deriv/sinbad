@@ -62,8 +62,6 @@ const Text = styled.div`
     text-align: center;
 `
 
-const browser = typeof window !== 'undefined' && window
-
 const PageNotFound = () => {
     useEffect(() => {
         setTimeout(() => {
@@ -72,32 +70,30 @@ const PageNotFound = () => {
     }, [])
 
     return (
-        browser && (
-            <Layout>
-                <DescriptionContainer>
-                    <DescriptionContainerWrapper>
-                        <PageNotFoundContainer>
-                            <img
-                                src={ImageNotAvailable}
-                                alt="Page not found"
-                                width="450"
-                                height="450"
-                            />
-                            <PageNotFoundContainerInfo>
-                                <Header>We couldn’t find that page</Header>
-                                <Text>
-                                    It may not be available in your country, or maybe a broken link
-                                    has brought you here.
-                                </Text>
-                                <ButtonWrapper>
-                                    <LinkButton to="/">Visit our homepage</LinkButton>
-                                </ButtonWrapper>
-                            </PageNotFoundContainerInfo>
-                        </PageNotFoundContainer>
-                    </DescriptionContainerWrapper>
-                </DescriptionContainer>
-            </Layout>
-        )
+        <Layout>
+            <DescriptionContainer>
+                <DescriptionContainerWrapper>
+                    <PageNotFoundContainer>
+                        <img
+                            src={ImageNotAvailable}
+                            alt="Page not found"
+                            width="450"
+                            height="450"
+                        />
+                        <PageNotFoundContainerInfo>
+                            <Header>We couldn’t find that page</Header>
+                            <Text>
+                                It may not be available in your country, or maybe a broken link has
+                                brought you here.
+                            </Text>
+                            <ButtonWrapper>
+                                <LinkButton to="/">Visit our homepage</LinkButton>
+                            </ButtonWrapper>
+                        </PageNotFoundContainerInfo>
+                    </PageNotFoundContainer>
+                </DescriptionContainerWrapper>
+            </DescriptionContainer>
+        </Layout>
     )
 }
 
