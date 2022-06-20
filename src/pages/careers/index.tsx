@@ -6,7 +6,7 @@ import PerksBenefits from './perks-benefits'
 import OpenPositions from './open-positions'
 import HiringProcess from './hiring-process'
 import Layout from 'components/layout/layout'
-import JoinUsSection from 'components/elements/join-us-section'
+import { JoinUs } from 'pages/home'
 
 const Careers = () => {
     return (
@@ -19,7 +19,7 @@ const Careers = () => {
             <PerksBenefits />
             <OpenPositions />
             <HiringProcess />
-            <JoinUsSection appearance="careers" />
+            <JoinUs appearance="careers" />
         </Layout>
     )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import Flex from 'components/containers/flex'
-import { Text, Header } from 'components/containers'
 import { ContainerWrapper } from 'components/containers/common/style'
 import { CSSElementProps } from 'types/generics'
 import device from 'themes/device'
@@ -27,7 +26,8 @@ const TextContainer = styled.div`
     padding: 100px 0;
     background: var(--color-white);
 `
-const StyledHeader = styled(Header)<StyledTextProps>`
+
+const StyledHeader = styled.div<StyledTextProps>`
     font-size: 4.8rem;
     line-height: 50px;
     color: #1b1b1b;
@@ -45,7 +45,7 @@ const StyledHeader = styled(Header)<StyledTextProps>`
     }
 `
 
-const StyledText = styled(Text)<StyledTextProps>`
+const StyledText = styled.div<StyledTextProps>`
     width: 100%;
     max-width: 982px;
     height: 96px;
@@ -53,7 +53,7 @@ const StyledText = styled(Text)<StyledTextProps>`
     line-height: 34px;
     color: #4c4c4c;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
 
     @media ${device.tablet} {
@@ -92,7 +92,7 @@ const CardContainer = styled.div`
         content: '';
         background: var(--color-sea-1);
         width: 100%;
-        height: 400px;
+        height: 525px;
         z-index: 2;
 
         @media ${device.laptopM} {
@@ -136,9 +136,9 @@ const Card = styled.div<CSSElementProps>`
     justify-content: flex-start;
     width: 100%;
     max-width: 320px;
-    height: 320px;
+    height: 340px;
     padding: 32px 44px 32px 32px;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
+    box-shadow: rgba(14, 14, 14, 0.1) 4px 4px 6px 6px;
     background-color: var(--color-white);
     margin: ${(props) => props.margin || '0 15px 20px 15px'};
     border-radius: 4px;
@@ -153,14 +153,12 @@ const Card = styled.div<CSSElementProps>`
         max-width: 100px;
         margin: 0 auto;
     }
-
     @media ${device.mobileL} {
         padding: 10px 0 30px;
         height: auto;
         margin: 10px;
         width: 100vw;
     }
-
     @media ${device.laptopM} {
         &.first {
             margin: 0 0 10px 0;
@@ -174,7 +172,7 @@ const CardHeader = styled.div<StyledTextProps>`
     line-height: 27px;
     color: #0a0a0a;
     font-weight: 560;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: center;
     padding: 20px 0;
 `
@@ -184,7 +182,7 @@ const CardText = styled.div<StyledTextProps>`
     line-height: 26px;
     color: #4c4c4c;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
 
     @media ${device.mobileL} {
@@ -270,7 +268,7 @@ const Welcome = () => {
                         Sinbad Software LLC provides software development services and IT solutions
                         for the fintech industri. At every step of the way, we aim to give our
                         clients the power to go beyond digital boundaires and surpass their
-                        competitors in the ever-evolving fintech landscape
+                        competitors in the ever-evolving fintech landscape.
                     </StyledText>
                 </TextContainer>
             </ContainerWrapper>

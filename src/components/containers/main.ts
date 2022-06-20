@@ -28,6 +28,7 @@ type ImageProps = {
     width?: string
     height?: string
     padding_bottom?: string
+    mobile_pb?: string
     max_height?: string
 }
 
@@ -54,14 +55,14 @@ export const ImageContainer = styled.div<ImageProps>`
     max-height: ${(props) => props.max_height || '512px'};
 `
 
-export const JoinUsImageContainer = styled(ImageContainer)`
+export const JoinUsImageContainer = styled(ImageContainer)<ImageProps>`
     object-fit: contain;
-    max-height: none;
-    max-width: 500px;
+    max-width: ${(props) => props.width || '500px'};
+    padding-bottom: ${(props) => props.padding_bottom || '100px;'};
 
     @media ${device.tabletS} {
         max-width: 350px;
-        padding-bottom: 40px;
+        padding-bottom: ${(props) => props.mobile_pb || '40px;'};
     }
 `
 

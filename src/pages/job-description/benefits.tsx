@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ContainerWrapper, Flex, Header } from 'components/containers'
+import { ContainerWrapper, Flex } from 'components/containers'
+import { Card } from 'components/containers/flex'
 import {
     Benefits,
     Salary,
@@ -10,17 +11,23 @@ import {
     DressCode,
     Contract,
     Location,
+    BlueBackground,
 } from 'images/common/jd'
 import device from 'themes/device'
 
-const JobTitleContainer = styled.div`
+const BenefitsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(${BlueBackground});
+    background-repeat: no-repeat;
+    background-size: 45% 100%;
+    width: 100%;
+    height: 100%;
 `
 
-const JobTitleContainerWrapper = styled(ContainerWrapper)`
+const BenefitsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
     align-items: flex-end;
@@ -31,11 +38,14 @@ const JobTitleContainerWrapper = styled(ContainerWrapper)`
     }
 `
 
-const StyledHeader = styled(Header)`
+const StyledHeader = styled.div<{ font_family?: string }>`
     text-transform: uppercase;
     color: var(--color-sand-4);
-    padding-right: 40px;
+    padding: 40px 40px 40px 0;
     font-size: 3.8rem;
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    text-align: right;
 `
 
 const BenefitsImageContainer = styled.div`
@@ -62,22 +72,17 @@ const StyledImg = styled.img`
     padding-right: 50px;
 `
 
-const Card = styled(Flex)`
-    display: flex;
-    flex-direction: ${(props) => props.direction || 'column'};
-    justify-content: center;
-    max-width: 370px;
-    height: 250px;
-    padding: 55px 0;
-    box-shadow: rgba(14, 14, 14, 0.1) 0 4px 8px 0;
-    background-color: white;
-    margin: 15px;
-    border-radius: 5px;
-`
-
 const CardInfo = styled.div`
     display: flex;
     flex-direction: column;
+`
+const CardHeader = styled.div<{ font_family?: string }>`
+    font-size: 1.9rem;
+    line-height: 32px;
+    color: var(--color-black-3);
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    padding: 25px 10px 0;
 `
 
 const LocationContainer = styled(Flex)`
@@ -86,7 +91,7 @@ const LocationContainer = styled(Flex)`
     flex-wrap: wrap;
     justify-content: flex-end;
 
-    @media ${device.laptopL} {
+    @media ${device.tabletL} {
         justify-content: center;
     }
 `
@@ -106,7 +111,7 @@ const StyledText = styled.div<{ font_family?: string }>`
     line-height: 27px;
     color: #1b1b1b;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding-bottom: 10px;
 `
@@ -122,28 +127,44 @@ const data = [
 
 const BenefitsList = () => {
     return (
-        <JobTitleContainer>
-            <JobTitleContainerWrapper>
+        <BenefitsContainer>
+            <BenefitsContainerWrapper>
                 <BenefitsImageContainer>
-                    <StyledHeader padding="40px 0">Benefits</StyledHeader>
+                    <StyledHeader>Benefits</StyledHeader>
                     <StyledImg src={Benefits} />
                 </BenefitsImageContainer>
                 <Flex wrap="wrap" jc="center">
                     {data.map(({ icon, text }, index) => {
                         return (
-                            <Card key={index} ai="center">
+                            <Card
+                                key={index}
+                                ai="center"
+                                fd="column"
+                                jc="center"
+                                max_width="370px"
+                                height="280px"
+                                padding="55px 0"
+                                margin="15px"
+                                border_radius="5px"
+                            >
                                 <img src={icon} />
                                 <CardInfo>
-                                    <Header padding="10px 10px 0" font_size="14px">
-                                        {text}
-                                    </Header>
+                                    <CardHeader>{text}</CardHeader>
                                 </CardInfo>
                             </Card>
                         )
                     })}
                 </Flex>
                 <LocationContainer>
-                    <Card direction="row" ai="center">
+                    <Card
+                        direction="row"
+                        ai="center"
+                        jc="flex-end"
+                        width="auto"
+                        height="180px"
+                        margin="50px 15px 15px 15px"
+                        padding="0 20px"
+                    >
                         <LocationImageContainer>
                             <StyledSSText font_family="Maven Pro Bold">Location</StyledSSText>
                             <StyledText>Dubai, the UAE</StyledText>
@@ -151,8 +172,8 @@ const BenefitsList = () => {
                         <img src={Location} />
                     </Card>
                 </LocationContainer>
-            </JobTitleContainerWrapper>
-        </JobTitleContainer>
+            </BenefitsContainerWrapper>
+        </BenefitsContainer>
     )
 }
 

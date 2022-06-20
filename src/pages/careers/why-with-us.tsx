@@ -42,23 +42,28 @@ const StyledHeader = styled.div<{ font_family?: string }>`
     padding-bottom: 20px;
 
     @media ${device.tabletL} {
-        font-size: 3.4rem;
+        font-size: 3.8rem;
     }
-
     @media ${device.tabletS} {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
     }
 `
 const StyledText = styled.div<{ font_family?: string }>`
-    max-width: 910px;
+    max-width: 940px;
     width: 100%;
-    height: 107px;
     font-size: 1.8rem;
     line-height: 34px;
     color: #4c4c4c;
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: center;
+
+    @media ${device.tabletL} {
+        font-size: 2.2rem;
+    }
+    @media ${device.tabletS} {
+        font-size: 2.4rem;
+    }
 `
 const StyledImage = styled(ImageContainer)`
     width: 900px;
@@ -69,7 +74,6 @@ const StyledImage = styled(ImageContainer)`
         width: 520px;
         height: 500px;
     }
-
     @media ${device.tabletS} {
         width: 400px;
         height: 350px;

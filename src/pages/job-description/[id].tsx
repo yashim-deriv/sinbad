@@ -6,7 +6,7 @@ import JobTitle from './job-title'
 import BenefitsList from './benefits'
 import { positions } from './data'
 import Layout from 'components/layout/layout'
-import JoinUsSection from 'components/elements/join-us-section'
+import { JoinUs } from 'pages/home'
 
 const JobDescription = (props: PageProps) => {
     const position = positions?.find(({ id }) => id === props.params.id)
@@ -19,7 +19,7 @@ const JobDescription = (props: PageProps) => {
             <JobTitle position={position} />
             <Description position={position} />
             <BenefitsList />
-            <JoinUsSection appearance="jobs" />
+            <JoinUs appearance="job" />
         </Layout>
     )
 }

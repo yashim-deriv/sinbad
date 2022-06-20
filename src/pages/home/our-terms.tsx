@@ -25,17 +25,19 @@ type StyledTextProps = {
 const OurTeamsContainerWrapper = styled(ContainerWrapper)`
     padding: 50px 0;
     display: flex;
+    align-items: flex-start;
+
     @media ${device.bp1060} {
         justify-content: center;
         padding-bottom: 200px;
     }
-
     @media ${device.laptopM} {
         display: flex;
     }
-    @media (max-width: 620px) {
+    @media (max-width: 720px) {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 50px;
     }
 `
 
@@ -57,7 +59,7 @@ const TermsTextContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
-    padding: 30px 0;
+    padding-top: 60px;
 
     @media ${device.tabletS} {
         flex-wrap: wrap;
@@ -66,10 +68,10 @@ const TermsTextContainer = styled.div`
 `
 
 const TermsAndSinbadContainer = styled.div`
-    padding: 120px 0 0;
+    padding: 80px 0 0;
     display: flex;
 
-    @media ${device.tabletS} {
+    @media ${device.tablet} {
         justify-content: center;
         padding: 0 0 30px;
     }
@@ -87,18 +89,19 @@ const StyledHeader = styled.div<StyledTextProps>`
 
     @media ${device.laptopM} {
         max-width: 320px;
-        font-size: 4.4rem;
-        line-height: 48px;
+        font-size: 4rem;
+        line-height: 44px;
     }
 `
 
 const StyledText = styled.div<StyledTextProps>`
-    max-width: 350px;
+    max-width: 425px;
+    width: 100%;
     font-size: 1.6rem;
     line-height: 27px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Poppins'};
+    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding-bottom: 10px;
 
@@ -117,7 +120,7 @@ const StyledDescription = styled.div<StyledTextProps>`
     font-weight: 560;
     font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
     text-align: left;
-    padding-bottom: 120px;
+    padding-bottom: 190px;
 
     @media ${device.laptopM} {
         max-width: 320px;
@@ -128,9 +131,9 @@ const StyledDescription = styled.div<StyledTextProps>`
 `
 
 const SinbadImage = styled(ImageContainer)`
-    max-width: 200px;
+    max-width: 205px;
 
-    @media ${device.bp1060} {
+    @media ${device.tabletL} {
         display: none;
     }
 `
@@ -188,7 +191,7 @@ const OurTeams = () => {
                         architecture, and more.
                     </StyledText>
                     <StyledDescription>
-                        Where others see gaps, we see an opportunity to build a powerhouse
+                        Where others see gaps, we see an opportunity to build a powerhouse.
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>

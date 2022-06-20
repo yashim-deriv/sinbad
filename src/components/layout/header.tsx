@@ -23,6 +23,9 @@ const Container = styled.div`
     top: 0px;
     z-index: 999;
 
+    @media ${device.tabletL} {
+        padding: unset;
+    }
     @media ${device.mobileL} {
         position: static;
     }

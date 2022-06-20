@@ -14,7 +14,7 @@ const WorkWithUsContainer = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 35% bottom 0%;
-    max-height: 790px;
+    max-height: 650px;
 
     @media ${device.mobileL} {
         background-image: none;
@@ -22,7 +22,7 @@ const WorkWithUsContainer = styled.div`
 `
 
 const CareersContainerWrapper = styled(ContainerWrapper)`
-    padding: 50px 0;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,6 +65,18 @@ const StyledContainer = styled.div`
     }
 `
 
+const StyledImageContainer = styled(ImageContainer)`
+    max-height: unset;
+    width: 900px;
+
+    @media ${device.tabletL} {
+        width: 570px;
+    }
+    @media ${device.tabletS} {
+        width: 400px;
+    }
+`
+
 const WorkWithUs = () => {
     return (
         <WorkWithUsContainer>
@@ -78,14 +90,14 @@ const WorkWithUs = () => {
                         on challenging projects.
                     </StyledHeader>
                 </StyledContainer>
-                <ImageContainer max_height="unset">
+                <StyledImageContainer>
                     <StaticImage
                         src="../../images/common/careers/work-with-us.png"
                         alt="work with us"
                         placeholder="none"
                         loading="eager"
                     />
-                </ImageContainer>
+                </StyledImageContainer>
             </CareersContainerWrapper>
         </WorkWithUsContainer>
     )

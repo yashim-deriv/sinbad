@@ -61,7 +61,7 @@ const SocialWrapperComponent = () => {
             id: 2,
             image: EmailSvg,
             info: 'Email:',
-            details: 'info@sindbadsoftware.com',
+            details: 'info@sinbad.software',
             link: '',
         },
     ]
