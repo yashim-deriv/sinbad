@@ -53,10 +53,13 @@ const CarouselImageContainer = styled(ImageContainer)`
         max-height: 500px;
         height: auto;
     }
-
+    @media ${device.tabletL} {
+        height: 500px;
+    }
     @media ${device.tablet} {
         margin-right: 0;
         max-width: 400px;
+        height: 400px;
     }
 `
 
