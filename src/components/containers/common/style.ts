@@ -15,7 +15,7 @@ export const HeaderTitle = styled.div<HeaderProps>`
     color: ${(props) => props.color || 'var(--color-black-1)'};
     padding-left: ${(props) => props.padding_left || '0px'};
     padding-right: ${(props) => props.padding_right || '0px'};
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
+    font-weight: bold;
 `
 
 export const DefaultFooter = styled.footer`

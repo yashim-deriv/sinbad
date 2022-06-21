@@ -55,9 +55,8 @@ const StyledHeaderLink = styled(Link)`
     line-height: 30px;
     text-transform: uppercase;
     color: var(--color-black-2);
-    font-weight: 900;
+    font-weight: bold;
     text-align: left;
-    font-family: 'Maven Pro Bold';
     padding-right: 30px;
 
     &.active,

@@ -23,8 +23,7 @@ export const StyledHeader = styled.div<{ font_family?: string }>`
     color: var(--color-black-3);
     font-size: 4.8rem;
     line-height: 58px;
-    font-weight: 560;
-    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+    font-weight: bold;
 `
 
 export const StyledText = styled.div<{ font_family?: string }>`
@@ -34,7 +33,6 @@ export const StyledText = styled.div<{ font_family?: string }>`
     line-height: 34px;
     color: var(--color-black-3);
     font-weight: 320;
-    font-family: ${(props) => props.font_family || 'Maven Pro'};
     text-align: left;
     padding: 25px 0;
 `
