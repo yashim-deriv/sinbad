@@ -58,7 +58,7 @@ export const TextContainer = styled.div<{ padding_bottom?: string }>`
     padding-bottom: ${(props) => props.padding_bottom || '190px'};
 
     @media ${device.tabletL} {
-        padding-bottom: 20px;
+        padding-bottom: 60px;
     }
 `
 
@@ -78,6 +78,10 @@ export const JoinUsInfo = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+
+    @media ${device.tabletL} {
+        padding-top: 40px;
+    }
 `
 
 const JoinUsHome = () => {

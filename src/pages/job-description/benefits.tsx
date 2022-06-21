@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { ContainerWrapper, Flex } from 'components/containers'
 import { Card } from 'components/containers/flex'
 import {
@@ -10,7 +11,6 @@ import {
     House,
     DressCode,
     Contract,
-    Location,
     BlueBackground,
 } from 'images/common/jd'
 import device from 'themes/device'
@@ -169,7 +169,11 @@ const BenefitsList = () => {
                             <StyledSSText font_family="Maven Pro Bold">Location</StyledSSText>
                             <StyledText>Dubai, the UAE</StyledText>
                         </LocationImageContainer>
-                        <img src={Location} />
+                        <StaticImage
+                            src="../../images/common/jd/location.png"
+                            alt="career join us image"
+                            placeholder="none"
+                        />
                     </Card>
                 </LocationContainer>
             </BenefitsContainerWrapper>
