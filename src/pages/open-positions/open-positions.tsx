@@ -53,7 +53,8 @@ const PositionsCarouselContainer = styled.div`
         padding: 60px 0;
     }
     @media ${device.mobileL} {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         padding-right: 35px;
         padding-top: 0px;
     }
