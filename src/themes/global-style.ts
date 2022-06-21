@@ -35,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         background: white;
     }
+    
+    div {
+        font-size: 0px;
+    }
 `
 
 export default GlobalStyle
