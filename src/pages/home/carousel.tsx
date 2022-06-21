@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import Background from 'images/common/background.png'
@@ -41,6 +41,7 @@ const CarouselTextContainer = styled.div`
 
     @media ${device.tabletL} {
         padding: 0;
+        align-items: center;
     }
 `
 
@@ -52,10 +53,11 @@ const CarouselImageContainer = styled(ImageContainer)`
     .gatsby-image-wrapper {
         max-height: 500px;
         height: auto;
+        @media ${device.tabletL} {
+            max-height: 400px;
+        }
     }
-    @media ${device.tabletL} {
-        height: 500px;
-    }
+
     @media ${device.tablet} {
         margin-right: 0;
         max-width: 400px;
@@ -69,9 +71,6 @@ const PickerContainer = styled.div`
     align-items: center;
     width: fit-content;
     margin: 10px 0 0 0;
-    @media ${device.tabletL} {
-        margin: 10px 0 0 70px;
-    }
 `
 
 const CarouselDots = styled.span`
@@ -239,6 +238,12 @@ const data = [
 
 const Carousel = () => {
     const [active, setActive] = useState(0)
+
+    useEffect(() => {
+        const next = (active + 1) % 3
+        const id = setTimeout(() => setActive(next), 5000)
+        return () => clearTimeout(id)
+    }, [active])
 
     return (
         <CarouselContainer>
