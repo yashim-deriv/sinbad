@@ -28,7 +28,7 @@ const CarouselContainerWrapper = styled(ContainerWrapper)`
     margin: 50px 0 75px 0;
 
     @media ${device.tabletL} {
-        flex-direction: row;
+        flex-direction: column-reverse;
         align-items: center;
         margin: 0;
     }
@@ -49,8 +49,14 @@ const CarouselImageContainer = styled(ImageContainer)`
     max-height: none;
     margin: 4rem 4rem 0 0;
 
+    .gatsby-image-wrapper {
+        max-height: 500px;
+        height: auto;
+    }
+
     @media ${device.tablet} {
         margin-right: 0;
+        max-width: 400px;
     }
 `
 
@@ -60,6 +66,9 @@ const PickerContainer = styled.div`
     align-items: center;
     width: fit-content;
     margin: 10px 0 0 0;
+    @media ${device.tabletL} {
+        margin: 10px 0 0 70px;
+    }
 `
 
 const CarouselDots = styled.span`
@@ -142,8 +151,8 @@ const StyledUpperText = styled(BasicText)`
         line-height: 52px;
     }
     @media ${device.tabletL} {
-        font-size: 3.2rem;
-        line-height: 44px;
+        font-size: 3rem;
+        line-height: 35px;
     }
     @media ${device.tablet} {
         font-size: 2.8rem;
@@ -191,6 +200,7 @@ const data = [
                 objectFit="contain"
                 loading="eager"
                 placeholder="none"
+                layout="fullWidth"
             />
         ),
     },
@@ -204,6 +214,7 @@ const data = [
                 objectFit="contain"
                 loading="eager"
                 placeholder="none"
+                layout="fullWidth"
             />
         ),
     },
@@ -217,6 +228,7 @@ const data = [
                 objectFit="contain"
                 loading="eager"
                 placeholder="none"
+                layout="fullWidth"
             />
         ),
     },
