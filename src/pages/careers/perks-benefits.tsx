@@ -40,13 +40,12 @@ const PBContainerWrapper = styled(ContainerWrapper)`
     display: flex;
     align-items: flex-start;
 
-    @media ${device.bp1060} {
-        justify-content: center;
-    }
-    @media ${device.tabletS} {
+    @media ${device.tabletL} {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    @media ${device.tabletS} {
         padding: 0 0 60px;
     }
 `
@@ -112,48 +111,101 @@ const StyledHeader = styled.div<StyledTextProps>`
     }
 `
 
-const StyledImage = styled(ImageContainer)`
-    max-width: 260px;
-
-    @media ${`(max-width: 1200px)`} {
-        max-width: 220px;
-    }
-    @media ${device.tabletL} {
-        display: none;
-    }
-`
-
 const data: TableType[] = [
     {
-        icon: Insurance,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/insurance.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Full medical insurance',
     },
     {
-        icon: Education,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/education.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Education assistance & training programms',
     },
     {
-        icon: Annual,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/annual.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: '22 days annual leave',
     },
     {
-        icon: Office,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/office.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Chic, comfy office in the heart of Dubai',
     },
     {
-        icon: Security,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/security.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Social security',
     },
     {
-        icon: Tech,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/tech.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Corporate laptops, monitors, and other hardware',
     },
     {
-        icon: Bonus,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/bonus.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Annual bonus',
     },
     {
-        icon: Pantry,
+        icon: (
+            <StaticImage
+                src="../../images/common/careers/pantry.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Well-stocked pantry, coffee machines, and more',
     },
 ]
@@ -175,13 +227,6 @@ const PerksBenefits = () => {
                         of your career development as it can broaden and deepen your expirience.
                     </StyledText>
                 </TextAboutCareer>
-                <StyledImage>
-                    <StaticImage
-                        src={`../../images/common/careers/sinbad-near-p&b.png`}
-                        alt="sinbad mascott"
-                        placeholder="none"
-                    />
-                </StyledImage>
                 <Table data={data} text={'Perks and benefits'} />
             </PBContainerWrapper>
         </PBContainer>

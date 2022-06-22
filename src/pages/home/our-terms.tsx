@@ -140,35 +140,99 @@ const SinbadImage = styled(ImageContainer)`
 
 const data: TableType[] = [
     {
-        icon: Term0,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-0.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Mobile App development',
     },
     {
-        icon: Term1,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-1.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Full-stack Development',
     },
     {
-        icon: Term2,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-2.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'UI/UX',
     },
     {
-        icon: Term3,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-3.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Business Intelligence',
     },
     {
-        icon: Term4,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-4.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Quantitative Analysis',
     },
     {
-        icon: Term5,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-5.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Data Science',
     },
     {
-        icon: Term6,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-6.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'DevOps',
     },
     {
-        icon: Term7,
+        icon: (
+            <StaticImage
+                src="../../images/common/homepage/our-terms/term-7.png"
+                alt="background check icon"
+                placeholder="tracedSVG"
+                width={95}
+                height={95}
+            />
+        ),
         text: 'Quality Assurance',
     },
 ]
@@ -195,14 +259,14 @@ const OurTeams = () => {
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
-                    <SinbadImage>
+                    {/* <SinbadImage>
                         <StaticImage
                             src="../../images/common/homepage/our-terms/sinbad-in-our-terms.png"
                             alt="sinbad mascott"
                             placeholder="none"
                             objectFit="scale-down"
                         />
-                    </SinbadImage>
+                    </SinbadImage> */}
                     <Table data={data} text={'Our Teams'} />
                 </TermsAndSinbadContainer>
             </OurTeamsContainerWrapper>

@@ -20,7 +20,7 @@ export type TableType = {
     other?: TermsType[]
     header?: string
     text?: string
-    icon?: string
+    icon?: string | React.ReactElement
 }
 
 type DataType = {
@@ -30,30 +30,14 @@ type DataType = {
 
 const TableContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-end;
     flex-wrap: wrap;
-    align-content: center;
-    max-width: 590px;
+    align-items: center;
+    max-width: 640px;
     width: 100%;
 
-    @media ${device.bp1060} {
-        max-width: 530px;
-    }
-    @media ${device.laptopM} {
-        max-width: 410px;
-    }
-    @media ${device.laptop} {
-        max-width: 415px;
-    }
-    @media ${device.tabletL} {
-        max-width: 320px;
-    }
-    @media ${device.tablet} {
-        max-width: 250px;
-    }
     @media (max-width: 620px) {
-        max-width: 250px;
         justify-content: center;
     }
     @media ${device.mobileL} {
@@ -67,98 +51,87 @@ const TermHeaderText = styled.div<TermProps>`
     color: var(--color-black-3);
     font-weight: bold;
     text-align: left;
-    padding: 0 110px 30px 0;
+    padding-bottom: 20px;
 
     @media ${device.laptopM} {
         font-size: 3.4rem;
     }
     @media ${device.tabletL} {
-        padding: 0 80px 0 0;
         font-size: 3rem;
-    }
-    @media (max-width: 620px) {
-        padding: 0 20px 0 0;
-    }
-`
-
-const TermImage = styled.img`
-    width: 95px;
-    height: 95px;
-    filter: drop-shadow(0 0 13.5px rgba(0, 0, 0, 0.15));
-
-    @media ${device.laptopM} {
-        width: 80px;
-        height: 80px;
-    }
-
-    @media ${device.tabletL} {
-        width: 55px;
-        height: 55px;
-    }
-
-    @media ${device.tabletS} {
-        width: 40px;
-        height: 40px;
     }
 `
 
 const TermText = styled.div<TermProps>`
+    max-width: 220px;
     font-size: 1.8rem;
     line-height: 22px;
     color: var(--color-black-3);
     font-weight: bold;
     text-align: left;
+    padding: 0 5px;
 
-    @media ${device.laptopM} {
-        font-size: 1.25rem;
-        line-height: 18px;
-    }
-
-    @media ${device.tabletL} {
-        line-height: 14px;
+    @media ${device.tablet} {
+        font-size: 1.5rem;
     }
 `
 
+const border = [0, 1, 2, 4, 5, 6]
 const Term = styled.div<TermProps>`
-    max-width: 224px;
+    max-width: 320px;
     width: 100%;
     height: 120px;
     display: flex;
     align-items: center;
-    border-top: ${(props) =>
-        props.index === 0
-            ? 'unset'
-            : props.index < 2
-            ? 'unset'
-            : '1px solid rgb(168, 168, 168, 0.5)'};
-    border-bottom: ${(props) => (props.index > 5 ? 'unset' : '1px solid rgb(225, 225, 225, 0.5)')};
-    border-left: ${(props) => (props.index % 2 ? '1px solid rgb(225, 225, 225, 0.5)' : 'unset')};
+    border-bottom: ${(props) =>
+        border.some((num) => num == props.index) ? '1px solid rgb(168, 168, 168, 0.5)' : 'unset'};
 
-    @media ${device.laptopM} {
-        max-width: 190px;
-    }
     @media ${device.tabletL} {
-        max-width: 120px;
-        height: 90px;
-    }
-    @media ${device.tablet} {
-        max-width: 120px;
+        height: 110px;
     }
     @media ${device.tabletS} {
-        height: 70px;
+        height: 100px;
     }
+`
+
+const ColumnContainer = styled.div`
+    display: flex;
+    fled-direction: row;
+`
+
+const Column = styled.div<TermProps>`
+    display: flex;
+    flex-direction: column;
+    border-left: ${(props) => (props.border_left ? '1px solid rgb(168, 168, 168, 0.5)' : 'unset')};
 `
 
 const Table = ({ data, text }: DataType) => {
     return (
         <TableContainer>
             <TermHeaderText>{text}</TermHeaderText>
-            {data.map((item, index) => (
-                <Term key={index} index={index}>
-                    <TermImage src={item.icon} alt={item.text} />
-                    <TermText>{item.text}</TermText>
-                </Term>
-            ))}
+            <ColumnContainer>
+                <Column>
+                    {data.map(
+                        (item, index) =>
+                            index < 4 && (
+                                <Term key={index} index={index}>
+                                    {item.icon}
+                                    <TermText>{item.text}</TermText>
+                                </Term>
+                            ),
+                    )}
+                </Column>
+                <Column border_left>
+                    {data.map(
+                        (item, index) =>
+                            index > 3 && (
+                                <Term key={index} index={index}>
+                                    {item.icon}
+                                    <TermText>{item.text}</TermText>
+                                </Term>
+                            ),
+                    )}
+                </Column>
+            </ColumnContainer>
         </TableContainer>
     )
 }
