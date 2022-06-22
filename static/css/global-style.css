@@ -32,7 +32,13 @@
     --text-size-header-5: 4.8rem;
 }
 
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
+
+
 
