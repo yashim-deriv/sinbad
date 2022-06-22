@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
 import { ContainerWrapper } from 'components/containers'
@@ -193,7 +193,9 @@ const Header = () => {
     useOnClickOutside(node, () => setOpen(false))
 
     const pathname = getPathName()
-
+    const HomeRedirect = () => {
+        navigate('/')
+    }
     return (
         <Container>
             <BurgerMenu>
@@ -218,7 +220,7 @@ const Header = () => {
             </BurgerMenu>
             <ContainerWrapper>
                 <HeaderContainer>
-                    <StyledHeader>
+                    <StyledHeader onClick={() => HomeRedirect()}>
                         <HeaderTitle font_family="Maven Pro Bold">Sinbad</HeaderTitle>
                         <HeaderTitle padding_left="5px">Software</HeaderTitle>
                     </StyledHeader>
