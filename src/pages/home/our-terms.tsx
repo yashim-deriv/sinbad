@@ -2,6 +2,8 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import { OurTermsBackground } from 'images/common/homepage/our-terms'
+import { Term0, Term1, Term2, Term3, Term4, Term5, Term6, Term7 } from 'images/svg/terms'
+import { ImageContainer } from 'components/containers'
 import Table, { TableType } from 'components/containers/table'
 import { SectionLabel } from 'components/chunks'
 import { ContainerWrapper } from 'components/containers/common/style'
@@ -119,101 +121,45 @@ const StyledDescription = styled.div<StyledTextProps>`
     }
 `
 
+const SinbadImage = styled(ImageContainer)`
+    max-width: 205px;
+
+    @media ${device.tabletL} {
+        display: none;
+    }
+`
+
 const data: TableType[] = [
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-0.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term0,
         text: 'Mobile App development',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-1.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term1,
         text: 'Full-stack Development',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-2.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term2,
         text: 'UI/UX',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-3.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term3,
         text: 'Business Intelligence',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-4.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term4,
         text: 'Quantitative Analysis',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-5.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term5,
         text: 'Data Science',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-6.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term6,
         text: 'DevOps',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/homepage/our-terms/term-7.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Term7,
         text: 'Quality Assurance',
     },
 ]
@@ -240,6 +186,14 @@ const OurTeams = () => {
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
+                    <SinbadImage>
+                        <StaticImage
+                            src="../../images/common/homepage/our-terms/sinbad-in-our-terms.png"
+                            alt="sinbad mascott"
+                            placeholder="none"
+                            objectFit="scale-down"
+                        />
+                    </SinbadImage>
                     <Table data={data} text={'Our Teams'} />
                 </TermsAndSinbadContainer>
             </OurTeamsContainerWrapper>

@@ -1,9 +1,19 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import { ContainerWrapper } from 'components/containers'
+import { ContainerWrapper, ImageContainer } from 'components/containers'
 import Table, { TableType } from 'components/containers/table'
 import { OpacityBackground } from 'images/common/careers'
+import {
+    Annual,
+    Bonus,
+    Education,
+    Insurance,
+    Office,
+    Pantry,
+    Security,
+    Tech,
+} from 'images/svg/benefits'
 import device from 'themes/device'
 import { SectionLabel } from 'components/chunks'
 
@@ -30,12 +40,13 @@ const PBContainerWrapper = styled(ContainerWrapper)`
     display: flex;
     align-items: flex-start;
 
-    @media ${device.tabletL} {
+    @media ${device.bp1060} {
+        justify-content: center;
+    }
+    @media ${device.tabletS} {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    @media ${device.tabletS} {
         padding: 0 0 60px;
     }
 `
@@ -101,101 +112,48 @@ const StyledHeader = styled.div<StyledTextProps>`
     }
 `
 
+const StyledImage = styled(ImageContainer)`
+    max-width: 260px;
+
+    @media ${`(max-width: 1200px)`} {
+        max-width: 220px;
+    }
+    @media ${device.tabletL} {
+        display: none;
+    }
+`
+
 const data: TableType[] = [
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/insurance.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Insurance,
         text: 'Full medical insurance',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/education.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Education,
         text: 'Education assistance & training programms',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/annual.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Annual,
         text: '22 days annual leave',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/office.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Office,
         text: 'Chic, comfy office in the heart of Dubai',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/security.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Security,
         text: 'Social security',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/tech.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Tech,
         text: 'Corporate laptops, monitors, and other hardware',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/bonus.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Bonus,
         text: 'Annual bonus',
     },
     {
-        icon: (
-            <StaticImage
-                src="../../images/common/careers/pantry.png"
-                alt="background check icon"
-                placeholder="tracedSVG"
-                width={95}
-                height={95}
-            />
-        ),
+        icon: Pantry,
         text: 'Well-stocked pantry, coffee machines, and more',
     },
 ]
@@ -217,6 +175,13 @@ const PerksBenefits = () => {
                         of your career development as it can broaden and deepen your expirience.
                     </StyledText>
                 </TextAboutCareer>
+                <StyledImage>
+                    <StaticImage
+                        src={`../../images/common/careers/sinbad-near-p&b.png`}
+                        alt="sinbad mascott"
+                        placeholder="none"
+                    />
+                </StyledImage>
                 <Table data={data} text={'Perks and benefits'} />
             </PBContainerWrapper>
         </PBContainer>
