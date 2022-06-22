@@ -23,7 +23,12 @@ export const StyledHeader = styled.div<{ font_family?: string }>`
     color: var(--color-black-3);
     font-size: 4.8rem;
     line-height: 58px;
-    font-weight: bold;
+    font-weight: 560;
+    font-family: ${(props) => props.font_family || 'Maven Pro Bold'};
+
+    @media ${device.mobileL} {
+        text-align: center;
+    }
 `
 
 export const StyledText = styled.div<{ font_family?: string }>`
@@ -35,6 +40,9 @@ export const StyledText = styled.div<{ font_family?: string }>`
     font-weight: 320;
     text-align: left;
     padding: 25px 0;
+    @media ${device.mobileL} {
+        text-align: center;
+    }
 `
 
 export const JoinUsContainer = styled.div<{ fd?: string; height?: string }>`
@@ -58,6 +66,11 @@ export const TextContainer = styled.div<{ padding_bottom?: string }>`
     @media ${device.tabletL} {
         padding-bottom: 60px;
     }
+    @media ${device.mobileL} {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 const JoinUsWrapper = styled(JoinUsContainer)`
@@ -77,8 +90,9 @@ export const JoinUsInfo = styled.div`
     flex-wrap: wrap;
     justify-content: center;
 
-    @media ${device.tabletL} {
-        padding-top: 40px;
+    @media ${device.mobileL} {
+        align-items: center;
+        padding: 10px;
     }
 `
 
