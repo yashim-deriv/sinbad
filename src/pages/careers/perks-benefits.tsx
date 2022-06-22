@@ -1,19 +1,9 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import { ContainerWrapper, ImageContainer } from 'components/containers'
+import { ContainerWrapper } from 'components/containers'
 import Table, { TableType } from 'components/containers/table'
-import {
-    Annual,
-    OpacityBackground,
-    Bonus,
-    Education,
-    Insurance,
-    Office,
-    Pantry,
-    Security,
-    Tech,
-} from 'images/common/careers'
+import { OpacityBackground } from 'images/common/careers'
 import device from 'themes/device'
 import { SectionLabel } from 'components/chunks'
 

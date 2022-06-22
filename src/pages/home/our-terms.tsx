@@ -1,18 +1,7 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
-import {
-    Term0,
-    Term1,
-    Term2,
-    Term3,
-    Term4,
-    Term5,
-    Term6,
-    Term7,
-    OurTermsBackground,
-} from 'images/common/homepage/our-terms'
-import { ImageContainer } from 'components/containers'
+import { OurTermsBackground } from 'images/common/homepage/our-terms'
 import Table, { TableType } from 'components/containers/table'
 import { SectionLabel } from 'components/chunks'
 import { ContainerWrapper } from 'components/containers/common/style'
@@ -127,14 +116,6 @@ const StyledDescription = styled.div<StyledTextProps>`
         font-size: 2.2rem;
         line-height: 30px;
         padding-bottom: 0px;
-    }
-`
-
-const SinbadImage = styled(ImageContainer)`
-    max-width: 205px;
-
-    @media ${device.tabletL} {
-        display: none;
     }
 `
 
@@ -259,14 +240,6 @@ const OurTeams = () => {
                     </StyledDescription>
                 </TermsTextContainer>
                 <TermsAndSinbadContainer>
-                    {/* <SinbadImage>
-                        <StaticImage
-                            src="../../images/common/homepage/our-terms/sinbad-in-our-terms.png"
-                            alt="sinbad mascott"
-                            placeholder="none"
-                            objectFit="scale-down"
-                        />
-                    </SinbadImage> */}
                     <Table data={data} text={'Our Teams'} />
                 </TermsAndSinbadContainer>
             </OurTeamsContainerWrapper>
